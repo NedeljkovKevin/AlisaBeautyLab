@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen</title>
+    
+    <!-- Hinweis für Live-Gang: Für 100% DSGVO-Konformität ohne Cookie-Banner sollten 
+         diese Google Fonts lokal auf dem eigenen Server gespeichert und eingebunden werden. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+
+    <!-- Tailwind CSS (Für Produktion später kompilieren, für den Moment über CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#f5f0e6',
+                            text: '#5b524b',
+                            light: '#e8e1d5',
+                            accent: '#8a7e75'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            background-color: #f5f0e6;
+            color: #5b524b;
+        }
+        .modal-overlay {
+            backdrop-filter: blur(4px);
+        }
+        .price-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 0.5rem;
+        }
+        .price-leader {
+            flex-grow: 1;
+            border-bottom: 1px dotted #5b524b;
+            margin: 0 10px;
+            opacity: 0.4;
+        }
+        /* Hilfsklassen für SVGs */
+        .svg-icon {
+            width: 1.25rem;
+            height: 1.25rem;
+            fill: currentColor;
+        }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <!-- Topbar -->
+    <div class="bg-brand-text text-brand-bg py-2 px-4 text-xs md:text-sm">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-2 text-center md:text-left">
+            <div class="flex items-center gap-2">
+                <svg class="svg-icon w-4 h-4" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
+            </div>
+            <div class="flex items-center gap-4">
+                <span class="hidden md:flex items-center gap-1">
+                    <svg class="svg-icon w-4 h-4" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>
+                    Termine telefonisch, per WhatsApp oder Instagram
+                </span>
+                <span class="font-semibold bg-brand-bg text-brand-text px-3 py-1 rounded-full text-xs flex items-center gap-1">
+                    Nur nach Vereinbarung
+                </span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="sticky top-0 z-40 bg-brand-bg/95 backdrop-blur-md shadow-sm border-b border-brand-text/10">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <!-- Logo & Name -->
+            <a href="#" class="flex items-center gap-3 group" aria-label="Startseite">
+                <!-- Fallback-Styling, falls die Vorschauumgebung das Bild blockiert -->
+                <img src="AlisaLogoQuertransparent.webp" alt="Alisa Beauty Lab Logo" width="200" height="60" style="min-height: 60px; min-width: 150px; object-fit: contain;" class="h-14 md:h-16 w-auto group-hover:opacity-80 transition-opacity">
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden lg:flex items-center gap-6 font-medium">
+                <a href="#behandlungen" class="hover:text-brand-accent transition-colors">Behandlungen</a>
+                <a href="#ueber-mich" class="hover:text-brand-accent transition-colors">Über mich</a>
+                <div class="h-6 w-px bg-brand-text/20"></div>
+                
+                <!-- Telefon -->
+                <a href="tel:+491784537636" class="flex items-center gap-2 hover:text-brand-accent transition-colors">
+                    <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    0178 4537636
+                </a>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/491784537636" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white px-5 py-2 rounded-full hover:bg-[#1DA851] transition-all shadow-md flex items-center gap-2 font-medium">
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.994 9.994 0 004.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.926-7.066A9.976 9.976 0 0012.012 2zm.005 16.544h-.003a8.28 8.28 0 01-4.225-1.152l-.303-.18-3.14.823.839-3.063-.197-.314a8.274 8.274 0 01-1.266-4.472c.001-4.57 3.722-8.289 8.298-8.289 2.215.001 4.296.864 5.862 2.43 1.566 1.567 2.43 3.649 2.429 5.865-.001 4.57-3.723 8.289-8.294 8.289zm4.555-6.222c-.25-.125-1.479-.73-1.708-.813-.23-.084-.397-.125-.564.125-.167.25-.646.813-.792.98-.146.166-.293.187-.543.062-.25-.125-1.056-.39-2.01-1.243-.742-.663-1.242-1.482-1.388-1.732-.146-.25-.015-.385.11-.51.111-.11.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.564-1.354-.772-1.854-.204-.49-.41-.424-.564-.432l-.481-.008c-.167 0-.438.063-.667.313-.23.25-.875.854-.875 2.083 0 1.23.896 2.417 1.021 2.583.125.167 1.761 2.688 4.267 3.771.597.258 1.062.412 1.425.528.599.19 1.144.163 1.572.099.477-.072 1.479-.604 1.688-1.188.208-.583.208-1.083.146-1.188-.063-.104-.23-.166-.48-.291z"/></svg>
+                    WhatsApp
+                </a>
+            </nav>
+
+            <!-- Mobile Menu Button -->
+            <button class="lg:hidden text-brand-text p-2" id="mobile-menu-btn" aria-label="Menü öffnen">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/></svg>
+            </button>
+        </div>
+
+        <!-- Mobile Nav Dropdown -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-brand-bg border-t border-brand-text/10 px-4 py-4 flex-col gap-3 shadow-lg absolute w-full">
+            <a href="#behandlungen" class="block py-2 border-b border-brand-text/10 mobile-link">Behandlungen</a>
+            <a href="#ueber-mich" class="block py-2 border-b border-brand-text/10 mobile-link">Über mich</a>
+            
+            <a href="tel:+491784537636" class="flex items-center gap-2 py-2 border-b border-brand-text/10 mobile-link">
+                <svg class="svg-icon" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                Anrufen (0178 4537636)
+            </a>
+            
+            <a href="https://wa.me/491784537636" target="_blank" rel="noopener noreferrer" class="bg-[#25D366] text-white text-center px-4 py-3 rounded-full mt-2 flex justify-center items-center gap-2 w-full mobile-link shadow-sm">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.994 9.994 0 004.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.926-7.066A9.976 9.976 0 0012.012 2zm.005 16.544h-.003a8.28 8.28 0 01-4.225-1.152l-.303-.18-3.14.823.839-3.063-.197-.314a8.274 8.274 0 01-1.266-4.472c.001-4.57 3.722-8.289 8.298-8.289 2.215.001 4.296.864 5.862 2.43 1.566 1.567 2.43 3.649 2.429 5.865-.001 4.57-3.723 8.289-8.294 8.289zm4.555-6.222c-.25-.125-1.479-.73-1.708-.813-.23-.084-.397-.125-.564.125-.167.25-.646.813-.792.98-.146.166-.293.187-.543.062-.25-.125-1.056-.39-2.01-1.243-.742-.663-1.242-1.482-1.388-1.732-.146-.25-.015-.385.11-.51.111-.11.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.564-1.354-.772-1.854-.204-.49-.41-.424-.564-.432l-.481-.008c-.167 0-.438.063-.667.313-.23.25-.875.854-.875 2.083 0 1.23.896 2.417 1.021 2.583.125.167 1.761 2.688 4.267 3.771.597.258 1.062.412 1.425.528.599.19 1.144.163 1.572.099.477-.072 1.479-.604 1.688-1.188.208-.583.208-1.083.146-1.188-.063-.104-.23-.166-.48-.291z"/></svg>
+                WhatsApp
+            </a>
+            
+            <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" class="bg-brand-text text-brand-bg text-center px-4 py-3 rounded-full flex justify-center items-center gap-2 w-full mobile-link shadow-sm">
+                <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                Instagram
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow">
+        
+        <!-- Intro Section -->
+        <section class="max-w-4xl mx-auto px-4 py-16 md:py-24 text-center">
+            <h1 class="text-3xl md:text-5xl font-serif mb-6 leading-tight">Willkommen im <br><span class="font-bold">ALISA BEAUTY LAB</span></h1>
+            <div class="h-1 w-20 bg-brand-text mx-auto mb-8 rounded-full"></div>
+            <p class="text-lg md:text-xl leading-relaxed font-light">
+                Im <strong class="font-medium">ALISA BEAUTY LAB</strong> erwartet Sie ein kleines, gemütliches Wimpernstudio mit persönlicher Atmosphäre. Alisa bietet professionelle Wimpernbehandlungen und individuelle Stylings mit viel Liebe zum Detail an. Dabei stehen präzise Arbeit, eine entspannte Umgebung und ein gepflegtes, natürlich schönes Ergebnis im Mittelpunkt. 
+                <br><br>
+                Termine sind ausschließlich nach vorheriger Vereinbarung möglich. Kontaktieren Sie Alisa gerne telefonisch, per WhatsApp oder über Instagram.
+            </p>
+        </section>
+
+        <!-- Behandlungen Section -->
+        <section id="behandlungen" class="bg-brand-light/50 py-16 md:py-24">
+            <div class="max-w-5xl mx-auto px-4">
+                <h2 class="text-3xl md:text-4xl font-serif text-center mb-6">Behandlungen & Preise</h2>
+                <p class="text-center max-w-2xl mx-auto mb-12 opacity-80">
+                    Vor jeder Neumodellage findet eine individuelle Beratung statt, um den perfekten Look für deine Augenform zu finden. Bitte plane für eine Neuanlage ausreichend Zeit (ca. 2 - 2,5 Stunden) ein, da Präzision an erster Stelle steht.
+                </p>
+                
+                <div class="grid md:grid-cols-2 gap-12">
+                    
+                    <!-- Lifting -->
+                    <div class="bg-brand-bg p-8 rounded-2xl shadow-sm border border-brand-text/10 h-fit">
+                        <h3 class="text-2xl font-serif mb-6 text-brand-text flex items-center gap-3">
+                            <svg class="w-6 h-6 fill-current opacity-70" viewBox="0 0 24 24"><path d="M12 22c4.97 0 9-4.03 9-9-4.97 0-9 4.03-9 9zM5.6 10.25a2.5 2.5 0 003.92-2.05L9.5 2C5.36 2 2 5.36 2 9.5c0 1.93.73 3.69 1.94 5.02.04-.25.13-.5.26-.74.34-.65 1.05-1.15 1.4-1.53zM14.5 2l-.02 6.2a2.5 2.5 0 003.92 2.05c.35.38 1.06.88 1.4 1.53.13.24.22.49.26.74C21.27 13.19 22 11.43 22 9.5 22 5.36 18.64 2 14.5 2zM3 13c0 4.97 4.03 9 9 9 0-4.97-4.03-9-9-9z"/></svg>
+                            Wimpernlifting
+                        </h3>
+                        <div class="price-row text-lg">
+                            <span>Wimpernlifting</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">30 €</span>
+                        </div>
+                    </div>
+
+                    <!-- Extensions -->
+                    <div class="bg-brand-bg p-8 rounded-2xl shadow-sm border border-brand-text/10">
+                        <h3 class="text-2xl font-serif mb-6 text-brand-text flex items-center gap-3">
+                            <svg class="w-6 h-6 fill-current opacity-70" viewBox="0 0 24 24"><path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+                            Wimpernextensions
+                        </h3>
+                        
+                        <h4 class="font-semibold text-lg mb-3 mt-4">Neumodellage:</h4>
+                        <div class="price-row">
+                            <span>1:1 Technik</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">30 €</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Volumen 2D - 5D</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">35 €</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Mega Volumen 6D - 10D</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">40 €</span>
+                        </div>
+
+                        <h4 class="font-semibold text-lg mb-3 mt-8">Auffüllpreise 1:1 & Volumen:</h4>
+                        <div class="price-row">
+                            <span>Nach 2 Wochen</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">25 €</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Nach 3 Wochen</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">28 €</span>
+                        </div>
+
+                        <h4 class="font-semibold text-lg mb-3 mt-8">Auffüllpreise Megavolumen:</h4>
+                        <div class="price-row">
+                            <span>Nach 2 Wochen</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">35 €</span>
+                        </div>
+                        <div class="price-row">
+                            <span>Nach 3 Wochen</span>
+                            <div class="price-leader"></div>
+                            <span class="font-medium">38 €</span>
+                        </div>
+
+                        <!-- Info Box -->
+                        <div class="mt-8 bg-brand-text/5 p-4 rounded-lg text-sm italic opacity-90 border-l-2 border-brand-text font-medium text-brand-text">
+                            <p class="mb-2">* Ab der 4. Woche wird der Neupreis verrechnet.</p>
+                            <p>Auffüllpreise gelten nur, wenn beim Termin noch mindestens <strong>50% der Extensions</strong> vorhanden sind.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Über Mich Section -->
+        <section id="ueber-mich" class="py-16 md:py-24 max-w-6xl mx-auto px-4">
+            <div class="flex flex-col md:flex-row items-center gap-12">
+                
+                <!-- Bild -->
+                <div class="w-full md:w-5/12 flex justify-center">
+                    <div class="relative">
+                        <!-- Decorative Background Blob/Square -->
+                        <div class="absolute inset-0 bg-brand-text/10 rounded-full md:rounded-[40px] transform translate-x-4 translate-y-4"></div>
+                        <!-- Echtes Foto (Lokal laden) -->
+                        <img src="images/alisa-portrait.webp" alt="Alisa Prykhodko - ALISA BEAUTY LAB" loading="lazy" width="400" height="500" class="relative z-10 w-64 h-64 md:w-[400px] md:h-[500px] object-cover rounded-full md:rounded-[40px] shadow-xl border-4 border-brand-bg bg-brand-light">
+                    </div>
+                </div>
+
+                <!-- Text -->
+                <div class="w-full md:w-7/12 text-center md:text-left">
+                    <h2 class="text-3xl md:text-4xl font-serif mb-4">Über mich</h2>
+                    <h3 class="text-xl font-medium mb-6 opacity-80">Schön, dass du hier bist!</h3>
+                    
+                    <div class="space-y-4 font-light leading-relaxed">
+                        <p>
+                            Ich bin Alisa und seit 2025 mit voller Leidenschaft in der Beauty-Branche tätig. Mein Ziel ist es, deine natürliche Schönheit zu unterstreichen – mit viel Präzision, Liebe zum Detail und einem sicheren Gespür für Ästhetik.
+                        </p>
+                        <p>
+                            Regelmäßige Weiterbildungen sind für mich selbstverständlich, damit ich dir moderne Techniken und eine gleichbleibend hohe Qualität bieten kann. In Kürze absolviere ich außerdem eine Weiterbildung im Bereich Haarverlängerungen und Haarverdichtungen. Danach werde ich auch diese Leistungen anbieten.
+                        </p>
+                        <p>
+                            Da ich mein Studio aktuell mit viel Hingabe aufbaue, biete ich meine Behandlungen derzeit zu besonders fairen Einführungspreisen an. So kannst du dich in persönlicher, entspannter Atmosphäre von meiner präzisen Arbeit und der hohen Qualität der Ergebnisse überzeugen. Mir ist es wichtig, mir für jede Kundin ausreichend Zeit zu nehmen, um das perfekte Styling zu kreieren.
+                        </p>
+                        <p class="font-medium text-lg pt-2 text-brand-text">
+                            Ich freue mich darauf, dich bald persönlich kennenzulernen!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Location / Map Section (Datenschutzfreundlich) -->
+        <section class="border-t border-brand-text/10 bg-brand-light/30 py-16">
+            <div class="max-w-4xl mx-auto px-4 text-center">
+                <div class="inline-flex justify-center items-center w-16 h-16 rounded-full bg-brand-text text-brand-bg mb-6">
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
+                </div>
+                <h3 class="text-2xl font-serif mb-2">Hier findest du mich</h3>
+                <p class="text-lg mb-8">Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen</p>
+                
+                <a href="https://maps.app.goo.gl/rhu1G8NoeCrjPhzw7" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-3 bg-brand-text text-brand-bg px-6 py-3 rounded-full font-medium hover:bg-brand-text/80 transition-colors shadow-md">
+                    Route in Google Maps öffnen
+                    <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 19H5V5h7V3H5c-1.11 0-2 .9-2 2v14c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2v-7h-2v7zM14 3v2h3.59l-9.83 9.83 1.41 1.41L19 6.41V10h2V3h-7z"/></svg>
+                </a>
+                <p class="text-xs opacity-60 mt-4">Mit Klick auf den Button wirst du zu Google Maps weitergeleitet.</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-text text-brand-bg pt-16 pb-8">
+        <div class="max-w-6xl mx-auto px-4">
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center md:text-left mb-12">
+                <!-- Kontakt -->
+                <div>
+                    <h4 class="text-xl font-serif mb-4 text-brand-light">Kontakt</h4>
+                    <p class="mb-2 flex items-center justify-center md:justify-start gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56a.977.977 0 00-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                        0178 4537636
+                    </p>
+                    <p class="mb-2 flex items-center justify-center md:justify-start gap-2">
+                        <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <a href="mailto:alisa.prykhodko07@gmail.com" class="hover:underline">E-Mail schreiben</a>
+                    </p>
+                </div>
+
+                <!-- Adresse -->
+                <div>
+                    <h4 class="text-xl font-serif mb-4 text-brand-light">Adresse</h4>
+                    <p class="mb-1"><strong>ALISA BEAUTY LAB</strong></p>
+                    <p>Bürgermeister-Sommer-Straße 34</p>
+                    <p>91757 Treuchtlingen</p>
+                </div>
+
+                <!-- Öffnungszeiten -->
+                <div>
+                    <h4 class="text-xl font-serif mb-4 text-brand-light">Termine</h4>
+                    <p class="mb-2 font-medium">Ausschließlich nach Vereinbarung</p>
+                    <p class="text-sm opacity-70 italic leading-snug">
+                        Terminvereinbarung jederzeit gerne telefonisch, per WhatsApp oder über Instagram.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Social Media Buttons -->
+            <div class="flex justify-center gap-6 mb-12">
+                <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" aria-label="Instagram" class="w-14 h-14 rounded-full bg-brand-bg text-brand-text flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                    <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://wa.me/491784537636" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp" class="w-14 h-14 rounded-full bg-[#25D366] text-white flex items-center justify-center hover:scale-110 transition-transform shadow-lg">
+                    <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984a9.964 9.964 0 001.333 4.993L2 22l5.233-1.237a9.994 9.994 0 004.779 1.217h.004c5.505 0 9.988-4.478 9.989-9.984 0-2.669-1.037-5.176-2.926-7.066A9.976 9.976 0 0012.012 2zm.005 16.544h-.003a8.28 8.28 0 01-4.225-1.152l-.303-.18-3.14.823.839-3.063-.197-.314a8.274 8.274 0 01-1.266-4.472c.001-4.57 3.722-8.289 8.298-8.289 2.215.001 4.296.864 5.862 2.43 1.566 1.567 2.43 3.649 2.429 5.865-.001 4.57-3.723 8.289-8.294 8.289zm4.555-6.222c-.25-.125-1.479-.73-1.708-.813-.23-.084-.397-.125-.564.125-.167.25-.646.813-.792.98-.146.166-.293.187-.543.062-.25-.125-1.056-.39-2.01-1.243-.742-.663-1.242-1.482-1.388-1.732-.146-.25-.015-.385.11-.51.111-.11.25-.292.375-.438.125-.146.167-.25.25-.417.083-.167.042-.313-.021-.438-.063-.125-.564-1.354-.772-1.854-.204-.49-.41-.424-.564-.432l-.481-.008c-.167 0-.438.063-.667.313-.23.25-.875.854-.875 2.083 0 1.23.896 2.417 1.021 2.583.125.167 1.761 2.688 4.267 3.771.597.258 1.062.412 1.425.528.599.19 1.144.163 1.572.099.477-.072 1.479-.604 1.688-1.188.208-.583.208-1.083.146-1.188-.063-.104-.23-.166-.48-.291z"/></svg>
+                </a>
+            </div>
+
+            <div class="h-px w-full bg-brand-bg/20 mb-8"></div>
+
+            <!-- Legal Links Bottom -->
+            <div class="flex flex-wrap justify-center gap-6 text-sm opacity-70">
+                <button onclick="openModal('modal-impressum')" class="hover:text-white hover:opacity-100 transition-all">Impressum</button>
+                <button onclick="openModal('modal-datenschutz')" class="hover:text-white hover:opacity-100 transition-all">Datenschutz</button>
+                <button onclick="openModal('modal-cookies')" class="hover:text-white hover:opacity-100 transition-all">Cookie-Einstellungen</button>
+            </div>
+            
+            <div class="text-center text-xs opacity-50 mt-6">
+                &copy; <span id="current-year"></span> ALISA BEAUTY LAB. Alle Rechte vorbehalten.
+            </div>
+        </div>
+    </footer>
+
+    <!-- MODALS (Popups) -->
+    
+    <!-- Impressum Modal -->
+    <div id="modal-impressum" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-impressum')"></div>
+        <div class="relative bg-brand-bg text-brand-text w-full max-w-2xl max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl p-6 md:p-8 transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-impressum')" class="absolute top-4 right-4 text-brand-text hover:text-brand-accent">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <h2 class="text-3xl font-serif mb-6">Impressum</h2>
+            <div class="space-y-4 text-sm leading-relaxed">
+                <p><strong>Angaben gemäß § 5 DDG</strong></p>
+                <p>
+                    ALISA BEAUTY LAB<br>
+                    Alisa Prykhodko<br>
+                    Bürgermeister-Sommer-Straße 34<br>
+                    91757 Treuchtlingen
+                </p>
+                <p><strong>Kontakt</strong></p>
+                <p>
+                    Telefon: 0178 4537636<br>
+                    E-Mail: alisa.prykhodko07@gmail.com
+                </p>
+                <p><strong>Verbraucherstreitbeilegung/Universalschlichtungsstelle</strong></p>
+                <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Datenschutz Modal -->
+    <div id="modal-datenschutz" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-datenschutz')"></div>
+        <div class="relative bg-brand-bg text-brand-text w-full max-w-3xl max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl p-6 md:p-8 transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-datenschutz')" class="absolute top-4 right-4 text-brand-text hover:text-brand-accent">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <h2 class="text-3xl font-serif mb-6">Datenschutzerklärung</h2>
+            <div class="space-y-4 text-sm leading-relaxed">
+                <h3 class="font-bold text-base mt-4">1. Datenschutz auf einen Blick</h3>
+                <p><strong>Allgemeine Hinweise</strong><br>
+                Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.</p>
+                
+                <h3 class="font-bold text-base mt-4">2. Datenerfassung auf dieser Website</h3>
+                <p><strong>Wer ist verantwortlich für die Datenerfassung?</strong><br>
+                Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Impressum entnehmen.</p>
+                <p><strong>Wie erfassen wir Ihre Daten?</strong><br>
+                Wir erheben auf dieser Website keine Daten automatisch durch Analyse-Tools. Ihre Daten werden erhoben, wenn Sie uns diese mitteilen, z.B. durch Kontaktaufnahme per E-Mail, WhatsApp oder Telefon.</p>
+                
+                <h3 class="font-bold text-base mt-4">3. Kontaktaufnahme (WhatsApp, Telefon, E-Mail, Instagram)</h3>
+                <p>Wenn Sie uns kontaktieren, wird Ihre Anfrage inklusive aller daraus hervorgehenden personenbezogenen Daten (Name, Anfrage, Telefonnummer) zum Zwecke der Bearbeitung Ihres Anliegens bei uns gespeichert und verarbeitet. Diese Daten geben wir nicht ohne Ihre Einwilligung weiter. Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist.</p>
+                
+                <h3 class="font-bold text-base mt-4">4. Externe Links & Social Media</h3>
+                <p><strong>Google Maps Link</strong><br>
+                Diese Seite nutzt keine direkte Einbindung von Google Maps, sondern verlinkt lediglich auf den Dienst. Erst durch den aktiven Klick auf den Link "Route in Google Maps öffnen" werden Sie zu Google weitergeleitet. Dort gelten die Datenschutzbestimmungen von Google.</p>
+                <p><strong>Instagram & WhatsApp</strong><br>
+                Unsere Website enthält Links zu unserem Instagram-Profil und WhatsApp-Kontakt. Dabei handelt es sich nicht um Plugins, die bereits beim Laden der Seite Daten übertragen, sondern um normale Hyperlinks. Daten werden erst an Meta (Mutterkonzern von Instagram und WhatsApp) übertragen, wenn Sie diese Links aktiv anklicken.</p>
+
+                <h3 class="font-bold text-base mt-4">5. Webhosting & Fonts</h3>
+                <p>Zur Bereitstellung dieser Website nutzen wir einen externen Hoster. Bei jedem Aufruf der Website erfasst das System des Hosters automatisiert Daten und Informationen vom Computersystem des aufrufenden Rechners (Server-Logfiles, inkl. IP-Adresse). Zur ansprechenden Darstellung nutzen wir Google Fonts, die über Server von Google geladen werden (Google Ireland Limited).</p>
+                <p class="mt-4 italic opacity-80 border-t border-brand-text/20 pt-4">Hinweis: Diese Datenschutzerklärung ist ein Basis-Muster für statische Webseiten. Bitte prüfen Sie die finale Version im Zweifel mit einem rechtlichen Berater, insbesondere in Bezug auf Ihren spezifischen Hosting-Anbieter.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookies Modal -->
+    <div id="modal-cookies" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-cookies')"></div>
+        <div class="relative bg-brand-bg text-brand-text w-full max-w-md max-h-[80vh] overflow-y-auto rounded-2xl shadow-2xl p-8 text-center transform scale-95 transition-transform duration-300">
+            <button onclick="closeModal('modal-cookies')" class="absolute top-4 right-4 text-brand-text hover:text-brand-accent">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+            </button>
+            <div class="flex justify-center mb-4 text-brand-text opacity-70">
+                <svg class="w-12 h-12 fill-current" viewBox="0 0 24 24"><path d="M21.95 10.99c-1.79-.03-3.7-1.95-2.68-4.22-2.97 1-5.15-1.17-4.14-4.14-3.52 1.34-6.66-.43-5.81-4.04-5.26.16-9.51 4.51-9.31 9.79.18 4.7 4.02 8.52 8.72 8.7 5.28.2 9.53-4.05 9.79-9.31.05-.73-.08-1.42-.31-2.07l3.74 5.29z"/></svg>
+            </div>
+            <h2 class="text-3xl font-serif mb-4">Cookie-Info</h2>
+            <p class="text-sm mb-6 leading-relaxed">Gut zu wissen: Diese Website ist absolut datenschutzfreundlich gestaltet. Wir verwenden <strong>keine</strong> Tracking-, Analyse- oder Marketing-Cookies. Da wir auch externe Dienste wie Google Maps nur noch verlinken statt einbetten, muss hier nichts abgelehnt oder akzeptiert werden.</p>
+            
+            <div class="flex flex-col gap-3">
+                <button onclick="closeModal('modal-cookies')" class="bg-brand-text text-brand-bg py-3 px-4 rounded-full font-medium hover:opacity-90 transition-all">
+                    Verstanden
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts for Logic -->
+    <script>
+        // Set Current Year in Footer
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex');
+        });
+
+        // Close mobile menu on link click
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                mobileMenu.classList.remove('flex');
+            });
+        });
+
+        // Modal Logic
+        function openModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.classList.remove('hidden');
+            // Small delay to allow CSS display:block to apply before scaling in
+            setTimeout(() => {
+                modal.firstElementChild.nextElementSibling.classList.remove('scale-95');
+                modal.firstElementChild.nextElementSibling.classList.add('scale-100');
+            }, 10);
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        function closeModal(modalId) {
+            const modal = document.getElementById(modalId);
+            modal.firstElementChild.nextElementSibling.classList.remove('scale-100');
+            modal.firstElementChild.nextElementSibling.classList.add('scale-95');
+            setTimeout(() => {
+                modal.classList.add('hidden');
+            }, 300); // Wait for transition
+            document.body.style.overflow = 'auto';
+        }
+    </script>
+</body>
+</html>
