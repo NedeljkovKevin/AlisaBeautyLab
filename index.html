@@ -6,38 +6,35 @@
 
   <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen</title>
 
-  <!--
-    Adobe Fonts:
-    Ersetze die folgenden Platzhalter durch deine echten Font-Dateien.
-
-    Beispielstruktur:
-    /fonts/great-vibes.woff2
-    /fonts/sweet-sans-pro-medium.woff2
-    /fonts/goldenbook-bold.woff2
-  -->
+  <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
+  
+  <meta
+    name="description"
+    content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting und Wimpernextensions mit eigener Online-Terminbuchung."
+  >
 
   <style>
     @font-face {
       font-family: "Great Vibes";
-      src: url("/fonts/great-vibes.woff2") format("woff2");
-      font-weight: 400;
+      src: url("fonts/great-vibes.woff2") format("woff2");
       font-style: normal;
+      font-weight: 400;
       font-display: swap;
     }
 
     @font-face {
       font-family: "Sweet Sans Pro Medium";
-      src: url("/fonts/sweet-sans-pro-medium.woff2") format("woff2");
-      font-weight: 500;
+      src: url("fonts/sweet-sans-pro-medium.woff2") format("woff2");
       font-style: normal;
+      font-weight: 500;
       font-display: swap;
     }
 
     @font-face {
       font-family: "Goldenbook Bold";
-      src: url("/fonts/goldenbook-bold.woff2") format("woff2");
-      font-weight: 700;
+      src: url("fonts/goldenbook-bold.woff2") format("woff2");
       font-style: normal;
+      font-weight: 700;
       font-display: swap;
     }
 
@@ -49,8 +46,8 @@
       --brown: #433630;
       --brown-dark: #2a211d;
       --gold: #c5a059;
-      --gold-light: rgba(197, 160, 89, 0.38);
-      --gold-border: rgba(197, 160, 89, 0.62);
+      --gold-light: rgba(197, 160, 89, 0.35);
+      --gold-border: rgba(197, 160, 89, 0.65);
       --white: #ffffff;
       --green: #25d366;
       --red: #8d2525;
@@ -67,18 +64,25 @@
     }
 
     body {
-      margin: 0;
       min-height: 100vh;
+      margin: 0;
       color: var(--brown);
       background-color: var(--sand);
       background-image:
-        linear-gradient(rgba(245, 239, 230, 0.32), rgba(245, 239, 230, 0.32)),
+        linear-gradient(
+          rgba(245, 239, 230, 0.3),
+          rgba(245, 239, 230, 0.3)
+        ),
         url("Hintergrund-muster.jpg");
       background-position: center;
       background-size: cover;
       background-attachment: fixed;
       font-family: "Sweet Sans Pro Medium", Arial, sans-serif;
       font-weight: 500;
+    }
+
+    body.modal-open {
+      overflow: hidden;
     }
 
     button,
@@ -93,13 +97,7 @@
       -webkit-tap-highlight-color: transparent;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
     button {
-      border: 0;
       cursor: pointer;
     }
 
@@ -108,9 +106,14 @@
       opacity: 0.48;
     }
 
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
     img {
-      max-width: 100%;
       display: block;
+      max-width: 100%;
     }
 
     .container {
@@ -118,9 +121,8 @@
       margin-inline: auto;
     }
 
-    .font-script {
-      font-family: "Great Vibes", cursive;
-      font-weight: 400;
+    .hidden {
+      display: none !important;
     }
 
     .font-display {
@@ -128,12 +130,9 @@
       font-weight: 700;
     }
 
-    .muted {
-      color: var(--taupe);
-    }
-
-    .gold {
-      color: var(--gold);
+    .font-script {
+      font-family: "Great Vibes", cursive;
+      font-weight: 400;
     }
 
     .announcement-bar {
@@ -141,30 +140,29 @@
       color: var(--cream);
       background: var(--brown-dark);
       border-bottom: 1px solid rgba(197, 160, 89, 0.35);
-      text-align: center;
       font-size: 12px;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      text-align: center;
     }
 
     .announcement-bar span {
-      margin-inline: 8px;
+      margin-inline: 7px;
     }
 
     .announcement-dot {
       display: inline-block;
       width: 7px;
       height: 7px;
-      margin-right: 3px;
+      margin-right: 2px;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 0 5px rgba(197, 160, 89, 0.12);
     }
 
     .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      background: rgba(247, 243, 236, 0.94);
+      background: rgba(247, 243, 236, 0.95);
       border-bottom: 1px solid var(--gold-light);
       backdrop-filter: blur(14px);
     }
@@ -174,41 +172,32 @@
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 20px;
+      gap: 18px;
     }
 
-    .brand {
-      display: flex;
-      flex-direction: column;
-      line-height: 1;
-      white-space: nowrap;
+    .logo-brand {
+      display: inline-flex;
+      align-items: center;
+      width: min(310px, 32vw);
+      min-width: 190px;
     }
 
-    .brand-main {
-      color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
-      font-size: clamp(19px, 3vw, 28px);
-      letter-spacing: 0.12em;
-    }
-
-    .brand-subtitle {
-      margin-top: 8px;
-      color: var(--taupe);
-      font-size: 9px;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
+    .site-logo {
+      display: block;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: left center;
     }
 
     .desktop-navigation {
       display: flex;
       align-items: center;
-      gap: 25px;
+      gap: 23px;
       font-size: 13px;
     }
 
     .desktop-navigation a {
-      position: relative;
-      color: var(--brown);
       transition: color 0.2s ease;
     }
 
@@ -220,7 +209,7 @@
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      gap: 8px;
+      gap: 7px;
     }
 
     .header-action {
@@ -228,14 +217,16 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 0 14px;
-      border-radius: 999px;
+      gap: 7px;
+      padding: 0 13px;
       border: 1px solid var(--gold-border);
-      font-size: 11px;
-      letter-spacing: 0.06em;
+      border-radius: 999px;
+      font-size: 10px;
+      letter-spacing: 0.07em;
       text-transform: uppercase;
-      transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .header-action:hover {
@@ -264,7 +255,7 @@
 
     .header-phone {
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.78);
+      background: rgba(255, 255, 255, 0.8);
     }
 
     .header-phone:hover {
@@ -274,43 +265,43 @@
 
     .hero {
       position: relative;
-      padding: 92px 0 110px;
-      text-align: center;
+      padding: 92px 0 108px;
       overflow: hidden;
+      text-align: center;
     }
 
     .hero::before,
     .hero::after {
       position: absolute;
       z-index: -1;
+      width: 320px;
+      height: 320px;
       content: "";
-      width: 300px;
-      height: 300px;
       border-radius: 50%;
       background: radial-gradient(
         circle,
-        rgba(255, 255, 255, 0.55),
+        rgba(255, 255, 255, 0.6),
         rgba(255, 255, 255, 0)
       );
     }
 
     .hero::before {
-      top: 10px;
+      top: -90px;
       left: -130px;
     }
 
     .hero::after {
       right: -130px;
-      bottom: 0;
+      bottom: -90px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 9px;
+      gap: 8px;
       padding: 8px 14px;
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.75);
       border: 1px solid var(--gold-border);
       border-radius: 999px;
       font-size: 11px;
@@ -328,19 +319,18 @@
     }
 
     .hero h1 {
-      max-width: 850px;
-      margin: 24px auto 18px;
+      max-width: 880px;
+      margin: 25px auto 18px;
       color: var(--brown-dark);
       font-family: "Goldenbook Bold", Georgia, serif;
       font-size: clamp(42px, 7vw, 78px);
-      font-weight: 700;
       line-height: 1.08;
     }
 
     .hero h1 em {
       color: var(--gold);
       font-family: "Great Vibes", cursive;
-      font-size: 1.15em;
+      font-size: 1.12em;
       font-style: normal;
       font-weight: 400;
     }
@@ -353,27 +343,34 @@
       line-height: 1.8;
     }
 
-    .hero-buttons {
+    .hero-buttons,
+    .contact-actions,
+    .success-actions {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      gap: 12px;
+      gap: 11px;
+    }
+
+    .hero-buttons {
       margin-top: 31px;
     }
 
     .button {
-      min-height: 48px;
+      min-height: 47px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 0 22px;
-      border-radius: 999px;
+      gap: 8px;
+      padding: 0 21px;
       border: 1px solid transparent;
-      font-size: 11px;
+      border-radius: 999px;
+      font-size: 10px;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      transition: transform 0.2s ease, background 0.2s ease;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
     .button:hover {
@@ -391,7 +388,7 @@
 
     .button-secondary {
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.74);
+      background: rgba(255, 255, 255, 0.78);
       border-color: var(--gold-border);
     }
 
@@ -399,23 +396,29 @@
       background: var(--white);
     }
 
+    .button-whatsapp {
+      color: var(--white);
+      background: var(--green);
+      border-color: var(--green);
+    }
+
     .section {
       padding: 88px 0;
     }
 
     .section-light {
-      background: rgba(247, 243, 236, 0.78);
+      background: rgba(247, 243, 236, 0.8);
       border-top: 1px solid var(--gold-light);
       border-bottom: 1px solid var(--gold-light);
     }
 
     .section-white {
-      background: rgba(255, 255, 255, 0.72);
+      background: rgba(255, 255, 255, 0.74);
       border-top: 1px solid var(--gold-light);
     }
 
     .section-heading {
-      max-width: 720px;
+      max-width: 730px;
       margin: 0 auto 45px;
       text-align: center;
     }
@@ -425,7 +428,7 @@
       margin-bottom: 10px;
       color: var(--taupe);
       font-size: 11px;
-      letter-spacing: 0.22em;
+      letter-spacing: 0.23em;
       text-transform: uppercase;
     }
 
@@ -433,7 +436,7 @@
       margin: 0;
       color: var(--brown-dark);
       font-family: "Goldenbook Bold", Georgia, serif;
-      font-size: clamp(33px, 5vw, 49px);
+      font-size: clamp(34px, 5vw, 50px);
       line-height: 1.1;
     }
 
@@ -471,8 +474,8 @@
 
     .card::after {
       position: absolute;
-      content: "";
       inset: 5px;
+      content: "";
       border: 1px solid rgba(197, 160, 89, 0.38);
       border-radius: calc(var(--radius) - 4px);
       pointer-events: none;
@@ -553,17 +556,13 @@
       line-height: 1.65;
     }
 
-    .pricing-note strong {
-      color: var(--brown);
-    }
-
     .info-card {
       padding: 25px;
       text-align: center;
       background:
         linear-gradient(
-          rgba(236, 227, 214, 0.8),
-          rgba(236, 227, 214, 0.8)
+          rgba(236, 227, 214, 0.82),
+          rgba(236, 227, 214, 0.82)
         ),
         url("Hintergrund-muster.jpg") center / cover;
     }
@@ -595,7 +594,7 @@
       z-index: 1;
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      background: rgba(245, 239, 230, 0.8);
+      background: rgba(245, 239, 230, 0.82);
       border-bottom: 1px solid var(--gold-light);
     }
 
@@ -624,9 +623,9 @@
       align-items: center;
       justify-content: center;
       flex: 0 0 auto;
-      border-radius: 50%;
       color: var(--brown);
       background: var(--cream-dark);
+      border-radius: 50%;
       font-size: 11px;
       font-weight: 700;
     }
@@ -666,11 +665,14 @@
       position: relative;
       padding: 17px;
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.84);
       border: 1px solid var(--gold-light);
       border-radius: 18px;
       text-align: left;
-      transition: border-color 0.2s ease, background 0.2s ease, transform 0.2s ease;
+      transition:
+        border-color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .service-option:hover,
@@ -681,7 +683,7 @@
 
     .service-option.selected,
     .addon-option.selected {
-      background: rgba(236, 227, 214, 0.8);
+      background: rgba(236, 227, 214, 0.84);
       border-color: var(--brown);
       box-shadow: 0 0 0 1px var(--brown);
     }
@@ -712,7 +714,8 @@
 
     .service-description,
     .addon-description {
-      margin: 8px 0 0;
+      display: block;
+      margin-top: 8px;
       color: var(--taupe);
       font-size: 11px;
       line-height: 1.55;
@@ -815,7 +818,7 @@
       align-items: center;
       justify-content: center;
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid var(--gold-light);
       border-radius: 50%;
       font-size: 20px;
@@ -851,17 +854,18 @@
       border: 1px solid var(--gold-light);
       border-radius: 10px;
       font-size: 12px;
-      transition: background 0.2s ease, color 0.2s ease;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease;
     }
 
-    .calendar-day:not(:disabled):hover {
+    .calendar-day:not(:disabled):hover,
+    .calendar-day.selected {
       color: var(--white);
       background: var(--brown);
     }
 
     .calendar-day.selected {
-      color: var(--white);
-      background: var(--brown);
       border-color: var(--gold);
     }
 
@@ -1037,6 +1041,7 @@
       color: var(--taupe);
       font-size: 11px;
       line-height: 1.55;
+      text-transform: none;
     }
 
     .consent input {
@@ -1138,13 +1143,6 @@
       margin: 9px 0;
     }
 
-    .success-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 10px;
-    }
-
     .about-grid {
       display: grid;
       grid-template-columns: 0.8fr 1.2fr;
@@ -1168,6 +1166,10 @@
       height: 100%;
       object-fit: cover;
       border-radius: 20px;
+    }
+
+    .about-copy {
+      text-align: left;
     }
 
     .about-copy .label {
@@ -1222,13 +1224,6 @@
       font-size: 13px;
     }
 
-    .contact-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 11px;
-    }
-
     .site-footer {
       padding: 55px 0 27px;
       color: var(--cream);
@@ -1281,7 +1276,22 @@
 
     .footer-links {
       display: flex;
+      flex-wrap: wrap;
       gap: 18px;
+    }
+
+    .footer-links button {
+      padding: 0;
+      color: rgba(255, 253, 249, 0.5);
+      background: transparent;
+      border: 0;
+      font: inherit;
+      font-size: 11px;
+      cursor: pointer;
+    }
+
+    .footer-links button:hover {
+      color: var(--white);
     }
 
     .footer-links a:hover {
@@ -1292,16 +1302,12 @@
       position: fixed;
       inset: 0;
       z-index: 100;
-      display: none;
+      display: flex;
       align-items: center;
       justify-content: center;
       padding: 16px;
       background: rgba(42, 33, 29, 0.78);
       backdrop-filter: blur(8px);
-    }
-
-    .modal-backdrop.open {
-      display: flex;
     }
 
     .modal {
@@ -1316,20 +1322,22 @@
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
     }
 
-    .modal-header {
+    .modal-header,
+    .legal-modal-header {
       display: flex;
-      align-items: center;
+      align-items: flex-start;
       justify-content: space-between;
-      gap: 16px;
-      padding: 21px 25px;
+      gap: 18px;
+      padding: 22px 25px;
       color: var(--white);
       background: var(--brown);
     }
 
-    .modal-title {
+    .modal-title,
+    .legal-modal-header h2 {
       margin: 0;
       font-family: "Goldenbook Bold", Georgia, serif;
-      font-size: 24px;
+      font-size: 25px;
     }
 
     .modal-subtitle {
@@ -1338,7 +1346,8 @@
       font-size: 11px;
     }
 
-    .modal-close {
+    .modal-close,
+    .legal-close {
       width: 36px;
       height: 36px;
       display: inline-flex;
@@ -1346,11 +1355,13 @@
       justify-content: center;
       color: var(--cream);
       background: transparent;
+      border: 0;
       border-radius: 50%;
       font-size: 25px;
     }
 
-    .modal-close:hover {
+    .modal-close:hover,
+    .legal-close:hover {
       background: rgba(255, 255, 255, 0.12);
     }
 
@@ -1433,17 +1444,15 @@
       gap: 8px;
     }
 
-    .toolbar-input {
-      width: auto;
-      min-width: 190px;
-      min-height: 38px;
-      font-size: 12px;
-    }
-
+    .toolbar-input,
     .toolbar-select {
       width: auto;
       min-height: 38px;
       font-size: 12px;
+    }
+
+    .toolbar-input {
+      min-width: 190px;
     }
 
     .admin-table-wrapper {
@@ -1473,10 +1482,6 @@
       padding: 13px 12px;
       border-bottom: 1px solid rgba(197, 160, 89, 0.2);
       vertical-align: top;
-    }
-
-    .admin-table tr:hover td {
-      background: rgba(245, 239, 230, 0.42);
     }
 
     .table-muted {
@@ -1552,7 +1557,6 @@
       border-radius: 12px;
       box-shadow: var(--shadow);
       font-size: 12px;
-      animation: toast-in 0.25s ease;
     }
 
     .toast.success {
@@ -1569,20 +1573,218 @@
       border-left-color: #ffd66f;
     }
 
-    @keyframes toast-in {
-      from {
-        opacity: 0;
-        transform: translateY(12px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .cookie-banner {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      left: 18px;
+      z-index: 150;
+      padding: 20px;
+      background: rgba(255, 253, 249, 0.98);
+      border: 1px solid var(--gold);
+      border-radius: 22px;
+      box-shadow: 0 18px 60px rgba(42, 33, 29, 0.24);
     }
 
-    .hidden {
-      display: none !important;
+    .cookie-banner-inner {
+      width: min(1150px, 100%);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+      margin: 0 auto;
+    }
+
+    .cookie-content {
+      max-width: 730px;
+    }
+
+    .cookie-label {
+      display: block;
+      margin-bottom: 7px;
+      color: var(--gold);
+      font-size: 10px;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+    }
+
+    .cookie-content h2 {
+      margin: 0 0 8px;
+      color: var(--brown-dark);
+      font-family: "Goldenbook Bold", Georgia, serif;
+      font-size: 24px;
+    }
+
+    .cookie-content p {
+      margin: 0;
+      color: var(--taupe);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .cookie-content a {
+      display: inline-block;
+      margin-top: 8px;
+      color: var(--brown);
+      font-size: 11px;
+      text-decoration: underline;
+    }
+
+    .cookie-actions {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 8px;
+      flex-shrink: 0;
+    }
+
+    .cookie-actions .button {
+      min-height: 40px;
+      padding: 0 14px;
+      font-size: 10px;
+    }
+
+    .legal-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      z-index: 170;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 18px;
+      background: rgba(42, 33, 29, 0.78);
+      backdrop-filter: blur(8px);
+    }
+
+    .legal-modal {
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .cookie-settings-modal {
+      width: min(650px, 100%);
+    }
+
+    .legal-content {
+      padding: 28px;
+      color: var(--brown);
+      font-size: 13px;
+      line-height: 1.75;
+    }
+
+    .legal-content h3 {
+      margin: 0 0 18px;
+      color: var(--brown-dark);
+      font-family: "Goldenbook Bold", Georgia, serif;
+      font-size: 30px;
+    }
+
+    .legal-content h4 {
+      margin: 22px 0 5px;
+      color: var(--brown-dark);
+      font-family: "Goldenbook Bold", Georgia, serif;
+      font-size: 18px;
+    }
+
+    .legal-content p {
+      margin: 9px 0;
+    }
+
+    .legal-content a {
+      text-decoration: underline;
+    }
+
+    .legal-warning {
+      padding: 13px 15px;
+      color: #6e4b15;
+      background: #fff3cf;
+      border-left: 3px solid var(--gold);
+      border-radius: 8px;
+      font-size: 12px;
+    }
+
+    .cookie-setting-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 20px 26px;
+      border-bottom: 1px solid var(--gold-light);
+    }
+
+    .cookie-setting-row strong {
+      color: var(--brown-dark);
+      font-family: "Goldenbook Bold", Georgia, serif;
+      font-size: 18px;
+    }
+
+    .cookie-setting-row p {
+      max-width: 550px;
+      margin: 5px 0 0;
+      color: var(--taupe);
+      font-size: 12px;
+      line-height: 1.55;
+    }
+
+    .cookie-settings-footer {
+      display: flex;
+      justify-content: flex-end;
+      gap: 9px;
+      padding: 20px 26px;
+    }
+
+    .switch {
+      position: relative;
+      display: block;
+      width: 46px;
+      height: 25px;
+      flex: 0 0 auto;
+      margin: 0;
+    }
+
+    .switch input {
+      width: 0;
+      height: 0;
+      opacity: 0;
+    }
+
+    .slider {
+      position: absolute;
+      inset: 0;
+      background: var(--cream-dark);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 0.2s ease;
+    }
+
+    .slider::before {
+      position: absolute;
+      bottom: 4px;
+      left: 4px;
+      width: 17px;
+      height: 17px;
+      content: "";
+      background: var(--white);
+      border-radius: 50%;
+      transition: transform 0.2s ease;
+    }
+
+    .switch input:checked + .slider {
+      background: var(--brown);
+    }
+
+    .switch input:checked + .slider::before {
+      transform: translateX(21px);
+    }
+
+    .switch input:disabled + .slider {
+      cursor: not-allowed;
+      opacity: 0.65;
     }
 
     @media (max-width: 1000px) {
@@ -1610,6 +1812,10 @@
         max-width: 700px;
         margin: 0 auto;
       }
+
+      .about-copy {
+        text-align: center;
+      }
     }
 
     @media (max-width: 720px) {
@@ -1627,37 +1833,26 @@
 
       .header-inner {
         min-height: 68px;
-        gap: 8px;
+        gap: 7px;
       }
 
-      .brand-main {
-        font-size: 15px;
-        letter-spacing: 0.08em;
-      }
-
-      .brand-subtitle {
-        margin-top: 5px;
-        font-size: 7px;
-        letter-spacing: 0.18em;
+      .logo-brand {
+        width: 180px;
+        min-width: 140px;
       }
 
       .header-actions {
-        gap: 5px;
+        gap: 4px;
       }
 
       .header-action {
-        width: 39px;
-        min-height: 39px;
+        width: 38px;
+        min-height: 38px;
         padding: 0;
         font-size: 0;
       }
 
-      .header-action::first-letter {
-        font-size: 17px;
-      }
-
-      .header-action svg,
-      .header-action span {
+      .header-action span:first-child {
         font-size: 17px;
       }
 
@@ -1682,7 +1877,6 @@
         padding: 23px 17px;
       }
 
-      .pricing-grid,
       .service-grid,
       .addon-grid {
         grid-template-columns: 1fr;
@@ -1698,10 +1892,6 @@
         width: 21px;
         height: 21px;
         font-size: 10px;
-      }
-
-      .step-label-long {
-        display: none;
       }
 
       .booking-footer {
@@ -1755,6 +1945,47 @@
         flex-direction: column;
         text-align: center;
       }
+
+      .cookie-banner {
+        right: 10px;
+        bottom: 10px;
+        left: 10px;
+        padding: 17px;
+      }
+
+      .cookie-banner-inner {
+        align-items: stretch;
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .cookie-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .cookie-actions .button {
+        width: 100%;
+      }
+
+      .legal-modal-header,
+      .legal-content,
+      .cookie-setting-row,
+      .cookie-settings-footer {
+        padding: 19px;
+      }
+
+      .cookie-setting-row {
+        align-items: flex-start;
+      }
+
+      .cookie-settings-footer {
+        flex-direction: column;
+      }
+
+      .cookie-settings-footer .button {
+        width: 100%;
+      }
     }
   </style>
 </head>
@@ -1775,9 +2006,16 @@
   <header class="site-header">
     <div class="container header-inner">
 
-      <a href="#" class="brand" aria-label="ALISA BEAUTY LAB Startseite">
-        <span class="brand-main">ALISA BEAUTY LAB</span>
-        <span class="brand-subtitle">Wimpernstudio Treuchtlingen</span>
+      <a
+        href="#"
+        class="logo-brand"
+        aria-label="ALISA BEAUTY LAB Startseite"
+      >
+        <img
+          src="AlisaLogoQuertransparent.webp"
+          alt="ALISA BEAUTY LAB Logo"
+          class="site-logo"
+        >
       </a>
 
       <nav class="desktop-navigation" aria-label="Hauptnavigation">
@@ -1788,7 +2026,12 @@
       </nav>
 
       <div class="header-actions">
-        <a href="#booking-section" class="header-action header-booking" aria-label="Termin buchen">
+
+        <a
+          href="#booking-section"
+          class="header-action header-booking"
+          aria-label="Termin buchen"
+        >
           <span>▣</span>
           <span>Termin</span>
         </a>
@@ -1812,8 +2055,8 @@
           <span>☎</span>
           <span>Anrufen</span>
         </a>
-      </div>
 
+      </div>
     </div>
   </header>
 
@@ -1821,7 +2064,10 @@
 
     <section class="hero">
       <div class="container">
-        <div class="eyebrow">Exklusives Wimpern-Atelier in Treuchtlingen</div>
+
+        <div class="eyebrow">
+          Exklusives Wimpern-Atelier in Treuchtlingen
+        </div>
 
         <h1>
           Präzision & Feingefühl für deinen
@@ -1836,14 +2082,21 @@
         </p>
 
         <div class="hero-buttons">
-          <a href="#booking-section" class="button button-primary">
+          <a
+            href="#booking-section"
+            class="button button-primary"
+          >
             Wunschtermin reservieren
           </a>
 
-          <a href="#services" class="button button-secondary">
+          <a
+            href="#services"
+            class="button button-secondary"
+          >
             Preise & Leistungen
           </a>
         </div>
+
       </div>
     </section>
 
@@ -1878,8 +2131,8 @@
 
               <div style="position:relative;z-index:1;margin-top:20px;text-align:center;">
                 <button
-                  class="button button-primary"
                   type="button"
+                  class="button button-primary"
                   onclick="selectServiceAndScroll('srv-lifting')"
                 >
                   Auswählen
@@ -1889,7 +2142,9 @@
 
             <div class="card info-card">
               <h4>Hinweise zum Auffüllen</h4>
-              <p>Ab der 4. Woche wird der Neupreis verrechnet.</p>
+              <p>
+                Ab der 4. Woche wird der Neupreis verrechnet.
+              </p>
               <p>
                 Auffüllpreise gelten nur, wenn beim Termin noch mindestens
                 <strong>50 % der Extensions</strong> vorhanden sind.
@@ -1955,7 +2210,10 @@
             </div>
 
             <div style="position:relative;z-index:1;margin-top:24px;text-align:center;">
-              <a href="#booking-section" class="button button-primary">
+              <a
+                href="#booking-section"
+                class="button button-primary"
+              >
                 Direkt online buchen
               </a>
             </div>
@@ -1982,6 +2240,7 @@
         <div class="card booking-card">
 
           <div class="steps">
+
             <div class="step active" id="step-indicator-1">
               <span class="step-number">1</span>
               <span>Behandlung</span>
@@ -1996,6 +2255,7 @@
               <span class="step-number">3</span>
               <span>Bestätigung</span>
             </div>
+
           </div>
 
           <div class="booking-content">
@@ -2003,25 +2263,37 @@
             <section id="booking-step-1" class="booking-step">
 
               <h3>Behandlung auswählen</h3>
+
               <p class="booking-step-intro">
                 Wähle zuerst die gewünschte Behandlung aus.
               </p>
 
-              <div id="services-list" class="service-grid"></div>
+              <div
+                id="services-list"
+                class="service-grid"
+              ></div>
 
               <div class="addons-section">
+
                 <div class="addons-heading">
                   <h4>Optionale Extras</h4>
                   <span>Zubuchbare Pflege</span>
                 </div>
 
-                <div id="addons-list" class="addon-grid"></div>
+                <div
+                  id="addons-list"
+                  class="addon-grid"
+                ></div>
+
               </div>
 
               <div class="booking-footer">
+
                 <div class="selection-summary">
                   Ausgewählt:
-                  <strong id="step1-summary">Bitte wählen</strong>
+                  <strong id="step1-summary">
+                    Bitte wählen
+                  </strong>
                 </div>
 
                 <button
@@ -2032,13 +2304,18 @@
                 >
                   Weiter zu Datum & Uhrzeit
                 </button>
+
               </div>
 
             </section>
 
-            <section id="booking-step-2" class="booking-step hidden">
+            <section
+              id="booking-step-2"
+              class="booking-step hidden"
+            >
 
               <h3>Wunschtermin festlegen</h3>
+
               <p class="booking-step-intro">
                 Wähle einen freien Tag und anschließend eine Uhrzeit.
               </p>
@@ -2046,7 +2323,9 @@
               <div class="calendar-layout">
 
                 <div class="calendar-box">
+
                   <div class="calendar-header">
+
                     <button
                       type="button"
                       class="icon-button"
@@ -2056,7 +2335,9 @@
                       ‹
                     </button>
 
-                    <h4 id="calendar-month-year">Monat Jahr</h4>
+                    <h4 id="calendar-month-year">
+                      Monat Jahr
+                    </h4>
 
                     <button
                       type="button"
@@ -2066,6 +2347,7 @@
                     >
                       ›
                     </button>
+
                   </div>
 
                   <div class="weekdays">
@@ -2078,9 +2360,13 @@
                     <span>So</span>
                   </div>
 
-                  <div id="calendar-grid" class="calendar-grid"></div>
+                  <div
+                    id="calendar-grid"
+                    class="calendar-grid"
+                  ></div>
 
                   <div class="calendar-legend">
+
                     <span class="legend-item">
                       <span class="legend-dot"></span>
                       Ausgewählt
@@ -2095,25 +2381,37 @@
                       <span class="legend-dot blocked"></span>
                       Gesperrt
                     </span>
+
                   </div>
+
                 </div>
 
                 <div class="time-box">
+
                   <h4>Verfügbare Uhrzeiten</h4>
-                  <p id="selected-date-display" class="selected-date">
+
+                  <p
+                    id="selected-date-display"
+                    class="selected-date"
+                  >
                     Bitte zuerst ein Datum wählen.
                   </p>
 
-                  <div id="time-slots" class="time-slots">
+                  <div
+                    id="time-slots"
+                    class="time-slots"
+                  >
                     <div class="empty-state">
                       Wähle ein Datum im Kalender, um freie Termine zu sehen.
                     </div>
                   </div>
+
                 </div>
 
               </div>
 
               <div class="booking-footer">
+
                 <button
                   type="button"
                   class="button button-secondary"
@@ -2131,47 +2429,94 @@
                 >
                   Weiter zu Kontaktdaten
                 </button>
+
               </div>
 
             </section>
 
-            <section id="booking-step-3" class="booking-step hidden">
+            <section
+              id="booking-step-3"
+              class="booking-step hidden"
+            >
 
               <h3>Deine Angaben</h3>
+
               <p class="booking-step-intro">
                 Bitte trage deine Daten für die Terminbestätigung ein.
               </p>
 
               <div class="form-layout">
 
-                <form id="booking-form" onsubmit="submitBooking(event)">
+                <form
+                  id="booking-form"
+                  onsubmit="submitBooking(event)"
+                >
 
                   <div class="form-row">
+
                     <div class="form-group">
-                      <label for="first-name">Vorname *</label>
-                      <input id="first-name" type="text" required placeholder="z. B. Julia">
+                      <label for="first-name">
+                        Vorname *
+                      </label>
+
+                      <input
+                        id="first-name"
+                        type="text"
+                        required
+                        placeholder="z. B. Julia"
+                      >
                     </div>
 
                     <div class="form-group">
-                      <label for="last-name">Nachname *</label>
-                      <input id="last-name" type="text" required placeholder="z. B. Schneider">
+                      <label for="last-name">
+                        Nachname *
+                      </label>
+
+                      <input
+                        id="last-name"
+                        type="text"
+                        required
+                        placeholder="z. B. Schneider"
+                      >
                     </div>
+
                   </div>
 
                   <div class="form-row">
+
                     <div class="form-group">
-                      <label for="email">E-Mail-Adresse *</label>
-                      <input id="email" type="email" required placeholder="name@beispiel.de">
+                      <label for="email">
+                        E-Mail-Adresse *
+                      </label>
+
+                      <input
+                        id="email"
+                        type="email"
+                        required
+                        placeholder="name@beispiel.de"
+                      >
                     </div>
 
                     <div class="form-group">
-                      <label for="phone">Telefon / WhatsApp *</label>
-                      <input id="phone" type="tel" required placeholder="0178 4537636">
+                      <label for="phone">
+                        Telefon / WhatsApp *
+                      </label>
+
+                      <input
+                        id="phone"
+                        type="tel"
+                        required
+                        placeholder="0178 4537636"
+                      >
                     </div>
+
                   </div>
 
                   <div class="form-group">
-                    <label for="notes">Wünsche oder Empfindlichkeiten</label>
+                    <label for="notes">
+                      Wünsche oder Empfindlichkeiten
+                    </label>
+
                     <textarea
                       id="notes"
                       placeholder="z. B. empfindliche Augen, natürlicher Schwung ..."
@@ -2179,15 +2524,21 @@
                   </div>
 
                   <label class="consent">
-                    <input id="consent" type="checkbox" required>
+                    <input
+                      id="consent"
+                      type="checkbox"
+                      required
+                    >
+
                     <span>
-                      Ich bestätige die Reservierung. Eine kostenlose Absage ist
-                      bis zu 24 Stunden vor dem Termin möglich. Die Bezahlung
-                      erfolgt vor Ort.
+                      Ich bestätige die Reservierung. Eine kostenlose Absage
+                      ist bis zu 24 Stunden vor dem Termin möglich. Die
+                      Bezahlung erfolgt vor Ort.
                     </span>
                   </label>
 
                   <div class="booking-footer">
+
                     <button
                       type="button"
                       class="button button-secondary"
@@ -2196,14 +2547,19 @@
                       Datum anpassen
                     </button>
 
-                    <button type="submit" class="button button-primary">
+                    <button
+                      type="submit"
+                      class="button button-primary"
+                    >
                       Verbindlich reservieren
                     </button>
+
                   </div>
 
                 </form>
 
                 <aside class="summary-box">
+
                   <h4>Buchungsübersicht</h4>
 
                   <div class="summary-line">
@@ -2235,23 +2591,29 @@
                     Bürgermeister-Sommer-Straße 34<br>
                     91757 Treuchtlingen
                   </p>
+
                 </aside>
 
               </div>
 
             </section>
 
-            <section id="booking-step-4" class="booking-step hidden">
+            <section
+              id="booking-step-4"
+              class="booking-step hidden"
+            >
 
               <div class="success-box">
+
                 <div class="success-icon">✓</div>
 
-                <h3>Vielen Dank für deine Buchung!</h3>
+                <h3>
+                  Vielen Dank für deine Buchung!
+                </h3>
 
                 <p>
-                  Dein Termin wurde auf diesem Gerät gespeichert. Speichere
-                  ihn zusätzlich in deinem Kalender oder bestätige ihn per
-                  WhatsApp.
+                  Dein Termin wurde gespeichert. Speichere ihn zusätzlich
+                  in deinem Kalender oder bestätige ihn per WhatsApp.
                 </p>
 
                 <div class="confirmation">
@@ -2284,6 +2646,7 @@
                 </div>
 
                 <div class="success-actions">
+
                   <button
                     type="button"
                     class="button button-primary"
@@ -2294,12 +2657,12 @@
 
                   <button
                     type="button"
-                    class="button"
-                    style="background:#25d366;color:white;"
+                    class="button button-whatsapp"
                     onclick="sendBookingWhatsApp()"
                   >
                     WhatsApp senden
                   </button>
+
                 </div>
 
                 <button
@@ -2310,11 +2673,13 @@
                 >
                   Weitere Buchung
                 </button>
+
               </div>
 
             </section>
 
           </div>
+
         </div>
 
       </div>
@@ -2334,9 +2699,12 @@
           </div>
 
           <div class="about-copy">
+
             <span class="label">Über mich</span>
 
-            <h2>Schön, dass du hier bist!</h2>
+            <h2>
+              Schön, dass du hier bist!
+            </h2>
 
             <p>
               Ich bin Alisa und seit 2025 mit voller Leidenschaft in der
@@ -2355,6 +2723,7 @@
               Ich freue mich darauf, dich bald persönlich in meinem
               Treuchtlinger Studio kennenzulernen.
             </p>
+
           </div>
 
         </div>
@@ -2374,6 +2743,7 @@
         </p>
 
         <div class="contact-actions">
+
           <a
             href="https://maps.app.goo.gl/rhu1G8NoeCrjPhzw7"
             target="_blank"
@@ -2387,8 +2757,7 @@
             href="https://wa.me/491784537636"
             target="_blank"
             rel="noopener noreferrer"
-            class="button"
-            style="background:#25d366;color:white;"
+            class="button button-whatsapp"
           >
             WhatsApp schreiben
           </a>
@@ -2399,6 +2768,7 @@
           >
             0178 4537636 anrufen
           </a>
+
         </div>
 
       </div>
@@ -2413,6 +2783,7 @@
 
         <div class="footer-column">
           <h3>ALISA BEAUTY LAB</h3>
+
           <p>
             Professionelles Wimpernstudio für natürliche Ästhetik,
             Wimpernlifting und Wimpernextensions in Treuchtlingen.
@@ -2421,21 +2792,43 @@
 
         <div class="footer-column">
           <h4>Termine</h4>
-          <p>Ausschließlich nach Vereinbarung</p>
-          <p>Montag – Samstag</p>
-          <p>Sonntag geschlossen</p>
+
+          <p>
+            Ausschließlich nach Vereinbarung
+          </p>
+
+          <p>
+            Montag – Samstag
+          </p>
+
+          <p>
+            Sonntag geschlossen
+          </p>
         </div>
 
         <div class="footer-column">
           <h4>Kontakt</h4>
-          <p>Bürgermeister-Sommer-Straße 34</p>
-          <p>91757 Treuchtlingen</p>
-          <p>Telefon: 0178 4537636</p>
-          <p>E-Mail: alisa.prykhodko07@gmail.com</p>
+
+          <p>
+            Bürgermeister-Sommer-Straße 34
+          </p>
+
+          <p>
+            91757 Treuchtlingen
+          </p>
+
+          <p>
+            Telefon: 0178 4537636
+          </p>
+
+          <p>
+            E-Mail: alisa.prykhodko07@gmail.com
+          </p>
         </div>
 
         <div class="footer-column">
           <h4>Studio-Management</h4>
+
           <p>
             Buchungen, gesperrte Tage und CSV-Export verwalten.
           </p>
@@ -2453,26 +2846,64 @@
       </div>
 
       <div class="footer-bottom">
-        <span>© 2026 ALISA BEAUTY LAB. Alle Rechte vorbehalten.</span>
+
+        <span>
+          © 2026 ALISA BEAUTY LAB. Alle Rechte vorbehalten.
+        </span>
 
         <div class="footer-links">
-          <a href="#">Impressum</a>
-          <a href="#">Datenschutz</a>
+
+          <button
+            type="button"
+            onclick="openLegalModal('imprint')"
+          >
+            Impressum
+          </button>
+
+          <button
+            type="button"
+            onclick="openLegalModal('privacy')"
+          >
+            Datenschutz
+          </button>
+
+          <button
+            type="button"
+            onclick="openCookieSettings()"
+          >
+            Cookie-Einstellungen
+          </button>
+
         </div>
+
       </div>
 
     </div>
   </footer>
 
-  <div id="toast-container" class="toast-container"></div>
+  <div
+    id="toast-container"
+    class="toast-container"
+  ></div>
 
-  <div id="admin-modal" class="modal-backdrop" role="dialog" aria-modal="true">
+  <!-- Adminbereich -->
+
+  <div
+    id="admin-modal"
+    class="modal-backdrop hidden"
+    role="dialog"
+    aria-modal="true"
+  >
 
     <div class="modal">
 
       <div class="modal-header">
+
         <div>
-          <h2 class="modal-title">Studio Management</h2>
+          <h2 class="modal-title">
+            Studio Management
+          </h2>
+
           <p class="modal-subtitle">
             Buchungen, Sperrtage und CSV-Export
           </p>
@@ -2486,14 +2917,18 @@
         >
           ×
         </button>
+
       </div>
 
       <div id="pin-screen" class="pin-screen">
+
         <div class="success-icon" style="width:56px;height:56px;margin-bottom:0;">
           🔒
         </div>
 
-        <h3>Studio-PIN</h3>
+        <h3>
+          Studio-PIN
+        </h3>
 
         <p>
           Demo-PIN: <strong>2468</strong><br>
@@ -2502,6 +2937,7 @@
         </p>
 
         <form onsubmit="unlockAdmin(event)">
+
           <div class="form-group">
             <input
               id="admin-pin"
@@ -2513,32 +2949,65 @@
             >
           </div>
 
-          <button type="submit" class="button button-primary">
+          <button
+            type="submit"
+            class="button button-primary"
+          >
             Dashboard öffnen
           </button>
+
         </form>
+
       </div>
 
-      <div id="admin-dashboard" class="admin-dashboard">
+      <div
+        id="admin-dashboard"
+        class="admin-dashboard"
+      >
 
         <div class="metrics">
 
           <div class="metric">
-            <span class="metric-label">Termine gesamt</span>
-            <span id="metric-total" class="metric-value">0</span>
+            <span class="metric-label">
+              Termine gesamt
+            </span>
+
+            <span
+              id="metric-total"
+              class="metric-value"
+            >
+              0
+            </span>
           </div>
 
           <div class="metric">
-            <span class="metric-label">Aktive Termine</span>
-            <span id="metric-active" class="metric-value">0</span>
+            <span class="metric-label">
+              Aktive Termine
+            </span>
+
+            <span
+              id="metric-active"
+              class="metric-value"
+            >
+              0
+            </span>
           </div>
 
           <div class="metric">
-            <span class="metric-label">Erwarteter Umsatz</span>
-            <span id="metric-revenue" class="metric-value">0 €</span>
+            <span class="metric-label">
+              Erwarteter Umsatz
+            </span>
+
+            <span
+              id="metric-revenue"
+              class="metric-value"
+            >
+              0 €
+            </span>
           </div>
 
           <div class="metric">
+
             <button
               type="button"
               class="button button-primary"
@@ -2547,6 +3016,7 @@
             >
               CSV exportieren
             </button>
+
           </div>
 
         </div>
@@ -2554,6 +3024,7 @@
         <div class="admin-toolbar">
 
           <div class="toolbar-group">
+
             <input
               id="admin-search"
               class="toolbar-input"
@@ -2572,10 +3043,16 @@
               <option value="completed">Erledigt</option>
               <option value="cancelled">Storniert</option>
             </select>
+
           </div>
 
           <div class="toolbar-group">
-            <input id="block-date" class="toolbar-input" type="date">
+
+            <input
+              id="block-date"
+              class="toolbar-input"
+              type="date"
+            >
 
             <button
               type="button"
@@ -2585,12 +3062,15 @@
             >
               Tag sperren
             </button>
+
           </div>
 
         </div>
 
         <div class="admin-table-wrapper">
+
           <table class="admin-table">
+
             <thead>
               <tr>
                 <th>Referenz & Termin</th>
@@ -2603,8 +3083,397 @@
             </thead>
 
             <tbody id="admin-table-body"></tbody>
+
           </table>
+
         </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Cookie-Banner -->
+
+  <div
+    id="cookie-banner"
+    class="cookie-banner hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-title"
+  >
+
+    <div class="cookie-banner-inner">
+
+      <div class="cookie-content">
+
+        <span class="cookie-label">
+          Datenschutz
+        </span>
+
+        <h2 id="cookie-title">
+          Deine Privatsphäre ist uns wichtig
+        </h2>
+
+        <p>
+          Wir verwenden notwendige Cookies, damit diese Website technisch
+          funktioniert. Optionale Cookies für Statistik oder Marketing werden
+          nur aktiviert, wenn du zustimmst.
+        </p>
+
+        <a
+          href="#privacy"
+          onclick="openLegalModal('privacy')"
+        >
+          Mehr über Datenschutz erfahren
+        </a>
+
+      </div>
+
+      <div class="cookie-actions">
+
+        <button
+          type="button"
+          class="button button-secondary"
+          onclick="openCookieSettings()"
+        >
+          Einstellungen
+        </button>
+
+        <button
+          type="button"
+          class="button button-secondary"
+          onclick="rejectOptionalCookies()"
+        >
+          Nur notwendige
+        </button>
+
+        <button
+          type="button"
+          class="button button-primary"
+          onclick="acceptAllCookies()"
+        >
+          Alle akzeptieren
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Cookie-Einstellungen -->
+
+  <div
+    id="cookie-settings-modal"
+    class="legal-modal-backdrop hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="cookie-settings-title"
+  >
+
+    <div class="legal-modal cookie-settings-modal">
+
+      <div class="legal-modal-header">
+
+        <div>
+          <span class="cookie-label">
+            Cookie-Einstellungen
+          </span>
+
+          <h2 id="cookie-settings-title">
+            Deine Auswahl verwalten
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="legal-close"
+          onclick="closeCookieSettings()"
+          aria-label="Cookie-Einstellungen schließen"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div class="cookie-setting-row">
+
+        <div>
+          <strong>
+            Notwendige Cookies
+          </strong>
+
+          <p>
+            Diese Cookies sind für die grundlegenden Funktionen der Website
+            erforderlich und können nicht deaktiviert werden.
+          </p>
+        </div>
+
+        <label class="switch">
+          <input
+            type="checkbox"
+            checked
+            disabled
+          >
+          <span class="slider"></span>
+        </label>
+
+      </div>
+
+      <div class="cookie-setting-row">
+
+        <div>
+          <strong>
+            Statistik-Cookies
+          </strong>
+
+          <p>
+            Helfen uns zu verstehen, wie Besucher die Website nutzen.
+          </p>
+        </div>
+
+        <label class="switch">
+          <input
+            id="analytics-cookies"
+            type="checkbox"
+          >
+          <span class="slider"></span>
+        </label>
+
+      </div>
+
+      <div class="cookie-setting-row">
+
+        <div>
+          <strong>
+            Marketing-Cookies
+          </strong>
+
+          <p>
+            Können für externe Inhalte und personalisierte Werbung verwendet
+            werden.
+          </p>
+        </div>
+
+        <label class="switch">
+          <input
+            id="marketing-cookies"
+            type="checkbox"
+          >
+          <span class="slider"></span>
+        </label>
+
+      </div>
+
+      <div class="cookie-settings-footer">
+
+        <button
+          type="button"
+          class="button button-secondary"
+          onclick="closeCookieSettings()"
+        >
+          Abbrechen
+        </button>
+
+        <button
+          type="button"
+          class="button button-primary"
+          onclick="saveCookieSettings()"
+        >
+          Auswahl speichern
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Impressum und Datenschutz -->
+
+  <div
+    id="legal-modal"
+    class="legal-modal-backdrop hidden"
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="legal-modal-title"
+  >
+
+    <div class="legal-modal">
+
+      <div class="legal-modal-header">
+
+        <div>
+          <span class="cookie-label">
+            ALISA BEAUTY LAB
+          </span>
+
+          <h2 id="legal-modal-title">
+            Informationen
+          </h2>
+        </div>
+
+        <button
+          type="button"
+          class="legal-close"
+          onclick="closeLegalModal()"
+          aria-label="Fenster schließen"
+        >
+          ×
+        </button>
+
+      </div>
+
+      <div
+        id="legal-imprint"
+        class="legal-content hidden"
+      >
+
+        <h3>
+          Impressum
+        </h3>
+
+        <p>
+          <strong>ALISA BEAUTY LAB</strong><br>
+          Alisa Prykhodko
+        </p>
+
+        <p>
+          Bürgermeister-Sommer-Straße 34<br>
+          91757 Treuchtlingen<br>
+          Deutschland
+        </p>
+
+        <p>
+          Telefon:
+          <a href="tel:+491784537636">
+            +49 178 4537636
+          </a>
+        </p>
+
+        <p>
+          E-Mail:
+          <a href="mailto:alisa.prykhodko07@gmail.com">
+            alisa.prykhodko07@gmail.com
+          </a>
+        </p>
+
+        <p>
+          Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
+        </p>
+
+        <p>
+          Alisa Prykhodko<br>
+          Bürgermeister-Sommer-Straße 34<br>
+          91757 Treuchtlingen
+        </p>
+
+        <p class="legal-warning">
+          Hinweis: Bitte ergänze vor der Veröffentlichung deine korrekten
+          rechtlichen Unternehmensdaten, gegebenenfalls Steuernummer,
+          Umsatzsteuer-ID und zuständige Aufsichtsbehörde. Die Angaben müssen
+          rechtlich geprüft werden.
+        </p>
+
+      </div>
+
+      <div
+        id="legal-privacy"
+        class="legal-content hidden"
+      >
+
+        <h3>
+          Datenschutzerklärung
+        </h3>
+
+        <h4>
+          1. Verantwortliche Stelle
+        </h4>
+
+        <p>
+          Verantwortlich für die Verarbeitung personenbezogener Daten auf
+          dieser Website ist:
+        </p>
+
+        <p>
+          Alisa Prykhodko<br>
+          Bürgermeister-Sommer-Straße 34<br>
+          91757 Treuchtlingen<br>
+          E-Mail:
+          <a href="mailto:alisa.prykhodko07@gmail.com">
+            alisa.prykhodko07@gmail.com
+          </a>
+        </p>
+
+        <h4>
+          2. Buchungsformular
+        </h4>
+
+        <p>
+          Wenn du einen Termin buchst, werden die von dir eingegebenen Daten
+          zur Bearbeitung und Verwaltung der Terminreservierung verarbeitet.
+          Dazu gehören insbesondere Name, E-Mail-Adresse, Telefonnummer,
+          Terminwunsch und optionale Hinweise.
+        </p>
+
+        <h4>
+          3. Rechtsgrundlage
+        </h4>
+
+        <p>
+          Die Verarbeitung erfolgt zur Durchführung der gewünschten
+          Terminreservierung beziehungsweise zur Beantwortung deiner Anfrage.
+        </p>
+
+        <h4>
+          4. Speicherung
+        </h4>
+
+        <p>
+          In der aktuellen Demo-Version werden Buchungen lokal im Browser
+          gespeichert. Für den späteren Live-Betrieb muss die Speicherung
+          über einen abgesicherten Server und eine datenschutzkonforme
+          Datenbank umgesetzt werden.
+        </p>
+
+        <h4>
+          5. WhatsApp und Telefon
+        </h4>
+
+        <p>
+          Wenn du die WhatsApp- oder Telefon-Schaltfläche nutzt, wird eine
+          Verbindung zum jeweiligen Anbieter hergestellt. Dabei gelten
+          zusätzlich die Datenschutzbestimmungen von WhatsApp beziehungsweise
+          deines Telefonanbieters.
+        </p>
+
+        <h4>
+          6. Cookies
+        </h4>
+
+        <p>
+          Notwendige Funktionen der Website können technisch erforderliche
+          Speichermechanismen verwenden. Optionale Statistik- oder
+          Marketingfunktionen werden nur nach deiner Auswahl aktiviert.
+        </p>
+
+        <h4>
+          7. Deine Rechte
+        </h4>
+
+        <p>
+          Du hast im Rahmen der gesetzlichen Vorschriften insbesondere Rechte
+          auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung
+          und Widerspruch.
+        </p>
+
+        <p class="legal-warning">
+          Diese Datenschutzerklärung ist eine technische Vorlage und ersetzt
+          keine individuelle rechtliche Prüfung. Vor dem Livegang sollte sie
+          an die tatsächlich eingesetzten Dienste angepasst werden.
+        </p>
 
       </div>
 
@@ -2616,8 +3485,9 @@
     "use strict";
 
     const STORAGE_KEYS = {
-      bookings: "alisa_beauty_lab_bookings_v2",
-      blockedDates: "alisa_beauty_lab_blocked_dates_v2"
+      bookings: "alisa_beauty_lab_bookings_v3",
+      blockedDates: "alisa_beauty_lab_blocked_dates_v3",
+      cookiePreferences: "alisa_beauty_lab_cookie_preferences_v3"
     };
 
     const ADMIN_PIN = "2468";
@@ -2774,26 +3644,26 @@
       latestBooking: null
     };
 
+    function cloneValue(value) {
+      return JSON.parse(JSON.stringify(value));
+    }
+
     function loadStorage(key, fallback) {
       try {
-        const value = localStorage.getItem(key);
+        const stored = localStorage.getItem(key);
 
-        if (!value) {
-          return structuredCloneSafe(fallback);
+        if (!stored) {
+          return cloneValue(fallback);
         }
 
-        const parsed = JSON.parse(value);
+        const parsed = JSON.parse(stored);
 
         return Array.isArray(parsed)
           ? parsed
-          : structuredCloneSafe(fallback);
+          : cloneValue(fallback);
       } catch (error) {
-        return structuredCloneSafe(fallback);
+        return cloneValue(fallback);
       }
-    }
-
-    function structuredCloneSafe(value) {
-      return JSON.parse(JSON.stringify(value));
     }
 
     function saveStorage() {
@@ -2809,11 +3679,15 @@
     }
 
     function getService(serviceId) {
-      return SERVICES.find(service => service.id === serviceId);
+      return SERVICES.find(
+        service => service.id === serviceId
+      );
     }
 
     function getAddon(addonId) {
-      return ADDONS.find(addon => addon.id === addonId);
+      return ADDONS.find(
+        addon => addon.id === addonId
+      );
     }
 
     function getSelectedService() {
@@ -2836,22 +3710,17 @@
         };
       }
 
-      const addonTotals = getSelectedAddons().reduce(
+      return getSelectedAddons().reduce(
         (total, addon) => {
           total.price += addon.price;
           total.duration += addon.duration;
           return total;
         },
         {
-          price: 0,
-          duration: 0
+          price: service.price,
+          duration: service.duration
         }
       );
-
-      return {
-        price: service.price + addonTotals.price,
-        duration: service.duration + addonTotals.duration
-      };
     }
 
     function formatEuro(value) {
@@ -2863,7 +3732,11 @@
         return "–";
       }
 
-      const [year, month, day] = dateString.split("-");
+      const [
+        year,
+        month,
+        day
+      ] = dateString.split("-");
 
       return `${day}.${month}.${year}`;
     }
@@ -2873,14 +3746,19 @@
         return "–";
       }
 
-      const date = new Date(`${dateString}T12:00:00`);
+      const date = new Date(
+        `${dateString}T12:00:00`
+      );
 
-      return new Intl.DateTimeFormat("de-DE", {
-        weekday: "long",
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric"
-      }).format(date);
+      return new Intl.DateTimeFormat(
+        "de-DE",
+        {
+          weekday: "long",
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric"
+        }
+      ).format(date);
     }
 
     function escapeHtml(value) {
@@ -2893,73 +3771,71 @@
     }
 
     function renderServices() {
-      const servicesContainer =
+      const servicesList =
         document.getElementById("services-list");
 
-      const addonsContainer =
+      const addonsList =
         document.getElementById("addons-list");
 
-      servicesContainer.innerHTML = SERVICES.map(service => {
-        const selected =
-          service.id === state.selectedServiceId
-            ? "selected"
-            : "";
+      servicesList.innerHTML =
+        SERVICES.map(service => {
+          const isSelected =
+            service.id === state.selectedServiceId;
 
-        return `
-          <button
-            type="button"
-            class="service-option ${selected}"
-            onclick="selectService('${service.id}')"
-          >
-            <span class="service-header">
-              <span class="service-title">
-                ${escapeHtml(service.title)}
+          return `
+            <button
+              type="button"
+              class="service-option ${isSelected ? "selected" : ""}"
+              onclick="selectService('${service.id}')"
+            >
+              <span class="service-header">
+                <span class="service-title">
+                  ${escapeHtml(service.title)}
+                </span>
+
+                <span class="service-price">
+                  ${formatEuro(service.price)}
+                </span>
               </span>
 
-              <span class="service-price">
-                ${formatEuro(service.price)}
-              </span>
-            </span>
-
-            <span class="service-description">
-              ${escapeHtml(service.description)}
-            </span>
-
-            <span class="service-duration">
-              ⏱ ca. ${service.duration} Min.
-            </span>
-          </button>
-        `;
-      }).join("");
-
-      addonsContainer.innerHTML = ADDONS.map(addon => {
-        const selected =
-          state.selectedAddonIds.includes(addon.id)
-            ? "selected"
-            : "";
-
-        return `
-          <button
-            type="button"
-            class="addon-option ${selected}"
-            onclick="toggleAddon('${addon.id}')"
-          >
-            <span class="addon-header">
-              <span class="addon-title">
-                ${escapeHtml(addon.title)}
+              <span class="service-description">
+                ${escapeHtml(service.description)}
               </span>
 
-              <span class="addon-price">
-                +${formatEuro(addon.price)}
+              <span class="service-duration">
+                ⏱ ca. ${service.duration} Min.
               </span>
-            </span>
+            </button>
+          `;
+        }).join("");
 
-            <span class="addon-description">
-              ${escapeHtml(addon.description)}
-            </span>
-          </button>
-        `;
-      }).join("");
+      addonsList.innerHTML =
+        ADDONS.map(addon => {
+          const isSelected =
+            state.selectedAddonIds.includes(addon.id);
+
+          return `
+            <button
+              type="button"
+              class="addon-option ${isSelected ? "selected" : ""}"
+              onclick="toggleAddon('${addon.id}')"
+            >
+              <span class="addon-header">
+                <span class="addon-title">
+                  ${escapeHtml(addon.title)}
+                </span>
+
+                <span class="addon-price">
+                  +${formatEuro(addon.price)}
+                </span>
+              </span>
+
+              <span class="addon-description">
+                ${escapeHtml(addon.description)}
+              </span>
+            </button>
+          `;
+        }).join("");
 
       updateStep1Summary();
       updateStep3Summary();
@@ -2986,7 +3862,9 @@
     function toggleAddon(addonId) {
       if (state.selectedAddonIds.includes(addonId)) {
         state.selectedAddonIds =
-          state.selectedAddonIds.filter(id => id !== addonId);
+          state.selectedAddonIds.filter(
+            id => id !== addonId
+          );
       } else {
         state.selectedAddonIds.push(addonId);
       }
@@ -2997,19 +3875,22 @@
     function updateStep1Summary() {
       const service = getSelectedService();
       const total = calculateTotal();
-      const summary = document.getElementById("step1-summary");
+
+      const summary =
+        document.getElementById("step1-summary");
 
       if (!service) {
         summary.textContent = "Bitte wählen";
         return;
       }
 
-      const addonCount = state.selectedAddonIds.length;
+      const addonText =
+        state.selectedAddonIds.length
+          ? ` + ${state.selectedAddonIds.length} Extra`
+          : "";
 
       summary.textContent =
-        `${service.title}` +
-        (addonCount ? ` + ${addonCount} Extra` : "") +
-        ` · ${formatEuro(total.price)}`;
+        `${service.title}${addonText} · ${formatEuro(total.price)}`;
     }
 
     function updateStep3Summary() {
@@ -3017,49 +3898,60 @@
       const addons = getSelectedAddons();
       const total = calculateTotal();
 
-      document.getElementById("summary-treatment").textContent =
-        service?.title || "–";
+      document.getElementById("summary-treatment")
+        .textContent = service?.title || "–";
 
-      document.getElementById("summary-addons").textContent =
-        addons.length
+      document.getElementById("summary-addons")
+        .textContent = addons.length
           ? addons.map(addon => addon.title).join(", ")
           : "Keine";
 
-      document.getElementById("summary-date").textContent =
-        formatDate(state.selectedDate);
+      document.getElementById("summary-date")
+        .textContent = formatDate(state.selectedDate);
 
-      document.getElementById("summary-time").textContent =
-        state.selectedTime
+      document.getElementById("summary-time")
+        .textContent = state.selectedTime
           ? `${state.selectedTime} Uhr`
           : "–";
 
-      document.getElementById("summary-price").textContent =
-        formatEuro(total.price);
+      document.getElementById("summary-price")
+        .textContent = formatEuro(total.price);
     }
 
     function setActiveStep(stepNumber) {
       [1, 2, 3].forEach(number => {
-        const indicator =
-          document.getElementById(`step-indicator-${number}`);
-
-        indicator.classList.toggle(
-          "active",
-          number === stepNumber
-        );
+        document
+          .getElementById(`step-indicator-${number}`)
+          .classList.toggle(
+            "active",
+            number === stepNumber
+          );
       });
     }
 
     function goToStep(stepNumber) {
-      if (stepNumber === 2 && !state.selectedServiceId) {
-        showToast("Bitte zuerst eine Behandlung auswählen.", "warning");
+      if (
+        stepNumber === 2 &&
+        !state.selectedServiceId
+      ) {
+        showToast(
+          "Bitte zuerst eine Behandlung auswählen.",
+          "warning"
+        );
+
         return;
       }
 
       if (
         stepNumber === 3 &&
-        (!state.selectedDate || !state.selectedTime)
+        (!state.selectedDate ||
+          !state.selectedTime)
       ) {
-        showToast("Bitte Datum und Uhrzeit auswählen.", "warning");
+        showToast(
+          "Bitte Datum und Uhrzeit auswählen.",
+          "warning"
+        );
+
         return;
       }
 
@@ -3101,60 +3993,100 @@
 
     function dateToKey(date) {
       const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const day = String(date.getDate()).padStart(2, "0");
+      const month = String(
+        date.getMonth() + 1
+      ).padStart(2, "0");
+
+      const day = String(
+        date.getDate()
+      ).padStart(2, "0");
 
       return `${year}-${month}-${day}`;
     }
 
     function renderCalendar() {
       const monthYear =
-        document.getElementById("calendar-month-year");
+        document.getElementById(
+          "calendar-month-year"
+        );
 
       const calendarGrid =
-        document.getElementById("calendar-grid");
+        document.getElementById(
+          "calendar-grid"
+        );
 
-      const year = currentCalendarDate.getFullYear();
-      const month = currentCalendarDate.getMonth();
+      const year =
+        currentCalendarDate.getFullYear();
+
+      const month =
+        currentCalendarDate.getMonth();
 
       monthYear.textContent =
-        new Intl.DateTimeFormat("de-DE", {
-          month: "long",
-          year: "numeric"
-        }).format(currentCalendarDate);
+        new Intl.DateTimeFormat(
+          "de-DE",
+          {
+            month: "long",
+            year: "numeric"
+          }
+        ).format(currentCalendarDate);
 
       calendarGrid.innerHTML = "";
 
-      const firstDay = new Date(year, month, 1);
-      const daysInMonth = new Date(year, month + 1, 0).getDate();
+      const firstDay =
+        new Date(year, month, 1);
 
-      let startIndex = firstDay.getDay() - 1;
+      const daysInMonth =
+        new Date(year, month + 1, 0).getDate();
+
+      let startIndex =
+        firstDay.getDay() - 1;
 
       if (startIndex < 0) {
         startIndex = 6;
       }
 
-      for (let index = 0; index < startIndex; index++) {
-        const empty = document.createElement("div");
-        calendarGrid.appendChild(empty);
+      for (
+        let index = 0;
+        index < startIndex;
+        index++
+      ) {
+        calendarGrid.appendChild(
+          document.createElement("div")
+        );
       }
 
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
-      for (let day = 1; day <= daysInMonth; day++) {
-        const date = new Date(year, month, day);
+      for (
+        let day = 1;
+        day <= daysInMonth;
+        day++
+      ) {
+        const date =
+          new Date(year, month, day);
+
         date.setHours(0, 0, 0, 0);
 
-        const dateKey = dateToKey(date);
-        const isSunday = date.getDay() === 0;
-        const isPast = date < today;
-        const isBlocked = blockedDates.includes(dateKey);
+        const dateKey =
+          dateToKey(date);
+
+        const isSunday =
+          date.getDay() === 0;
+
+        const isPast =
+          date < today;
+
+        const isBlocked =
+          blockedDates.includes(dateKey);
 
         const isUnavailable =
-          isSunday || isPast || isBlocked;
+          isSunday ||
+          isPast ||
+          isBlocked;
 
-        const button = document.createElement("button");
+        const button =
+          document.createElement("button");
 
         button.type = "button";
         button.textContent = String(day);
@@ -3173,9 +4105,10 @@
               ? "Sonntags geschlossen."
               : "Vergangener Tag.";
         } else {
-          button.addEventListener("click", () => {
-            selectDate(dateKey);
-          });
+          button.addEventListener(
+            "click",
+            () => selectDate(dateKey)
+          );
         }
 
         calendarGrid.appendChild(button);
@@ -3209,13 +4142,32 @@
       });
     }
 
-    function getServiceEndTime(startTime, durationMinutes) {
-      const [hours, minutes] = startTime
+    function timeToMinutes(timeString) {
+      const [
+        hours,
+        minutes
+      ] = timeString
+        .split(":")
+        .map(Number);
+
+      return hours * 60 + minutes;
+    }
+
+    function getServiceEndTime(
+      startTime,
+      durationMinutes
+    ) {
+      const [
+        hours,
+        minutes
+      ] = startTime
         .split(":")
         .map(Number);
 
       const totalMinutes =
-        hours * 60 + minutes + durationMinutes;
+        hours * 60 +
+        minutes +
+        durationMinutes;
 
       const endHours =
         Math.floor(totalMinutes / 60) % 24;
@@ -3228,48 +4180,58 @@
       ).padStart(2, "0")}`;
     }
 
-    function timeToMinutes(timeString) {
-      const [hours, minutes] = timeString
-        .split(":")
-        .map(Number);
-
-      return hours * 60 + minutes;
-    }
-
     function intervalsOverlap(
       startA,
       durationA,
       startB,
       durationB
     ) {
-      const aStart = timeToMinutes(startA);
-      const aEnd = aStart + durationA;
+      const aStart =
+        timeToMinutes(startA);
 
-      const bStart = timeToMinutes(startB);
-      const bEnd = bStart + durationB;
+      const aEnd =
+        aStart + durationA;
 
-      return aStart < bEnd && bStart < aEnd;
+      const bStart =
+        timeToMinutes(startB);
+
+      const bEnd =
+        bStart + durationB;
+
+      return (
+        aStart < bEnd &&
+        bStart < aEnd
+      );
     }
 
-    function isSlotAvailable(dateKey, time) {
-      const total = calculateTotal();
+    function isSlotAvailable(
+      dateKey,
+      time
+    ) {
+      const total =
+        calculateTotal();
 
-      return !getBookingsForDate(dateKey).some(booking => {
-        return intervalsOverlap(
-          time,
-          total.duration,
-          booking.time,
-          booking.duration
-        );
-      });
+      return !getBookingsForDate(dateKey)
+        .some(booking => {
+          return intervalsOverlap(
+            time,
+            total.duration,
+            booking.time,
+            booking.duration
+          );
+        });
     }
 
     function renderTimeSlots() {
       const container =
-        document.getElementById("time-slots");
+        document.getElementById(
+          "time-slots"
+        );
 
       const display =
-        document.getElementById("selected-date-display");
+        document.getElementById(
+          "selected-date-display"
+        );
 
       if (!state.selectedDate) {
         display.textContent =
@@ -3287,32 +4249,34 @@
       display.textContent =
         `Termine am ${formatDateLong(state.selectedDate)}:`;
 
-      container.innerHTML = STUDIO_SLOTS.map(slot => {
-        const available =
-          isSlotAvailable(state.selectedDate, slot);
+      container.innerHTML =
+        STUDIO_SLOTS.map(slot => {
+          const available =
+            isSlotAvailable(
+              state.selectedDate,
+              slot
+            );
 
-        const selected =
-          state.selectedTime === slot;
+          const selected =
+            state.selectedTime === slot;
 
-        const classNames = [
-          "time-slot",
-          available ? "" : "booked",
-          selected ? "selected" : ""
-        ].filter(Boolean).join(" ");
-
-        return `
-          <button
-            type="button"
-            class="${classNames}"
-            ${available
-              ? `onclick="selectTime('${slot}')"`
-              : "disabled"}
-          >
-            <span>${slot} Uhr</span>
-            <small>${available ? "Frei" : "Belegt"}</small>
-          </button>
-        `;
-      }).join("");
+          return `
+            <button
+              type="button"
+              class="time-slot
+                ${available ? "" : "booked"}
+                ${selected ? "selected" : ""}"
+              ${available
+                ? `onclick="selectTime('${slot}')"`
+                : "disabled"}
+            >
+              <span>${slot} Uhr</span>
+              <small>
+                ${available ? "Frei" : "Belegt"}
+              </small>
+            </button>
+          `;
+        }).join("");
     }
 
     function selectTime(time) {
@@ -3320,9 +4284,14 @@
         return;
       }
 
-      if (!isSlotAvailable(state.selectedDate, time)) {
+      if (
+        !isSlotAvailable(
+          state.selectedDate,
+          time
+        )
+      ) {
         showToast(
-          "Dieser Termin ist inzwischen nicht mehr frei.",
+          "Dieser Termin wurde gerade vergeben.",
           "warning"
         );
 
@@ -3338,15 +4307,13 @@
     }
 
     function validateDateAndTime() {
-      const button =
-        document.getElementById("next-step-2");
-
-      button.disabled =
-        !state.selectedDate ||
-        !state.selectedTime;
+      document
+        .getElementById("next-step-2")
+        .disabled = !state.selectedDate ||
+          !state.selectedTime;
     }
 
-    function getBookingCustomerData() {
+    function getCustomerData() {
       return {
         firstName: document
           .getElementById("first-name")
@@ -3388,7 +4355,10 @@
     function submitBooking(event) {
       event.preventDefault();
 
-      if (!state.selectedDate || !state.selectedTime) {
+      if (
+        !state.selectedDate ||
+        !state.selectedTime
+      ) {
         showToast(
           "Bitte zuerst Datum und Uhrzeit auswählen.",
           "warning"
@@ -3414,18 +4384,29 @@
         return;
       }
 
-      const customer = getBookingCustomerData();
-      const service = getSelectedService();
-      const addons = getSelectedAddons();
-      const total = calculateTotal();
+      const customer =
+        getCustomerData();
+
+      const service =
+        getSelectedService();
+
+      const addons =
+        getSelectedAddons();
+
+      const total =
+        calculateTotal();
 
       const booking = {
         id: generateBookingCode(),
         serviceId: service.id,
         serviceTitle: service.title,
-        addons: addons.map(addon => addon.id),
+        addons: addons.map(
+          addon => addon.id
+        ),
         addonsSummary: addons.length
-          ? addons.map(addon => addon.title).join(", ")
+          ? addons.map(
+              addon => addon.title
+            ).join(", ")
           : "Keine",
         date: state.selectedDate,
         time: state.selectedTime,
@@ -3441,17 +4422,24 @@
 
       saveStorage();
 
-      document.getElementById("confirmed-code").textContent =
-        booking.id;
+      document
+        .getElementById("confirmed-code")
+        .textContent = booking.id;
 
-      document.getElementById("confirmed-name").textContent =
-        `${customer.firstName} ${customer.lastName}`;
+      document
+        .getElementById("confirmed-name")
+        .textContent =
+          `${customer.firstName} ${customer.lastName}`;
 
-      document.getElementById("confirmed-service").textContent =
-        `${booking.serviceTitle} · ${formatEuro(booking.price)}`;
+      document
+        .getElementById("confirmed-service")
+        .textContent =
+          `${booking.serviceTitle} · ${formatEuro(booking.price)}`;
 
-      document.getElementById("confirmed-date").textContent =
-        `${formatDateLong(booking.date)} um ${booking.time} Uhr`;
+      document
+        .getElementById("confirmed-date")
+        .textContent =
+          `${formatDateLong(booking.date)} um ${booking.time} Uhr`;
 
       goToStep(4);
 
@@ -3477,12 +4465,14 @@
       renderServices();
       renderCalendar();
       renderTimeSlots();
+      updateStep3Summary();
       validateDateAndTime();
       goToStep(1);
     }
 
     function downloadCalendarFile() {
-      const booking = state.latestBooking;
+      const booking =
+        state.latestBooking;
 
       if (!booking) {
         return;
@@ -3506,11 +4496,12 @@
         endTime.replace(":", "") +
         "00";
 
-      const now = new Date()
-        .toISOString()
-        .replaceAll("-", "")
-        .replaceAll(":", "")
-        .split(".")[0] + "Z";
+      const timestamp =
+        new Date()
+          .toISOString()
+          .replaceAll("-", "")
+          .replaceAll(":", "")
+          .split(".")[0] + "Z";
 
       const ics = [
         "BEGIN:VCALENDAR",
@@ -3519,7 +4510,7 @@
         "CALSCALE:GREGORIAN",
         "BEGIN:VEVENT",
         `UID:${booking.id}@alisabeautylab.de`,
-        `DTSTAMP:${now}`,
+        `DTSTAMP:${timestamp}`,
         `DTSTART:${startDate}`,
         `DTEND:${endDate}`,
         `SUMMARY:Termin ALISA BEAUTY LAB - ${booking.serviceTitle}`,
@@ -3530,15 +4521,23 @@
         "END:VCALENDAR"
       ].join("\r\n");
 
-      const blob = new Blob([ics], {
-        type: "text/calendar;charset=utf-8"
-      });
+      const blob =
+        new Blob(
+          [ics],
+          {
+            type: "text/calendar;charset=utf-8"
+          }
+        );
 
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
 
       link.href = url;
-      link.download = `Termin-${booking.id}.ics`;
+      link.download =
+        `Termin-${booking.id}.ics`;
 
       document.body.appendChild(link);
       link.click();
@@ -3553,7 +4552,8 @@
     }
 
     function sendBookingWhatsApp() {
-      const booking = state.latestBooking;
+      const booking =
+        state.latestBooking;
 
       if (!booking) {
         return;
@@ -3575,13 +4575,19 @@
         `https://wa.me/${STUDIO_PHONE}?text=` +
         encodeURIComponent(message);
 
-      window.open(url, "_blank", "noopener,noreferrer");
+      window.open(
+        url,
+        "_blank",
+        "noopener,noreferrer"
+      );
     }
 
     function openAdminModal() {
       document
         .getElementById("admin-modal")
-        .classList.add("open");
+        .classList.remove("hidden");
+
+      document.body.classList.add("modal-open");
 
       document
         .getElementById("admin-pin")
@@ -3591,14 +4597,18 @@
     function closeAdminModal() {
       document
         .getElementById("admin-modal")
-        .classList.remove("open");
+        .classList.add("hidden");
+
+      document.body.classList.remove("modal-open");
     }
 
     function unlockAdmin(event) {
       event.preventDefault();
 
       const pin =
-        document.getElementById("admin-pin").value;
+        document
+          .getElementById("admin-pin")
+          .value;
 
       if (pin !== ADMIN_PIN) {
         showToast(
@@ -3630,13 +4640,11 @@
     }
 
     function statusLabel(status) {
-      const labels = {
+      return {
         confirmed: "Bestätigt",
         completed: "Erledigt",
         cancelled: "Storniert"
-      };
-
-      return labels[status] || status;
+      }[status] || status;
     }
 
     function statusClass(status) {
@@ -3649,7 +4657,9 @@
 
     function renderAdminTable() {
       const body =
-        document.getElementById("admin-table-body");
+        document.getElementById(
+          "admin-table-body"
+        );
 
       const search =
         document
@@ -3658,38 +4668,43 @@
           .trim()
           .toLowerCase();
 
-      const status =
+      const selectedStatus =
         document
           .getElementById("admin-status")
           .value;
 
-      const filtered = bookings.filter(booking => {
-        const searchable = [
-          booking.id,
-          booking.serviceTitle,
-          booking.customer.firstName,
-          booking.customer.lastName,
-          booking.customer.phone
-        ]
-          .join(" ")
-          .toLowerCase();
+      const filtered =
+        bookings.filter(booking => {
+          const searchable = [
+            booking.id,
+            booking.serviceTitle,
+            booking.customer.firstName,
+            booking.customer.lastName,
+            booking.customer.phone
+          ]
+            .join(" ")
+            .toLowerCase();
 
-        const matchesSearch =
-          !search || searchable.includes(search);
+          const matchesSearch =
+            !search ||
+            searchable.includes(search);
 
-        const matchesStatus =
-          status === "all" ||
-          booking.status === status;
+          const matchesStatus =
+            selectedStatus === "all" ||
+            booking.status === selectedStatus;
 
-        return matchesSearch && matchesStatus;
-      });
+          return matchesSearch && matchesStatus;
+        });
 
       updateAdminMetrics();
 
       if (!filtered.length) {
         body.innerHTML = `
           <tr>
-            <td colspan="6" style="padding:30px;text-align:center;color:#8a7a71;">
+            <td
+              colspan="6"
+              style="padding:30px;text-align:center;color:#8a7a71;"
+            >
               Keine Buchungen gefunden.
             </td>
           </tr>
@@ -3698,131 +4713,171 @@
         return;
       }
 
-      body.innerHTML = filtered.map(booking => {
-        const isCancelled =
-          booking.status === "cancelled";
+      body.innerHTML =
+        filtered.map(booking => {
+          const isCancelled =
+            booking.status === "cancelled";
 
-        const nextStatus =
-          booking.status === "completed"
-            ? "confirmed"
-            : booking.status === "cancelled"
+          const nextStatus =
+            booking.status === "completed"
               ? "confirmed"
-              : "completed";
+              : booking.status === "cancelled"
+                ? "confirmed"
+                : "completed";
 
-        return `
-          <tr>
-            <td>
-              <strong>${escapeHtml(booking.id)}</strong>
-              <span class="table-muted">
-                ${formatDate(booking.date)} · ${booking.time} Uhr
-              </span>
-            </td>
+          return `
+            <tr>
 
-            <td>
-              <strong>
-                ${escapeHtml(booking.customer.firstName)}
-                ${escapeHtml(booking.customer.lastName)}
-              </strong>
+              <td>
+                <strong>
+                  ${escapeHtml(booking.id)}
+                </strong>
 
-              <span class="table-muted">
-                ${escapeHtml(booking.customer.phone)}
-              </span>
+                <span class="table-muted">
+                  ${formatDate(booking.date)}
+                  · ${booking.time} Uhr
+                </span>
+              </td>
 
-              ${
-                booking.customer.notes
-                  ? `<span class="table-muted">
-                      ${escapeHtml(booking.customer.notes)}
-                    </span>`
-                  : ""
-              }
-            </td>
+              <td>
+                <strong>
+                  ${escapeHtml(
+                    booking.customer.firstName
+                  )}
+                  ${escapeHtml(
+                    booking.customer.lastName
+                  )}
+                </strong>
 
-            <td>
-              <strong>${escapeHtml(booking.serviceTitle)}</strong>
-              <span class="table-muted">
-                ${booking.duration} Min. ·
-                ${escapeHtml(booking.addonsSummary)}
-              </span>
-            </td>
-
-            <td>
-              <strong>${formatEuro(booking.price)}</strong>
-            </td>
-
-            <td>
-              <span class="status-badge ${statusClass(booking.status)}">
-                ${statusLabel(booking.status)}
-              </span>
-            </td>
-
-            <td>
-              <div class="table-actions">
+                <span class="table-muted">
+                  ${escapeHtml(
+                    booking.customer.phone
+                  )}
+                </span>
 
                 ${
-                  !isCancelled
+                  booking.customer.notes
                     ? `
-                      <button
-                        type="button"
-                        class="small-action"
-                        title="${booking.status === "completed"
-                          ? "Wieder aktivieren"
-                          : "Als erledigt markieren"}"
-                        onclick="changeBookingStatus(
-                          '${booking.id}',
-                          '${nextStatus}'
-                        )"
-                      >
-                        ${booking.status === "completed" ? "↺" : "✓"}
-                      </button>
-                    `
-                    : `
-                      <button
-                        type="button"
-                        class="small-action"
-                        title="Wiederherstellen"
-                        onclick="changeBookingStatus(
-                          '${booking.id}',
-                          'confirmed'
-                        )"
-                      >
-                        ↺
-                      </button>
-                    `
-                }
-
-                ${
-                  !isCancelled
-                    ? `
-                      <button
-                        type="button"
-                        class="small-action"
-                        title="Termin stornieren"
-                        onclick="changeBookingStatus(
-                          '${booking.id}',
-                          'cancelled'
-                        )"
-                      >
-                        ×
-                      </button>
+                      <span class="table-muted">
+                        ${escapeHtml(
+                          booking.customer.notes
+                        )}
+                      </span>
                     `
                     : ""
                 }
+              </td>
 
-                <a
-                  class="small-action"
-                  title="WhatsApp öffnen"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  href="${createCustomerWhatsAppLink(booking)}"
+              <td>
+                <strong>
+                  ${escapeHtml(
+                    booking.serviceTitle
+                  )}
+                </strong>
+
+                <span class="table-muted">
+                  ${booking.duration} Min.
+                  · ${escapeHtml(
+                    booking.addonsSummary
+                  )}
+                </span>
+              </td>
+
+              <td>
+                <strong>
+                  ${formatEuro(booking.price)}
+                </strong>
+              </td>
+
+              <td>
+                <span
+                  class="status-badge ${statusClass(
+                    booking.status
+                  )}"
                 >
-                  ◉
-                </a>
+                  ${statusLabel(
+                    booking.status
+                  )}
+                </span>
+              </td>
 
-              </div>
-            </td>
-          </tr>
-        `;
-      }).join("");
+              <td>
+                <div class="table-actions">
+
+                  ${
+                    !isCancelled
+                      ? `
+                        <button
+                          type="button"
+                          class="small-action"
+                          title="${
+                            booking.status === "completed"
+                              ? "Wieder aktivieren"
+                              : "Als erledigt markieren"
+                          }"
+                          onclick="changeBookingStatus(
+                            '${booking.id}',
+                            '${nextStatus}'
+                          )"
+                        >
+                          ${
+                            booking.status === "completed"
+                              ? "↺"
+                              : "✓"
+                          }
+                        </button>
+                      `
+                      : `
+                        <button
+                          type="button"
+                          class="small-action"
+                          title="Wiederherstellen"
+                          onclick="changeBookingStatus(
+                            '${booking.id}',
+                            'confirmed'
+                          )"
+                        >
+                          ↺
+                        </button>
+                      `
+                  }
+
+                  ${
+                    !isCancelled
+                      ? `
+                        <button
+                          type="button"
+                          class="small-action"
+                          title="Termin stornieren"
+                          onclick="changeBookingStatus(
+                            '${booking.id}',
+                            'cancelled'
+                          )"
+                        >
+                          ×
+                        </button>
+                      `
+                      : ""
+                  }
+
+                  <a
+                    class="small-action"
+                    title="WhatsApp öffnen"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    href="${createCustomerWhatsAppLink(
+                      booking
+                    )}"
+                  >
+                    ◉
+                  </a>
+
+                </div>
+              </td>
+
+            </tr>
+          `;
+        }).join("");
     }
 
     function updateAdminMetrics() {
@@ -3830,40 +4885,43 @@
         bookings.length;
 
       const active =
-        bookings.filter(booking =>
-          booking.status === "confirmed"
+        bookings.filter(
+          booking => booking.status === "confirmed"
         ).length;
 
       const revenue =
         bookings
-          .filter(booking =>
-            booking.status !== "cancelled"
+          .filter(
+            booking => booking.status !== "cancelled"
           )
           .reduce(
-            (sum, booking) => sum + Number(booking.price || 0),
+            (sum, booking) =>
+              sum + Number(booking.price || 0),
             0
           );
 
-      document.getElementById("metric-total")
+      document
+        .getElementById("metric-total")
         .textContent = total;
 
-      document.getElementById("metric-active")
+      document
+        .getElementById("metric-active")
         .textContent = active;
 
-      document.getElementById("metric-revenue")
+      document
+        .getElementById("metric-revenue")
         .textContent = formatEuro(revenue);
     }
 
     function createCustomerWhatsAppLink(booking) {
       const cleanPhone =
-        booking.customer.phone.replace(/\D/g, "");
+        booking.customer.phone
+          .replace(/\D/g, "");
 
-      let internationalPhone = cleanPhone;
-
-      if (cleanPhone.startsWith("0")) {
-        internationalPhone =
-          "49" + cleanPhone.slice(1);
-      }
+      const internationalPhone =
+        cleanPhone.startsWith("0")
+          ? "49" + cleanPhone.slice(1)
+          : cleanPhone;
 
       const message =
         `Hallo ${booking.customer.firstName}, ` +
@@ -3876,30 +4934,41 @@
       );
     }
 
-    function changeBookingStatus(bookingId, newStatus) {
+    function changeBookingStatus(
+      bookingId,
+      newStatus
+    ) {
       const booking =
-        bookings.find(item => item.id === bookingId);
+        bookings.find(
+          item => item.id === bookingId
+        );
 
       if (!booking) {
         return;
       }
 
       booking.status = newStatus;
+
       saveStorage();
       renderAdminTable();
       renderCalendar();
 
       showToast(
-        `Status wurde auf "${statusLabel(newStatus)}" geändert.`,
+        `Status wurde auf "${statusLabel(
+          newStatus
+        )}" geändert.`,
         "success"
       );
     }
 
     function blockDate() {
       const input =
-        document.getElementById("block-date");
+        document.getElementById(
+          "block-date"
+        );
 
-      const dateKey = input.value;
+      const dateKey =
+        input.value;
 
       if (!dateKey) {
         showToast(
@@ -3955,41 +5024,56 @@
         "Notizen"
       ];
 
-      const rows = bookings.map(booking => {
-        return [
-          booking.id,
-          booking.status,
-          booking.date,
-          booking.time,
-          booking.duration,
-          booking.serviceTitle,
-          booking.addonsSummary,
-          booking.price,
-          booking.customer.firstName,
-          booking.customer.lastName,
-          booking.customer.email,
-          booking.customer.phone,
-          booking.customer.notes
-        ].map(value => {
-          return `"${String(value ?? "")
-            .replaceAll('"', '""')}"`;
-        }).join(";");
-      });
+      const rows =
+        bookings.map(booking => {
+          return [
+            booking.id,
+            booking.status,
+            booking.date,
+            booking.time,
+            booking.duration,
+            booking.serviceTitle,
+            booking.addonsSummary,
+            booking.price,
+            booking.customer.firstName,
+            booking.customer.lastName,
+            booking.customer.email,
+            booking.customer.phone,
+            booking.customer.notes
+          ]
+            .map(value => {
+              return `"${String(value ?? "")
+                .replaceAll('"', '""')}"`;
+            })
+            .join(";");
+        });
 
       const csv =
         "\uFEFF" +
-        [headers.join(";"), ...rows].join("\r\n");
+        [
+          headers.join(";"),
+          ...rows
+        ].join("\r\n");
 
-      const blob = new Blob([csv], {
-        type: "text/csv;charset=utf-8"
-      });
+      const blob =
+        new Blob(
+          [csv],
+          {
+            type: "text/csv;charset=utf-8"
+          }
+        );
 
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
+      const url =
+        URL.createObjectURL(blob);
+
+      const link =
+        document.createElement("a");
 
       link.href = url;
       link.download =
-        `alisa-beauty-lab-buchungen-${dateToKey(new Date())}.csv`;
+        `alisa-beauty-lab-buchungen-${dateToKey(
+          new Date()
+        )}.csv`;
 
       document.body.appendChild(link);
       link.click();
@@ -4003,44 +5087,261 @@
       );
     }
 
-    function showToast(message, type = "info") {
-      const container =
-        document.getElementById("toast-container");
+    function getCookiePreferences() {
+      try {
+        const stored =
+          localStorage.getItem(
+            STORAGE_KEYS.cookiePreferences
+          );
 
-      const toast =
-        document.createElement("div");
+        if (!stored) {
+          return {
+            necessary: true,
+            analytics: false,
+            marketing: false,
+            decided: false
+          };
+        }
 
-      toast.className = `toast ${type}`;
-      toast.textContent = message;
-
-      container.appendChild(toast);
-
-      window.setTimeout(() => {
-        toast.remove();
-      }, 4500);
+        return {
+          necessary: true,
+          analytics: false,
+          marketing: false,
+          decided: false,
+          ...JSON.parse(stored)
+        };
+      } catch (error) {
+        return {
+          necessary: true,
+          analytics: false,
+          marketing: false,
+          decided: false
+        };
+      }
     }
 
-    document.addEventListener("keydown", event => {
-      if (event.key === "Escape") {
+    function saveCookiePreferences(preferences) {
+      localStorage.setItem(
+        STORAGE_KEYS.cookiePreferences,
+        JSON.stringify(preferences)
+      );
+    }
+
+    function showCookieBanner() {
+      document
+        .getElementById("cookie-banner")
+        .classList.remove("hidden");
+    }
+
+    function hideCookieBanner() {
+      document
+        .getElementById("cookie-banner")
+        .classList.add("hidden");
+    }
+
+    function acceptAllCookies() {
+      saveCookiePreferences({
+        necessary: true,
+        analytics: true,
+        marketing: true,
+        decided: true
+      });
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      showToast(
+        "Alle Cookie-Einstellungen wurden gespeichert.",
+        "success"
+      );
+    }
+
+    function rejectOptionalCookies() {
+      saveCookiePreferences({
+        necessary: true,
+        analytics: false,
+        marketing: false,
+        decided: true
+      });
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      showToast(
+        "Nur notwendige Cookies wurden aktiviert.",
+        "success"
+      );
+    }
+
+    function openCookieSettings() {
+      const preferences =
+        getCookiePreferences();
+
+      document
+        .getElementById("analytics-cookies")
+        .checked = preferences.analytics;
+
+      document
+        .getElementById("marketing-cookies")
+        .checked = preferences.marketing;
+
+      document
+        .getElementById("cookie-settings-modal")
+        .classList.remove("hidden");
+
+      document.body.classList.add("modal-open");
+    }
+
+    function closeCookieSettings() {
+      document
+        .getElementById("cookie-settings-modal")
+        .classList.add("hidden");
+
+      document.body.classList.remove("modal-open");
+    }
+
+    function saveCookieSettings() {
+      saveCookiePreferences({
+        necessary: true,
+        analytics: document
+          .getElementById("analytics-cookies")
+          .checked,
+        marketing: document
+          .getElementById("marketing-cookies")
+          .checked,
+        decided: true
+      });
+
+      hideCookieBanner();
+      closeCookieSettings();
+
+      showToast(
+        "Cookie-Einstellungen wurden gespeichert.",
+        "success"
+      );
+    }
+
+    function openLegalModal(type) {
+      const modal =
+        document.getElementById(
+          "legal-modal"
+        );
+
+      const imprint =
+        document.getElementById(
+          "legal-imprint"
+        );
+
+      const privacy =
+        document.getElementById(
+          "legal-privacy"
+        );
+
+      imprint.classList.add("hidden");
+      privacy.classList.add("hidden");
+
+      if (type === "imprint") {
+        imprint.classList.remove("hidden");
+
+        document
+          .getElementById("legal-modal-title")
+          .textContent = "Impressum";
+      }
+
+      if (type === "privacy") {
+        privacy.classList.remove("hidden");
+
+        document
+          .getElementById("legal-modal-title")
+          .textContent =
+            "Datenschutzerklärung";
+      }
+
+      modal.classList.remove("hidden");
+      document.body.classList.add("modal-open");
+    }
+
+    function closeLegalModal() {
+      document
+        .getElementById("legal-modal")
+        .classList.add("hidden");
+
+      document.body.classList.remove("modal-open");
+    }
+
+    document.addEventListener(
+      "keydown",
+      event => {
+        if (event.key !== "Escape") {
+          return;
+        }
+
+        closeCookieSettings();
+        closeLegalModal();
         closeAdminModal();
       }
-    });
+    );
 
     document
       .getElementById("admin-modal")
-      .addEventListener("click", event => {
-        if (event.target.id === "admin-modal") {
-          closeAdminModal();
+      .addEventListener(
+        "click",
+        event => {
+          if (
+            event.target.id === "admin-modal"
+          ) {
+            closeAdminModal();
+          }
         }
-      });
+      );
 
-    document.addEventListener("DOMContentLoaded", () => {
-      renderServices();
-      renderCalendar();
-      renderTimeSlots();
-      updateStep3Summary();
-      validateDateAndTime();
-    });
+    document
+      .getElementById("cookie-settings-modal")
+      .addEventListener(
+        "click",
+        event => {
+          if (
+            event.target.id ===
+            "cookie-settings-modal"
+          ) {
+            closeCookieSettings();
+          }
+        }
+      );
+
+    document
+      .getElementById("legal-modal")
+      .addEventListener(
+        "click",
+        event => {
+          if (
+            event.target.id === "legal-modal"
+          ) {
+            closeLegalModal();
+          }
+        }
+      );
+
+    document.addEventListener(
+      "DOMContentLoaded",
+      () => {
+        renderServices();
+        renderCalendar();
+        renderTimeSlots();
+        updateStep3Summary();
+        validateDateAndTime();
+
+        const cookiePreferences =
+          getCookiePreferences();
+
+        if (!cookiePreferences.decided) {
+          window.setTimeout(
+            showCookieBanner,
+            350
+          );
+        }
+      }
+    );
   </script>
 
 </body>
