@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen & Buchung</title>
     
-    <!-- Google Fonts -->
+    <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS -->
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <script>
         tailwind.config = {
             theme: {
@@ -55,15 +56,15 @@
             background-color: #FAF6F0;
             color: #433630;
             background-image: 
-                radial-gradient(at 0% 0%, rgba(232, 212, 162, 0.25) 0px, transparent 50%),
-                radial-gradient(at 100% 0%, rgba(142, 122, 113, 0.18) 0px, transparent 50%),
-                radial-gradient(at 100% 100%, rgba(197, 160, 89, 0.2) 0px, transparent 50%),
-                radial-gradient(at 0% 100%, rgba(142, 122, 113, 0.2) 0px, transparent 50%);
+                radial-gradient(at 0% 0%, rgba(232, 212, 162, 0.22) 0px, transparent 50%),
+                radial-gradient(at 100% 0%, rgba(142, 122, 113, 0.15) 0px, transparent 50%),
+                radial-gradient(at 100% 100%, rgba(197, 160, 89, 0.18) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, rgba(142, 122, 113, 0.18) 0px, transparent 50%);
             background-attachment: fixed;
             background-size: cover;
         }
 
-        /* Hintergrundbild-Unterstützung mit weichem Overlay */
+        /* Hintergrundbild-Unterstützung mit sanftem Overlay */
         .hero-pattern-bg {
             background-image: linear-gradient(to bottom, rgba(250, 246, 240, 0.88), rgba(250, 246, 240, 0.94)), url('Hintergrund muster.jpg');
             background-size: cover;
@@ -89,13 +90,13 @@
         /* Punkt- / Verbindungslinie für Preise */
         .price-leader {
             flex-grow: 1;
-            border-bottom: 1px solid rgba(197, 160, 89, 0.45);
+            border-bottom: 1px dotted rgba(197, 160, 89, 0.6);
             margin: 0 12px;
             position: relative;
             top: -4px;
         }
 
-        /* Sanfte Gold-Verläufe */
+        /* Gold-Verläufe */
         .gold-gradient-text {
             background: linear-gradient(135deg, #B28E46 0%, #C5A059 40%, #E8D4A2 70%, #9C7A38 100%);
             -webkit-background-clip: text;
@@ -106,18 +107,9 @@
             background: linear-gradient(135deg, #C5A059 0%, #D8B56F 50%, #B28E46 100%);
         }
 
-        .gold-gradient-subtle {
-            background: linear-gradient(135deg, rgba(197, 160, 89, 0.12) 0%, rgba(232, 212, 162, 0.22) 100%);
-        }
-
-        /* Modals & Backdrop */
-        .modal-overlay {
-            backdrop-filter: blur(8px);
-        }
-
         /* Custom Scrollbar */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 7px;
         }
         ::-webkit-scrollbar-track {
             background: #FAF6F0;
@@ -149,7 +141,7 @@
                     0 € Buchungsgebühr
                 </span>
                 <!-- Admin Lock Trigger -->
-                <button onclick="openAdminModal()" title="Studio Verwaltung" class="text-brand-goldLight/70 hover:text-brand-goldLight p-1 transition-colors">
+                <button type="button" onclick="openAdminModal()" title="Studio Verwaltung Login" class="text-brand-goldLight/70 hover:text-brand-goldLight p-1 transition-colors">
                     <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                 </button>
             </div>
@@ -162,7 +154,6 @@
             
             <!-- Logo & Brand Name -->
             <a href="#" class="flex items-center gap-3 group" aria-label="Startseite">
-                <!-- Fallback-Logo Bild oder luxuriöse Typo -->
                 <div class="flex items-center gap-2.5">
                     <img src="AlisaLogoQuertransparent.webp" alt="Alisa Beauty Lab Logo" onerror="this.style.display='none'; document.getElementById('logo-text-fallback').classList.remove('hidden');" class="h-12 md:h-14 w-auto object-contain transition-opacity group-hover:opacity-85">
                     
@@ -239,10 +230,9 @@
     <!-- Main Content -->
     <main class="flex-grow">
         
-        <!-- Hero Section mit luxuriösen geschwungenen Akzenten -->
         <section class="relative overflow-hidden hero-pattern-bg py-20 md:py-32 border-b border-brand-gold/20">
             
-            <!-- Dekorative geschwungene Gold-Linien (Inspiration aus Hintergrund muster.jpg) -->
+            <!-- Dekorative geschwungene Gold-Linien -->
             <div class="absolute inset-0 pointer-events-none opacity-40">
                 <svg class="w-full h-full" viewBox="0 0 1440 600" fill="none" preserveAspectRatio="none">
                     <path d="M-100,50 C300,10 600,220 1000,80 C1300,-20 1500,120 1600,150" stroke="#C5A059" stroke-width="1.8" stroke-dasharray="8 6"/>
@@ -284,7 +274,6 @@
             </div>
         </section>
 
-        <!-- INTUIVES INTERAKTIVES BUCHUNGSSYSTEM (0 € Fremdkosten) -->
         <section id="buchen" class="py-16 md:py-24 max-w-5xl mx-auto px-4 sm:px-6">
             
             <div class="text-center max-w-2xl mx-auto mb-12">
@@ -330,17 +319,17 @@
                         </div>
                         
                         <!-- Filter Tabs -->
-                        <div class="flex flex-wrap gap-1.5 text-xs">
-                            <button onclick="filterServiceCategory('all')" class="cat-pill active px-3 py-1.5 rounded-full bg-brand-truffle text-white">Alle</button>
-                            <button onclick="filterServiceCategory('neuanlage')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30">Neuanlage</button>
-                            <button onclick="filterServiceCategory('auffuellen')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30">Auffüllen</button>
-                            <button onclick="filterServiceCategory('lifting')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30">Lifting</button>
+                        <div class="flex flex-wrap gap-1.5 text-xs" id="category-filter-buttons">
+                            <button type="button" onclick="setCategoryFilter('all')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-truffle text-white font-medium transition-all" data-filter="all">Alle</button>
+                            <button type="button" onclick="setCategoryFilter('neuanlage')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30 font-medium transition-all" data-filter="neuanlage">Neuanlage</button>
+                            <button type="button" onclick="setCategoryFilter('auffuellen')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30 font-medium transition-all" data-filter="auffuellen">Auffüllen</button>
+                            <button type="button" onclick="setCategoryFilter('lifting')" class="cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30 font-medium transition-all" data-filter="lifting">Lifting</button>
                         </div>
                     </div>
 
                     <!-- Services Grid -->
                     <div id="services-list" class="grid sm:grid-cols-2 gap-4 mb-8">
-                        <!-- Wird per JS dynamisch mit exakten Preisen befüllt -->
+                        <!-- Dynamisch befüllt -->
                     </div>
 
                     <!-- Optionale Extras / Addons -->
@@ -361,7 +350,7 @@
                             <span id="selected-service-summary" class="font-serif font-semibold text-lg text-brand-dark">Bitte wähle eine Behandlung aus</span>
                             <span id="selected-service-price" class="text-sm font-semibold text-brand-gold ml-2"></span>
                         </div>
-                        <button id="btn-to-step-2" onclick="goToStep(2)" disabled class="w-full sm:w-auto opacity-50 cursor-not-allowed gold-gradient-bg text-brand-dark px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-sm transition-all flex items-center justify-center gap-2">
+                        <button id="btn-to-step-2" type="button" onclick="goToStep(2)" disabled class="w-full sm:w-auto opacity-50 cursor-not-allowed gold-gradient-bg text-brand-dark px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-sm transition-all flex items-center justify-center gap-2">
                             <span>Weiter zu Termin & Uhrzeit</span>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
                         </button>
@@ -375,7 +364,7 @@
                             <h3 class="text-2xl font-serif text-brand-dark">2. Wunschtermin auswählen</h3>
                             <p class="text-xs text-brand-taupe mt-1">Wähle einen freien Tag im Kalender und anschließend eine verfügbare Uhrzeit.</p>
                         </div>
-                        <button onclick="goToStep(1)" class="text-xs text-brand-taupe hover:text-brand-truffle underline">
+                        <button type="button" onclick="goToStep(1)" class="text-xs text-brand-taupe hover:text-brand-truffle underline">
                             ← Behandlung ändern
                         </button>
                     </div>
@@ -387,10 +376,10 @@
                             <div class="flex justify-between items-center mb-4">
                                 <h4 id="calendar-month-year" class="font-serif font-bold text-lg text-brand-dark">Monat Jahr</h4>
                                 <div class="flex gap-2">
-                                    <button onclick="prevMonth()" class="p-2 rounded-full bg-brand-card hover:bg-brand-cream border border-brand-gold/30 text-brand-truffle transition-colors">
+                                    <button type="button" onclick="prevMonth()" class="p-2 rounded-full bg-brand-card hover:bg-brand-cream border border-brand-gold/30 text-brand-truffle transition-colors">
                                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"/></svg>
                                     </button>
-                                    <button onclick="nextMonth()" class="p-2 rounded-full bg-brand-card hover:bg-brand-cream border border-brand-gold/30 text-brand-truffle transition-colors">
+                                    <button type="button" onclick="nextMonth()" class="p-2 rounded-full bg-brand-card hover:bg-brand-cream border border-brand-gold/30 text-brand-truffle transition-colors">
                                         <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"/></svg>
                                     </button>
                                 </div>
@@ -417,7 +406,7 @@
                                 </div>
                                 <div class="flex items-center gap-1.5 opacity-60">
                                     <span class="w-2.5 h-2.5 rounded-full bg-gray-300"></span>
-                                    <span>Sonntags geschlossen</span>
+                                    <span>Sonntags Ruhetag</span>
                                 </div>
                             </div>
                         </div>
@@ -426,7 +415,7 @@
                         <div class="md:col-span-5 flex flex-col justify-between h-full">
                             <div>
                                 <h4 class="font-serif font-bold text-base text-brand-dark mb-1">Freie Uhrzeiten</h4>
-                                <p id="selected-date-display" class="text-xs text-brand-gold font-medium mb-4">Bitte wähle zuerst einen Tag aus</p>
+                                <p id="selected-date-display" class="text-xs text-brand-gold font-medium mb-4">Bitte wähle zuerst einen Tag links aus</p>
                                 
                                 <div id="time-slots-container" class="grid grid-cols-2 gap-2.5 max-h-[290px] overflow-y-auto pr-1">
                                     <div class="col-span-2 text-center py-10 text-xs text-brand-taupe italic">
@@ -445,10 +434,10 @@
 
                     <!-- Step 2 Footer Navigation -->
                     <div class="mt-8 pt-6 border-t border-brand-gold/20 flex flex-col sm:flex-row justify-between items-center gap-4">
-                        <button onclick="goToStep(1)" class="w-full sm:w-auto px-6 py-3 rounded-full border border-brand-gold/40 text-brand-truffle font-medium text-xs hover:bg-brand-canvas transition-colors">
-                            ← Zurück
+                        <button type="button" onclick="goToStep(1)" class="w-full sm:w-auto px-6 py-3 rounded-full border border-brand-gold/40 text-brand-truffle font-medium text-xs hover:bg-brand-canvas transition-colors">
+                            ← Zurück zu Behandlungen
                         </button>
-                        <button id="btn-to-step-3" onclick="goToStep(3)" disabled class="w-full sm:w-auto opacity-50 cursor-not-allowed gold-gradient-bg text-brand-dark px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-sm transition-all flex items-center justify-center gap-2">
+                        <button id="btn-to-step-3" type="button" onclick="goToStep(3)" disabled class="w-full sm:w-auto opacity-50 cursor-not-allowed gold-gradient-bg text-brand-dark px-8 py-3.5 rounded-full font-semibold text-sm tracking-wide shadow-sm transition-all flex items-center justify-center gap-2">
                             <span>Weiter zu meinen Daten</span>
                             <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M5 13h11.86l-5.43 5.43 1.42 1.42L21.14 12l-8.29-8.29-1.42 1.42L16.86 11H5v2z"/></svg>
                         </button>
@@ -462,7 +451,7 @@
                             <h3 class="text-2xl font-serif text-brand-dark">3. Kontaktdaten & Vorbereitung</h3>
                             <p class="text-xs text-brand-taupe mt-1">Wohin dürfen wir deine Terminbestätigung senden?</p>
                         </div>
-                        <button onclick="goToStep(2)" class="text-xs text-brand-taupe hover:text-brand-truffle underline">
+                        <button type="button" onclick="goToStep(2)" class="text-xs text-brand-taupe hover:text-brand-truffle underline">
                             ← Datum & Uhrzeit anpassen
                         </button>
                     </div>
@@ -503,19 +492,19 @@
                         <div class="p-4 rounded-2xl bg-brand-gold/10 border border-brand-gold/30 text-xs text-brand-truffle space-y-2">
                             <div class="flex justify-between items-center font-semibold text-sm text-brand-dark pb-2 border-b border-brand-gold/20">
                                 <span>Zusammenfassung deiner Reservierung:</span>
-                                <span id="summary-total-price" class="text-brand-gold text-base">0 €</span>
+                                <span id="summary-total-price" class="text-brand-gold text-base font-bold">0 €</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-brand-taupe">Behandlung:</span>
-                                <span id="summary-treatment-name" class="font-medium">-</span>
+                                <span id="summary-treatment-name" class="font-medium text-brand-dark">-</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-brand-taupe">Termin:</span>
-                                <span id="summary-datetime" class="font-medium">-</span>
+                                <span id="summary-datetime" class="font-medium text-brand-dark">-</span>
                             </div>
                             <div class="flex justify-between">
                                 <span class="text-brand-taupe">Ort:</span>
-                                <span class="font-medium">Bürgermeister-Sommer-Str. 34, Treuchtlingen</span>
+                                <span class="font-medium text-brand-dark">Bürgermeister-Sommer-Str. 34, Treuchtlingen</span>
                             </div>
                             <p class="text-[11px] text-brand-taupe pt-2 italic">
                                 * Keine Vorab-Zahlung erforderlich. Die Bezahlung erfolgt vor Ort im Studio (Bar oder PayPal). Kostenfreie Terminabsage oder -verschiebung bis zu 24 Stunden vor dem Termin möglich.
@@ -592,12 +581,12 @@
                         </a>
 
                         <!-- Kalender Download (.ics Datei) -->
-                        <button onclick="downloadICSCalendar()" class="w-full bg-brand-card hover:bg-brand-cream border border-brand-gold/40 text-brand-truffle py-3.5 px-6 rounded-full font-semibold text-xs flex items-center justify-center gap-2 transition-all">
+                        <button type="button" onclick="downloadICSCalendar()" class="w-full bg-brand-card hover:bg-brand-cream border border-brand-gold/40 text-brand-truffle py-3.5 px-6 rounded-full font-semibold text-xs flex items-center justify-center gap-2 transition-all">
                             <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M19 4h-1V2h-2v2H8V2H6v2H5c-1.11 0-1.99.9-1.99 2L3 20c0 1.1.89 2 2 2h14c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 16H5V10h14v10zm0-12H5V6h14v2zm-7 5h5v5h-5z"/></svg>
                             <span>In Smartphone- / Google-Kalender eintragen (.ics)</span>
                         </button>
 
-                        <button onclick="resetBookingForm()" class="text-xs text-brand-taupe hover:text-brand-truffle underline pt-2 block mx-auto">
+                        <button type="button" onclick="resetBookingForm()" class="text-xs text-brand-taupe hover:text-brand-truffle underline pt-2 block mx-auto">
                             Weiteren Termin buchen
                         </button>
                     </div>
@@ -606,7 +595,6 @@
             </div>
         </section>
 
-        <!-- BEHANDLUNGEN & PREISE SECTION (Exakt nach Vorlage & Bild) -->
         <section id="behandlungen" class="py-16 md:py-24 bg-brand-canvas/70 border-t border-brand-gold/20">
             <div class="max-w-5xl mx-auto px-4 sm:px-6">
                 
@@ -637,12 +625,19 @@
                                 <span class="font-serif font-bold text-xl text-brand-dark">35 €</span>
                             </div>
 
-                            <div class="mt-4 pt-4 border-t border-brand-gold/15 text-xs text-brand-taupe leading-relaxed">
+                            <div class="mt-4 pt-4 border-t border-brand-gold/15 flex items-center justify-between text-xs">
+                                <span class="text-brand-taupe">Dauer: ca. 60 Min.</span>
+                                <button type="button" onclick="selectAndScrollToService('wimpernlifting')" class="text-brand-gold hover:text-brand-goldHover font-semibold underline">
+                                    Diesen Service buchen →
+                                </button>
+                            </div>
+
+                            <div class="mt-3 text-xs text-brand-taupe leading-relaxed">
                                 Verleiht deinen Naturwimpern einen atemberaubenden Schwung, optische Verlängerung und intensive Pflege – ganz ohne künstliche Wimpern. Hält ca. 6 bis 8 Wochen.
                             </div>
                         </div>
 
-                        <!-- Info Box: Pflege- & Auffüllregeln (Wie auf dem Flyer) -->
+                        <!-- Info Box: Pflege- & Auffüllregeln -->
                         <div class="luxury-card p-6 rounded-3xl bg-brand-gold/10 border-brand-gold/50 text-center">
                             <p class="text-xs font-semibold text-brand-dark uppercase tracking-wider mb-2">Wichtige Kundenhinweise</p>
                             <p class="text-xs text-brand-taupe leading-relaxed mb-2">
@@ -666,20 +661,20 @@
 
                         <!-- Neuanlage Preise -->
                         <div class="space-y-3">
-                            <div class="flex justify-between items-baseline text-base sm:text-lg">
-                                <span class="font-medium text-brand-dark">1:1 Technik</span>
+                            <div class="flex justify-between items-baseline text-base sm:text-lg group cursor-pointer" onclick="selectAndScrollToService('neu-1-1')">
+                                <span class="font-medium text-brand-dark group-hover:text-brand-gold transition-colors">1:1 Technik</span>
                                 <div class="price-leader"></div>
                                 <span class="font-serif font-bold text-xl text-brand-dark">55 €</span>
                             </div>
 
-                            <div class="flex justify-between items-baseline text-base sm:text-lg">
-                                <span class="font-medium text-brand-dark">Volumen 2D - 4D</span>
+                            <div class="flex justify-between items-baseline text-base sm:text-lg group cursor-pointer" onclick="selectAndScrollToService('neu-volumen')">
+                                <span class="font-medium text-brand-dark group-hover:text-brand-gold transition-colors">Volumen 2D - 4D</span>
                                 <div class="price-leader"></div>
                                 <span class="font-serif font-bold text-xl text-brand-dark">65 €</span>
                             </div>
 
-                            <div class="flex justify-between items-baseline text-base sm:text-lg">
-                                <span class="font-medium text-brand-dark">Mega Volumen 5D - 8D</span>
+                            <div class="flex justify-between items-baseline text-base sm:text-lg group cursor-pointer" onclick="selectAndScrollToService('neu-mega-volumen')">
+                                <span class="font-medium text-brand-dark group-hover:text-brand-gold transition-colors">Mega Volumen 5D - 8D</span>
                                 <div class="price-leader"></div>
                                 <span class="font-serif font-bold text-xl text-brand-dark">80 €</span>
                             </div>
@@ -692,14 +687,14 @@
                             </h4>
 
                             <div class="space-y-3">
-                                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                                    <span class="text-brand-truffle">Bis 2 Wochen</span>
+                                <div class="flex justify-between items-baseline text-sm sm:text-base group cursor-pointer" onclick="selectAndScrollToService('refill-1-1-vol-2w')">
+                                    <span class="text-brand-truffle group-hover:text-brand-gold transition-colors">Bis 2 Wochen</span>
                                     <div class="price-leader"></div>
                                     <span class="font-serif font-bold text-lg text-brand-dark">30 €</span>
                                 </div>
 
-                                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                                    <span class="text-brand-truffle">Bis 3 Wochen</span>
+                                <div class="flex justify-between items-baseline text-sm sm:text-base group cursor-pointer" onclick="selectAndScrollToService('refill-1-1-vol-3w')">
+                                    <span class="text-brand-truffle group-hover:text-brand-gold transition-colors">Bis 3 Wochen</span>
                                     <div class="price-leader"></div>
                                     <span class="font-serif font-bold text-lg text-brand-dark">40 €</span>
                                 </div>
@@ -713,14 +708,14 @@
                             </h4>
 
                             <div class="space-y-3">
-                                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                                    <span class="text-brand-truffle">Bis 2 Wochen</span>
+                                <div class="flex justify-between items-baseline text-sm sm:text-base group cursor-pointer" onclick="selectAndScrollToService('refill-mega-2w')">
+                                    <span class="text-brand-truffle group-hover:text-brand-gold transition-colors">Bis 2 Wochen</span>
                                     <div class="price-leader"></div>
                                     <span class="font-serif font-bold text-lg text-brand-dark">40 €</span>
                                 </div>
 
-                                <div class="flex justify-between items-baseline text-sm sm:text-base">
-                                    <span class="text-brand-truffle">Bis 3 Wochen</span>
+                                <div class="flex justify-between items-baseline text-sm sm:text-base group cursor-pointer" onclick="selectAndScrollToService('refill-mega-3w')">
+                                    <span class="text-brand-truffle group-hover:text-brand-gold transition-colors">Bis 3 Wochen</span>
                                     <div class="price-leader"></div>
                                     <span class="font-serif font-bold text-lg text-brand-dark">50 €</span>
                                 </div>
@@ -741,7 +736,6 @@
             </div>
         </section>
 
-        <!-- ÜBER MICH SECTION -->
         <section id="ueber-mich" class="py-16 md:py-24 max-w-6xl mx-auto px-4 sm:px-6">
             <div class="flex flex-col md:flex-row items-center gap-12 lg:gap-16">
                 
@@ -798,7 +792,6 @@
             </div>
         </section>
 
-        <!-- LOCATION & ANFAHRT SECTION -->
         <section id="kontakt" class="border-t border-brand-gold/20 bg-brand-base/40 py-16">
             <div class="max-w-4xl mx-auto px-4 text-center">
                 <div class="inline-flex justify-center items-center w-14 h-14 rounded-full gold-gradient-bg text-brand-dark mb-5 shadow-sm">
@@ -827,7 +820,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="bg-brand-dark text-[#F5EFEB] pt-16 pb-8 border-t border-brand-gold/30">
         <div class="max-w-6xl mx-auto px-4 sm:px-6">
             
@@ -840,7 +832,7 @@
                         <span>0178 4537636</span>
                     </p>
                     <p class="mb-2 flex items-center justify-center md:justify-start gap-2 text-xs text-brand-cream/80">
-                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                        <svg class="w-4 h-4 text-brand-gold fill-current" viewBox="0 0 24 24"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.89 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                         <a href="mailto:alisa.prykhodko07@gmail.com" class="hover:underline hover:text-brand-goldLight">alisa.prykhodko07@gmail.com</a>
                     </p>
                 </div>
@@ -861,7 +853,7 @@
                         Nutze unser kostenloses Online-Buchungssystem oben oder kontaktiere mich unkompliziert via WhatsApp.
                     </p>
                     <div class="mt-3">
-                        <button onclick="openAdminModal()" class="text-[11px] text-brand-goldLight/70 hover:text-brand-gold underline flex items-center justify-center md:justify-start gap-1">
+                        <button type="button" onclick="openAdminModal()" class="text-[11px] text-brand-goldLight/70 hover:text-brand-gold underline flex items-center justify-center md:justify-start gap-1">
                             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                             <span>Studio Management Login</span>
                         </button>
@@ -883,9 +875,9 @@
 
             <!-- Legal Links Bottom -->
             <div class="flex flex-wrap justify-center gap-6 text-xs text-brand-cream/70">
-                <button onclick="openModal('modal-impressum')" class="hover:text-brand-goldLight transition-colors">Impressum</button>
-                <button onclick="openModal('modal-datenschutz')" class="hover:text-brand-goldLight transition-colors">Datenschutz</button>
-                <button onclick="openModal('modal-cookies')" class="hover:text-brand-goldLight transition-colors">Cookie-Hinweis</button>
+                <button type="button" onclick="openModal('modal-impressum')" class="hover:text-brand-goldLight transition-colors">Impressum</button>
+                <button type="button" onclick="openModal('modal-datenschutz')" class="hover:text-brand-goldLight transition-colors">Datenschutz</button>
+                <button type="button" onclick="openModal('modal-cookies')" class="hover:text-brand-goldLight transition-colors">Cookie-Hinweis</button>
             </div>
             
             <div class="text-center text-[11px] text-brand-cream/40 mt-5">
@@ -894,13 +886,12 @@
         </div>
     </footer>
 
-    <!-- MODALS -->
 
     <!-- Impressum Modal -->
     <div id="modal-impressum" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-impressum')"></div>
         <div class="relative bg-brand-canvas text-brand-truffle w-full max-w-2xl max-h-[85vh] overflow-y-auto rounded-3xl shadow-2xl p-6 sm:p-8 border border-brand-gold/40">
-            <button onclick="closeModal('modal-impressum')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
+            <button type="button" onclick="closeModal('modal-impressum')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
                 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
             </button>
             <h2 class="text-3xl font-serif mb-6 text-brand-dark">Impressum</h2>
@@ -927,7 +918,7 @@
     <div id="modal-datenschutz" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-datenschutz')"></div>
         <div class="relative bg-brand-canvas text-brand-truffle w-full max-w-3xl max-h-[85vh] overflow-y-auto rounded-3xl shadow-2xl p-6 sm:p-8 border border-brand-gold/40">
-            <button onclick="closeModal('modal-datenschutz')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
+            <button type="button" onclick="closeModal('modal-datenschutz')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
                 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
             </button>
             <h2 class="text-3xl font-serif mb-6 text-brand-dark">Datenschutzerklärung</h2>
@@ -948,7 +939,7 @@
     <div id="modal-cookies" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeModal('modal-cookies')"></div>
         <div class="relative bg-brand-canvas text-brand-truffle w-full max-w-md max-h-[80vh] overflow-y-auto rounded-3xl shadow-2xl p-6 sm:p-8 text-center border border-brand-gold/40">
-            <button onclick="closeModal('modal-cookies')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
+            <button type="button" onclick="closeModal('modal-cookies')" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
                 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
             </button>
             <div class="w-12 h-12 rounded-full gold-gradient-bg text-brand-dark flex items-center justify-center mx-auto mb-4">
@@ -958,7 +949,7 @@
             <p class="text-xs sm:text-sm text-brand-taupe mb-6 leading-relaxed">
                 Diese Website verwendet <strong>keine Tracking-, Analyse- oder Marketing-Cookies</strong>. Alle Buchungen werden sicher und direkt ohne fremde Tracking-Anbieter abgewickelt.
             </p>
-            <button onclick="closeModal('modal-cookies')" class="gold-gradient-bg text-brand-dark py-3 px-6 rounded-full font-semibold text-xs tracking-wide shadow-sm w-full">
+            <button type="button" onclick="closeModal('modal-cookies')" class="gold-gradient-bg text-brand-dark py-3 px-6 rounded-full font-semibold text-xs tracking-wide shadow-sm w-full">
                 Verstanden
             </button>
         </div>
@@ -968,7 +959,7 @@
     <div id="modal-admin" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
         <div class="absolute inset-0 bg-black/70 modal-overlay" onclick="closeAdminModal()"></div>
         <div class="relative bg-brand-card text-brand-truffle w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-3xl shadow-2xl p-6 sm:p-8 border border-brand-gold">
-            <button onclick="closeAdminModal()" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
+            <button type="button" onclick="closeAdminModal()" class="absolute top-5 right-5 text-brand-taupe hover:text-brand-dark">
                 <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24"><path d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
             </button>
 
@@ -978,12 +969,14 @@
                     <svg class="w-7 h-7 fill-current" viewBox="0 0 24 24"><path d="M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"/></svg>
                 </div>
                 <h3 class="text-xl font-serif text-brand-dark mb-1">Studio Login</h3>
-                <p class="text-xs text-brand-taupe mb-4">PIN eingeben (Standard: 1234)</p>
-                <input type="password" id="admin-pin-input" placeholder="PIN" class="w-full text-center text-lg tracking-widest px-4 py-2.5 rounded-xl border border-brand-gold/40 mb-3 focus:outline-none focus:border-brand-gold">
-                <button onclick="checkAdminPin()" class="w-full gold-gradient-bg text-brand-dark py-2.5 rounded-xl font-bold text-xs">
-                    Einloggen
-                </button>
-                <p id="admin-pin-error" class="text-xs text-red-500 mt-2 hidden">Falsche PIN. Bitte erneut versuchen.</p>
+                <p class="text-xs text-brand-taupe mb-4">PIN eingeben (Standard: <strong>1234</strong>)</p>
+                <form onsubmit="handleAdminLoginSubmit(event)">
+                    <input type="password" id="admin-pin-input" placeholder="PIN" maxlength="8" class="w-full text-center text-lg tracking-widest px-4 py-2.5 rounded-xl border border-brand-gold/40 mb-3 focus:outline-none focus:border-brand-gold">
+                    <button type="submit" class="w-full gold-gradient-bg text-brand-dark py-2.5 rounded-xl font-bold text-xs">
+                        Einloggen
+                    </button>
+                </form>
+                <p id="admin-pin-error" class="text-xs text-red-500 mt-2 hidden">Falsche PIN (Standard: 1234). Bitte erneut versuchen.</p>
             </div>
 
             <!-- Admin Dashboard Content -->
@@ -994,11 +987,11 @@
                         <p class="text-xs text-brand-taupe">ALISA BEAUTY LAB • Buchungen & Termine verwalten</p>
                     </div>
                     <div class="flex items-center gap-2">
-                        <button onclick="exportBookingsToCSV()" class="bg-brand-truffle text-[#FAF6F0] px-4 py-2 rounded-xl text-xs font-semibold hover:bg-brand-dark transition-colors flex items-center gap-1.5">
+                        <button type="button" onclick="exportBookingsToCSV()" class="bg-brand-truffle text-[#FAF6F0] px-4 py-2 rounded-xl text-xs font-semibold hover:bg-brand-dark transition-colors flex items-center gap-1.5">
                             <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24"><path d="M19 9h-4V3H9v6H5l7 7 7-7zM5 18v2h14v-2H5z"/></svg>
                             CSV / Excel Export
                         </button>
-                        <button onclick="lockAdmin()" class="bg-gray-200 text-brand-dark px-3 py-2 rounded-xl text-xs hover:bg-gray-300">
+                        <button type="button" onclick="lockAdmin()" class="bg-gray-200 text-brand-dark px-3 py-2 rounded-xl text-xs hover:bg-gray-300">
                             Abmelden
                         </button>
                     </div>
@@ -1026,7 +1019,7 @@
 
                 <div class="mt-6 pt-4 border-t border-brand-gold/20 flex justify-between items-center text-xs text-brand-taupe">
                     <span id="admin-count-label">0 Buchungen hinterlegt</span>
-                    <button onclick="clearDemoBookings()" class="text-red-500 hover:underline">
+                    <button type="button" onclick="requestResetBookings()" class="text-red-500 hover:underline">
                         Buchungsdaten zurücksetzen
                     </button>
                 </div>
@@ -1035,7 +1028,26 @@
         </div>
     </div>
 
-    <!-- LOGIK & DATENBANK DES BUCHUNGSSYSTEMS -->
+    <!-- Benutzerdefinierter Bestätigungs-Dialog (ersetzt browser confirm) -->
+    <div id="custom-confirm-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/60 modal-overlay" onclick="closeConfirmModal()"></div>
+        <div class="relative bg-brand-card text-brand-truffle w-full max-w-sm rounded-2xl p-6 border border-brand-gold/50 shadow-2xl text-center">
+            <h4 id="confirm-modal-title" class="font-serif text-lg font-bold text-brand-dark mb-2">Bestätigung erforderlich</h4>
+            <p id="confirm-modal-message" class="text-xs text-brand-taupe mb-6 leading-relaxed">Möchtest du diese Aktion wirklich durchführen?</p>
+            <div class="flex gap-3 justify-center">
+                <button type="button" id="confirm-modal-cancel" onclick="closeConfirmModal()" class="px-4 py-2 rounded-xl border border-brand-gold/40 text-xs font-semibold hover:bg-brand-canvas transition-colors">
+                    Abbrechen
+                </button>
+                <button type="button" id="confirm-modal-ok" class="px-4 py-2 rounded-xl bg-red-600 text-white text-xs font-semibold hover:bg-red-700 transition-colors">
+                    Bestätigen
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Notification Container (ersetzt browser alerts) -->
+    <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
     <script>
         // --- 1. DATEN: LEISTUNGEN & PREISE (Exakt nach Vorlage & Bild) ---
         const SERVICES_DATA = [
@@ -1119,55 +1131,71 @@
             { id: 'remove', title: 'Altes Fremdset ablösen', price: 15, duration: 25 },
         ];
 
-        // --- 2. BUCHUNGS-STATE ---
+        // --- 2. APPLIKATIONS-STATE ---
         let currentStep = 1;
+        let currentCategoryFilter = 'all';
         let selectedService = null;
         let selectedAddons = [];
         let selectedDate = null; // YYYY-MM-DD
         let selectedTime = null; // HH:MM
-        let calendarYear = new Date().getFullYear();
-        let calendarMonth = new Date().getMonth(); // 0-indexed
+        
+        const now = new Date();
+        let calendarYear = now.getFullYear();
+        let calendarMonth = now.getMonth();
         let completedBooking = null;
 
-        // Lokaler Speicher für Buchungen (kein kostenpflichtiges Planity nötig)
-        const STORAGE_KEY = 'alisa_studio_bookings_v2';
+        // In-Memory Speicher für Studiobuchungen (kein localStorage-Konflikt in iframes)
+        let inMemoryBookings = [
+            {
+                code: 'ALISA-2026-1042',
+                name: 'Laura Schmidt',
+                phone: '0171 2345678',
+                email: 'laura.s@example.de',
+                serviceId: 'neu-volumen',
+                serviceTitle: 'Neuanlage: Volumen 2D - 4D',
+                addons: ['Keratin / Lash Botox Pflege'],
+                date: '2026-10-14',
+                time: '13:30',
+                duration: 145,
+                price: 75,
+                status: 'Bestätigt',
+                notes: 'Natürliches Cat-Eye gewünscht',
+                createdAt: '2026-10-06'
+            },
+            {
+                code: 'ALISA-2026-1043',
+                name: 'Sophie Wagner',
+                phone: '0176 9876543',
+                email: 'sophie.w@beispiel.de',
+                serviceId: 'wimpernlifting',
+                serviceTitle: 'Wimpernlifting',
+                addons: ['Wimpern färben'],
+                date: '2026-10-15',
+                time: '11:00',
+                duration: 75,
+                price: 40,
+                status: 'Bestätigt',
+                notes: 'Kontaktlinsenträgerin',
+                createdAt: '2026-10-06'
+            }
+        ];
+
         function getBookings() {
-            try {
-                const stored = localStorage.getItem(STORAGE_KEY);
-                if (stored) return JSON.parse(stored);
-            } catch (e) {}
-            // Standard-Demobuchungen zur Veranschaulichung
-            const initial = [
-                {
-                    code: 'ALISA-2026-1042',
-                    name: 'Laura Schmidt',
-                    phone: '0171 2345678',
-                    email: 'laura.s@example.de',
-                    serviceId: 'neu-volumen',
-                    serviceTitle: 'Neuanlage: Volumen 2D - 4D',
-                    date: '2026-10-14',
-                    time: '14:00',
-                    price: 65,
-                    status: 'Bestätigt',
-                    createdAt: '2026-10-06'
-                }
-            ];
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(initial));
-            return initial;
+            return inMemoryBookings;
         }
 
         function saveBookings(list) {
-            localStorage.setItem(STORAGE_KEY, JSON.stringify(list));
+            inMemoryBookings = list;
         }
 
-        // --- 3. SERVICES RENDERN & FILTERN ---
-        function renderServices(filter = 'all') {
+        function renderServices() {
             const container = document.getElementById('services-list');
+            if (!container) return;
             container.innerHTML = '';
 
-            const filtered = filter === 'all' 
+            const filtered = currentCategoryFilter === 'all' 
                 ? SERVICES_DATA 
-                : SERVICES_DATA.filter(s => s.category === filter);
+                : SERVICES_DATA.filter(s => s.category === currentCategoryFilter);
 
             filtered.forEach(service => {
                 const isSelected = selectedService && selectedService.id === service.id;
@@ -1202,8 +1230,22 @@
             updateStep1State();
         }
 
+        function setCategoryFilter(category) {
+            currentCategoryFilter = category;
+            const buttons = document.querySelectorAll('#category-filter-buttons .cat-pill');
+            buttons.forEach(btn => {
+                if (btn.getAttribute('data-filter') === category) {
+                    btn.className = "cat-pill px-3 py-1.5 rounded-full bg-brand-truffle text-white font-medium transition-all";
+                } else {
+                    btn.className = "cat-pill px-3 py-1.5 rounded-full bg-brand-cream text-brand-truffle hover:bg-brand-gold/30 font-medium transition-all";
+                }
+            });
+            renderServices();
+        }
+
         function renderAddons() {
             const container = document.getElementById('addons-list');
+            if (!container) return;
             container.innerHTML = '';
 
             ADDONS_DATA.forEach(addon => {
@@ -1211,7 +1253,7 @@
                 const btn = document.createElement('div');
                 btn.className = `p-3 rounded-xl border cursor-pointer text-xs transition-all flex items-center justify-between ${
                     isSelected 
-                        ? 'bg-brand-truffle text-[#FAF6F0] border-brand-truffle' 
+                        ? 'bg-brand-truffle text-[#FAF6F0] border-brand-truffle shadow-sm' 
                         : 'bg-brand-canvas/40 border-brand-gold/25 text-brand-dark hover:border-brand-gold'
                 }`;
                 btn.onclick = () => toggleAddon(addon);
@@ -1226,19 +1268,23 @@
             });
         }
 
-        function filterServiceCategory(cat) {
-            document.querySelectorAll('.cat-pill').forEach(btn => {
-                btn.classList.remove('bg-brand-truffle', 'text-white', 'active');
-                btn.classList.add('bg-brand-cream', 'text-brand-truffle');
-            });
-            event.target.classList.remove('bg-brand-cream', 'text-brand-truffle');
-            event.target.classList.add('bg-brand-truffle', 'text-white', 'active');
-            renderServices(cat);
-        }
-
         function selectService(service) {
             selectedService = service;
-            renderServices(document.querySelector('.cat-pill.active')?.getAttribute('onclick')?.match(/'([^']+)'/)?.[1] || 'all');
+            renderServices();
+        }
+
+        function selectAndScrollToService(serviceId) {
+            const s = SERVICES_DATA.find(item => item.id === serviceId);
+            if (s) {
+                selectedService = s;
+                currentCategoryFilter = 'all';
+                setCategoryFilter('all');
+                renderServices();
+                goToStep(1);
+                const section = document.getElementById('buchen');
+                if (section) section.scrollIntoView({ behavior: 'smooth' });
+                showToast(`„${s.title}“ wurde ausgewählt.`, 'info');
+            }
         }
 
         function toggleAddon(addon) {
@@ -1258,10 +1304,12 @@
             const nextBtn = document.getElementById('btn-to-step-2');
 
             if (!selectedService) {
-                summaryTitle.textContent = 'Bitte wähle eine Behandlung aus';
-                summaryPrice.textContent = '';
-                nextBtn.disabled = true;
-                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                if (summaryTitle) summaryTitle.textContent = 'Bitte wähle eine Behandlung aus';
+                if (summaryPrice) summaryPrice.textContent = '';
+                if (nextBtn) {
+                    nextBtn.disabled = true;
+                    nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+                }
                 return;
             }
 
@@ -1272,33 +1320,38 @@
                 totalDur += a.duration;
             });
 
-            summaryTitle.textContent = `${selectedService.title} ${selectedAddons.length > 0 ? `(+ ${selectedAddons.length} Extra)` : ''}`;
-            summaryPrice.textContent = `| ${totalPrice} € (ca. ${totalDur} Min.)`;
+            if (summaryTitle) {
+                summaryTitle.textContent = `${selectedService.title} ${selectedAddons.length > 0 ? `(+ ${selectedAddons.length} Extra)` : ''}`;
+            }
+            if (summaryPrice) {
+                summaryPrice.textContent = `| ${totalPrice} € (ca. ${totalDur} Min.)`;
+            }
 
-            nextBtn.disabled = false;
-            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            if (nextBtn) {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
         }
 
-        // --- 4. STEP NAVIGATION ---
         function goToStep(step) {
             currentStep = step;
             document.querySelectorAll('.booking-step').forEach(el => el.classList.add('hidden'));
-            document.getElementById(`booking-step-${step}`).classList.remove('hidden');
+            
+            const target = document.getElementById(`booking-step-${step}`);
+            if (target) target.classList.remove('hidden');
 
             // Stepper Nodes hervorheben
             for (let i = 1; i <= 4; i++) {
                 const node = document.querySelector(`#step-node-${i} div`);
                 const label = document.querySelector(`#step-node-${i} span`);
-                if (i <= step) {
-                    node.classList.remove('bg-brand-cream', 'text-brand-taupe');
-                    node.classList.add('bg-brand-gold', 'text-brand-dark');
-                    label.classList.add('text-brand-dark');
-                    label.classList.remove('text-brand-taupe');
-                } else {
-                    node.classList.add('bg-brand-cream', 'text-brand-taupe');
-                    node.classList.remove('bg-brand-gold', 'text-brand-dark');
-                    label.classList.remove('text-brand-dark');
-                    label.classList.add('text-brand-taupe');
+                if (node && label) {
+                    if (i <= step) {
+                        node.className = 'w-9 h-9 rounded-full bg-brand-gold text-brand-dark font-bold text-sm flex items-center justify-center shadow-md border-2 border-brand-canvas transition-all';
+                        label.className = 'text-xs mt-1.5 font-medium text-brand-dark';
+                    } else {
+                        node.className = 'w-9 h-9 rounded-full bg-brand-cream text-brand-taupe font-bold text-sm flex items-center justify-center border-2 border-brand-canvas transition-all';
+                        label.className = 'text-xs mt-1.5 font-medium text-brand-taupe';
+                    }
                 }
             }
 
@@ -1308,11 +1361,10 @@
                 updateStep3Summary();
             }
 
-            // Sanft zum Buchungsbereich scrollen
-            document.getElementById('buchen').scrollIntoView({ behavior: 'smooth' });
+            const bookingSec = document.getElementById('buchen');
+            if (bookingSec) bookingSec.scrollIntoView({ behavior: 'smooth' });
         }
 
-        // --- 5. KALENDER- & ZEITSLOT LOGIK ---
         const MONTH_NAMES = [
             'Januar', 'Februar', 'März', 'April', 'Mai', 'Juni',
             'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember'
@@ -1320,12 +1372,17 @@
 
         function initCalendar() {
             renderCalendar(calendarYear, calendarMonth);
+            if (selectedDate) {
+                renderTimeSlots(selectedDate);
+            }
         }
 
         function prevMonth() {
-            const today = new Date();
-            // Nicht weiter zurück als aktueller Monat
-            if (calendarYear === today.getFullYear() && calendarMonth <= today.getMonth()) return;
+            const current = new Date();
+            if (calendarYear === current.getFullYear() && calendarMonth <= current.getMonth()) {
+                showToast('Termine vor dem aktuellen Monat können nicht gebucht werden.', 'info');
+                return;
+            }
             
             calendarMonth--;
             if (calendarMonth < 0) {
@@ -1345,8 +1402,11 @@
         }
 
         function renderCalendar(year, month) {
-            document.getElementById('calendar-month-year').textContent = `${MONTH_NAMES[month]} ${year}`;
+            const label = document.getElementById('calendar-month-year');
+            if (label) label.textContent = `${MONTH_NAMES[month]} ${year}`;
+            
             const grid = document.getElementById('calendar-days-grid');
+            if (!grid) return;
             grid.innerHTML = '';
 
             const firstDayIndex = new Date(year, month, 1).getDay(); // 0 = Sonntag, 1 = Montag...
@@ -1361,10 +1421,11 @@
             }
 
             const today = new Date();
-            today.setHours(0,0,0,0);
+            today.setHours(0, 0, 0, 0);
 
             for (let day = 1; day <= daysInMonth; day++) {
                 const dateObj = new Date(year, month, day);
+                dateObj.setHours(0, 0, 0, 0);
                 const dayOfWeek = dateObj.getDay(); // 0 = Sonntag
                 const isPast = dateObj < today;
                 const isSunday = dayOfWeek === 0;
@@ -1394,21 +1455,26 @@
         function selectCalendarDate(dateStr, dateObj) {
             selectedDate = dateStr;
             selectedTime = null; // Zeit zurücksetzen
-            document.getElementById('btn-to-step-3').disabled = true;
-            document.getElementById('btn-to-step-3').classList.add('opacity-50', 'cursor-not-allowed');
+            
+            const nextBtn = document.getElementById('btn-to-step-3');
+            if (nextBtn) {
+                nextBtn.disabled = true;
+                nextBtn.classList.add('opacity-50', 'cursor-not-allowed');
+            }
 
             const formatted = dateObj.toLocaleDateString('de-DE', { weekday: 'long', day: '2-digit', month: 'long', year: 'numeric' });
-            document.getElementById('selected-date-display').textContent = `Ausgewählt: ${formatted}`;
+            const display = document.getElementById('selected-date-display');
+            if (display) display.textContent = `Ausgewählt: ${formatted}`;
 
             renderTimeSlots(dateStr);
             renderCalendar(calendarYear, calendarMonth);
         }
 
-        // Standard-Zeitslots für das Studio
         const DAILY_SLOTS = ['09:00', '11:00', '13:30', '15:30', '17:30'];
 
         function renderTimeSlots(dateStr) {
             const container = document.getElementById('time-slots-container');
+            if (!container) return;
             container.innerHTML = '';
 
             const allBookings = getBookings();
@@ -1447,31 +1513,46 @@
 
         function selectTimeSlot(slot) {
             selectedTime = slot;
-            renderTimeSlots(selectedDate);
+            if (selectedDate) {
+                renderTimeSlots(selectedDate);
+            }
 
             const nextBtn = document.getElementById('btn-to-step-3');
-            nextBtn.disabled = false;
-            nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            if (nextBtn) {
+                nextBtn.disabled = false;
+                nextBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
         }
 
-        // --- 6. STEP 3 SUMMARY & SUBMISSION ---
         function updateStep3Summary() {
-            let total = selectedService ? selectedService.price : 0;
+            if (!selectedService || !selectedDate || !selectedTime) return;
+
+            let total = selectedService.price;
             selectedAddons.forEach(a => total += a.price);
 
-            document.getElementById('summary-total-price').textContent = `${total} €`;
+            const priceEl = document.getElementById('summary-total-price');
+            if (priceEl) priceEl.textContent = `${total} €`;
             
             const addonNames = selectedAddons.map(a => a.title).join(', ');
-            document.getElementById('summary-treatment-name').textContent = 
-                selectedService.title + (addonNames ? ` (+ ${addonNames})` : '');
+            const nameEl = document.getElementById('summary-treatment-name');
+            if (nameEl) {
+                nameEl.textContent = selectedService.title + (addonNames ? ` (+ ${addonNames})` : '');
+            }
 
             const dateParts = selectedDate.split('-');
             const displayDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
-            document.getElementById('summary-datetime').textContent = `${displayDate} um ${selectedTime} Uhr`;
+            const dtEl = document.getElementById('summary-datetime');
+            if (dtEl) dtEl.textContent = `${displayDate} um ${selectedTime} Uhr`;
         }
 
         function submitBooking(event) {
             event.preventDefault();
+
+            if (!selectedService || !selectedDate || !selectedTime) {
+                showToast('Bitte wähle zuerst Behandlung, Datum und Uhrzeit aus.', 'warning');
+                goToStep(1);
+                return;
+            }
 
             const name = document.getElementById('cust-name').value.trim();
             const phone = document.getElementById('cust-phone').value.trim();
@@ -1506,88 +1587,97 @@
                 createdAt: new Date().toISOString()
             };
 
-            // Speichern im Browser
             const bookings = getBookings();
             bookings.push(newBooking);
             saveBookings(bookings);
 
             completedBooking = newBooking;
-
-            // Step 4 vorbereiten
             displayConfirmation(newBooking);
             goToStep(4);
+            showToast(`Termin ${newBooking.code} erfolgreich reserviert!`, 'success');
         }
 
         function displayConfirmation(b) {
-            document.getElementById('confirm-code').textContent = b.code;
-            document.getElementById('confirm-name').textContent = b.name;
+            const codeEl = document.getElementById('confirm-code');
+            if (codeEl) codeEl.textContent = b.code;
+
+            const nameEl = document.getElementById('confirm-name');
+            if (nameEl) nameEl.textContent = b.name;
             
             const addonTxt = b.addons && b.addons.length > 0 ? ` (+ ${b.addons.join(', ')})` : '';
-            document.getElementById('confirm-treatment').textContent = b.serviceTitle + addonTxt;
+            const treatEl = document.getElementById('confirm-treatment');
+            if (treatEl) treatEl.textContent = b.serviceTitle + addonTxt;
 
             const dateParts = b.date.split('-');
             const displayDate = `${dateParts[2]}.${dateParts[1]}.${dateParts[0]}`;
-            document.getElementById('confirm-datetime').textContent = `${displayDate} um ${b.time} Uhr`;
-            document.getElementById('confirm-price').textContent = `${b.price} €`;
+            const dtEl = document.getElementById('confirm-datetime');
+            if (dtEl) dtEl.textContent = `${displayDate} um ${b.time} Uhr`;
+
+            const priceEl = document.getElementById('confirm-price');
+            if (priceEl) priceEl.textContent = `${b.price} €`;
 
             // WhatsApp Button Link mit vorformulierter Nachricht
-            const waText = encodeURIComponent(
-                `Hallo Alisa, ich habe gerade über deine Website einen Termin reserviert!
+            const messageParts = [
+                'Hallo Alisa, ich habe gerade über deine Website einen Termin reserviert!',
+                '',
+                `✨ Buchungscode: ${b.code}`,
+                `👤 Name: ${b.name}`,
+                `💅 Behandlung: ${b.serviceTitle}${addonTxt}`,
+                `📅 Termin: ${displayDate} um ${b.time} Uhr`,
+                `💶 Betrag: ${b.price} € vor Ort`,
+                b.notes ? `📝 Notiz: ${b.notes}` : '',
+                '',
+                'Ich freue mich auf den Termin!'
+            ].filter(line => line !== null);
 
-` +
-                `✨ Buchungscode: ${b.code}
-` +
-                `👤 Name: ${b.name}
-` +
-                `💅 Behandlung: ${b.serviceTitle}${addonTxt}
-` +
-                `📅 Termin: ${displayDate} um ${b.time} Uhr
-` +
-                `💶 Preis: ${b.price} €
-` +
-                (b.notes ? `📝 Notiz: ${b.notes}
-` : '') +
-                `
-Ich freue mich auf den Termin!`
-            );
-            document.getElementById('btn-whatsapp-confirm').href = `https://wa.me/491784537636?text=${waText}`;
+            const waText = encodeURIComponent(messageParts.join('\n'));
+            const waBtn = document.getElementById('btn-whatsapp-confirm');
+            if (waBtn) {
+                waBtn.href = `https://wa.me/491784537636?text=${waText}`;
+            }
         }
 
-        // --- 7. KALENDER-DATEI (.ICS) DOWNLOAD OHNE INTERNET-ABHÄNGIGKEIT ---
         function downloadICSCalendar() {
-            if (!completedBooking) return;
+            if (!completedBooking) {
+                showToast('Keine aktive Buchung gefunden.', 'warning');
+                return;
+            }
             const b = completedBooking;
             
-            // Datum & Uhrzeit für ICS formatieren (z. B. 20261014T140000)
-            const [year, month, day] = b.date.split('-');
-            const [hour, minute] = b.time.split(':');
-            
-            const startStr = `${year}${month}${day}T${hour}${minute}00`;
-            
-            // Endzeit basierend auf Dauer berechnen
-            const endDate = new Date(year, month - 1, day, parseInt(hour), parseInt(minute) + b.duration);
-            const endYear = endDate.getFullYear();
-            const endMonth = String(endDate.getMonth() + 1).padStart(2, '0');
-            const endDay = String(endDate.getDate()).padStart(2, '0');
-            const endHour = String(endDate.getHours()).padStart(2, '0');
-            const endMinute = String(endDate.getMinutes()).padStart(2, '0');
-            const endStr = `${endYear}${endMonth}${endDay}T${endHour}${endMinute}00`;
+            const dateParts = b.date.split('-');
+            const year = parseInt(dateParts[0], 10);
+            const month = parseInt(dateParts[1], 10);
+            const day = parseInt(dateParts[2], 10);
 
-            const icsContent = 
-`BEGIN:VCALENDAR
-VERSION:2.0
-PRODID:-//ALISA BEAUTY LAB//Terminbuchung//DE
-CALSCALE:GREGORIAN
-BEGIN:VEVENT
-SUMMARY:Termin: ${b.serviceTitle} | ALISA BEAUTY LAB
-DESCRIPTION:Buchungscode: ${b.code}\nBehandlung: ${b.serviceTitle}\nStudio: ALISA BEAUTY LAB (Alisa Prykhodko)\nTelefon: 0178 4537636
-LOCATION:Bürgermeister-Sommer-Straße 34\, 91757 Treuchtlingen
-DTSTART:${startStr}
-DTEND:${endStr}
-STATUS:CONFIRMED
-END:VEVENT
-END:VCALENDAR`;
+            const timeParts = b.time.split(':');
+            const hour = parseInt(timeParts[0], 10);
+            const minute = parseInt(timeParts[1], 10);
+            
+            const pad = num => String(num).padStart(2, '0');
+            const startStr = `${year}${pad(month)}${pad(day)}T${pad(hour)}${pad(minute)}00`;
+            
+            const endDate = new Date(year, month - 1, day, hour, minute + (b.duration || 60));
+            const endStr = `${endDate.getFullYear()}${pad(endDate.getMonth() + 1)}${pad(endDate.getDate())}T${pad(endDate.getHours())}${pad(endDate.getMinutes())}00`;
 
+            const icsLines = [
+                'BEGIN:VCALENDAR',
+                'VERSION:2.0',
+                'PRODID:-//ALISA BEAUTY LAB//Terminbuchung//DE',
+                'CALSCALE:GREGORIAN',
+                'METHOD:PUBLISH',
+                'BEGIN:VEVENT',
+                `UID:${b.code}@alisabeautylab.de`,
+                `SUMMARY:Termin: ${b.serviceTitle} | ALISA BEAUTY LAB`,
+                `DESCRIPTION:Buchungscode: ${b.code}\\nBehandlung: ${b.serviceTitle}\\nStudio: ALISA BEAUTY LAB (Alisa Prykhodko)\\nTelefon: 0178 4537636`,
+                'LOCATION:Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen',
+                `DTSTART:${startStr}`,
+                `DTEND:${endStr}`,
+                'STATUS:CONFIRMED',
+                'END:VEVENT',
+                'END:VCALENDAR'
+            ];
+
+            const icsContent = icsLines.join('\r\n');
             const blob = new Blob([icsContent], { type: 'text/calendar;charset=utf-8' });
             const link = document.createElement('a');
             link.href = window.URL.createObjectURL(blob);
@@ -1595,6 +1685,8 @@ END:VCALENDAR`;
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            window.URL.revokeObjectURL(link.href);
+            showToast('Kalender-Datei (.ics) wurde heruntergeladen.', 'success');
         }
 
         function resetBookingForm() {
@@ -1603,33 +1695,57 @@ END:VCALENDAR`;
             selectedDate = null;
             selectedTime = null;
             completedBooking = null;
-            document.getElementById('booking-client-form').reset();
-            renderServices('all');
+            const form = document.getElementById('booking-client-form');
+            if (form) form.reset();
+            renderServices();
             goToStep(1);
         }
 
-        // --- 8. STUDIO ADMIN MANAGEMENT LOGIK (PIN: 1234) ---
         function openAdminModal() {
-            document.getElementById('modal-admin').classList.remove('hidden');
-            document.getElementById('admin-pin-screen').classList.remove('hidden');
-            document.getElementById('admin-dashboard-screen').classList.add('hidden');
-            document.getElementById('admin-pin-input').value = '';
-            document.getElementById('admin-pin-error').classList.add('hidden');
-            setTimeout(() => document.getElementById('admin-pin-input').focus(), 100);
+            const modal = document.getElementById('modal-admin');
+            if (modal) modal.classList.remove('hidden');
+            
+            const pinScreen = document.getElementById('admin-pin-screen');
+            if (pinScreen) pinScreen.classList.remove('hidden');
+            
+            const dashScreen = document.getElementById('admin-dashboard-screen');
+            if (dashScreen) dashScreen.classList.add('hidden');
+            
+            const pinInput = document.getElementById('admin-pin-input');
+            if (pinInput) {
+                pinInput.value = '';
+                setTimeout(() => pinInput.focus(), 100);
+            }
+
+            const errorMsg = document.getElementById('admin-pin-error');
+            if (errorMsg) errorMsg.classList.add('hidden');
         }
 
         function closeAdminModal() {
-            document.getElementById('modal-admin').classList.add('hidden');
+            const modal = document.getElementById('modal-admin');
+            if (modal) modal.classList.add('hidden');
         }
 
-        function checkAdminPin() {
-            const input = document.getElementById('admin-pin-input').value;
-            if (input === '1234') {
-                document.getElementById('admin-pin-screen').classList.add('hidden');
-                document.getElementById('admin-dashboard-screen').classList.remove('hidden');
+        function handleAdminLoginSubmit(e) {
+            e.preventDefault();
+            const input = document.getElementById('admin-pin-input');
+            const errorMsg = document.getElementById('admin-pin-error');
+            if (!input) return;
+
+            if (input.value.trim() === '1234') {
+                const pinScreen = document.getElementById('admin-pin-screen');
+                if (pinScreen) pinScreen.classList.add('hidden');
+                
+                const dashScreen = document.getElementById('admin-dashboard-screen');
+                if (dashScreen) dashScreen.classList.remove('hidden');
+                
+                if (errorMsg) errorMsg.classList.add('hidden');
                 renderAdminBookings();
+                showToast('Studio-Dashboard erfolgreich entsperrt.', 'success');
             } else {
-                document.getElementById('admin-pin-error').classList.remove('hidden');
+                if (errorMsg) errorMsg.classList.remove('hidden');
+                input.value = '';
+                input.focus();
             }
         }
 
@@ -1640,16 +1756,18 @@ END:VCALENDAR`;
         function renderAdminBookings() {
             const bookings = getBookings();
             const tbody = document.getElementById('admin-bookings-tbody');
+            if (!tbody) return;
             tbody.innerHTML = '';
 
-            document.getElementById('admin-count-label').textContent = `${bookings.length} Buchungen gespeichert`;
+            const countLabel = document.getElementById('admin-count-label');
+            if (countLabel) countLabel.textContent = `${bookings.length} Buchungen gespeichert`;
 
             if (bookings.length === 0) {
-                tbody.innerHTML = `<tr><td colspan="7" class="p-6 text-center text-gray-400">Keine Buchungen vorhanden.</td></tr>`;
+                tbody.innerHTML = '<tr><td colspan="7" class="p-6 text-center text-gray-400">Keine Buchungen vorhanden.</td></tr>';
                 return;
             }
 
-            // Nach Datum sortieren (neueste zuerst)
+            // Neueste zuerst
             bookings.slice().reverse().forEach(b => {
                 const tr = document.createElement('tr');
                 tr.className = 'hover:bg-brand-canvas/40 transition-colors';
@@ -1668,8 +1786,8 @@ END:VCALENDAR`;
                         }">${b.status}</span>
                     </td>
                     <td class="p-3 text-right">
-                        <button onclick="toggleBookingStatus('${b.code}')" class="text-xs text-brand-taupe hover:text-brand-dark underline mr-2">Status</button>
-                        <button onclick="deleteBooking('${b.code}')" class="text-xs text-red-500 hover:text-red-700">Löschen</button>
+                        <button type="button" onclick="toggleBookingStatus('${b.code}')" class="text-xs text-brand-taupe hover:text-brand-dark underline mr-2">Status</button>
+                        <button type="button" onclick="requestDeleteBooking('${b.code}')" class="text-xs text-red-500 hover:text-red-700">Löschen</button>
                     </td>
                 `;
                 tbody.appendChild(tr);
@@ -1683,87 +1801,161 @@ END:VCALENDAR`;
                 found.status = found.status === 'Bestätigt' ? 'Storniert' : 'Bestätigt';
                 saveBookings(bookings);
                 renderAdminBookings();
+                showToast(`Status von ${code} auf „${found.status}“ geändert.`, 'info');
             }
         }
 
-        function deleteBooking(code) {
-            if (confirm(`Buchung ${code} wirklich löschen?`)) {
-                let bookings = getBookings();
-                bookings = bookings.filter(b => b.code !== code);
-                saveBookings(bookings);
-                renderAdminBookings();
-            }
+        function requestDeleteBooking(code) {
+            showConfirmDialog(
+                'Buchung löschen',
+                `Möchtest du die Buchung ${code} wirklich dauerhaft aus dem System entfernen?`,
+                () => {
+                    let bookings = getBookings();
+                    bookings = bookings.filter(b => b.code !== code);
+                    saveBookings(bookings);
+                    renderAdminBookings();
+                    showToast(`Buchung ${code} wurde gelöscht.`, 'info');
+                }
+            );
         }
 
-        function clearDemoBookings() {
-            if (confirm('Möchtest du alle Buchungen auf den Ausgangszustand zurücksetzen?')) {
-                localStorage.removeItem(STORAGE_KEY);
-                renderAdminBookings();
-            }
+        function requestResetBookings() {
+            showConfirmDialog(
+                'Buchungen zurücksetzen',
+                'Möchtest du alle Buchungen auf den Ausgangszustand zurücksetzen?',
+                () => {
+                    inMemoryBookings = [];
+                    renderAdminBookings();
+                    showToast('Buchungsregister geleert.', 'info');
+                }
+            );
         }
 
         function exportBookingsToCSV() {
             const bookings = getBookings();
             if (bookings.length === 0) {
-                alert('Keine Buchungsdaten zum Exportieren vorhanden.');
+                showToast('Keine Buchungsdaten zum Exportieren vorhanden.', 'warning');
                 return;
             }
 
-            let csv = '﻿'; // UTF-8 BOM für Excel
-            csv += 'Buchungscode;Datum;Uhrzeit;Kunde;Telefon;Email;Behandlung;Extras;Preis;Status;Notizen
-';
-
-            bookings.forEach(b => {
+            const headerRow = 'Buchungscode;Datum;Uhrzeit;Kunde;Telefon;Email;Behandlung;Extras;Preis;Status;Notizen';
+            const dataRows = bookings.map(b => {
                 const extras = b.addons ? b.addons.join(' | ') : '';
                 const notes = (b.notes || '').replace(/;/g, ',');
-                csv += `"${b.code}";"${b.date}";"${b.time}";"${b.name}";"${b.phone}";"${b.email}";"${b.serviceTitle}";"${extras}";"${b.price} €";"${b.status}";"${notes}"
-`;
+                return `"${b.code}";"${b.date}";"${b.time}";"${b.name}";"${b.phone}";"${b.email}";"${b.serviceTitle}";"${extras}";"${b.price} €";"${b.status}";"${notes}"`;
             });
 
-            const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+            // UTF-8 BOM für Excel-Kompatibilität mit Umlauten
+            const csvContent = '\uFEFF' + [headerRow, ...dataRows].join('\r\n');
+            const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
             const link = document.createElement('a');
             link.href = URL.createObjectURL(blob);
-            link.setAttribute('download', `Buchungen-AlisaBeautyLab-${new Date().toISOString().slice(0,10)}.csv`);
+            link.setAttribute('download', `Buchungen-AlisaBeautyLab-${new Date().toISOString().slice(0, 10)}.csv`);
             document.body.appendChild(link);
             link.click();
             document.body.removeChild(link);
+            URL.revokeObjectURL(link.href);
+            showToast('Buchungen erfolgreich als CSV exportiert.', 'success');
         }
 
-        // --- 9. MODALS & ALLGEMEINE UI LOGIK ---
-        document.getElementById('current-year').textContent = new Date().getFullYear();
+        let pendingConfirmCallback = null;
 
-        // Mobile Menu
-        const menuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        const mobileLinks = document.querySelectorAll('.mobile-link');
+        function showConfirmDialog(title, message, onConfirm) {
+            const modal = document.getElementById('custom-confirm-modal');
+            const titleEl = document.getElementById('confirm-modal-title');
+            const msgEl = document.getElementById('confirm-modal-message');
+            const okBtn = document.getElementById('confirm-modal-ok');
 
-        menuBtn.addEventListener('click', () => {
-            mobileMenu.classList.toggle('hidden');
-            mobileMenu.classList.toggle('flex');
-        });
+            if (titleEl) titleEl.textContent = title;
+            if (msgEl) msgEl.textContent = message;
+            
+            pendingConfirmCallback = onConfirm;
+            if (okBtn) {
+                okBtn.onclick = () => {
+                    if (pendingConfirmCallback) pendingConfirmCallback();
+                    closeConfirmModal();
+                };
+            }
 
-        mobileLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenu.classList.remove('flex');
+            if (modal) modal.classList.remove('hidden');
+        }
+
+        function closeConfirmModal() {
+            const modal = document.getElementById('custom-confirm-modal');
+            if (modal) modal.classList.add('hidden');
+            pendingConfirmCallback = null;
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+
+            const toast = document.createElement('div');
+            const typeClasses = {
+                success: 'bg-emerald-900 border-emerald-500 text-white',
+                error: 'bg-rose-900 border-rose-500 text-white',
+                warning: 'bg-amber-900 border-amber-500 text-white',
+                info: 'bg-brand-truffle border-brand-gold text-brand-canvas'
+            };
+
+            toast.className = `px-4 py-3 rounded-2xl shadow-luxury border-l-4 text-xs font-medium flex items-center gap-2 pointer-events-auto transform transition-all duration-300 translate-y-2 opacity-0 ${typeClasses[type] || typeClasses.info}`;
+            toast.textContent = message;
+
+            container.appendChild(toast);
+            
+            // Animation In
+            requestAnimationFrame(() => {
+                toast.classList.remove('translate-y-2', 'opacity-0');
             });
-        });
+
+            // Fade out
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'translate-y-2');
+                setTimeout(() => toast.remove(), 300);
+            }, 3500);
+        }
 
         function openModal(id) {
             const modal = document.getElementById(id);
-            modal.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
+            if (modal) {
+                modal.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
+            }
         }
 
         function closeModal(id) {
             const modal = document.getElementById(id);
-            modal.classList.add('hidden');
-            document.body.style.overflow = 'auto';
+            if (modal) {
+                modal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
         }
 
-        // Initialisierung beim Laden
         document.addEventListener('DOMContentLoaded', () => {
-            renderServices('all');
+            const yearEl = document.getElementById('current-year');
+            if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+            // Mobile Menu Toggle
+            const menuBtn = document.getElementById('mobile-menu-btn');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+
+            if (menuBtn && mobileMenu) {
+                menuBtn.addEventListener('click', () => {
+                    mobileMenu.classList.toggle('hidden');
+                    mobileMenu.classList.toggle('flex');
+                });
+
+                mobileLinks.forEach(link => {
+                    link.addEventListener('click', () => {
+                        mobileMenu.classList.add('hidden');
+                        mobileMenu.classList.remove('flex');
+                    });
+                });
+            }
+
+            renderServices();
+            updateStep1State();
         });
     </script>
 </body>
