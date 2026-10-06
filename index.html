@@ -2,47 +2,72 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
 
   <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen</title>
 
   <meta
     name="description"
-    content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting, Wimpernextensions und Online-Terminbuchung."
+    content="ALISA BEAUTY LAB in Treuchtlingen – Wimpernlifting, Wimpernextensions und persönliche Online-Terminbuchung."
   >
 
+  <meta name="theme-color" content="#f6efe7">
 
-  <style>
-    @font-face { font-family: "goldenbook"; src: url("https://use.typekit.net/af/c6ae17/000000000000000077359e1e/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff2"), url("https://use.typekit.net/af/c6ae17/000000000000000077359e1e/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n3&v=3") format("woff"); font-style: normal; font-weight: 300; font-display: swap; }
-    @font-face { font-family: "great-vibes"; src: url("https://use.typekit.net/af/0cda4d/00000000000000007735a1a7/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff2"), url("https://use.typekit.net/af/0cda4d/00000000000000007735a1a7/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n4&v=3") format("woff"); font-style: normal; font-weight: 400; font-display: swap; }
-    @font-face { font-family: "sweet-sans-pro"; src: url("https://use.typekit.net/af/ab7c40/00000000000000007735c62d/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff2"), url("https://use.typekit.net/af/ab7c40/00000000000000007735c62d/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n7&v=3") format("woff"); font-style: normal; font-weight: 700; font-display: swap; }
-    @font-face { font-family: "ivypresto-display"; src: url("https://use.typekit.net/af/0b9b24/00000000000000007735e5ae/31/l?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff2"), url("https://use.typekit.net/af/0b9b24/00000000000000007735e5ae/31/d?primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&fvd=n6&v=3") format("woff"); font-style: normal; font-weight: 600; font-display: swap; }
-      .portrait-empty::after { content: "ALISA BEAUTY LAB"; display: grid; place-items: center; height: 100%; color: var(--gold); font-family: var(--font-display); font-size: 20px; letter-spacing: .08em; text-align: center; }
-  </style>
+  <link
+    rel="preload"
+    as="image"
+    href="AlisaLogoQuertransparent.jpg"
+  >
 
-  <!-- Adobe Fonts -->
-  <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
+  <link
+    rel="preload"
+    as="image"
+    href="Hintergrund-muster.jpg"
+  >
+
+  <link
+    rel="stylesheet"
+    href="https://use.typekit.net/fda0xlt.css"
+  >
 
   <style>
     :root {
-      --sand: #f5efe6;
-      --cream: #fffdf9;
-      --cream-dark: #ece3d6;
-      --taupe: #8a7a71;
-      --brown: #433630;
-      --brown-dark: #2a211d;
-      --gold: #c5a059;
-      --gold-light: rgba(197, 160, 89, 0.35);
-      --gold-border: rgba(197, 160, 89, 0.65);
+      --canvas: #f6efe7;
+      --canvas-deep: #eadbc9;
+      --surface: #fffdfa;
+      --surface-soft: rgba(255, 253, 250, 0.76);
+      --surface-muted: #f1e6d9;
+
+      --espresso: #2b211e;
+      --brown: #5b4940;
+      --taupe: #837168;
+      --taupe-light: #bba99b;
+
+      --gold: #b28a4a;
+      --gold-soft: rgba(178, 138, 74, 0.24);
+      --gold-border: rgba(178, 138, 74, 0.44);
+
+      --green: #1c9c5a;
+      --danger: #9a3b3b;
+
       --white: #ffffff;
-      --green: #25d366;
-      --red: #8d2525;
-      --shadow: 0 15px 45px rgba(67, 54, 48, 0.12);
-      --radius: 28px;
+      --shadow-soft: 0 20px 60px rgba(68, 48, 37, 0.09);
+      --shadow-hover: 0 24px 65px rgba(68, 48, 37, 0.16);
+
+      --radius-xs: 12px;
+      --radius-sm: 18px;
+      --radius-md: 26px;
+      --radius-lg: 38px;
 
       --font-body: "sweet-sans-pro", Arial, sans-serif;
-      --font-display: "goldenbook", Georgia, serif;
+      --font-display: "ivypresto-display", Georgia, serif;
       --font-script: "great-vibes", cursive;
+
+      --container: 1180px;
+      --header-height: 82px;
     }
 
     * {
@@ -51,29 +76,37 @@
 
     html {
       scroll-behavior: smooth;
+      scroll-padding-top: calc(var(--header-height) + 22px);
     }
 
     body {
+      min-width: 320px;
       min-height: 100vh;
       margin: 0;
+      overflow-x: hidden;
       color: var(--brown);
-      background-color: var(--sand);
-      background-image:
+      background:
         linear-gradient(
-          rgba(245, 239, 230, 0.28),
-          rgba(245, 239, 230, 0.28)
+          rgba(246, 239, 231, 0.84),
+          rgba(246, 239, 231, 0.94)
         ),
-        url("Hintergrund-muster.jpg");
-      background-position: center;
-      background-size: cover;
-      background-attachment: fixed;
+        url("Hintergrund-muster.jpg") center / cover fixed;
       font-family: var(--font-body);
-      font-size: 15px;
+      font-size: 16px;
       font-weight: 400;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
+    body.menu-open,
     body.modal-open {
       overflow: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
     button,
@@ -89,12 +122,7 @@
 
     button:disabled {
       cursor: not-allowed;
-      opacity: 0.48;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
+      opacity: 0.52;
     }
 
     img {
@@ -102,257 +130,396 @@
       max-width: 100%;
     }
 
-    strong,
-    b {
-      font-weight: 700;
+    ::selection {
+      color: var(--surface);
+      background: var(--brown);
+    }
+
+    .skip-link {
+      position: fixed;
+      top: 12px;
+      left: 12px;
+      z-index: 500;
+      padding: 11px 16px;
+      color: var(--surface);
+      background: var(--espresso);
+      border-radius: 999px;
+      transform: translateY(-180%);
+      transition: transform 0.2s ease;
+    }
+
+    .skip-link:focus {
+      transform: translateY(0);
+    }
+
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border: 0;
     }
 
     .hidden {
       display: none !important;
     }
 
-    .container {
-      width: min(1160px, calc(100% - 32px));
-      margin-inline: auto;
-    }
-
-    .announcement-bar {
-      padding: 10px 16px;
-      color: var(--cream);
-      background: var(--brown-dark);
-      border-bottom: 1px solid rgba(197, 160, 89, 0.35);
-      font-size: 12px;
-      letter-spacing: 0.04em;
+    .announcement {
+      padding: 9px max(20px, env(safe-area-inset-right)) 10px max(20px, env(safe-area-inset-left));
+      color: rgba(255, 253, 250, 0.88);
+      background: var(--espresso);
+      border-bottom: 1px solid rgba(178, 138, 74, 0.36);
+      font-size: 11px;
+      letter-spacing: 0.08em;
       text-align: center;
+      text-transform: uppercase;
     }
 
-    .announcement-bar span {
-      margin-inline: 7px;
+    .announcement-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 15px;
+      flex-wrap: wrap;
     }
 
     .announcement-dot {
+      width: 6px;
+      height: 6px;
       display: inline-block;
-      width: 7px;
-      height: 7px;
-      margin-right: 2px;
       border-radius: 50%;
       background: var(--gold);
+      box-shadow: 0 0 0 4px rgba(178, 138, 74, 0.12);
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 50;
-      background: rgba(247, 243, 236, 0.95);
-      border-bottom: 1px solid var(--gold-light);
-      backdrop-filter: blur(14px);
+      z-index: 100;
+      min-height: var(--header-height);
+      background: rgba(255, 253, 250, 0.86);
+      border-bottom: 1px solid rgba(178, 138, 74, 0.16);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
     }
 
     .header-inner {
-      min-height: 84px;
-      display: flex;
+      min-height: var(--header-height);
+      display: grid;
+      grid-template-columns: minmax(180px, 250px) 1fr auto;
       align-items: center;
-      justify-content: space-between;
-      gap: 18px;
+      gap: 26px;
     }
 
-    .logo-brand {
+    .brand {
+      width: min(250px, 100%);
       display: inline-flex;
       align-items: center;
-      width: min(310px, 32vw);
-      min-width: 190px;
     }
 
-    .site-logo {
-      display: block;
+    .brand img {
       width: 100%;
       height: auto;
-      object-fit: contain;
-      object-position: left center;
+      mix-blend-mode: multiply;
     }
 
-    .desktop-navigation {
+    .desktop-nav {
       display: flex;
       align-items: center;
-      gap: 23px;
-      font-size: 13px;
+      justify-content: center;
+      gap: clamp(18px, 2.5vw, 36px);
     }
 
-    .desktop-navigation a {
+    .desktop-nav a {
+      position: relative;
+      padding: 11px 0;
+      color: var(--brown);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
       transition: color 0.2s ease;
     }
 
-    .desktop-navigation a:hover {
-      color: var(--gold);
+    .desktop-nav a::after {
+      position: absolute;
+      right: 0;
+      bottom: 2px;
+      left: 0;
+      height: 1px;
+      content: "";
+      background: var(--gold);
+      transform: scaleX(0);
+      transform-origin: center;
+      transition: transform 0.22s ease;
     }
 
-    .header-actions {
-      display: flex;
-      align-items: center;
-      justify-content: flex-end;
-      gap: 7px;
+    .desktop-nav a:hover,
+    .desktop-nav a:focus-visible {
+      color: var(--espresso);
     }
 
-    .header-action {
-      min-height: 42px;
+    .desktop-nav a:hover::after,
+    .desktop-nav a:focus-visible::after {
+      transform: scaleX(1);
+    }
+
+    .header-cta {
+      min-height: 46px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 7px;
-      padding: 0 13px;
-      border: 1px solid var(--gold-border);
+      padding: 0 18px;
+      color: var(--surface);
+      background: var(--espresso);
+      border: 1px solid var(--espresso);
       border-radius: 999px;
       font-size: 10px;
-      letter-spacing: 0.07em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       transition:
-        transform 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
     }
 
-    .header-action:hover {
+    .header-cta:hover {
+      background: var(--brown);
+      border-color: var(--brown);
       transform: translateY(-2px);
     }
 
-    .header-booking {
-      color: var(--white);
-      background: var(--brown);
-      border-color: var(--brown);
+    .mobile-menu-button {
+      width: 46px;
+      height: 46px;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      color: var(--espresso);
+      background: transparent;
+      border: 1px solid var(--gold-border);
+      border-radius: 50%;
     }
 
-    .header-booking:hover {
-      background: var(--brown-dark);
+    .menu-icon,
+    .menu-icon::before,
+    .menu-icon::after {
+      width: 18px;
+      height: 1px;
+      display: block;
+      background: currentColor;
+      transition: transform 0.2s ease;
     }
 
-    .header-whatsapp {
-      color: var(--white);
-      background: var(--green);
-      border-color: var(--green);
+    .menu-icon {
+      position: relative;
     }
 
-    .header-whatsapp:hover {
-      background: #1fb957;
+    .menu-icon::before,
+    .menu-icon::after {
+      position: absolute;
+      left: 0;
+      content: "";
     }
 
-    .header-phone {
-      color: var(--brown);
-      background: rgba(255, 255, 255, 0.8);
+    .menu-icon::before {
+      top: -6px;
     }
 
-    .header-phone:hover {
-      background: var(--white);
-      border-color: var(--brown);
+    .menu-icon::after {
+      top: 6px;
+    }
+
+    .mobile-menu-button[aria-expanded="true"] .menu-icon {
+      background: transparent;
+    }
+
+    .mobile-menu-button[aria-expanded="true"] .menu-icon::before {
+      transform: translateY(6px) rotate(45deg);
+    }
+
+    .mobile-menu-button[aria-expanded="true"] .menu-icon::after {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    .mobile-menu {
+      position: fixed;
+      inset: calc(var(--header-height) + 31px) 16px auto;
+      z-index: 95;
+      display: none;
+      padding: 16px;
+      background: rgba(255, 253, 250, 0.98);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-sm);
+      box-shadow: var(--shadow-hover);
+    }
+
+    .mobile-menu.is-open {
+      display: grid;
+      gap: 4px;
+    }
+
+    .mobile-menu a {
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      padding: 0 14px;
+      color: var(--espresso);
+      border-bottom: 1px solid rgba(178, 138, 74, 0.16);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+
+    .mobile-menu a:last-child {
+      margin-top: 10px;
+      color: var(--surface);
+      background: var(--espresso);
+      border: 0;
+      border-radius: 999px;
+      justify-content: center;
     }
 
     .hero {
       position: relative;
-      padding: 92px 0 108px;
+      min-height: 680px;
+      display: grid;
+      place-items: center;
+      padding: 110px 0 124px;
       overflow: hidden;
       text-align: center;
     }
 
-    .hero::before,
+    .hero::before {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      content: "";
+      background:
+        linear-gradient(
+          90deg,
+          rgba(246, 239, 231, 0.72),
+          rgba(255, 253, 250, 0.74),
+          rgba(246, 239, 231, 0.72)
+        );
+    }
+
     .hero::after {
       position: absolute;
+      top: 10%;
+      left: 50%;
       z-index: -1;
-      width: 320px;
-      height: 320px;
+      width: min(980px, 110vw);
+      aspect-ratio: 1;
       content: "";
+      border: 1px solid rgba(178, 138, 74, 0.2);
       border-radius: 50%;
-      background: radial-gradient(
-        circle,
-        rgba(255, 255, 255, 0.6),
-        rgba(255, 255, 255, 0)
-      );
+      transform: translateX(-50%);
+      box-shadow:
+        0 0 0 55px rgba(255, 253, 250, 0.22),
+        0 0 0 110px rgba(178, 138, 74, 0.06);
     }
 
-    .hero::before {
-      top: -90px;
-      left: -130px;
-    }
-
-    .hero::after {
-      right: -130px;
-      bottom: -90px;
+    .hero-content {
+      max-width: 960px;
     }
 
     .eyebrow {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 8px 14px;
+      justify-content: center;
+      gap: 9px;
+      min-height: 34px;
+      padding: 0 14px;
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 253, 250, 0.72);
       border: 1px solid var(--gold-border);
       border-radius: 999px;
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
     }
 
     .eyebrow::before {
-      width: 7px;
-      height: 7px;
-      display: inline-block;
+      width: 6px;
+      height: 6px;
       content: "";
       border-radius: 50%;
       background: var(--gold);
     }
 
     .hero h1 {
-      max-width: 880px;
-      margin: 25px auto 18px;
-      color: var(--brown-dark);
+      max-width: 900px;
+      margin: 25px auto 21px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: clamp(42px, 7vw, 78px);
-      font-weight: 300;
-      line-height: 1.08;
+      font-size: clamp(49px, 7vw, 88px);
+      font-weight: 400;
+      letter-spacing: -0.045em;
+      line-height: 0.98;
     }
 
     .hero h1 em {
+      display: inline-block;
+      margin-inline: 0.06em;
       color: var(--gold);
       font-family: var(--font-script);
       font-size: 1.12em;
       font-style: normal;
       font-weight: 400;
+      letter-spacing: 0;
     }
 
-    .hero p {
-      max-width: 650px;
+    .hero-copy {
+      max-width: 620px;
       margin: 0 auto;
       color: var(--taupe);
-      font-size: 15px;
+      font-size: 16px;
       line-height: 1.8;
     }
 
-    .hero-buttons,
-    .contact-actions,
-    .success-actions {
+    .hero-actions,
+    .contact-actions {
       display: flex;
-      flex-wrap: wrap;
       justify-content: center;
-      gap: 11px;
-    }
-
-    .hero-buttons {
-      margin-top: 31px;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 32px;
     }
 
     .button {
-      min-height: 47px;
+      min-height: 52px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 0 21px;
+      gap: 9px;
+      padding: 0 22px;
       border: 1px solid transparent;
       border-radius: 999px;
       font-size: 10px;
-      letter-spacing: 0.1em;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-align: center;
       text-transform: uppercase;
       transition:
         transform 0.2s ease,
-        background 0.2s ease;
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease,
+        box-shadow 0.2s ease;
     }
 
     .button:hover {
@@ -360,22 +527,27 @@
     }
 
     .button-primary {
-      color: var(--white);
-      background: var(--brown);
+      color: var(--surface);
+      background: var(--espresso);
+      border-color: var(--espresso);
+      box-shadow: 0 10px 24px rgba(43, 33, 30, 0.16);
     }
 
     .button-primary:hover {
-      background: var(--brown-dark);
+      background: var(--brown);
+      border-color: var(--brown);
+      box-shadow: 0 14px 30px rgba(43, 33, 30, 0.22);
     }
 
     .button-secondary {
-      color: var(--brown);
-      background: rgba(255, 255, 255, 0.78);
+      color: var(--espresso);
+      background: rgba(255, 253, 250, 0.72);
       border-color: var(--gold-border);
     }
 
     .button-secondary:hover {
-      background: var(--white);
+      background: var(--surface);
+      border-color: var(--gold);
     }
 
     .button-whatsapp {
@@ -384,477 +556,529 @@
       border-color: var(--green);
     }
 
+    .button-whatsapp:hover {
+      background: #16874c;
+      border-color: #16874c;
+    }
+
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      margin-top: 36px;
+      color: var(--taupe);
+      font-size: 11px;
+    }
+
+    .hero-trust span {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+    }
+
+    .hero-trust span::before {
+      width: 5px;
+      height: 5px;
+      content: "";
+      border-radius: 50%;
+      background: var(--gold);
+    }
+
     .section {
-      padding: 88px 0;
+      padding: 110px 0;
     }
 
-    .section-light {
-      background: rgba(247, 243, 236, 0.8);
-      border-top: 1px solid var(--gold-light);
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .section-white {
-      background: rgba(255, 255, 255, 0.74);
-      border-top: 1px solid var(--gold-light);
+    .section-surface {
+      background: rgba(255, 253, 250, 0.6);
+      border-block: 1px solid rgba(178, 138, 74, 0.16);
     }
 
     .section-heading {
-      max-width: 730px;
-      margin: 0 auto 45px;
+      max-width: 740px;
+      margin: 0 auto 54px;
       text-align: center;
     }
 
-    .section-heading .label {
+    .section-label {
       display: block;
-      margin-bottom: 10px;
+      margin-bottom: 12px;
       color: var(--taupe);
-      font-size: 11px;
-      letter-spacing: 0.23em;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
       text-transform: uppercase;
     }
 
-    .section-heading h2 {
+    .section-heading h2,
+    .about-copy h2,
+    .contact-section h2 {
       margin: 0;
-      color: var(--brown-dark);
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: clamp(34px, 5vw, 50px);
-      font-weight: 300;
-      line-height: 1.1;
+      font-size: clamp(39px, 5.2vw, 62px);
+      font-weight: 400;
+      letter-spacing: -0.04em;
+      line-height: 1.04;
     }
 
     .section-heading p {
       margin: 16px auto 0;
       color: var(--taupe);
-      font-size: 14px;
-      line-height: 1.7;
+      font-size: 15px;
+      line-height: 1.8;
     }
 
-    .pricing-grid {
+    .price-layout {
       display: grid;
       grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
       align-items: start;
-      gap: 28px;
+      gap: 24px;
     }
 
-    .stack {
+    .price-stack {
       display: grid;
       gap: 24px;
     }
 
     .card {
       position: relative;
-      background:
-        linear-gradient(
-          rgba(255, 253, 249, 0.94),
-          rgba(255, 253, 249, 0.94)
-        ),
-        url("Hintergrund-muster.jpg") center / cover;
-      border: 1px solid var(--gold);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow);
+      overflow: hidden;
+      background: var(--surface-soft);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-soft);
     }
 
-    .card::after {
+    .card::before {
       position: absolute;
-      inset: 5px;
+      inset: 7px;
       content: "";
-      border: 1px solid rgba(197, 160, 89, 0.38);
-      border-radius: calc(var(--radius) - 4px);
+      border: 1px solid rgba(178, 138, 74, 0.18);
+      border-radius: calc(var(--radius-md) - 6px);
       pointer-events: none;
     }
 
-    .pricing-card {
-      padding: 31px;
+    .price-card {
+      padding: 38px;
     }
 
-    .pricing-card h3 {
+    .price-card > * {
       position: relative;
       z-index: 1;
-      margin: 0 0 20px;
-      color: var(--brown-dark);
+    }
+
+    .price-card h3 {
+      margin: 0 0 26px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 29px;
-      font-weight: 300;
+      font-size: 36px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
       text-align: center;
     }
 
-    .pricing-card h4 {
-      position: relative;
-      z-index: 1;
-      margin: 0 0 14px;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 300;
+    .price-card h4 {
+      margin: 30px 0 12px;
+      color: var(--brown);
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.16em;
       text-align: center;
+      text-transform: uppercase;
     }
 
-    .pricing-card h4:not(:first-child) {
-      margin-top: 28px;
+    .price-card h4:first-of-type {
+      margin-top: 0;
     }
 
-    .pricing-row {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 11px;
-      padding: 9px 0;
+    .price-row {
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      align-items: end;
+      gap: 12px;
+      padding: 11px 0;
       color: var(--brown);
       font-size: 15px;
     }
 
-    .pricing-row .line {
-      flex: 1;
+    .price-line {
       height: 1px;
+      margin-bottom: 7px;
       background: linear-gradient(
         to right,
-        rgba(197, 160, 89, 0.18),
-        rgba(197, 160, 89, 0.9)
+        rgba(178, 138, 74, 0.06),
+        rgba(178, 138, 74, 0.6)
       );
     }
 
-    .pricing-row .price {
-      color: var(--brown-dark);
+    .price {
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 300;
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
       white-space: nowrap;
     }
 
-    .card-divider {
-      position: relative;
-      z-index: 1;
+    .price-divider {
       height: 1px;
       margin: 22px 0;
-      background: var(--gold-light);
+      background: var(--gold-soft);
     }
 
-    .pricing-note {
-      position: relative;
-      z-index: 1;
-      margin-top: 21px;
+    .price-note {
+      margin: 21px 0 0;
       padding-top: 17px;
       color: var(--taupe);
-      border-top: 1px solid var(--gold-light);
+      border-top: 1px solid var(--gold-soft);
       font-size: 12px;
-      line-height: 1.65;
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .card-action {
+      margin-top: 25px;
+      text-align: center;
     }
 
     .info-card {
-      padding: 25px;
-      text-align: center;
+      padding: 31px;
       background:
         linear-gradient(
-          rgba(236, 227, 214, 0.82),
-          rgba(236, 227, 214, 0.82)
-        ),
-        url("Hintergrund-muster.jpg") center / cover;
+          135deg,
+          rgba(239, 227, 213, 0.92),
+          rgba(255, 253, 250, 0.9)
+        );
+      text-align: center;
     }
 
-    .info-card h4 {
+    .info-card h3 {
       position: relative;
       z-index: 1;
-      margin: 0 0 10px;
-      color: var(--brown-dark);
+      margin: 0 0 12px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 21px;
-      font-weight: 300;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
     }
 
     .info-card p {
       position: relative;
       z-index: 1;
-      margin: 7px 0;
+      max-width: 430px;
+      margin: 8px auto;
       color: var(--taupe);
-      font-size: 12px;
-      line-height: 1.6;
+      font-size: 13px;
+      line-height: 1.72;
     }
 
-    .booking-card {
+    .booking-shell {
       overflow: hidden;
+      background: rgba(255, 253, 250, 0.86);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
     }
 
-    .steps {
-      position: relative;
-      z-index: 1;
+    .booking-progress {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      background: rgba(245, 239, 230, 0.82);
-      border-bottom: 1px solid var(--gold-light);
+      background: rgba(239, 227, 213, 0.56);
+      border-bottom: 1px solid var(--gold-soft);
     }
 
-    .step {
-      min-height: 68px;
+    .booking-step-indicator {
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 9px;
-      padding: 13px;
+      gap: 10px;
+      padding: 14px;
       color: var(--taupe);
-      border-bottom: 2px solid transparent;
-      font-size: 12px;
+      border-bottom: 3px solid transparent;
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
       text-align: center;
+      text-transform: uppercase;
+      transition:
+        color 0.2s ease,
+        border-color 0.2s ease;
     }
 
-    .step.active {
-      color: var(--brown-dark);
-      border-bottom-color: var(--brown);
+    .booking-step-indicator.active {
+      color: var(--espresso);
+      border-bottom-color: var(--espresso);
     }
 
     .step-number {
-      width: 24px;
-      height: 24px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
+      width: 29px;
+      height: 29px;
+      display: inline-grid;
+      place-items: center;
       flex: 0 0 auto;
       color: var(--brown);
-      background: var(--cream-dark);
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
       border-radius: 50%;
       font-size: 11px;
-      font-weight: 700;
     }
 
-    .step.active .step-number {
-      color: var(--white);
-      background: var(--brown);
+    .booking-step-indicator.active .step-number {
+      color: var(--surface);
+      background: var(--espresso);
+      border-color: var(--espresso);
     }
 
     .booking-content {
-      position: relative;
-      z-index: 1;
-      padding: 39px;
+      padding: clamp(24px, 4vw, 50px);
     }
 
-    .booking-step h3 {
+    .booking-panel h3 {
       margin: 0;
-      color: var(--brown-dark);
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 29px;
-      font-weight: 300;
+      font-size: clamp(31px, 4vw, 42px);
+      font-weight: 400;
+      letter-spacing: -0.035em;
     }
 
-    .booking-step-intro {
-      margin: 7px 0 25px;
+    .booking-intro {
+      margin: 8px 0 28px;
       color: var(--taupe);
-      font-size: 13px;
+      font-size: 14px;
+      line-height: 1.7;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 12px;
+      gap: 14px;
     }
 
     .service-option {
-      position: relative;
-      padding: 17px;
+      min-height: 170px;
+      display: flex;
+      flex-direction: column;
+      padding: 21px;
       color: var(--brown);
-      background: rgba(255, 255, 255, 0.84);
-      border: 1px solid var(--gold-light);
-      border-radius: 18px;
+      background: var(--surface);
+      border: 1px solid rgba(178, 138, 74, 0.25);
+      border-radius: var(--radius-sm);
       text-align: left;
       transition:
         border-color 0.2s ease,
         background 0.2s ease,
+        box-shadow 0.2s ease,
         transform 0.2s ease;
     }
 
     .service-option:hover {
-      transform: translateY(-2px);
       border-color: var(--gold);
+      box-shadow: 0 14px 26px rgba(68, 48, 37, 0.08);
+      transform: translateY(-2px);
     }
 
     .service-option.selected {
-      background: rgba(236, 227, 214, 0.84);
-      border-color: var(--brown);
-      box-shadow: 0 0 0 1px var(--brown);
+      background: #f5ebdf;
+      border-color: var(--espresso);
+      box-shadow: 0 0 0 1px var(--espresso);
     }
 
-    .service-header {
+    .service-option-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 10px;
+      gap: 14px;
     }
 
     .service-title {
-      color: var(--brown-dark);
+      max-width: 75%;
+      color: var(--espresso);
       font-size: 14px;
       font-weight: 700;
       line-height: 1.35;
     }
 
     .service-price {
-      color: var(--brown-dark);
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 300;
+      font-size: 22px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
       white-space: nowrap;
     }
 
     .service-description {
       display: block;
-      margin-top: 8px;
+      margin-top: 10px;
       color: var(--taupe);
-      font-size: 11px;
-      line-height: 1.55;
+      font-size: 12px;
+      line-height: 1.6;
     }
 
-    .service-duration {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      margin-top: 11px;
+    .service-meta {
+      display: block;
+      margin-top: auto;
+      padding-top: 15px;
       color: var(--taupe);
-      font-size: 11px;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
     }
 
     .booking-footer {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 15px;
-      margin-top: 29px;
-      padding-top: 24px;
-      border-top: 1px solid var(--gold-light);
+      gap: 16px;
+      margin-top: 31px;
+      padding-top: 25px;
+      border-top: 1px solid var(--gold-soft);
     }
 
-    .selection-summary {
+    .booking-summary-text {
       color: var(--taupe);
       font-size: 13px;
     }
 
-    .selection-summary strong {
-      color: var(--brown-dark);
+    .booking-summary-text strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--espresso);
+      font-size: 14px;
     }
 
-    .calendar-layout {
+    .calendar-layout,
+    .form-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
-      gap: 30px;
+      grid-template-columns: minmax(0, 1.2fr) minmax(270px, 0.8fr);
+      align-items: start;
+      gap: 24px;
     }
 
     .calendar-box,
     .time-box,
     .summary-box {
-      padding: 23px;
-      background: rgba(245, 239, 230, 0.72);
-      border: 1px solid var(--gold-light);
-      border-radius: 20px;
+      padding: 24px;
+      background: rgba(246, 239, 231, 0.62);
+      border: 1px solid var(--gold-soft);
+      border-radius: var(--radius-sm);
     }
 
     .calendar-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 8px;
-      margin-bottom: 19px;
+      gap: 12px;
+      margin-bottom: 22px;
     }
 
     .calendar-header h4,
     .time-box h4,
     .summary-box h4 {
       margin: 0;
-      color: var(--brown-dark);
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-weight: 300;
-    }
-
-    .calendar-header h4,
-    .time-box h4 {
-      font-size: 21px;
-    }
-
-    .summary-box h4 {
-      margin-bottom: 15px;
-      padding-bottom: 12px;
-      border-bottom: 1px solid var(--gold-light);
-      font-size: 22px;
+      font-size: 25px;
+      font-weight: 400;
+      letter-spacing: -0.025em;
     }
 
     .icon-button {
-      width: 36px;
-      height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--brown);
-      background: rgba(255, 255, 255, 0.82);
-      border: 1px solid var(--gold-light);
+      width: 42px;
+      height: 42px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      color: var(--espresso);
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
       border-radius: 50%;
-      font-size: 20px;
+      font-size: 24px;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
     }
 
     .icon-button:hover {
-      color: var(--white);
-      background: var(--brown);
+      color: var(--surface);
+      background: var(--espresso);
+      transform: translateY(-1px);
     }
 
     .weekdays,
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr));
-      gap: 5px;
+      gap: 6px;
     }
 
     .weekdays {
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       color: var(--taupe);
       font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.05em;
       text-align: center;
       text-transform: uppercase;
     }
 
     .calendar-day {
-      min-height: 41px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+      min-height: 46px;
+      display: grid;
+      place-items: center;
+      padding: 0;
       color: var(--brown);
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 10px;
+      background: var(--surface);
+      border: 1px solid rgba(178, 138, 74, 0.22);
+      border-radius: 12px;
       font-size: 12px;
       transition:
         color 0.2s ease,
-        background 0.2s ease;
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .calendar-day:not(:disabled):hover,
     .calendar-day.selected {
-      color: var(--white);
-      background: var(--brown);
+      color: var(--surface);
+      background: var(--espresso);
+      border-color: var(--espresso);
     }
 
-    .calendar-day.selected {
+    .calendar-day.today:not(.selected) {
       border-color: var(--gold);
+      box-shadow: inset 0 0 0 1px var(--gold);
     }
 
     .calendar-day.unavailable {
-      color: rgba(138, 122, 113, 0.48);
-      background: rgba(236, 227, 214, 0.65);
+      color: rgba(131, 113, 104, 0.45);
+      background: rgba(234, 219, 201, 0.48);
       border-color: transparent;
     }
 
     .calendar-legend {
       display: flex;
+      justify-content: center;
+      gap: 18px;
       flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 8px;
-      margin-top: 18px;
-      padding-top: 13px;
+      margin-top: 19px;
+      padding-top: 15px;
       color: var(--taupe);
-      border-top: 1px solid var(--gold-light);
+      border-top: 1px solid var(--gold-soft);
       font-size: 10px;
     }
 
     .legend-item {
       display: inline-flex;
       align-items: center;
-      gap: 5px;
+      gap: 7px;
     }
 
     .legend-dot {
@@ -862,49 +1086,55 @@
       height: 9px;
       display: inline-block;
       border-radius: 50%;
-      background: var(--brown);
+      background: var(--espresso);
     }
 
     .legend-dot.free {
-      background: var(--white);
+      background: var(--surface);
       border: 1px solid var(--gold);
     }
 
     .legend-dot.blocked {
-      background: var(--cream-dark);
+      background: var(--canvas-deep);
     }
 
     .selected-date {
-      min-height: 20px;
-      margin: 7px 0 16px;
+      min-height: 22px;
+      margin: 8px 0 17px;
       color: var(--taupe);
       font-size: 12px;
+      line-height: 1.5;
     }
 
     .time-slots {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 8px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
     }
 
     .time-slot {
+      min-height: 50px;
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 8px;
-      padding: 12px 10px;
+      padding: 0 13px;
       color: var(--brown);
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 12px;
+      background: var(--surface);
+      border: 1px solid rgba(178, 138, 74, 0.28);
+      border-radius: var(--radius-xs);
       font-size: 12px;
+      transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        border-color 0.2s ease;
     }
 
     .time-slot:hover:not(:disabled),
     .time-slot.selected {
-      color: var(--white);
-      background: var(--brown);
-      border-color: var(--brown);
+      color: var(--surface);
+      background: var(--espresso);
+      border-color: var(--espresso);
     }
 
     .time-slot small {
@@ -913,49 +1143,44 @@
     }
 
     .time-slot.selected small {
-      color: var(--gold);
+      color: rgba(255, 253, 250, 0.7);
     }
 
     .time-slot.booked {
       color: var(--taupe);
-      background: var(--cream-dark);
+      background: var(--canvas-deep);
       text-decoration: line-through;
     }
 
     .empty-state {
       grid-column: 1 / -1;
-      padding: 24px 12px;
+      padding: 28px 16px;
       color: var(--taupe);
-      background: rgba(255, 255, 255, 0.58);
-      border: 1px solid var(--gold-light);
-      border-radius: 12px;
+      background: rgba(255, 253, 250, 0.54);
+      border: 1px dashed var(--gold-border);
+      border-radius: var(--radius-xs);
       font-size: 12px;
+      line-height: 1.6;
       text-align: center;
-    }
-
-    .form-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.15fr) minmax(260px, 0.85fr);
-      gap: 28px;
-      align-items: start;
-    }
-
-    .form-group {
-      margin-bottom: 15px;
     }
 
     .form-row {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 13px;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
     }
 
     label {
       display: block;
-      margin-bottom: 7px;
+      margin-bottom: 8px;
       color: var(--brown);
-      font-size: 11px;
-      letter-spacing: 0.04em;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
     }
 
@@ -963,185 +1188,242 @@
     textarea,
     select {
       width: 100%;
-      color: var(--brown);
-      background: rgba(255, 255, 255, 0.9);
+      color: var(--espresso);
+      background: rgba(255, 253, 250, 0.92);
       border: 1px solid var(--gold-border);
-      border-radius: 11px;
-      outline: 0;
-      font-size: 13px;
+      border-radius: var(--radius-xs);
+      outline: none;
+      font-size: 14px;
+      transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
     }
 
     input,
     select {
-      min-height: 45px;
-      padding: 0 13px;
+      min-height: 50px;
+      padding: 0 14px;
     }
 
     textarea {
-      min-height: 92px;
-      padding: 12px 13px;
+      min-height: 110px;
+      padding: 14px;
       resize: vertical;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: var(--taupe-light);
     }
 
     input:focus,
     textarea:focus,
     select:focus {
-      border-color: var(--brown);
-      box-shadow: 0 0 0 3px rgba(197, 160, 89, 0.13);
+      background: var(--surface);
+      border-color: var(--espresso);
+      box-shadow: 0 0 0 4px rgba(178, 138, 74, 0.13);
     }
 
     .consent {
       display: flex;
       align-items: flex-start;
-      gap: 9px;
-      margin: 18px 0 0;
+      gap: 10px;
+      margin: 20px 0 0;
       color: var(--taupe);
-      font-size: 11px;
-      line-height: 1.55;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: 0;
+      line-height: 1.6;
       text-transform: none;
     }
 
     .consent input {
-      width: 17px;
-      height: 17px;
-      min-height: 17px;
+      width: 18px;
+      height: 18px;
+      min-height: 18px;
       flex: 0 0 auto;
-      accent-color: var(--brown);
+      margin-top: 1px;
+      accent-color: var(--espresso);
+    }
+
+    .summary-box {
+      position: sticky;
+      top: calc(var(--header-height) + 24px);
+      background: rgba(246, 239, 231, 0.82);
+    }
+
+    .summary-box h4 {
+      margin-bottom: 16px;
+      padding-bottom: 15px;
+      border-bottom: 1px solid var(--gold-soft);
     }
 
     .summary-line {
       display: flex;
       justify-content: space-between;
-      gap: 15px;
-      margin: 10px 0;
+      gap: 16px;
+      margin: 12px 0;
       color: var(--taupe);
       font-size: 12px;
     }
 
     .summary-line span:last-child {
-      max-width: 65%;
-      color: var(--brown-dark);
+      max-width: 66%;
+      color: var(--espresso);
       font-weight: 700;
       text-align: right;
     }
 
     .summary-total {
-      margin-top: 15px;
-      padding-top: 14px;
-      border-top: 1px solid var(--gold-light);
+      margin-top: 17px;
+      padding-top: 16px;
+      border-top: 1px solid var(--gold-soft);
     }
 
     .summary-total span:last-child {
-      color: var(--brown-dark);
       font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 300;
+      font-size: 23px;
+      font-weight: 400;
+      letter-spacing: -0.02em;
     }
 
     .summary-location {
-      margin: 17px 0 0;
+      margin: 20px 0 0;
       color: var(--taupe);
       font-size: 11px;
-      line-height: 1.6;
+      line-height: 1.65;
     }
 
     .success-box {
-      max-width: 620px;
+      max-width: 670px;
+      padding: 12px 0;
       margin: 0 auto;
       text-align: center;
     }
 
     .success-icon {
-      width: 67px;
-      height: 67px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 19px;
-      color: #176b40;
-      background: #e2f4e9;
-      border: 1px solid #a8d7b8;
+      width: 70px;
+      height: 70px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 20px;
+      color: #176a40;
+      background: #e6f6eb;
+      border: 1px solid #abd9bb;
       border-radius: 50%;
       font-size: 31px;
     }
 
     .success-box h3 {
-      margin: 0 0 9px;
-      color: var(--brown-dark);
+      margin: 0 0 10px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 34px;
-      font-weight: 300;
+      font-size: clamp(34px, 4.4vw, 48px);
+      font-weight: 400;
+      letter-spacing: -0.04em;
     }
 
     .success-box > p {
       margin: 0;
       color: var(--taupe);
-      font-size: 13px;
+      font-size: 14px;
       line-height: 1.7;
     }
 
     .confirmation {
-      margin: 26px auto 22px;
-      padding: 21px;
-      background: rgba(245, 239, 230, 0.75);
-      border: 1px solid var(--gold-light);
-      border-radius: 19px;
+      margin: 29px auto 24px;
+      padding: 23px;
+      background: rgba(246, 239, 231, 0.74);
+      border: 1px solid var(--gold-soft);
+      border-radius: var(--radius-sm);
       text-align: left;
-    }
-
-    .confirmation .summary-line {
-      margin: 9px 0;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: 0.8fr 1.2fr;
+      grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.16fr);
       align-items: center;
-      gap: 58px;
+      gap: clamp(38px, 6vw, 86px);
     }
 
     .portrait-frame {
-      max-width: 320px;
+      width: min(100%, 410px);
       aspect-ratio: 4 / 5;
       padding: 9px;
-      margin: auto;
-      background: var(--white);
-      border: 1px solid var(--gold);
-      border-radius: 29px;
-      box-shadow: var(--shadow);
+      margin-inline: auto;
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
     }
 
-    .portrait-frame img {
+    .portrait-placeholder {
       width: 100%;
       height: 100%;
-      object-fit: cover;
-      border-radius: 20px;
+      display: grid;
+      place-items: center;
+      align-content: center;
+      gap: 14px;
+      overflow: hidden;
+      color: var(--espresso);
+      background:
+        linear-gradient(
+          145deg,
+          rgba(255, 253, 250, 0.64),
+          rgba(229, 211, 193, 0.55)
+        ),
+        url("Hintergrund-muster.jpg") center / cover;
+      border-radius: calc(var(--radius-lg) - 9px);
+      text-align: center;
     }
 
-    .about-copy {
-      text-align: left;
+    .portrait-placeholder-mark {
+      font-family: var(--font-display);
+      font-size: clamp(45px, 6vw, 66px);
+      font-weight: 400;
+      letter-spacing: 0.08em;
     }
 
-    .about-copy .label {
+    .portrait-placeholder-line {
+      width: 62px;
+      height: 1px;
+      background: var(--gold);
+    }
+
+    .portrait-placeholder-caption {
       color: var(--taupe);
-      font-size: 11px;
-      letter-spacing: 0.2em;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.19em;
       text-transform: uppercase;
     }
 
+    .about-copy {
+      max-width: 620px;
+    }
+
+    .about-copy .section-label {
+      margin-bottom: 14px;
+    }
+
     .about-copy h2 {
-      margin: 12px 0 18px;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: clamp(34px, 5vw, 53px);
-      font-weight: 300;
-      line-height: 1.05;
+      margin-bottom: 20px;
     }
 
     .about-copy p {
+      margin: 0 0 15px;
       color: var(--brown);
-      font-size: 14px;
-      line-height: 1.8;
+      font-size: 15px;
+      line-height: 1.82;
+    }
+
+    .about-signature {
+      margin-top: 24px;
+      color: var(--gold);
+      font-family: var(--font-script);
+      font-size: 42px;
+      line-height: 1;
     }
 
     .contact-section {
@@ -1149,689 +1431,479 @@
     }
 
     .contact-icon {
-      width: 55px;
-      height: 55px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      color: var(--brown);
-      background: var(--cream-dark);
-      border: 1px solid var(--gold);
+      width: 58px;
+      height: 58px;
+      display: inline-grid;
+      place-items: center;
+      margin-bottom: 16px;
+      color: var(--espresso);
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
       border-radius: 50%;
-      font-size: 23px;
+      font-size: 24px;
     }
 
     .contact-section h2 {
-      margin: 0;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 300;
+      font-size: clamp(38px, 5vw, 58px);
     }
 
-    .contact-section p {
-      margin: 9px 0 23px;
+    .contact-section > p {
+      margin: 12px auto 0;
       color: var(--taupe);
-      font-size: 13px;
+      font-size: 15px;
     }
 
     .site-footer {
-      padding: 55px 0 27px;
-      color: var(--cream);
-      background: var(--brown-dark);
-      border-top: 1px solid var(--gold-light);
+      padding: 76px 0 30px;
+      color: rgba(255, 253, 250, 0.78);
+      background: var(--espresso);
+      border-top: 1px solid rgba(178, 138, 74, 0.3);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.1fr 1fr 1fr 1fr;
-      gap: 33px;
-      padding-bottom: 35px;
+      grid-template-columns: 1.3fr 1fr 1fr;
+      gap: 42px;
+      padding-bottom: 44px;
+    }
+
+    .footer-brand {
+      width: min(260px, 100%);
+      margin-bottom: 18px;
+      filter: grayscale(1) brightness(3.5) contrast(0.6);
+      opacity: 0.94;
     }
 
     .footer-column h3,
     .footer-column h4 {
-      margin: 0 0 13px;
-    }
-
-    .footer-column h3 {
-      color: var(--white);
-      font-family: var(--font-display);
-      font-size: 21px;
-      font-weight: 300;
-      letter-spacing: 0.08em;
+      margin: 0 0 15px;
     }
 
     .footer-column h4 {
       color: var(--gold);
-      font-size: 11px;
-      letter-spacing: 0.17em;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
-    .footer-column p {
+    .footer-column p,
+    .footer-column a {
       margin: 7px 0;
-      color: rgba(255, 253, 249, 0.7);
+      color: rgba(255, 253, 250, 0.68);
       font-size: 12px;
-      line-height: 1.65;
+      line-height: 1.7;
+    }
+
+    .footer-column a {
+      transition: color 0.2s ease;
+    }
+
+    .footer-column a:hover {
+      color: var(--surface);
     }
 
     .footer-bottom {
       display: flex;
+      align-items: center;
       justify-content: space-between;
       gap: 18px;
-      padding-top: 22px;
-      color: rgba(255, 253, 249, 0.5);
-      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 24px;
+      color: rgba(255, 253, 250, 0.45);
+      border-top: 1px solid rgba(255, 253, 250, 0.12);
       font-size: 11px;
     }
 
     .footer-links {
       display: flex;
+      gap: 19px;
       flex-wrap: wrap;
-      gap: 18px;
     }
 
-    .footer-links button {
-      padding: 0;
-      color: rgba(255, 253, 249, 0.5);
-      background: transparent;
-      border: 0;
-      font: inherit;
-      font-size: 11px;
+    .footer-links a {
+      color: inherit;
+      transition: color 0.2s ease;
     }
 
-    .footer-links button:hover {
+    .footer-links a:hover {
+      color: var(--surface);
+    }
+
+    .floating-contact {
+      position: fixed;
+      right: max(18px, env(safe-area-inset-right));
+      bottom: max(18px, env(safe-area-inset-bottom));
+      z-index: 80;
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
       color: var(--white);
+      background: var(--green);
+      border: 2px solid rgba(255, 255, 255, 0.76);
+      border-radius: 50%;
+      box-shadow: 0 12px 26px rgba(28, 156, 90, 0.3);
+      font-size: 23px;
+      transition:
+        transform 0.2s ease,
+        background 0.2s ease;
     }
 
-    .modal-backdrop,
-    .legal-modal-backdrop {
+    .floating-contact:hover {
+      background: #16874c;
+      transform: translateY(-3px) scale(1.04);
+    }
+
+    .modal-backdrop {
       position: fixed;
       inset: 0;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 16px;
-      background: rgba(42, 33, 29, 0.78);
+      z-index: 200;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      background: rgba(43, 33, 30, 0.72);
       backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
     }
 
     .modal {
-      width: min(1100px, 100%);
-      max-height: 92vh;
-      display: flex;
-      flex-direction: column;
-      overflow: hidden;
-      background: var(--cream);
-      border: 1px solid var(--gold);
-      border-radius: 25px;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
-    }
-
-    .legal-modal {
-      width: min(760px, 100%);
-      max-height: 90vh;
+      width: min(640px, 100%);
+      max-height: min(720px, 90vh);
       overflow: auto;
-      background: var(--cream);
-      border: 1px solid var(--gold);
-      border-radius: 24px;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+      background: var(--surface);
+      border: 1px solid var(--gold-border);
+      border-radius: var(--radius-md);
+      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
     }
 
-    .cookie-settings-modal {
-      width: min(650px, 100%);
-    }
-
-    .modal-header,
-    .legal-modal-header {
+    .modal-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
-      gap: 18px;
-      padding: 22px 25px;
-      color: var(--white);
-      background: var(--brown);
+      gap: 16px;
+      padding: 24px 25px;
+      color: var(--surface);
+      background: var(--espresso);
     }
 
-    .modal-title,
-    .legal-modal-header h2 {
+    .modal-header h2 {
       margin: 0;
       font-family: var(--font-display);
-      font-size: 25px;
-      font-weight: 300;
+      font-size: 28px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
     }
 
-    .modal-subtitle {
-      margin: 4px 0 0;
-      color: rgba(255, 253, 249, 0.75);
-      font-size: 11px;
-    }
-
-    .modal-close,
-    .legal-close {
-      width: 36px;
-      height: 36px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--cream);
+    .modal-close {
+      width: 40px;
+      height: 40px;
+      display: inline-grid;
+      place-items: center;
+      padding: 0;
+      color: var(--surface);
       background: transparent;
-      border: 0;
+      border: 1px solid rgba(255, 253, 250, 0.3);
       border-radius: 50%;
       font-size: 25px;
     }
 
-    .modal-close:hover,
-    .legal-close:hover {
-      background: rgba(255, 255, 255, 0.12);
+    .modal-close:hover {
+      background: rgba(255, 253, 250, 0.12);
     }
 
-    .pin-screen {
-      max-width: 390px;
-      padding: 47px 25px;
-      margin: auto;
-      text-align: center;
-    }
-
-    .pin-screen h3 {
-      margin: 17px 0 8px;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 27px;
-      font-weight: 300;
-    }
-
-    .pin-screen p {
-      margin: 0 0 17px;
-      color: var(--taupe);
-      font-size: 12px;
-      line-height: 1.5;
-    }
-
-    .admin-dashboard {
-      display: none;
-      overflow: auto;
-    }
-
-    .admin-dashboard.visible {
-      display: block;
-    }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 12px;
-      padding: 19px;
-      background: rgba(245, 239, 230, 0.75);
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .metric {
-      padding: 15px;
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 14px;
-    }
-
-    .metric-label {
-      display: block;
-      margin-bottom: 8px;
-      color: var(--taupe);
-      font-size: 10px;
-      letter-spacing: 0.09em;
-      text-transform: uppercase;
-    }
-
-    .metric-value {
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 26px;
-      font-weight: 300;
-    }
-
-    .admin-toolbar {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: space-between;
-      gap: 11px;
-      padding: 15px 19px;
-      background: var(--white);
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .toolbar-group {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .toolbar-input,
-    .toolbar-select {
-      width: auto;
-      min-height: 38px;
-      font-size: 12px;
-    }
-
-    .toolbar-input {
-      min-width: 190px;
-    }
-
-    .admin-table-wrapper {
-      padding: 19px;
-      overflow-x: auto;
-    }
-
-    .admin-table {
-      width: 100%;
-      min-width: 850px;
-      border-collapse: collapse;
-      font-size: 11px;
-    }
-
-    .admin-table th {
-      padding: 12px;
-      color: var(--brown);
-      background: rgba(245, 239, 230, 0.8);
-      border-bottom: 1px solid var(--gold-light);
-      font-size: 10px;
-      letter-spacing: 0.08em;
-      text-align: left;
-      text-transform: uppercase;
-    }
-
-    .admin-table td {
-      padding: 13px 12px;
-      border-bottom: 1px solid rgba(197, 160, 89, 0.2);
-      vertical-align: top;
-    }
-
-    .table-muted {
-      display: block;
-      margin-top: 4px;
-      color: var(--taupe);
-      font-size: 10px;
-    }
-
-    .status-badge {
-      display: inline-block;
-      padding: 5px 8px;
-      border-radius: 999px;
-      font-size: 10px;
-      font-weight: 700;
-    }
-
-    .status-confirmed {
-      color: #146c41;
-      background: #e2f4e9;
-    }
-
-    .status-completed {
-      color: #555;
-      background: #ededed;
-    }
-
-    .status-cancelled {
-      color: #8d2525;
-      background: #f7dddd;
-    }
-
-    .table-actions {
-      display: flex;
-      justify-content: flex-end;
-      gap: 5px;
-    }
-
-    .small-action {
-      min-width: 31px;
-      min-height: 31px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 0 8px;
-      color: var(--brown);
-      background: var(--white);
-      border: 1px solid var(--gold-light);
-      border-radius: 8px;
-      font-size: 11px;
-    }
-
-    .small-action:hover {
-      color: var(--white);
-      background: var(--brown);
-    }
-
-    .toast-container {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 200;
-      display: grid;
-      gap: 8px;
-      width: min(360px, calc(100% - 40px));
-    }
-
-    .toast {
-      padding: 14px 16px;
-      color: var(--white);
-      background: var(--brown);
-      border-left: 4px solid var(--gold);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      font-size: 12px;
-    }
-
-    .toast.success {
-      border-left-color: #4bc681;
-    }
-
-    .toast.error {
-      background: #7c2222;
-      border-left-color: #ff9b9b;
-    }
-
-    .toast.warning {
-      background: #805914;
-      border-left-color: #ffd66f;
-    }
-
-    .cookie-banner {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      left: 18px;
-      z-index: 150;
-      padding: 20px;
-      background: rgba(255, 253, 249, 0.98);
-      border: 1px solid var(--gold);
-      border-radius: 22px;
-      box-shadow: 0 18px 60px rgba(42, 33, 29, 0.24);
-    }
-
-    .cookie-banner-inner {
-      width: min(1150px, 100%);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      margin: 0 auto;
-    }
-
-    .cookie-content {
-      max-width: 730px;
-    }
-
-    .cookie-label {
-      display: block;
-      margin-bottom: 7px;
-      color: var(--gold);
-      font-size: 10px;
-      letter-spacing: 0.17em;
-      text-transform: uppercase;
-    }
-
-    .cookie-content h2 {
-      margin: 0 0 8px;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 300;
-    }
-
-    .cookie-content p {
-      margin: 0;
-      color: var(--taupe);
-      font-size: 12px;
-      line-height: 1.6;
-    }
-
-    .cookie-content a {
-      display: inline-block;
-      margin-top: 8px;
-      color: var(--brown);
-      font-size: 11px;
-      text-decoration: underline;
-    }
-
-    .cookie-actions {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 8px;
-      flex-shrink: 0;
-    }
-
-    .cookie-actions .button {
-      min-height: 40px;
-      padding: 0 14px;
-      font-size: 10px;
-    }
-
-    .legal-content {
-      padding: 28px;
+    .modal-content {
+      padding: 26px;
       color: var(--brown);
       font-size: 13px;
       line-height: 1.75;
     }
 
-    .legal-content h3 {
-      margin: 0 0 18px;
-      color: var(--brown-dark);
+    .modal-content h3 {
+      margin: 0 0 16px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 30px;
-      font-weight: 300;
+      font-size: 31px;
+      font-weight: 400;
+      letter-spacing: -0.03em;
     }
 
-    .legal-content h4 {
-      margin: 22px 0 5px;
-      color: var(--brown-dark);
+    .modal-content h4 {
+      margin: 22px 0 6px;
+      color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 300;
+      font-size: 19px;
+      font-weight: 400;
     }
 
-    .legal-content p {
-      margin: 9px 0;
+    .modal-content p {
+      margin: 10px 0;
     }
 
-    .legal-content a {
+    .modal-content a {
       text-decoration: underline;
+      text-underline-offset: 3px;
     }
 
-    .legal-warning {
-      padding: 13px 15px;
-      color: #6e4b15;
-      background: #fff3cf;
-      border-left: 3px solid var(--gold);
-      border-radius: 8px;
-      font-size: 12px;
+    .toast-container {
+      position: fixed;
+      right: 18px;
+      bottom: 86px;
+      z-index: 300;
+      width: min(370px, calc(100% - 36px));
+      display: grid;
+      gap: 9px;
     }
 
-    .cookie-setting-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 18px;
-      padding: 20px 26px;
-      border-bottom: 1px solid var(--gold-light);
-    }
-
-    .cookie-setting-row strong {
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 18px;
-      font-weight: 300;
-    }
-
-    .cookie-setting-row p {
-      max-width: 550px;
-      margin: 5px 0 0;
-      color: var(--taupe);
+    .toast {
+      padding: 15px 17px;
+      color: var(--surface);
+      background: var(--espresso);
+      border-left: 4px solid var(--gold);
+      border-radius: var(--radius-xs);
+      box-shadow: var(--shadow-hover);
       font-size: 12px;
       line-height: 1.55;
     }
 
-    .cookie-settings-footer {
-      display: flex;
-      justify-content: flex-end;
-      gap: 9px;
-      padding: 20px 26px;
+    .toast.success {
+      border-left-color: #65ca91;
     }
 
-    .switch {
-      position: relative;
-      display: block;
-      width: 46px;
-      height: 25px;
-      flex: 0 0 auto;
-      margin: 0;
+    .toast.error {
+      background: #7d2929;
+      border-left-color: #f3a7a7;
     }
 
-    .switch input {
-      width: 0;
-      height: 0;
-      opacity: 0;
+    :focus-visible {
+      outline: 3px solid rgba(178, 138, 74, 0.6);
+      outline-offset: 3px;
     }
 
-    .slider {
-      position: absolute;
-      inset: 0;
-      background: var(--cream-dark);
-      border-radius: 999px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    .slider::before {
-      position: absolute;
-      bottom: 4px;
-      left: 4px;
-      width: 17px;
-      height: 17px;
-      content: "";
-      background: var(--white);
-      border-radius: 50%;
-      transition: transform 0.2s ease;
-    }
-
-    .switch input:checked + .slider {
-      background: var(--brown);
-    }
-
-    .switch input:checked + .slider::before {
-      transform: translateX(21px);
-    }
-
-    .switch input:disabled + .slider {
-      cursor: not-allowed;
-      opacity: 0.65;
-    }
-
-    @media (max-width: 1000px) {
-      .desktop-navigation {
-        display: none;
+    @media (max-width: 1020px) {
+      .header-inner {
+        grid-template-columns: minmax(170px, 230px) 1fr auto;
+        gap: 16px;
       }
 
-      .pricing-grid,
-      .calendar-layout,
-      .form-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .footer-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-        text-align: center;
-      }
-
-      .about-copy {
-        max-width: 700px;
-        margin: 0 auto;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .container {
-        width: min(100% - 22px, 1160px);
-      }
-
-      .announcement-bar {
-        font-size: 10px;
-      }
-
-      .announcement-bar span:not(:first-child) {
+      .desktop-nav {
         display: none;
       }
 
       .header-inner {
-        min-height: 68px;
-        gap: 7px;
+        grid-template-columns: minmax(170px, 230px) 1fr auto;
       }
 
-      .logo-brand {
-        width: 180px;
-        min-width: 140px;
+      .header-cta {
+        justify-self: end;
       }
 
-      .header-actions {
-        gap: 4px;
+      .mobile-menu-button {
+        display: inline-flex;
       }
 
-      .header-action {
-        width: 38px;
-        min-height: 38px;
-        padding: 0;
-        font-size: 0;
-      }
-
-      .header-action span:first-child {
-        font-size: 17px;
-      }
-
-      .hero {
-        padding: 68px 0 77px;
-      }
-
-      .hero h1 {
-        font-size: clamp(39px, 12vw, 60px);
-      }
-
-      .hero p {
-        font-size: 13px;
-      }
-
-      .section {
-        padding: 66px 0;
-      }
-
-      .pricing-card,
-      .booking-content {
-        padding: 23px 17px;
-      }
-
-      .service-grid {
+      .price-layout,
+      .calendar-layout,
+      .form-layout,
+      .about-grid {
         grid-template-columns: 1fr;
       }
 
-      .step {
-        min-height: 59px;
-        padding: 10px 5px;
+      .about-copy {
+        max-width: 700px;
+        margin-inline: auto;
+        text-align: center;
+      }
+
+      .summary-box {
+        position: static;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1.3fr 1fr;
+      }
+    }
+
+    @media (max-width: 680px) {
+      :root {
+        --header-height: 70px;
+      }
+
+      body {
+        background-attachment: scroll;
+      }
+
+      .container {
+        width: min(100% - 28px, var(--container));
+      }
+
+      .announcement {
+        min-height: 35px;
+        display: grid;
+        place-items: center;
+        padding: 8px 14px;
+        font-size: 9px;
+        line-height: 1.35;
+      }
+
+      .announcement-inner span:not(:first-child) {
+        display: none;
+      }
+
+      .header-inner {
+        min-height: var(--header-height);
+        grid-template-columns: minmax(0, 164px) 1fr auto;
+        gap: 10px;
+      }
+
+      .brand {
+        width: 164px;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .mobile-menu-button {
+        width: 44px;
+        height: 44px;
+      }
+
+      .mobile-menu {
+        inset: calc(var(--header-height) + 27px) 12px auto;
+      }
+
+      .hero {
+        min-height: 610px;
+        padding: 76px 0 82px;
+      }
+
+      .hero::after {
+        width: 135vw;
+        top: 14%;
+        box-shadow:
+          0 0 0 35px rgba(255, 253, 250, 0.22),
+          0 0 0 70px rgba(178, 138, 74, 0.06);
+      }
+
+      .hero h1 {
+        margin-top: 21px;
+        font-size: clamp(44px, 13vw, 62px);
+        line-height: 1.01;
+      }
+
+      .hero-copy {
+        max-width: 33ch;
+        font-size: 14px;
+        line-height: 1.75;
+      }
+
+      .hero-actions,
+      .contact-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: min(100%, 360px);
+        margin-inline: auto;
+      }
+
+      .hero-actions {
+        margin-top: 28px;
+      }
+
+      .hero-actions .button,
+      .contact-actions .button {
+        width: 100%;
+      }
+
+      .hero-trust {
+        max-width: 300px;
+        gap: 9px 14px;
+        margin-inline: auto;
         font-size: 10px;
       }
 
+      .section {
+        padding: 78px 0;
+      }
+
+      .section-heading {
+        margin-bottom: 36px;
+      }
+
+      .section-heading h2,
+      .about-copy h2,
+      .contact-section h2 {
+        font-size: clamp(36px, 10.6vw, 48px);
+      }
+
+      .section-heading p {
+        font-size: 14px;
+      }
+
+      .price-card {
+        padding: 29px 20px;
+      }
+
+      .price-card h3 {
+        font-size: 32px;
+      }
+
+      .price-row {
+        gap: 8px;
+        font-size: 14px;
+      }
+
+      .price {
+        font-size: 21px;
+      }
+
+      .booking-shell {
+        border-radius: var(--radius-md);
+      }
+
+      .booking-progress {
+        overflow: hidden;
+      }
+
+      .booking-step-indicator {
+        min-height: 69px;
+        flex-direction: column;
+        gap: 4px;
+        padding: 8px 5px;
+        font-size: 8px;
+        letter-spacing: 0.04em;
+      }
+
       .step-number {
-        width: 21px;
-        height: 21px;
-        font-size: 10px;
+        width: 23px;
+        height: 23px;
+        font-size: 9px;
+      }
+
+      .booking-content {
+        padding: 25px 17px;
+      }
+
+      .booking-panel h3 {
+        font-size: 33px;
+      }
+
+      .booking-intro {
+        margin-bottom: 22px;
+        font-size: 13px;
+      }
+
+      .service-grid,
+      .form-row {
+        grid-template-columns: 1fr;
+      }
+
+      .service-option {
+        min-height: 148px;
+        padding: 18px;
+      }
+
+      .service-title {
+        max-width: 76%;
       }
 
       .booking-footer {
@@ -1843,41 +1915,57 @@
         width: 100%;
       }
 
-      .form-row {
-        grid-template-columns: 1fr;
-        gap: 0;
+      .booking-footer .button-secondary {
+        order: 2;
       }
 
       .calendar-box,
       .time-box,
       .summary-box {
-        padding: 17px;
+        padding: 18px 14px;
       }
 
-      .success-box h3 {
-        font-size: 29px;
+      .calendar-header h4,
+      .time-box h4,
+      .summary-box h4 {
+        font-size: 23px;
       }
 
-      .metrics {
-        grid-template-columns: repeat(2, 1fr);
+      .calendar-day {
+        min-height: 40px;
+        font-size: 11px;
       }
 
-      .admin-toolbar {
-        align-items: stretch;
-        flex-direction: column;
+      .weekdays,
+      .calendar-grid {
+        gap: 4px;
       }
 
-      .toolbar-group {
-        width: 100%;
+      .calendar-legend {
+        gap: 10px;
+        font-size: 9px;
       }
 
-      .toolbar-input,
-      .toolbar-select {
-        width: 100%;
+      .time-slots {
+        gap: 7px;
+      }
+
+      .time-slot {
+        min-height: 48px;
+        padding: 0 10px;
+      }
+
+      .portrait-frame {
+        width: min(100%, 355px);
+      }
+
+      .about-copy p {
+        font-size: 14px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
+        gap: 31px;
       }
 
       .footer-bottom {
@@ -1886,246 +1974,122 @@
         text-align: center;
       }
 
-      .cookie-banner {
-        right: 10px;
-        bottom: 10px;
-        left: 10px;
-        padding: 17px;
+      .footer-links {
+        justify-content: center;
       }
 
-      .cookie-banner-inner {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 16px;
+      .floating-contact {
+        right: 14px;
+        bottom: max(14px, env(safe-area-inset-bottom));
+        width: 53px;
+        height: 53px;
       }
 
-      .cookie-actions {
-        display: grid;
-        grid-template-columns: 1fr;
+      .toast-container {
+        right: 14px;
+        bottom: 79px;
+        width: calc(100% - 28px);
       }
 
-      .cookie-actions .button {
-        width: 100%;
+      .modal-backdrop {
+        align-items: end;
+        padding: 10px;
       }
 
-      .legal-modal-header,
-      .legal-content,
-      .cookie-setting-row,
-      .cookie-settings-footer {
-        padding: 19px;
+      .modal {
+        max-height: 88vh;
+        border-radius: var(--radius-sm);
       }
 
-      .cookie-setting-row {
-        align-items: flex-start;
-      }
-
-      .cookie-settings-footer {
-        flex-direction: column;
-      }
-
-      .cookie-settings-footer .button {
-        width: 100%;
+      .modal-header,
+      .modal-content {
+        padding: 20px;
       }
     }
-  
-    /* Premium visual system */
-    :root {
-      --sand: #f4eee6;
-      --cream: #fffdfa;
-      --cream-dark: #e9dfd1;
-      --taupe: #81746d;
-      --brown: #493a33;
-      --brown-dark: #251b18;
-      --gold: #b9975b;
-      --gold-light: rgba(185, 151, 91, .24);
-      --gold-border: rgba(185, 151, 91, .58);
-      --shadow: 0 18px 55px rgba(55, 40, 32, .10);
-      --radius: 24px;
-      --font-body: "sweet-sans-pro", Arial, sans-serif;
-      --font-display: "ivypresto-display", Georgia, serif;
-      --font-script: "great-vibes", cursive;
-      --font-brand: "goldenbook", Georgia, serif;
-    }
 
-    html { scroll-padding-top: 92px; }
-    body {
-      font-family: var(--font-body);
-      font-size: 16px;
-      line-height: 1.55;
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-    h1, h2, h3, h4, .price, .service-price, .metric-value,
-    .modal-title, .legal-modal-header h2, .cookie-content h2,
-    .cookie-setting-row strong { letter-spacing: -.015em; }
-    .site-header { background: rgba(255,253,249,.92); box-shadow: 0 8px 30px rgba(55,40,32,.06); }
-    .header-inner { min-height: 78px; }
-    .logo-brand { width: min(280px, 28vw); min-width: 170px; }
-    .desktop-navigation { gap: 26px; font-size: 12px; letter-spacing: .08em; text-transform: uppercase; }
-    .desktop-navigation a { position: relative; padding: 28px 0; }
-    .desktop-navigation a::after { position: absolute; right: 0; bottom: 18px; left: 0; height: 1px; content: ""; background: var(--gold); transform: scaleX(0); transform-origin: center; transition: transform .2s ease; }
-    .desktop-navigation a:hover::after, .desktop-navigation a:focus-visible::after { transform: scaleX(1); }
-    .header-action, .button { min-height: 48px; font-weight: 700; }
-    .button { letter-spacing: .12em; }
-    .hero { min-height: 610px; display: grid; place-items: center; padding: 112px 0 130px; }
-    .hero h1 { max-width: 900px; font-size: clamp(46px, 6.6vw, 82px); line-height: 1.02; letter-spacing: -.025em; }
-    .hero h1 em { display: inline-block; margin: 0 .08em; }
-    .hero p { font-size: 16px; }
-    .section { padding: 104px 0; }
-    .section-heading { margin-bottom: 52px; }
-    .section-heading h2 { font-size: clamp(38px, 5vw, 58px); letter-spacing: -.025em; }
-    .card { border-color: var(--gold-border); box-shadow: var(--shadow); }
-    .card::after { inset: 6px; border-color: rgba(185,151,91,.22); }
-    .pricing-card { padding: 34px; }
-    .pricing-card h3 { font-size: 33px; }
-    .pricing-row { font-size: 16px; }
-    .booking-content { padding: 42px; }
-    .service-option { min-height: 166px; padding: 20px; border-radius: 16px; }
-    .service-option:focus-visible, .button:focus-visible, .header-action:focus-visible, .icon-button:focus-visible, input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid rgba(185,151,91,.46); outline-offset: 3px; }
-    .booking-footer { margin-top: 34px; }
-    .site-footer { padding-top: 70px; }
-    .footer-column h3 { font-family: var(--font-brand); letter-spacing: .04em; }
-    .modal, .legal-modal { border-radius: 22px; }
-    @media (max-width: 1000px) {
-      .header-actions { gap: 5px; }
-      .logo-brand { width: 220px; }
-    }
-    @media (max-width: 720px) {
-      .container { width: min(100% - 28px, 1160px); }
-      .announcement-bar { min-height: 34px; padding: 8px 12px; line-height: 1.35; }
-      .site-header { position: sticky; }
-      .header-inner { min-height: 64px; }
-      .logo-brand { width: 160px; min-width: 0; }
-      .header-action { width: 40px; min-height: 40px; }
-      .hero { min-height: 560px; padding: 76px 0 88px; }
-      .hero h1 { font-size: clamp(39px, 12vw, 62px); }
-      .hero p { max-width: 35ch; font-size: 14px; line-height: 1.7; }
-      .hero-buttons, .contact-actions { display: grid; grid-template-columns: 1fr; width: min(100%, 360px); margin-inline: auto; }
-      .hero-buttons { margin-top: 28px; }
-      .hero-buttons .button, .contact-actions .button { width: 100%; }
-      .section { padding: 76px 0; }
-      .section-heading { margin-bottom: 34px; }
-      .section-heading h2 { font-size: clamp(35px, 10vw, 48px); }
-      .section-heading p { font-size: 14px; }
-      .pricing-card, .booking-content { padding: 24px 18px; }
-      .pricing-row { gap: 8px; font-size: 14px; }
-      .pricing-row .price { font-size: 19px; }
-      .steps { grid-template-columns: repeat(3, 1fr); }
-      .step { gap: 5px; font-size: 9px; }
-      .step-number { width: 22px; height: 22px; }
-      .calendar-box, .time-box, .summary-box { padding: 18px 14px; }
-      .calendar-day { min-height: 39px; }
-      .footer-grid { gap: 28px; }
-      .cookie-banner { right: 8px; bottom: 8px; left: 8px; }
-    }
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; animation-duration: .01ms !important; }
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+      }
     }
-
   </style>
 </head>
 
 <body>
+  <a class="skip-link" href="#main-content">
+    Direkt zum Inhalt
+  </a>
 
-  <div class="announcement-bar">
-    <span>
-      <span class="announcement-dot"></span>
-      Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
-    </span>
-
-    <span>·</span>
-
-    <span>
-      Persönliche Termine ohne Wartezeiten
-    </span>
-
-    <span>·</span>
-
-    <span>
-      0 € Buchungsgebühr
-    </span>
+  <div class="announcement">
+    <div class="announcement-inner">
+      <span>
+        <i class="announcement-dot"></i>
+        Bürgermeister-Sommer-Straße 34 · Treuchtlingen
+      </span>
+      <span>Persönliche Termine ohne Wartezeit</span>
+      <span>Keine Buchungsgebühr</span>
+    </div>
   </div>
 
   <header class="site-header">
     <div class="container header-inner">
-
       <a
-        href="#"
-        class="logo-brand"
-        aria-label="ALISA BEAUTY LAB Startseite"
+        class="brand"
+        href="#main-content"
+        aria-label="ALISA BEAUTY LAB – Startseite"
       >
         <img
-          src="AlisaLogoQuertransparent.webp"
-          alt="ALISA BEAUTY LAB Logo"
-          class="site-logo"
+          src="AlisaLogoQuertransparent.jpg"
+          alt="ALISA BEAUTY LAB"
         >
       </a>
 
-      <nav
-        class="desktop-navigation"
-        aria-label="Hauptnavigation"
-      >
-        <a href="#booking-section">
-          Termin buchen
-        </a>
-
-        <a href="#services">
-          Preise
-        </a>
-
-        <a href="#about">
-          Über mich
-        </a>
-
-        <a href="#contact">
-          Kontakt
-        </a>
+      <nav class="desktop-nav" aria-label="Hauptnavigation">
+        <a href="#services">Leistungen</a>
+        <a href="#booking">Termin buchen</a>
+        <a href="#about">Über Alisa</a>
+        <a href="#contact">Kontakt</a>
       </nav>
 
-      <div class="header-actions">
+      <a class="header-cta" href="#booking">
+        Termin buchen
+      </a>
 
-        <a
-          href="#booking-section"
-          class="header-action header-booking"
-          aria-label="Termin buchen"
-        >
-          <span>▣</span>
-          <span>Termin</span>
-        </a>
-
-        <a
-          href="https://wa.me/491784537636?text=Hallo%20Alisa,%20ich%20interessiere%20mich%20für%20einen%20Termin."
-          target="_blank"
-          rel="noopener noreferrer"
-          class="header-action header-whatsapp"
-          aria-label="WhatsApp Nachricht schreiben"
-        >
-          <span>◉</span>
-          <span>WhatsApp</span>
-        </a>
-
-        <a
-          href="tel:+491784537636"
-          class="header-action header-phone"
-          aria-label="Direkt anrufen"
-        >
-          <span>☎</span>
-          <span>Anrufen</span>
-        </a>
-
-      </div>
-
+      <button
+        id="mobile-menu-button"
+        class="mobile-menu-button"
+        type="button"
+        aria-label="Menü öffnen"
+        aria-controls="mobile-menu"
+        aria-expanded="false"
+      >
+        <span class="menu-icon"></span>
+      </button>
     </div>
   </header>
 
-  <main>
+  <nav
+    id="mobile-menu"
+    class="mobile-menu"
+    aria-label="Mobile Hauptnavigation"
+  >
+    <a href="#services">Leistungen & Preise</a>
+    <a href="#booking">Online buchen</a>
+    <a href="#about">Über Alisa</a>
+    <a href="#contact">Studio & Kontakt</a>
+    <a href="#booking">Wunschtermin reservieren</a>
+  </nav>
 
+  <main id="main-content">
     <section class="hero">
-      <div class="container">
-
-        <div class="eyebrow">
+      <div class="container hero-content">
+        <span class="eyebrow">
           Exklusives Wimpern-Atelier in Treuchtlingen
-        </div>
+        </span>
 
         <h1>
           Präzision & Feingefühl für deinen
@@ -2133,320 +2097,199 @@
           Augenaufschlag.
         </h1>
 
-        <p>
-          Im ALISA BEAUTY LAB erwartet dich ein gemütliches Studio mit
-          persönlicher Atmosphäre. Professionelle Wimpernbehandlungen,
-          individuelle Stylings und liebevolle Detailarbeit.
+        <p class="hero-copy">
+          Professionelle Wimpernbehandlungen, individuelle Stylings und
+          liebevolle Detailarbeit – in persönlicher, ruhiger Atmosphäre.
         </p>
 
-        <div class="hero-buttons">
-
-          <a
-            href="#booking-section"
-            class="button button-primary"
-          >
+        <div class="hero-actions">
+          <a class="button button-primary" href="#booking">
             Wunschtermin reservieren
           </a>
 
-          <a
-            href="#services"
-            class="button button-secondary"
-          >
-            Preise & Leistungen
+          <a class="button button-secondary" href="#services">
+            Preise ansehen
           </a>
-
         </div>
 
+        <div class="hero-trust" aria-label="Vorteile">
+          <span>Persönliche Beratung</span>
+          <span>Individueller Look</span>
+          <span>Ohne Buchungsgebühr</span>
+        </div>
       </div>
     </section>
 
-    <section
-      id="services"
-      class="section section-light"
-    >
+    <section id="services" class="section section-surface">
       <div class="container">
-
         <div class="section-heading">
-
-          <span class="label">
-            Original Preisliste
-          </span>
+          <span class="section-label">Leistungen & Preise</span>
 
           <h2>
-            Behandlungen & Preise
+            Dein Look.<br>
+            Individuell abgestimmt.
           </h2>
 
           <p>
-            Vor jeder Neumodellage findet eine persönliche Beratung statt,
-            damit der Look perfekt zu deiner Augenform passt.
+            Vor jeder Neumodellage besprechen wir gemeinsam Form, Effekt und
+            Stil – damit das Ergebnis perfekt zu dir und deiner Augenform
+            passt.
           </p>
-
         </div>
 
-        <div class="pricing-grid">
+        <div class="price-layout">
+          <div class="price-stack">
+            <article class="card price-card">
+              <h3>Wimpernlifting</h3>
 
-          <div class="stack">
-
-            <div class="card pricing-card">
-
-              <h3>
-                Wimpernlifting
-              </h3>
-
-              <div class="pricing-row">
-                <span>
-                  Wimpernlifting
-                </span>
-
-                <span class="line"></span>
-
-                <span class="price">
-                  35 €
-                </span>
+              <div class="price-row">
+                <span>Wimpernlifting</span>
+                <span class="price-line"></span>
+                <span class="price">35 €</span>
               </div>
 
-              <div class="pricing-note">
-                Dauer ca. 60 Minuten · Haltbarkeit 6–8 Wochen
-              </div>
+              <p class="price-note">
+                Dauer ca. 60 Minuten · Haltbarkeit ca. 6–8 Wochen
+              </p>
 
-              <div
-                style="position:relative;z-index:1;margin-top:20px;text-align:center;"
-              >
+              <div class="card-action">
                 <button
-                  type="button"
                   class="button button-primary"
-                  onclick="selectServiceAndScroll('srv-lifting')"
+                  type="button"
+                  data-service="srv-lifting"
                 >
-                  Auswählen
+                  Behandlung wählen
                 </button>
               </div>
+            </article>
 
-            </div>
-
-            <div class="card info-card">
-
-              <h4>
-                Hinweise zum Auffüllen
-              </h4>
+            <aside class="card info-card">
+              <h3>Hinweise zum Auffüllen</h3>
 
               <p>
                 Ab der 4. Woche wird der Neupreis verrechnet.
               </p>
 
               <p>
-                Auffüllpreise gelten nur, wenn beim Termin noch mindestens
+                Auffüllpreise gelten, wenn beim Termin noch mindestens
                 <strong>50 % der Extensions</strong> vorhanden sind.
               </p>
-
-            </div>
-
+            </aside>
           </div>
 
-          <div class="card pricing-card">
+          <article class="card price-card">
+            <h3>Wimpernextensions</h3>
 
-            <h3>
-              Wimpernextensions
-            </h3>
+            <h4>Neuanlage</h4>
 
-            <h4>
-              Neuanlage:
-            </h4>
-
-            <div class="pricing-row">
-              <span>
-                1:1 Technik
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                55 €
-              </span>
+            <div class="price-row">
+              <span>1:1 Technik</span>
+              <span class="price-line"></span>
+              <span class="price">55 €</span>
             </div>
 
-            <div class="pricing-row">
-              <span>
-                Volumen 2D–4D
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                65 €
-              </span>
+            <div class="price-row">
+              <span>Volumen 2D–4D</span>
+              <span class="price-line"></span>
+              <span class="price">65 €</span>
             </div>
 
-            <div class="pricing-row">
-              <span>
-                Mega Volumen 5D–8D
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                80 €
-              </span>
+            <div class="price-row">
+              <span>Mega Volumen 5D–8D</span>
+              <span class="price-line"></span>
+              <span class="price">80 €</span>
             </div>
 
-            <div class="card-divider"></div>
+            <div class="price-divider"></div>
 
-            <h4>
-              Auffüllpreise 1:1 & Volumen
-            </h4>
+            <h4>Auffüllen 1:1 & Volumen</h4>
 
-            <div class="pricing-row">
-              <span>
-                Bis 2 Wochen
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                30 €
-              </span>
+            <div class="price-row">
+              <span>Bis 2 Wochen</span>
+              <span class="price-line"></span>
+              <span class="price">30 €</span>
             </div>
 
-            <div class="pricing-row">
-              <span>
-                Bis 3 Wochen
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                40 €
-              </span>
+            <div class="price-row">
+              <span>Bis 3 Wochen</span>
+              <span class="price-line"></span>
+              <span class="price">40 €</span>
             </div>
 
-            <div class="card-divider"></div>
+            <div class="price-divider"></div>
 
-            <h4>
-              Auffüllpreise Megavolumen
-            </h4>
+            <h4>Auffüllen Megavolumen</h4>
 
-            <div class="pricing-row">
-              <span>
-                Bis 2 Wochen
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                40 €
-              </span>
+            <div class="price-row">
+              <span>Bis 2 Wochen</span>
+              <span class="price-line"></span>
+              <span class="price">40 €</span>
             </div>
 
-            <div class="pricing-row">
-              <span>
-                Bis 3 Wochen
-              </span>
-
-              <span class="line"></span>
-
-              <span class="price">
-                50 €
-              </span>
+            <div class="price-row">
+              <span>Bis 3 Wochen</span>
+              <span class="price-line"></span>
+              <span class="price">50 €</span>
             </div>
 
-            <div
-              style="position:relative;z-index:1;margin-top:24px;text-align:center;"
-            >
-              <a
-                href="#booking-section"
-                class="button button-primary"
-              >
+            <div class="card-action">
+              <a class="button button-primary" href="#booking">
                 Direkt online buchen
               </a>
             </div>
-
-          </div>
-
+          </article>
         </div>
-
       </div>
     </section>
 
-    <section
-      id="booking-section"
-      class="section"
-    >
+    <section id="booking" class="section">
       <div class="container">
-
         <div class="section-heading">
+          <span class="eyebrow">Online-Terminbuchung</span>
 
-          <span class="eyebrow">
-            Online-Terminbuchung
-          </span>
-
-          <h2>
+          <h2 style="margin-top: 17px;">
             Wunschtermin festlegen
           </h2>
 
           <p>
-            In wenigen Schritten deinen Termin auswählen – ohne Planity und
-            ohne Buchungsgebühr.
+            Wähle Behandlung, Datum und Uhrzeit in wenigen Schritten aus.
+            Deine Anfrage wird anschließend direkt gespeichert.
           </p>
-
         </div>
 
-        <div class="card booking-card">
-
-          <div class="steps">
-
+        <div class="booking-shell">
+          <div class="booking-progress" aria-label="Buchungsfortschritt">
             <div
-              class="step active"
               id="step-indicator-1"
+              class="booking-step-indicator active"
             >
-              <span class="step-number">
-                1
-              </span>
-
-              <span>
-                Behandlung
-              </span>
+              <span class="step-number">1</span>
+              <span>Behandlung</span>
             </div>
 
             <div
-              class="step"
               id="step-indicator-2"
+              class="booking-step-indicator"
             >
-              <span class="step-number">
-                2
-              </span>
-
-              <span>
-                Datum & Uhrzeit
-              </span>
+              <span class="step-number">2</span>
+              <span>Datum & Uhrzeit</span>
             </div>
 
             <div
-              class="step"
               id="step-indicator-3"
+              class="booking-step-indicator"
             >
-              <span class="step-number">
-                3
-              </span>
-
-              <span>
-                Bestätigung
-              </span>
+              <span class="step-number">3</span>
+              <span>Deine Angaben</span>
             </div>
-
           </div>
 
           <div class="booking-content">
+            <section id="booking-step-1" class="booking-panel">
+              <h3>Behandlung auswählen</h3>
 
-            <section
-              id="booking-step-1"
-              class="booking-step"
-            >
-
-              <h3>
-                Behandlung auswählen
-              </h3>
-
-              <p class="booking-step-intro">
-                Wähle deine gewünschte Behandlung aus.
+              <p class="booking-intro">
+                Wähle die Behandlung, die du buchen möchtest.
               </p>
 
               <div
@@ -2455,51 +2298,41 @@
               ></div>
 
               <div class="booking-footer">
-
-                <div class="selection-summary">
-                  Ausgewählt:
+                <div class="booking-summary-text">
+                  Ausgewählte Behandlung
                   <strong id="step1-summary">
                     Bitte wählen
                   </strong>
                 </div>
 
                 <button
-                  type="button"
+                  id="go-step-2"
                   class="button button-primary"
-                  onclick="goToStep(2)"
+                  type="button"
                 >
                   Weiter zu Datum & Uhrzeit
                 </button>
-
               </div>
-
             </section>
 
             <section
               id="booking-step-2"
-              class="booking-step hidden"
+              class="booking-panel hidden"
             >
+              <h3>Wunschtermin wählen</h3>
 
-              <h3>
-                Wunschtermin festlegen
-              </h3>
-
-              <p class="booking-step-intro">
-                Die Buchung ist montags bis sonntags möglich. Jeder Termin
-                reserviert ein Zeitfenster von zwei Stunden.
+              <p class="booking-intro">
+                Jeder Termin reserviert ein Zeitfenster von zwei Stunden.
               </p>
 
               <div class="calendar-layout">
-
                 <div class="calendar-box">
-
                   <div class="calendar-header">
-
                     <button
-                      type="button"
+                      id="previous-month"
                       class="icon-button"
+                      type="button"
                       aria-label="Vorheriger Monat"
-                      onclick="changeMonth(-1)"
                     >
                       ‹
                     </button>
@@ -2509,17 +2342,16 @@
                     </h4>
 
                     <button
-                      type="button"
+                      id="next-month"
                       class="icon-button"
+                      type="button"
                       aria-label="Nächster Monat"
-                      onclick="changeMonth(1)"
                     >
                       ›
                     </button>
-
                   </div>
 
-                  <div class="weekdays">
+                  <div class="weekdays" aria-hidden="true">
                     <span>Mo</span>
                     <span>Di</span>
                     <span>Mi</span>
@@ -2532,40 +2364,35 @@
                   <div
                     id="calendar-grid"
                     class="calendar-grid"
+                    aria-label="Kalender"
                   ></div>
 
                   <div class="calendar-legend">
-
                     <span class="legend-item">
-                      <span class="legend-dot"></span>
+                      <i class="legend-dot"></i>
                       Ausgewählt
                     </span>
 
                     <span class="legend-item">
-                      <span class="legend-dot free"></span>
+                      <i class="legend-dot free"></i>
                       Frei
                     </span>
 
                     <span class="legend-item">
-                      <span class="legend-dot blocked"></span>
-                      Gesperrt
+                      <i class="legend-dot blocked"></i>
+                      Nicht verfügbar
                     </span>
-
                   </div>
-
                 </div>
 
                 <div class="time-box">
-
-                  <h4>
-                    Verfügbare Uhrzeiten
-                  </h4>
+                  <h4>Freie Uhrzeiten</h4>
 
                   <p
                     id="selected-date-display"
                     class="selected-date"
                   >
-                    Bitte zuerst ein Datum wählen.
+                    Bitte wähle zuerst ein Datum.
                   </p>
 
                   <div
@@ -2573,120 +2400,99 @@
                     class="time-slots"
                   >
                     <div class="empty-state">
-                      Wähle ein Datum im Kalender, um freie Termine zu sehen.
+                      Wähle ein Datum im Kalender aus, um freie Uhrzeiten zu
+                      sehen.
                     </div>
                   </div>
-
                 </div>
-
               </div>
 
               <div class="booking-footer">
-
                 <button
-                  type="button"
+                  id="back-step-1"
                   class="button button-secondary"
-                  onclick="goToStep(1)"
+                  type="button"
                 >
                   Zurück
                 </button>
 
                 <button
-                  id="next-step-2"
-                  type="button"
+                  id="go-step-3"
                   class="button button-primary"
-                  onclick="goToStep(3)"
+                  type="button"
                   disabled
                 >
-                  Weiter zu Kontaktdaten
+                  Weiter zu deinen Angaben
                 </button>
-
               </div>
-
             </section>
 
             <section
               id="booking-step-3"
-              class="booking-step hidden"
+              class="booking-panel hidden"
             >
+              <h3>Deine Angaben</h3>
 
-              <h3>
-                Deine Angaben
-              </h3>
-
-              <p class="booking-step-intro">
-                Bitte trage deine Daten für die Terminbestätigung ein.
+              <p class="booking-intro">
+                Bitte gib deine Kontaktdaten für die Terminbestätigung ein.
               </p>
 
               <div class="form-layout">
-
-                <form
-                  id="booking-form"
-                  onsubmit="submitBooking(event)"
-                >
-
+                <form id="booking-form" novalidate>
                   <div class="form-row">
-
                     <div class="form-group">
-                      <label for="first-name">
-                        Vorname *
-                      </label>
+                      <label for="first-name">Vorname *</label>
 
                       <input
                         id="first-name"
+                        name="firstName"
                         type="text"
                         autocomplete="given-name"
-                        required
                         placeholder="z. B. Julia"
+                        required
                       >
                     </div>
 
                     <div class="form-group">
-                      <label for="last-name">
-                        Nachname *
-                      </label>
+                      <label for="last-name">Nachname *</label>
 
                       <input
                         id="last-name"
+                        name="lastName"
                         type="text"
                         autocomplete="family-name"
-                        required
                         placeholder="z. B. Schneider"
+                        required
                       >
                     </div>
-
                   </div>
 
                   <div class="form-row">
-
                     <div class="form-group">
-                      <label for="email">
-                        E-Mail-Adresse *
-                      </label>
+                      <label for="email">E-Mail-Adresse *</label>
 
                       <input
                         id="email"
+                        name="email"
                         type="email"
                         autocomplete="email"
-                        required
                         placeholder="name@beispiel.de"
+                        required
                       >
                     </div>
 
                     <div class="form-group">
-                      <label for="phone">
-                        Telefon / WhatsApp *
-                      </label>
+                      <label for="phone">Telefon / WhatsApp *</label>
 
                       <input
                         id="phone"
+                        name="phone"
                         type="tel"
                         autocomplete="tel"
-                        required
                         placeholder="0178 4537636"
+                        required
                       >
                     </div>
-
                   </div>
 
                   <div class="form-group">
@@ -2696,6 +2502,7 @@
 
                     <textarea
                       id="notes"
+                      name="notes"
                       placeholder="z. B. empfindliche Augen, natürlicher Schwung ..."
                     ></textarea>
                   </div>
@@ -2703,6 +2510,7 @@
                   <label class="consent">
                     <input
                       id="consent"
+                      name="consent"
                       type="checkbox"
                       required
                     >
@@ -2715,54 +2523,48 @@
                   </label>
 
                   <div class="booking-footer">
-
                     <button
-                      type="button"
+                      id="back-step-2"
                       class="button button-secondary"
-                      onclick="goToStep(2)"
+                      type="button"
                     >
                       Datum anpassen
                     </button>
 
                     <button
-                      type="submit"
                       class="button button-primary"
+                      type="submit"
                     >
-                      Verbindlich reservieren
+                      Termin reservieren
                     </button>
-
                   </div>
-
                 </form>
 
                 <aside class="summary-box">
-
-                  <h4>
-                    Buchungsübersicht
-                  </h4>
+                  <h4>Buchungsübersicht</h4>
 
                   <div class="summary-line">
-                    <span>Behandlung:</span>
+                    <span>Behandlung</span>
                     <span id="summary-treatment">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Datum:</span>
+                    <span>Datum</span>
                     <span id="summary-date">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Uhrzeit:</span>
+                    <span>Uhrzeit</span>
                     <span id="summary-time">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Sperrzeit:</span>
+                    <span>Zeitfenster</span>
                     <span>2 Stunden</span>
                   </div>
 
                   <div class="summary-line summary-total">
-                    <span>Betrag:</span>
+                    <span>Betrag</span>
                     <span id="summary-price">0 €</span>
                   </div>
 
@@ -2770,131 +2572,106 @@
                     Bürgermeister-Sommer-Straße 34<br>
                     91757 Treuchtlingen
                   </p>
-
                 </aside>
-
               </div>
-
             </section>
 
             <section
               id="booking-step-4"
-              class="booking-step hidden"
+              class="booking-panel hidden"
             >
-
               <div class="success-box">
+                <div class="success-icon">✓</div>
 
-                <div class="success-icon">
-                  ✓
-                </div>
-
-                <h3>
-                  Vielen Dank für deine Buchung!
-                </h3>
+                <h3>Dein Termin ist reserviert.</h3>
 
                 <p>
-                  Dein Termin wurde gespeichert. Speichere ihn zusätzlich
-                  in deinem Kalender oder bestätige ihn per WhatsApp.
+                  Vielen Dank für deine Buchung. Deine Terminübersicht findest
+                  du hier – du kannst sie direkt per WhatsApp bestätigen.
                 </p>
 
                 <div class="confirmation">
-
                   <div class="summary-line">
-                    <span>Buchungscode:</span>
+                    <span>Buchungscode</span>
                     <span id="confirmed-code">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Name:</span>
+                    <span>Name</span>
                     <span id="confirmed-name">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Leistung:</span>
+                    <span>Leistung</span>
                     <span id="confirmed-service">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Termin:</span>
+                    <span>Termin</span>
                     <span id="confirmed-date">–</span>
                   </div>
 
                   <div class="summary-line">
-                    <span>Gesperrt bis:</span>
-                    <span id="confirmed-until">–</span>
-                  </div>
-
-                  <div class="summary-line">
-                    <span>Ort:</span>
+                    <span>Studio</span>
                     <span>Treuchtlingen</span>
                   </div>
-
                 </div>
 
-                <div class="success-actions">
-
+                <div class="contact-actions">
                   <button
-                    type="button"
+                    id="calendar-download"
                     class="button button-primary"
-                    onclick="downloadCalendarFile()"
+                    type="button"
                   >
                     Kalenderdatei speichern
                   </button>
 
                   <button
-                    type="button"
+                    id="send-whatsapp"
                     class="button button-whatsapp"
-                    onclick="sendBookingWhatsApp()"
+                    type="button"
                   >
-                    WhatsApp senden
+                    Per WhatsApp bestätigen
                   </button>
-
                 </div>
 
                 <button
-                  type="button"
+                  id="new-booking"
                   class="button button-secondary"
-                  style="margin-top:18px;"
-                  onclick="resetBooking()"
+                  type="button"
+                  style="margin-top: 18px;"
                 >
                   Weitere Buchung
                 </button>
-
               </div>
-
             </section>
-
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <section
-      id="about"
-      class="section section-white"
-    >
+    <section id="about" class="section section-surface">
       <div class="container">
-
         <div class="about-grid">
-
           <div class="portrait-frame">
-            <img
-              src="images/alisa-portrait.webp"
-              alt="Alisa vom ALISA BEAUTY LAB"
-              onerror="this.style.display='none'; this.parentElement.classList.add('portrait-empty');"
+            <div
+              class="portrait-placeholder"
+              role="img"
+              aria-label="Portrait von Alisa folgt"
             >
+              <span class="portrait-placeholder-mark">ALISA</span>
+              <span class="portrait-placeholder-line"></span>
+              <span class="portrait-placeholder-caption">
+                Persönlich für dich da
+              </span>
+            </div>
           </div>
 
           <div class="about-copy">
-
-            <span class="label">
-              Über mich
-            </span>
+            <span class="section-label">Über Alisa</span>
 
             <h2>
-              Schön, dass du hier bist!
+              Schön, dass du hier bist.
             </h2>
 
             <p>
@@ -2915,844 +2692,171 @@
               Treuchtlinger Studio kennenzulernen.
             </p>
 
+            <div class="about-signature">Alisa</div>
           </div>
-
         </div>
-
       </div>
     </section>
 
-    <section
-      id="contact"
-      class="section section-light contact-section"
-    >
+    <section id="contact" class="section contact-section">
       <div class="container">
+        <div class="contact-icon">⌖</div>
 
-        <div class="contact-icon">
-          ⌖
-        </div>
+        <span class="section-label">Dein Termin bei ALISA BEAUTY LAB</span>
 
-        <h2>
-          Studio Treuchtlingen
-        </h2>
+        <h2>Studio Treuchtlingen</h2>
 
         <p>
-          Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
+          Bürgermeister-Sommer-Straße 34 · 91757 Treuchtlingen
         </p>
 
         <div class="contact-actions">
-
           <a
+            class="button button-primary"
             href="https://maps.app.goo.gl/rhu1G8NoeCrjPhzw7"
             target="_blank"
             rel="noopener noreferrer"
-            class="button button-primary"
           >
-            Route in Google Maps
+            Route planen
           </a>
 
           <a
-            href="https://wa.me/491784537636"
+            class="button button-whatsapp"
+            href="https://wa.me/491784537636?text=Hallo%20Alisa,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
             target="_blank"
             rel="noopener noreferrer"
-            class="button button-whatsapp"
           >
             WhatsApp schreiben
           </a>
 
           <a
-            href="tel:+491784537636"
             class="button button-secondary"
+            href="tel:+491784537636"
           >
             0178 4537636 anrufen
           </a>
-
         </div>
-
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <div class="container">
-
       <div class="footer-grid">
-
         <div class="footer-column">
-          <h3>
-            ALISA BEAUTY LAB
-          </h3>
+          <img
+            class="footer-brand"
+            src="AlisaLogoQuertransparent.jpg"
+            alt="ALISA BEAUTY LAB"
+          >
 
           <p>
-            Professionelles Wimpernstudio für natürliche Ästhetik,
-            Wimpernlifting und Wimpernextensions in Treuchtlingen.
+            Professionelles Wimpernstudio für Wimpernlifting,
+            Wimpernextensions und natürliche Ästhetik in Treuchtlingen.
           </p>
         </div>
 
         <div class="footer-column">
-          <h4>
-            Öffnungszeiten
-          </h4>
+          <h4>Öffnungszeiten</h4>
 
-          <p>
-            Montag: ab 18:00 Uhr
-          </p>
-
-          <p>
-            Dienstag: ab 12:00 Uhr
-          </p>
-
-          <p>
-            Mittwoch–Freitag: ab 19:00 Uhr
-          </p>
-
-          <p>
-            Samstag–Sonntag: ab 12:00 Uhr
-          </p>
-
-          <p>
-            Buchbar jeweils bis 21:00 Uhr
-          </p>
+          <p>Montag: ab 18:00 Uhr</p>
+          <p>Dienstag: ab 12:00 Uhr</p>
+          <p>Mittwoch–Freitag: ab 19:00 Uhr</p>
+          <p>Samstag–Sonntag: ab 12:00 Uhr</p>
+          <p>Buchbar jeweils bis 21:00 Uhr</p>
         </div>
 
         <div class="footer-column">
-          <h4>
-            Kontakt
-          </h4>
+          <h4>Kontakt</h4>
 
           <p>
-            Bürgermeister-Sommer-Straße 34
-          </p>
-
-          <p>
+            Bürgermeister-Sommer-Straße 34<br>
             91757 Treuchtlingen
           </p>
 
           <p>
-            Telefon: 0178 4537636
+            <a href="tel:+491784537636">
+              0178 4537636
+            </a>
           </p>
 
           <p>
-            E-Mail: alisa.prykhodko07@gmail.com
+            <a href="mailto:alisa.prykhodko07@gmail.com">
+              alisa.prykhodko07@gmail.com
+            </a>
           </p>
         </div>
-
-        <div class="footer-column">
-          <h4>
-            Studio-Management
-          </h4>
-
-          <p>
-            Buchungen, gesperrte Tage und CSV-Export verwalten.
-          </p>
-
-          <button
-            type="button"
-            class="button button-secondary"
-            onclick="openAdminModal()"
-            style="min-height:40px;padding:0 14px;font-size:10px;"
-          >
-            Adminbereich öffnen
-          </button>
-        </div>
-
       </div>
 
       <div class="footer-bottom">
-
         <span>
           © 2026 ALISA BEAUTY LAB. Alle Rechte vorbehalten.
         </span>
 
         <div class="footer-links">
-
-          <button
-            type="button"
-            onclick="openLegalModal('imprint')"
-          >
-            Impressum
-          </button>
-
-          <button
-            type="button"
-            onclick="openLegalModal('privacy')"
-          >
-            Datenschutz
-          </button>
-
-          <button
-            type="button"
-            onclick="openCookieSettings()"
-          >
-            Cookie-Einstellungen
-          </button>
-
+          <a href="#" data-modal="imprint">Impressum</a>
+          <a href="#" data-modal="privacy">Datenschutz</a>
         </div>
-
       </div>
-
     </div>
   </footer>
 
-  <div
-    id="toast-container"
-    class="toast-container"
-  ></div>
-
-  <!-- Adminbereich -->
-
-  <div
-    id="admin-modal"
-    class="modal-backdrop hidden"
-    role="dialog"
-    aria-modal="true"
+  <a
+    class="floating-contact"
+    href="https://wa.me/491784537636?text=Hallo%20Alisa,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="WhatsApp Nachricht an ALISA BEAUTY LAB schreiben"
   >
-
-    <div class="modal">
-
-      <div class="modal-header">
-
-        <div>
-          <h2 class="modal-title">
-            Studio Management
-          </h2>
-
-          <p class="modal-subtitle">
-            Buchungen, Sperrtage und CSV-Export
-          </p>
-        </div>
-
-        <button
-          type="button"
-          class="modal-close"
-          aria-label="Adminbereich schließen"
-          onclick="closeAdminModal()"
-        >
-          ×
-        </button>
-
-      </div>
-
-      <div
-        id="pin-screen"
-        class="pin-screen"
-      >
-
-        <div
-          class="success-icon"
-          style="width:56px;height:56px;margin-bottom:0;"
-        >
-          🔒
-        </div>
-
-        <h3>
-          Studio-PIN
-        </h3>
-
-        <p>
-          Demo-PIN: <strong>2468</strong><br>
-          Für einen echten Live-Betrieb muss die Anmeldung serverseitig
-          abgesichert werden.
-        </p>
-
-        <form onsubmit="unlockAdmin(event)">
-
-          <div class="form-group">
-            <input
-              id="admin-pin"
-              type="password"
-              inputmode="numeric"
-              maxlength="8"
-              placeholder="PIN eingeben"
-              required
-            >
-          </div>
-
-          <button
-            type="submit"
-            class="button button-primary"
-          >
-            Dashboard öffnen
-          </button>
-
-        </form>
-
-      </div>
-
-      <div
-        id="admin-dashboard"
-        class="admin-dashboard"
-      >
-
-        <div class="metrics">
-
-          <div class="metric">
-            <span class="metric-label">
-              Termine gesamt
-            </span>
-
-            <span
-              id="metric-total"
-              class="metric-value"
-            >
-              0
-            </span>
-          </div>
-
-          <div class="metric">
-            <span class="metric-label">
-              Aktive Termine
-            </span>
-
-            <span
-              id="metric-active"
-              class="metric-value"
-            >
-              0
-            </span>
-          </div>
-
-          <div class="metric">
-            <span class="metric-label">
-              Erwarteter Umsatz
-            </span>
-
-            <span
-              id="metric-revenue"
-              class="metric-value"
-            >
-              0 €
-            </span>
-          </div>
-
-          <div class="metric">
-
-            <button
-              type="button"
-              class="button button-primary"
-              onclick="exportCsv()"
-              style="width:100%;min-height:38px;padding:0 10px;"
-            >
-              CSV exportieren
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="admin-toolbar">
-
-          <div class="toolbar-group">
-
-            <input
-              id="admin-search"
-              class="toolbar-input"
-              type="search"
-              placeholder="Name oder Buchungscode"
-              oninput="renderAdminTable()"
-            >
-
-            <select
-              id="admin-status"
-              class="toolbar-select"
-              onchange="renderAdminTable()"
-            >
-              <option value="all">
-                Alle Status
-              </option>
-
-              <option value="confirmed">
-                Bestätigt
-              </option>
-
-              <option value="completed">
-                Erledigt
-              </option>
-
-              <option value="cancelled">
-                Storniert
-              </option>
-            </select>
-
-          </div>
-
-          <div class="toolbar-group">
-
-            <input
-              id="block-date"
-              class="toolbar-input"
-              type="date"
-            >
-
-            <button
-              type="button"
-              class="button"
-              style="min-height:38px;padding:0 13px;background:#8d2525;color:white;font-size:10px;"
-              onclick="blockDate()"
-            >
-              Tag sperren
-            </button>
-
-          </div>
-
-        </div>
-
-        <div class="admin-table-wrapper">
-
-          <table class="admin-table">
-
-            <thead>
-              <tr>
-                <th>Referenz & Termin</th>
-                <th>Kundin</th>
-                <th>Behandlung</th>
-                <th>Betrag</th>
-                <th>Status</th>
-                <th>Aktionen</th>
-              </tr>
-            </thead>
-
-            <tbody id="admin-table-body"></tbody>
-
-          </table>
-
-        </div>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Cookie-Banner -->
-
-  <div
-    id="cookie-banner"
-    class="cookie-banner hidden"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="cookie-title"
-  >
-
-    <div class="cookie-banner-inner">
-
-      <div class="cookie-content">
-
-        <span class="cookie-label">
-          Datenschutz
-        </span>
-
-        <h2 id="cookie-title">
-          Deine Privatsphäre ist uns wichtig
-        </h2>
-
-        <p>
-          Wir verwenden notwendige Speichermechanismen für die Website und
-          Terminbuchung. Optionale Dienste werden nur aktiviert, wenn du
-          ihnen ausdrücklich zustimmst.
-        </p>
-
-        <a
-          href="#privacy"
-          onclick="openLegalModal('privacy')"
-        >
-          Mehr über Datenschutz erfahren
-        </a>
-
-      </div>
-
-      <div class="cookie-actions">
-
-        <button
-          type="button"
-          class="button button-secondary"
-          onclick="openCookieSettings()"
-        >
-          Einstellungen
-        </button>
-
-        <button
-          type="button"
-          class="button button-secondary"
-          onclick="rejectOptionalCookies()"
-        >
-          Nur notwendige
-        </button>
-
-        <button
-          type="button"
-          class="button button-primary"
-          onclick="acceptAllCookies()"
-        >
-          Alle akzeptieren
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Cookie-Einstellungen -->
-
-  <div
-    id="cookie-settings-modal"
-    class="legal-modal-backdrop hidden"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="cookie-settings-title"
-  >
-
-    <div class="legal-modal cookie-settings-modal">
-
-      <div class="legal-modal-header">
-
-        <div>
-          <span class="cookie-label">
-            Cookie-Einstellungen
-          </span>
-
-          <h2 id="cookie-settings-title">
-            Deine Auswahl verwalten
-          </h2>
-        </div>
-
-        <button
-          type="button"
-          class="legal-close"
-          onclick="closeCookieSettings()"
-          aria-label="Cookie-Einstellungen schließen"
-        >
-          ×
-        </button>
-
-      </div>
-
-      <div class="cookie-setting-row">
-
-        <div>
-          <strong>
-            Notwendige Speicherungen
-          </strong>
-
-          <p>
-            Diese Speicherungen sind für Cookie-Einstellungen und die
-            Demo-Terminbuchung erforderlich.
-          </p>
-        </div>
-
-        <label class="switch">
-          <input
-            type="checkbox"
-            checked
-            disabled
-          >
-
-          <span class="slider"></span>
-        </label>
-
-      </div>
-
-      <div class="cookie-setting-row">
-
-        <div>
-          <strong>
-            Statistik-Dienste
-          </strong>
-
-          <p>
-            Helfen uns zu verstehen, wie Besucher die Website nutzen.
-          </p>
-        </div>
-
-        <label class="switch">
-          <input
-            id="analytics-cookies"
-            type="checkbox"
-          >
-
-          <span class="slider"></span>
-        </label>
-
-      </div>
-
-      <div class="cookie-setting-row">
-
-        <div>
-          <strong>
-            Marketing-Dienste
-          </strong>
-
-          <p>
-            Können für externe Inhalte und personalisierte Werbung verwendet
-            werden.
-          </p>
-        </div>
-
-        <label class="switch">
-          <input
-            id="marketing-cookies"
-            type="checkbox"
-          >
-
-          <span class="slider"></span>
-        </label>
-
-      </div>
-
-      <div class="cookie-settings-footer">
-
-        <button
-          type="button"
-          class="button button-secondary"
-          onclick="closeCookieSettings()"
-        >
-          Abbrechen
-        </button>
-
-        <button
-          type="button"
-          class="button button-primary"
-          onclick="saveCookieSettings()"
-        >
-          Auswahl speichern
-        </button>
-
-      </div>
-
-    </div>
-
-  </div>
-
-  <!-- Impressum und Datenschutz -->
+    ◉
+  </a>
 
   <div
     id="legal-modal"
-    class="legal-modal-backdrop hidden"
+    class="modal-backdrop hidden"
     role="dialog"
     aria-modal="true"
     aria-labelledby="legal-modal-title"
   >
-
-    <div class="legal-modal">
-
-      <div class="legal-modal-header">
-
-        <div>
-          <span class="cookie-label">
-            ALISA BEAUTY LAB
-          </span>
-
-          <h2 id="legal-modal-title">
-            Informationen
-          </h2>
-        </div>
+    <div class="modal">
+      <div class="modal-header">
+        <h2 id="legal-modal-title">Informationen</h2>
 
         <button
+          id="legal-modal-close"
+          class="modal-close"
           type="button"
-          class="legal-close"
-          onclick="closeLegalModal()"
           aria-label="Fenster schließen"
         >
           ×
         </button>
-
       </div>
 
-      <div
-        id="legal-imprint"
-        class="legal-content hidden"
-      >
-
-        <h3>
-          Impressum
-        </h3>
-
-        <p>
-          <strong>ALISA BEAUTY LAB</strong><br>
-          Alisa Prykhodko
-        </p>
-
-        <p>
-          Bürgermeister-Sommer-Straße 34<br>
-          91757 Treuchtlingen<br>
-          Deutschland
-        </p>
-
-        <p>
-          Telefon:
-          <a href="tel:+491784537636">
-            +49 178 4537636
-          </a>
-        </p>
-
-        <p>
-          E-Mail:
-          <a href="mailto:alisa.prykhodko07@gmail.com">
-            alisa.prykhodko07@gmail.com
-          </a>
-        </p>
-
-        <p>
-          Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV:
-        </p>
-
-        <p>
-          Alisa Prykhodko<br>
-          Bürgermeister-Sommer-Straße 34<br>
-          91757 Treuchtlingen
-        </p>
-
-        <p class="legal-warning">
-          Bitte ergänze vor der Veröffentlichung deine vollständigen
-          rechtlichen Unternehmensdaten. Die Angaben sollten rechtlich
-          geprüft werden.
-        </p>
-
-      </div>
-
-      <div
-        id="legal-privacy"
-        class="legal-content hidden"
-      >
-
-        <h3>
-          Datenschutzerklärung
-        </h3>
-
-        <h4>
-          1. Verantwortliche Stelle
-        </h4>
-
-        <p>
-          Verantwortlich für die Verarbeitung personenbezogener Daten auf
-          dieser Website ist:
-        </p>
-
-        <p>
-          Alisa Prykhodko<br>
-          Bürgermeister-Sommer-Straße 34<br>
-          91757 Treuchtlingen<br>
-          E-Mail:
-          <a href="mailto:alisa.prykhodko07@gmail.com">
-            alisa.prykhodko07@gmail.com
-          </a>
-        </p>
-
-        <h4>
-          2. Adobe Fonts
-        </h4>
-
-        <p>
-          Diese Website verwendet Adobe Fonts zur Darstellung der
-          Schriftarten. Beim Aufruf der Website kann eine Verbindung zu
-          Servern von Adobe hergestellt werden, damit die verwendeten
-          Schriftarten geladen werden können.
-        </p>
-
-        <h4>
-          3. Buchungsformular
-        </h4>
-
-        <p>
-          Wenn du einen Termin buchst, werden die von dir eingegebenen Daten
-          zur Bearbeitung und Verwaltung der Terminreservierung verarbeitet.
-          Dazu gehören insbesondere Name, E-Mail-Adresse, Telefonnummer,
-          Terminwunsch und optionale Hinweise.
-        </p>
-
-        <h4>
-          4. Speicherung
-        </h4>
-
-        <p>
-          In dieser Demo-Version werden Buchungen lokal im Browser gespeichert.
-          Für den echten Live-Betrieb muss die Speicherung über einen
-          abgesicherten Server und eine datenschutzkonforme Datenbank
-          umgesetzt werden.
-        </p>
-
-        <h4>
-          5. WhatsApp und Telefon
-        </h4>
-
-        <p>
-          Wenn du die WhatsApp- oder Telefon-Schaltfläche nutzt, wird eine
-          Verbindung zum jeweiligen Anbieter hergestellt. Dabei gelten
-          zusätzlich die Datenschutzbestimmungen der jeweiligen Anbieter.
-        </p>
-
-        <h4>
-          6. Cookie-Einstellungen
-        </h4>
-
-        <p>
-          Die Website speichert deine Cookie-Auswahl lokal im Browser. Die
-          Auswahl kann jederzeit über den Link „Cookie-Einstellungen“ in der
-          Fußzeile geändert werden.
-        </p>
-
-        <h4>
-          7. Deine Rechte
-        </h4>
-
-        <p>
-          Du hast im Rahmen der gesetzlichen Vorschriften insbesondere Rechte
-          auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung
-          und Widerspruch.
-        </p>
-
-        <p class="legal-warning">
-          Diese Datenschutzerklärung ist eine technische Vorlage und ersetzt
-          keine individuelle rechtliche Prüfung. Vor dem Livegang muss sie an
-          die tatsächlich eingesetzten Dienste angepasst werden.
-        </p>
-
-      </div>
-
+      <div id="legal-modal-content" class="modal-content"></div>
     </div>
-
   </div>
+
+  <div
+    id="toast-container"
+    class="toast-container"
+    aria-live="polite"
+    aria-atomic="true"
+  ></div>
 
   <script>
     "use strict";
 
-    const STORAGE_KEYS = {
-      bookings: "alisa_beauty_lab_bookings_v5",
-      blockedDates: "alisa_beauty_lab_blocked_dates_v5",
-      cookies: "alisa_beauty_lab_cookie_preferences_v5"
-    };
-
-    const ADMIN_PIN = "2468";
-
     const STUDIO_PHONE = "491784537636";
-
     const STUDIO_ADDRESS =
       "Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen";
 
-    /*
-      Jede Buchung blockiert exakt 120 Minuten.
-      Slots werden alle 15 Minuten erzeugt.
-    */
+    const STORAGE_KEYS = {
+      bookings: "alisa_beauty_lab_bookings_v6"
+    };
+
     const BOOKING_BLOCK_MINUTES = 120;
+    const SLOT_INTERVAL_MINUTES = 30;
 
-    const SLOT_INTERVAL_MINUTES = 15;
-
-    /*
-      Öffnungszeiten:
-      0 = Sonntag
-      1 = Montag
-      2 = Dienstag
-      3 = Mittwoch
-      4 = Donnerstag
-      5 = Freitag
-      6 = Samstag
-
-      Die Endzeit 21:00 ist das Ende des buchbaren Zeitfensters.
-      Deshalb ist der letzte Start bei einer zweistündigen Sperrzeit
-      19:00 Uhr.
-    */
     const OPENING_HOURS = {
       0: { start: "12:00", end: "21:00" },
       1: { start: "18:00", end: "21:00" },
@@ -3769,49 +2873,49 @@
         title: "Wimpernlifting",
         price: 35,
         description:
-          "Natürlicher Schwung und optische Verlängerung der eigenen Naturwimpern. Haltbarkeit ca. 6–8 Wochen."
+          "Natürlicher Schwung und eine optische Verlängerung deiner eigenen Naturwimpern."
       },
       {
         id: "srv-new-1-1",
         title: "Neuanlage: 1:1 Technik",
         price: 55,
         description:
-          "Feiner, eleganter Mascara-Look. Eine synthetische Wimper auf jede Naturwimper."
+          "Feiner, eleganter Mascara-Look – eine Extension auf jede Naturwimper."
       },
       {
         id: "srv-new-volume",
         title: "Neuanlage: Volumen 2D–4D",
         price: 65,
         description:
-          "Zarte handgemachte Fächer für mehr Dichte und einen weichen, voluminösen Look."
+          "Zarte Fächer für mehr Dichte und einen weichen, voluminösen Look."
       },
       {
         id: "srv-new-mega",
         title: "Neuanlage: Mega Volumen 5D–8D",
         price: 80,
         description:
-          "Maximales Volumen, intensive Dichte und ein ausdrucksstarker Augenaufschlag."
+          "Intensive Dichte und ein ausdrucksstarker Augenaufschlag."
       },
       {
         id: "srv-refill-volume-2w",
         title: "Auffüllen 1:1 & Volumen bis 2 Wochen",
         price: 30,
         description:
-          "Regelmäßiges Nachfüllen für eine gepflegte und gleichmäßige Fülle."
+          "Regelmäßiges Auffüllen für eine gepflegte und gleichmäßige Fülle."
       },
       {
         id: "srv-refill-volume-3w",
         title: "Auffüllen 1:1 & Volumen bis 3 Wochen",
         price: 40,
         description:
-          "Auffrischen der 1:1- und Volumen-Extensions nach drei Wochen."
+          "Auffrischen deiner 1:1- oder Volumen-Extensions nach drei Wochen."
       },
       {
         id: "srv-refill-mega-2w",
         title: "Auffüllen Megavolumen bis 2 Wochen",
         price: 40,
         description:
-          "Nachfüllen der Megavolumen-Fächer nach bis zu zwei Wochen."
+          "Nachfüllen der Megavolumen-Fächer innerhalb von zwei Wochen."
       },
       {
         id: "srv-refill-mega-3w",
@@ -3822,74 +2926,75 @@
       }
     ];
 
-    const DEFAULT_BOOKINGS = [];
-
-    const DEFAULT_BLOCKED_DATES = [];
-
-    let bookings = loadArray(
-      STORAGE_KEYS.bookings,
-      DEFAULT_BOOKINGS
-    );
-
-    let blockedDates = loadArray(
-      STORAGE_KEYS.blockedDates,
-      DEFAULT_BLOCKED_DATES
-    );
-
-    let currentCalendarDate = new Date();
-
-    let state = {
+    const state = {
       selectedServiceId: "srv-lifting",
       selectedDate: null,
       selectedTime: null,
-      latestBooking: null
+      latestBooking: null,
+      currentStep: 1
     };
 
-    function clone(value) {
-      return JSON.parse(JSON.stringify(value));
-    }
+    let currentCalendarDate = new Date();
+    currentCalendarDate.setDate(1);
 
-    function loadArray(key, fallback) {
+    let bookings = loadBookings();
+
+    const elements = {
+      body: document.body,
+      mobileMenuButton: document.getElementById("mobile-menu-button"),
+      mobileMenu: document.getElementById("mobile-menu"),
+      servicesList: document.getElementById("services-list"),
+      step1Summary: document.getElementById("step1-summary"),
+      calendarMonthYear: document.getElementById("calendar-month-year"),
+      calendarGrid: document.getElementById("calendar-grid"),
+      selectedDateDisplay: document.getElementById("selected-date-display"),
+      timeSlots: document.getElementById("time-slots"),
+      goStep2: document.getElementById("go-step-2"),
+      goStep3: document.getElementById("go-step-3"),
+      backStep1: document.getElementById("back-step-1"),
+      backStep2: document.getElementById("back-step-2"),
+      previousMonth: document.getElementById("previous-month"),
+      nextMonth: document.getElementById("next-month"),
+      bookingForm: document.getElementById("booking-form"),
+      summaryTreatment: document.getElementById("summary-treatment"),
+      summaryDate: document.getElementById("summary-date"),
+      summaryTime: document.getElementById("summary-time"),
+      summaryPrice: document.getElementById("summary-price"),
+      calendarDownload: document.getElementById("calendar-download"),
+      sendWhatsapp: document.getElementById("send-whatsapp"),
+      newBooking: document.getElementById("new-booking"),
+      legalModal: document.getElementById("legal-modal"),
+      legalModalTitle: document.getElementById("legal-modal-title"),
+      legalModalContent: document.getElementById("legal-modal-content"),
+      legalModalClose: document.getElementById("legal-modal-close"),
+      toastContainer: document.getElementById("toast-container")
+    };
+
+    function loadBookings() {
       try {
-        const stored =
-          localStorage.getItem(key);
+        const stored = localStorage.getItem(STORAGE_KEYS.bookings);
 
         if (!stored) {
-          return clone(fallback);
+          return [];
         }
 
-        const parsed =
-          JSON.parse(stored);
-
-        return Array.isArray(parsed)
-          ? parsed
-          : clone(fallback);
-      } catch (error) {
-        return clone(fallback);
+        const parsed = JSON.parse(stored);
+        return Array.isArray(parsed) ? parsed : [];
+      } catch {
+        return [];
       }
     }
 
-    function saveData() {
+    function saveBookings() {
       localStorage.setItem(
         STORAGE_KEYS.bookings,
         JSON.stringify(bookings)
       );
-
-      localStorage.setItem(
-        STORAGE_KEYS.blockedDates,
-        JSON.stringify(blockedDates)
-      );
-    }
-
-    function getService(serviceId) {
-      return SERVICES.find(
-        service => service.id === serviceId
-      );
     }
 
     function getSelectedService() {
-      return getService(
-        state.selectedServiceId
+      return SERVICES.find(
+        service => service.id === state.selectedServiceId
       );
     }
 
@@ -3897,17 +3002,20 @@
       return `${Number(value).toLocaleString("de-DE")} €`;
     }
 
+    function dateToKey(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+
+      return `${year}-${month}-${day}`;
+    }
+
     function formatDate(dateString) {
       if (!dateString) {
         return "–";
       }
 
-      const [
-        year,
-        month,
-        day
-      ] = dateString.split("-");
-
+      const [year, month, day] = dateString.split("-");
       return `${day}.${month}.${year}`;
     }
 
@@ -3916,18 +3024,691 @@
         return "–";
       }
 
-      const date =
-        new Date(`${dateString}T12:00:00`);
+      const date = new Date(`${dateString}T12:00:00`);
 
-      return new Intl.DateTimeFormat(
-        "de-DE",
-        {
-          weekday: "long",
-          day: "2-digit",
-          month: "2-digit",
-          year: "numeric"
+      return new Intl.DateTimeFormat("de-DE", {
+        weekday: "long",
+        day: "2-digit",
+        month: "long",
+        year: "numeric"
+      }).format(date);
+    }
+
+    function timeToMinutes(time) {
+      const [hours, minutes] = time.split(":").map(Number);
+      return hours * 60 + minutes;
+    }
+
+    function minutesToTime(totalMinutes) {
+      const hours = Math.floor(totalMinutes / 60);
+      const minutes = totalMinutes % 60;
+
+      return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
+    }
+
+    function addMinutesToTime(time, minutes) {
+      return minutesToTime(timeToMinutes(time) + minutes);
+    }
+
+    function getOpeningHoursForDate(dateString) {
+      const date = new Date(`${dateString}T12:00:00`);
+      return OPENING_HOURS[date.getDay()];
+    }
+
+    function getSlotsForDate(dateString) {
+      const hours = getOpeningHoursForDate(dateString);
+
+      if (!hours) {
+        return [];
+      }
+
+      const slots = [];
+      const start = timeToMinutes(hours.start);
+      const latestStart =
+        timeToMinutes(hours.end) - BOOKING_BLOCK_MINUTES;
+
+      for (
+        let minutes = start;
+        minutes <= latestStart;
+        minutes += SLOT_INTERVAL_MINUTES
+      ) {
+        slots.push(minutesToTime(minutes));
+      }
+
+      return slots;
+    }
+
+    function isSlotBooked(date, time) {
+      const start = timeToMinutes(time);
+      const end = start + BOOKING_BLOCK_MINUTES;
+
+      return bookings.some(booking => {
+        if (
+          booking.date !== date ||
+          booking.status === "cancelled"
+        ) {
+          return false;
         }
-      ).format(date);
+
+        const bookingStart = timeToMinutes(booking.time);
+        const bookingEnd = bookingStart + BOOKING_BLOCK_MINUTES;
+
+        return start < bookingEnd && end > bookingStart;
+      });
+    }
+
+    function isDateAvailable(dateKey) {
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
+      const date = new Date(`${dateKey}T12:00:00`);
+
+      if (date < today) {
+        return false;
+      }
+
+      return getSlotsForDate(dateKey).length > 0;
+    }
+
+    function renderServices() {
+      elements.servicesList.innerHTML = SERVICES.map(service => {
+        const isSelected =
+          service.id === state.selectedServiceId;
+
+        return `
+          <button
+            class="service-option ${isSelected ? "selected" : ""}"
+            type="button"
+            data-service-id="${service.id}"
+            aria-pressed="${isSelected}"
+          >
+            <span class="service-option-header">
+              <span class="service-title">
+                ${escapeHtml(service.title)}
+              </span>
+
+              <span class="service-price">
+                ${formatEuro(service.price)}
+              </span>
+            </span>
+
+            <span class="service-description">
+              ${escapeHtml(service.description)}
+            </span>
+
+            <span class="service-meta">
+              Zeitfenster · 2 Stunden
+            </span>
+          </button>
+        `;
+      }).join("");
+
+      document
+        .querySelectorAll("[data-service-id]")
+        .forEach(button => {
+          button.addEventListener("click", () => {
+            selectService(button.dataset.serviceId);
+          });
+        });
+
+      updateBookingSummary();
+    }
+
+    function selectService(serviceId) {
+      state.selectedServiceId = serviceId;
+      state.selectedTime = null;
+
+      renderServices();
+      renderTimeSlots();
+    }
+
+    function renderCalendar() {
+      const year = currentCalendarDate.getFullYear();
+      const month = currentCalendarDate.getMonth();
+
+      const monthName = new Intl.DateTimeFormat("de-DE", {
+        month: "long",
+        year: "numeric"
+      }).format(currentCalendarDate);
+
+      elements.calendarMonthYear.textContent =
+        monthName.charAt(0).toUpperCase() + monthName.slice(1);
+
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+
+      const mondayOffset = (firstDay.getDay() + 6) % 7;
+      const totalDays = lastDay.getDate();
+
+      let calendarMarkup = "";
+
+      for (let i = 0; i < mondayOffset; i += 1) {
+        calendarMarkup += "<span aria-hidden='true'></span>";
+      }
+
+      for (let day = 1; day <= totalDays; day += 1) {
+        const date = new Date(year, month, day);
+        const dateKey = dateToKey(date);
+        const isAvailable = isDateAvailable(dateKey);
+        const isSelected = dateKey === state.selectedDate;
+        const isToday = dateKey === dateToKey(new Date());
+
+        const classes = [
+          "calendar-day",
+          !isAvailable ? "unavailable" : "",
+          isSelected ? "selected" : "",
+          isToday ? "today" : ""
+        ].filter(Boolean).join(" ");
+
+        const label = formatDateLong(dateKey);
+
+        calendarMarkup += `
+          <button
+            class="${classes}"
+            type="button"
+            data-date="${dateKey}"
+            aria-label="${label}"
+            ${!isAvailable ? "disabled" : ""}
+          >
+            ${day}
+          </button>
+        `;
+      }
+
+      elements.calendarGrid.innerHTML = calendarMarkup;
+
+      document
+        .querySelectorAll("[data-date]")
+        .forEach(button => {
+          button.addEventListener("click", () => {
+            selectDate(button.dataset.date);
+          });
+        });
+    }
+
+    function selectDate(dateKey) {
+      state.selectedDate = dateKey;
+      state.selectedTime = null;
+
+      renderCalendar();
+      renderTimeSlots();
+      updateBookingSummary();
+    }
+
+    function renderTimeSlots() {
+      elements.goStep3.disabled = !(
+        state.selectedDate &&
+        state.selectedTime
+      );
+
+      if (!state.selectedDate) {
+        elements.selectedDateDisplay.textContent =
+          "Bitte wähle zuerst ein Datum.";
+
+        elements.timeSlots.innerHTML = `
+          <div class="empty-state">
+            Wähle ein Datum im Kalender aus, um freie Uhrzeiten zu sehen.
+          </div>
+        `;
+
+        return;
+      }
+
+      const hours = getOpeningHoursForDate(state.selectedDate);
+      const slots = getSlotsForDate(state.selectedDate);
+
+      elements.selectedDateDisplay.textContent =
+        `${formatDateLong(state.selectedDate)} · Öffnungszeit ${hours.start}–${hours.end} Uhr`;
+
+      const availableSlots = slots.filter(
+        time => !isSlotBooked(state.selectedDate, time)
+      );
+
+      if (!availableSlots.length) {
+        elements.timeSlots.innerHTML = `
+          <div class="empty-state">
+            An diesem Tag sind keine freien Zeitfenster mehr verfügbar.
+            Bitte wähle ein anderes Datum.
+          </div>
+        `;
+
+        return;
+      }
+
+      elements.timeSlots.innerHTML = slots.map(time => {
+        const isBooked = isSlotBooked(state.selectedDate, time);
+        const isSelected = time === state.selectedTime;
+        const endTime = addMinutesToTime(
+          time,
+          BOOKING_BLOCK_MINUTES
+        );
+
+        return `
+          <button
+            class="time-slot ${isBooked ? "booked" : ""} ${isSelected ? "selected" : ""}"
+            type="button"
+            data-time="${time}"
+            ${isBooked ? "disabled" : ""}
+          >
+            <span>${time} Uhr</span>
+            <small>bis ${endTime}</small>
+          </button>
+        `;
+      }).join("");
+
+      document
+        .querySelectorAll("[data-time]")
+        .forEach(button => {
+          button.addEventListener("click", () => {
+            state.selectedTime = button.dataset.time;
+
+            renderTimeSlots();
+            updateBookingSummary();
+          });
+        });
+    }
+
+    function updateBookingSummary() {
+      const service = getSelectedService();
+
+      elements.step1Summary.textContent = service
+        ? `${service.title} · ${formatEuro(service.price)}`
+        : "Bitte wählen";
+
+      elements.summaryTreatment.textContent =
+        service?.title || "–";
+
+      elements.summaryDate.textContent =
+        formatDate(state.selectedDate);
+
+      elements.summaryTime.textContent = state.selectedTime
+        ? `${state.selectedTime} Uhr`
+        : "–";
+
+      elements.summaryPrice.textContent = service
+        ? formatEuro(service.price)
+        : "0 €";
+    }
+
+    function goToStep(step) {
+      if (step === 2 && !state.selectedServiceId) {
+        showToast(
+          "Bitte wähle zuerst eine Behandlung aus.",
+          "error"
+        );
+
+        return;
+      }
+
+      if (
+        step === 3 &&
+        (!state.selectedDate || !state.selectedTime)
+      ) {
+        showToast(
+          "Bitte wähle zuerst Datum und Uhrzeit aus.",
+          "error"
+        );
+
+        return;
+      }
+
+      [1, 2, 3, 4].forEach(number => {
+        document
+          .getElementById(`booking-step-${number}`)
+          .classList.toggle("hidden", number !== step);
+      });
+
+      [1, 2, 3].forEach(number => {
+        document
+          .getElementById(`step-indicator-${number}`)
+          .classList.toggle("active", number === step);
+      });
+
+      state.currentStep = step;
+
+      if (step === 2) {
+        renderCalendar();
+        renderTimeSlots();
+      }
+
+      if (step === 3) {
+        updateBookingSummary();
+      }
+
+      document
+        .getElementById("booking")
+        .scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+    }
+
+    function submitBooking(event) {
+      event.preventDefault();
+
+      const form = elements.bookingForm;
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      if (!state.selectedDate || !state.selectedTime) {
+        showToast(
+          "Bitte wähle zuerst Datum und Uhrzeit aus.",
+          "error"
+        );
+
+        goToStep(2);
+        return;
+      }
+
+      if (isSlotBooked(state.selectedDate, state.selectedTime)) {
+        showToast(
+          "Dieses Zeitfenster wurde gerade vergeben. Bitte wähle einen anderen Termin.",
+          "error"
+        );
+
+        goToStep(2);
+        renderTimeSlots();
+        return;
+      }
+
+      const service = getSelectedService();
+
+      const booking = {
+        id: createBookingCode(),
+        serviceId: service.id,
+        serviceTitle: service.title,
+        price: service.price,
+        date: state.selectedDate,
+        time: state.selectedTime,
+        firstName: form.elements.firstName.value.trim(),
+        lastName: form.elements.lastName.value.trim(),
+        email: form.elements.email.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        notes: form.elements.notes.value.trim(),
+        status: "confirmed",
+        createdAt: new Date().toISOString()
+      };
+
+      bookings.push(booking);
+      saveBookings();
+
+      state.latestBooking = booking;
+
+      document.getElementById("confirmed-code").textContent =
+        booking.id;
+
+      document.getElementById("confirmed-name").textContent =
+        `${booking.firstName} ${booking.lastName}`;
+
+      document.getElementById("confirmed-service").textContent =
+        booking.serviceTitle;
+
+      document.getElementById("confirmed-date").textContent =
+        `${formatDateLong(booking.date)} · ${booking.time} Uhr`;
+
+      goToStep(4);
+      showToast(
+        "Dein Termin wurde erfolgreich reserviert.",
+        "success"
+      );
+    }
+
+    function createBookingCode() {
+      const random = Math.random()
+        .toString(36)
+        .slice(2, 7)
+        .toUpperCase();
+
+      return `ABL-${random}`;
+    }
+
+    function resetBooking() {
+      state.selectedServiceId = "srv-lifting";
+      state.selectedDate = null;
+      state.selectedTime = null;
+      state.latestBooking = null;
+
+      elements.bookingForm.reset();
+
+      renderServices();
+      renderCalendar();
+      renderTimeSlots();
+      updateBookingSummary();
+      goToStep(1);
+    }
+
+    function downloadCalendarFile() {
+      const booking = state.latestBooking;
+
+      if (!booking) {
+        return;
+      }
+
+      const start = `${booking.date.replaceAll("-", "")}T${booking.time.replace(":", "")}00`;
+      const endTime = addMinutesToTime(
+        booking.time,
+        BOOKING_BLOCK_MINUTES
+      );
+
+      const end = `${booking.date.replaceAll("-", "")}T${endTime.replace(":", "")}00`;
+
+      const icsContent = [
+        "BEGIN:VCALENDAR",
+        "VERSION:2.0",
+        "PRODID:-//ALISA BEAUTY LAB//Terminbuchung//DE",
+        "BEGIN:VEVENT",
+        `UID:${booking.id}@alisabeautylab.de`,
+        `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")}`,
+        `DTSTART:${start}`,
+        `DTEND:${end}`,
+        `SUMMARY:${booking.serviceTitle} – ALISA BEAUTY LAB`,
+        `LOCATION:${STUDIO_ADDRESS}`,
+        `DESCRIPTION:Termin bei ALISA BEAUTY LAB. Buchungscode: ${booking.id}`,
+        "END:VEVENT",
+        "END:VCALENDAR"
+      ].join("\r\n");
+
+      const blob = new Blob(
+        [icsContent],
+        {
+          type: "text/calendar;charset=utf-8"
+        }
+      );
+
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+
+      link.href = url;
+      link.download = `alisa-beauty-lab-${booking.date}.ics`;
+
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+
+      URL.revokeObjectURL(url);
+    }
+
+    function sendBookingWhatsApp() {
+      const booking = state.latestBooking;
+
+      if (!booking) {
+        return;
+      }
+
+      const message = [
+        "Hallo Alisa,",
+        "",
+        "ich bestätige hiermit meinen Termin:",
+        `Behandlung: ${booking.serviceTitle}`,
+        `Datum: ${formatDateLong(booking.date)}`,
+        `Uhrzeit: ${booking.time} Uhr`,
+        `Buchungscode: ${booking.id}`,
+        "",
+        `Name: ${booking.firstName} ${booking.lastName}`
+      ].join("\n");
+
+      const url =
+        `https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(message)}`;
+
+      window.open(url, "_blank", "noopener,noreferrer");
+    }
+
+    function toggleMobileMenu() {
+      const isOpen =
+        elements.mobileMenuButton.getAttribute("aria-expanded") ===
+        "true";
+
+      elements.mobileMenuButton.setAttribute(
+        "aria-expanded",
+        String(!isOpen)
+      );
+
+      elements.mobileMenuButton.setAttribute(
+        "aria-label",
+        isOpen ? "Menü öffnen" : "Menü schließen"
+      );
+
+      elements.mobileMenu.classList.toggle("is-open", !isOpen);
+      elements.body.classList.toggle("menu-open", !isOpen);
+    }
+
+    function closeMobileMenu() {
+      elements.mobileMenuButton.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+      elements.mobileMenuButton.setAttribute(
+        "aria-label",
+        "Menü öffnen"
+      );
+
+      elements.mobileMenu.classList.remove("is-open");
+      elements.body.classList.remove("menu-open");
+    }
+
+    function openLegalModal(type) {
+      const legalContent = {
+        imprint: {
+          title: "Impressum",
+          content: `
+            <h3>Impressum</h3>
+
+            <p>
+              <strong>ALISA BEAUTY LAB</strong><br>
+              Alisa Prykhodko
+            </p>
+
+            <p>
+              Bürgermeister-Sommer-Straße 34<br>
+              91757 Treuchtlingen<br>
+              Deutschland
+            </p>
+
+            <p>
+              Telefon:
+              <a href="tel:+491784537636">
+                +49 178 4537636
+              </a>
+            </p>
+
+            <p>
+              E-Mail:
+              <a href="mailto:alisa.prykhodko07@gmail.com">
+                alisa.prykhodko07@gmail.com
+              </a>
+            </p>
+
+            <h4>Verantwortlich für den Inhalt</h4>
+
+            <p>
+              Alisa Prykhodko<br>
+              Bürgermeister-Sommer-Straße 34<br>
+              91757 Treuchtlingen
+            </p>
+          `
+        },
+
+        privacy: {
+          title: "Datenschutz",
+          content: `
+            <h3>Datenschutzerklärung</h3>
+
+            <h4>Verantwortliche Stelle</h4>
+
+            <p>
+              Verantwortlich für die Verarbeitung personenbezogener Daten ist
+              Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757
+              Treuchtlingen.
+            </p>
+
+            <h4>Terminbuchung</h4>
+
+            <p>
+              Bei einer Buchung werden die eingegebenen Kontaktdaten,
+              Terminwünsche und freiwilligen Hinweise zur Bearbeitung der
+              Reservierung verarbeitet.
+            </p>
+
+            <h4>Lokale Demo-Speicherung</h4>
+
+            <p>
+              Diese technische Demo speichert Buchungen ausschließlich lokal
+              im Browser. Für den Live-Betrieb ist eine abgesicherte,
+              datenschutzkonforme Server- und Datenbanklösung erforderlich.
+            </p>
+
+            <h4>Externe Dienste</h4>
+
+            <p>
+              Bei Nutzung von Telefon-, WhatsApp- oder Kartenlinks gelten
+              zusätzlich die Datenschutzbestimmungen der jeweiligen Anbieter.
+            </p>
+
+            <h4>Wichtiger Hinweis</h4>
+
+            <p>
+              Diese Erklärung ist eine technische Vorlage und muss vor dem
+              Livegang rechtlich an die tatsächlich eingesetzten Dienste
+              angepasst werden.
+            </p>
+          `
+        }
+      };
+
+      const content = legalContent[type];
+
+      if (!content) {
+        return;
+      }
+
+      elements.legalModalTitle.textContent = content.title;
+      elements.legalModalContent.innerHTML = content.content;
+
+      elements.legalModal.classList.remove("hidden");
+      elements.body.classList.add("modal-open");
+      elements.legalModalClose.focus();
+    }
+
+    function closeLegalModal() {
+      elements.legalModal.classList.add("hidden");
+      elements.body.classList.remove("modal-open");
+    }
+
+    function showToast(message, type = "default") {
+      const toast = document.createElement("div");
+
+      toast.className = `toast ${type}`;
+      toast.textContent = message;
+
+      elements.toastContainer.appendChild(toast);
+
+      window.setTimeout(() => {
+        toast.remove();
+      }, 4500);
     }
 
     function escapeHtml(value) {
@@ -3939,1858 +3720,120 @@
         .replaceAll("'", "&#039;");
     }
 
-    function timeToMinutes(time) {
-      const [
-        hours,
-        minutes
-      ] = time
-        .split(":")
-        .map(Number);
-
-      return hours * 60 + minutes;
-    }
-
-    function minutesToTime(totalMinutes) {
-      const hours =
-        Math.floor(totalMinutes / 60);
-
-      const minutes =
-        totalMinutes % 60;
-
-      return `${String(hours).padStart(
-        2,
-        "0"
-      )}:${String(minutes).padStart(
-        2,
-        "0"
-      )}`;
-    }
-
-    function addMinutesToTime(
-      time,
-      minutesToAdd
-    ) {
-      return minutesToTime(
-        timeToMinutes(time) +
-        minutesToAdd
-      );
-    }
-
-    function getOpeningHoursForDate(
-      dateString
-    ) {
-      const date =
-        new Date(`${dateString}T12:00:00`);
-
-      return OPENING_HOURS[
-        date.getDay()
-      ];
-    }
-
-    function getSlotsForDate(dateString) {
-      const hours =
-        getOpeningHoursForDate(dateString);
-
-      if (!hours) {
-        return [];
-      }
-
-      const start =
-        timeToMinutes(hours.start);
-
-      const end =
-        timeToMinutes(hours.end);
-
-      const latestStart =
-        end - BOOKING_BLOCK_MINUTES;
-
-      const slots = [];
-
-      for (
-        let minutes = start;
-        minutes <= latestStart;
-        minutes += SLOT_INTERVAL_MINUTES
-      ) {
-        slots.push(
-          minutesToTime(minutes)
-        );
-      }
-
-      return slots;
-    }
-
-    function getOpeningText(dateString) {
-      const hours =
-        getOpeningHoursForDate(dateString);
-
-      if (!hours) {
-        return "Geschlossen";
-      }
-
-      return `${hours.start}–${hours.end} Uhr`;
-    }
-
-    function renderServices() {
-      const list =
-        document.getElementById(
-          "services-list"
-        );
-
-      list.innerHTML =
-        SERVICES.map(service => {
-          const selected =
-            service.id === state.selectedServiceId;
-
-          return `
-            <button
-              type="button"
-              class="service-option ${selected ? "selected" : ""}"
-              onclick="selectService('${service.id}')"
-            >
-              <span class="service-header">
-                <span class="service-title">
-                  ${escapeHtml(service.title)}
-                </span>
-
-                <span class="service-price">
-                  ${formatEuro(service.price)}
-                </span>
-              </span>
-
-              <span class="service-description">
-                ${escapeHtml(service.description)}
-              </span>
-
-              <span class="service-duration">
-                ⏱ Zeitfenster: 2 Stunden
-              </span>
-            </button>
-          `;
-        }).join("");
-
-      updateStep1Summary();
-      updateStep3Summary();
-    }
-
-    function selectService(serviceId) {
-      state.selectedServiceId =
-        serviceId;
-
-      state.selectedTime = null;
-
-      renderServices();
-
-      if (state.selectedDate) {
-        renderTimeSlots();
-      }
-    }
-
-    function selectServiceAndScroll(
-      serviceId
-    ) {
-      selectService(serviceId);
-
-      document
-        .getElementById("booking-section")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-
-      goToStep(1);
-    }
-
-    function updateStep1Summary() {
-      const service =
-        getSelectedService();
-
-      const element =
-        document.getElementById(
-          "step1-summary"
-        );
-
-      if (!service) {
-        element.textContent =
-          "Bitte wählen";
-
-        return;
-      }
-
-      element.textContent =
-        `${service.title} · ${formatEuro(
-          service.price
-        )}`;
-    }
-
-    function updateStep3Summary() {
-      const service =
-        getSelectedService();
-
-      document
-        .getElementById(
-          "summary-treatment"
-        )
-        .textContent =
-          service?.title || "–";
-
-      document
-        .getElementById(
-          "summary-date"
-        )
-        .textContent =
-          formatDate(state.selectedDate);
-
-      document
-        .getElementById(
-          "summary-time"
-        )
-        .textContent =
-          state.selectedTime
-            ? `${state.selectedTime} Uhr`
-            : "–";
-
-      document
-        .getElementById(
-          "summary-price"
-        )
-        .textContent =
-          service
-            ? formatEuro(service.price)
-            : "0 €";
-    }
-
-    function setActiveStep(step) {
-      [1, 2, 3].forEach(number => {
-        document
-          .getElementById(
-            `step-indicator-${number}`
-          )
-          .classList.toggle(
-            "active",
-            number === step
-          );
-      });
-    }
-
-    function goToStep(step) {
-      if (
-        step === 2 &&
-        !state.selectedServiceId
-      ) {
-        showToast(
-          "Bitte zuerst eine Behandlung auswählen.",
-          "warning"
-        );
-
-        return;
-      }
-
-      if (
-        step === 3 &&
-        (
-          !state.selectedDate ||
-          !state.selectedTime
-        )
-      ) {
-        showToast(
-          "Bitte Datum und Uhrzeit auswählen.",
-          "warning"
-        );
-
-        return;
-      }
-
-      [1, 2, 3, 4].forEach(number => {
-        const section =
-          document.getElementById(
-            `booking-step-${number}`
-          );
-
-        if (section) {
-          section.classList.toggle(
-            "hidden",
-            number !== step
-          );
-        }
-      });
-
-      if (step <= 3) {
-        setActiveStep(step);
-      }
-
-      if (step === 2) {
-        renderCalendar();
-
-        if (state.selectedDate) {
-          renderTimeSlots();
-        }
-      }
-
-      if (step === 3) {
-        updateStep3Summary();
-      }
-
-      document
-        .getElementById("booking-section")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-    }
-
-    function dateToKey(date) {
-      const year =
-        date.getFullYear();
-
-      const month =
-        String(
-          date.getMonth() + 1
-        ).padStart(2, "0");
-
-      const day =
-        String(
-          date.getDate()
-        ).padStart(2, "0");
-
-      return `${year}-${month}-${day}`;
-    }
-
-    function renderCalendar() {
-      const title =
-        document.getElementById(
-          "calendar-month-year"
-        );
-
-      const grid =
-        document.getElementById(
-          "calendar-grid"
-        );
-
-      const year =
-        currentCalendarDate.getFullYear();
-
-      const month =
-        currentCalendarDate.getMonth();
-
-      title.textContent =
-        new Intl.DateTimeFormat(
-          "de-DE",
-          {
-            month: "long",
-            year: "numeric"
-          }
-        ).format(currentCalendarDate);
-
-      grid.innerHTML = "";
-
-      const firstDay =
-        new Date(year, month, 1);
-
-      let startIndex =
-        firstDay.getDay() - 1;
-
-      if (startIndex < 0) {
-        startIndex = 6;
-      }
-
-      const daysInMonth =
-        new Date(
-          year,
-          month + 1,
-          0
-        ).getDate();
-
-      for (
-        let index = 0;
-        index < startIndex;
-        index++
-      ) {
-        grid.appendChild(
-          document.createElement("div")
-        );
-      }
-
-      const today =
-        new Date();
-
-      today.setHours(
-        0,
-        0,
-        0,
-        0
-      );
-
-      for (
-        let day = 1;
-        day <= daysInMonth;
-        day++
-      ) {
-        const date =
-          new Date(year, month, day);
-
-        date.setHours(
-          0,
-          0,
-          0,
-          0
-        );
-
-        const key =
-          dateToKey(date);
-
-        const isPast =
-          date < today;
-
-        const isBlocked =
-          blockedDates.includes(key);
-
-        const unavailable =
-          isPast || isBlocked;
-
-        const button =
-          document.createElement(
-            "button"
-          );
-
-        button.type = "button";
-        button.textContent =
-          String(day);
-
-        button.className =
-          "calendar-day";
-
-        if (
-          state.selectedDate === key
-        ) {
-          button.classList.add(
-            "selected"
-          );
-        }
-
-        if (unavailable) {
-          button.disabled = true;
-          button.classList.add(
-            "unavailable"
-          );
-
-          button.title =
-            isBlocked
-              ? "Dieser Tag ist gesperrt."
-              : "Vergangener Tag.";
-        } else {
-          button.addEventListener(
-            "click",
-            () => selectDate(key)
-          );
-        }
-
-        grid.appendChild(button);
-      }
-    }
-
-    function changeMonth(direction) {
-      currentCalendarDate.setMonth(
-        currentCalendarDate.getMonth() +
-        direction
-      );
-
-      renderCalendar();
-    }
-
-    function selectDate(dateKey) {
-      state.selectedDate =
-        dateKey;
-
-      state.selectedTime =
-        null;
-
-      renderCalendar();
-      renderTimeSlots();
-      updateStep3Summary();
-      validateDateAndTime();
-    }
-
-    function getBookingsForDate(
-      dateKey
-    ) {
-      return bookings.filter(
-        booking =>
-          booking.date === dateKey &&
-          booking.status !== "cancelled"
-      );
-    }
-
-    function intervalsOverlap(
-      startA,
-      durationA,
-      startB,
-      durationB
-    ) {
-      const aStart =
-        timeToMinutes(startA);
-
-      const aEnd =
-        aStart + durationA;
-
-      const bStart =
-        timeToMinutes(startB);
-
-      const bEnd =
-        bStart + durationB;
-
-      return (
-        aStart < bEnd &&
-        bStart < aEnd
-      );
-    }
-
-    function isSlotAvailable(
-      dateKey,
-      time
-    ) {
-      return !getBookingsForDate(
-        dateKey
-      ).some(booking =>
-        intervalsOverlap(
-          time,
-          BOOKING_BLOCK_MINUTES,
-          booking.time,
-          booking.duration ||
-            BOOKING_BLOCK_MINUTES
-        )
-      );
-    }
-
-    function renderTimeSlots() {
-      const container =
-        document.getElementById(
-          "time-slots"
-        );
-
-      const display =
-        document.getElementById(
-          "selected-date-display"
-        );
-
-      if (!state.selectedDate) {
-        display.textContent =
-          "Bitte zuerst ein Datum wählen.";
-
-        container.innerHTML = `
-          <div class="empty-state">
-            Wähle ein Datum im Kalender, um freie Termine zu sehen.
-          </div>
-        `;
-
-        return;
-      }
-
-      const opening =
-        getOpeningHoursForDate(
-          state.selectedDate
-        );
-
-      if (!opening) {
-        display.textContent =
-          "An diesem Tag ist das Studio geschlossen.";
-
-        container.innerHTML = `
-          <div class="empty-state">
-            An diesem Tag sind keine Termine verfügbar.
-          </div>
-        `;
-
-        return;
-      }
-
-      display.textContent =
-        `${formatDateLong(
-          state.selectedDate
-        )} · geöffnet ${getOpeningText(
-          state.selectedDate
-        )}`;
-
-      const slots =
-        getSlotsForDate(
-          state.selectedDate
-        );
-
-      container.innerHTML =
-        slots.map(slot => {
-          const available =
-            isSlotAvailable(
-              state.selectedDate,
-              slot
-            );
-
-          const selected =
-            state.selectedTime === slot;
-
-          return `
-            <button
-              type="button"
-              class="time-slot
-                ${available ? "" : "booked"}
-                ${selected ? "selected" : ""}"
-              ${available
-                ? `onclick="selectTime('${slot}')"`
-                : "disabled"}
-            >
-              <span>
-                ${slot} Uhr
-              </span>
-
-              <small>
-                ${available ? "Frei" : "Gesperrt"}
-              </small>
-            </button>
-          `;
-        }).join("");
-    }
-
-    function selectTime(time) {
-      if (!state.selectedDate) {
-        return;
-      }
-
-      if (
-        !isSlotAvailable(
-          state.selectedDate,
-          time
-        )
-      ) {
-        showToast(
-          "Dieser Termin ist nicht mehr frei.",
-          "warning"
-        );
-
-        renderTimeSlots();
-        return;
-      }
-
-      state.selectedTime =
-        time;
-
-      renderTimeSlots();
-      updateStep3Summary();
-      validateDateAndTime();
-    }
-
-    function validateDateAndTime() {
-      document
-        .getElementById(
-          "next-step-2"
-        )
-        .disabled =
-          !state.selectedDate ||
-          !state.selectedTime;
-    }
-
-    function getCustomerData() {
-      return {
-        firstName: document
-          .getElementById(
-            "first-name"
-          )
-          .value
-          .trim(),
-
-        lastName: document
-          .getElementById(
-            "last-name"
-          )
-          .value
-          .trim(),
-
-        email: document
-          .getElementById(
-            "email"
-          )
-          .value
-          .trim(),
-
-        phone: document
-          .getElementById(
-            "phone"
-          )
-          .value
-          .trim(),
-
-        notes: document
-          .getElementById(
-            "notes"
-          )
-          .value
-          .trim()
-      };
-    }
-
-    function generateBookingCode() {
-      const timestamp =
-        Date.now()
-          .toString()
-          .slice(-6);
-
-      const random =
-        Math.floor(
-          Math.random() * 90 + 10
-        );
-
-      return `ALISA-${timestamp}-${random}`;
-    }
-
-    function submitBooking(event) {
-      event.preventDefault();
-
-      if (
-        !state.selectedDate ||
-        !state.selectedTime
-      ) {
-        showToast(
-          "Bitte zuerst Datum und Uhrzeit auswählen.",
-          "warning"
-        );
-
-        goToStep(2);
-        return;
-      }
-
-      if (
-        !isSlotAvailable(
-          state.selectedDate,
-          state.selectedTime
-        )
-      ) {
-        showToast(
-          "Dieser Termin wurde gerade vergeben.",
-          "error"
-        );
-
-        renderTimeSlots();
-        goToStep(2);
-        return;
-      }
-
-      const customer =
-        getCustomerData();
-
-      const service =
-        getSelectedService();
-
-      const booking = {
-        id: generateBookingCode(),
-        serviceId: service.id,
-        serviceTitle: service.title,
-        date: state.selectedDate,
-        time: state.selectedTime,
-        duration: BOOKING_BLOCK_MINUTES,
-        price: service.price,
-        customer,
-        status: "confirmed",
-        createdAt: new Date().toISOString()
-      };
-
-      bookings.unshift(booking);
-      state.latestBooking =
-        booking;
-
-      saveData();
-
-      const blockedUntil =
-        addMinutesToTime(
-          booking.time,
-          BOOKING_BLOCK_MINUTES
-        );
-
-      document
-        .getElementById(
-          "confirmed-code"
-        )
-        .textContent =
-          booking.id;
-
-      document
-        .getElementById(
-          "confirmed-name"
-        )
-        .textContent =
-          `${customer.firstName} ${customer.lastName}`;
-
-      document
-        .getElementById(
-          "confirmed-service"
-        )
-        .textContent =
-          `${booking.serviceTitle} · ${formatEuro(
-            booking.price
-          )}`;
-
-      document
-        .getElementById(
-          "confirmed-date"
-        )
-        .textContent =
-          `${formatDateLong(
-            booking.date
-          )} um ${booking.time} Uhr`;
-
-      document
-        .getElementById(
-          "confirmed-until"
-        )
-        .textContent =
-          `${blockedUntil} Uhr`;
-
-      goToStep(4);
-
-      showToast(
-        `Termin ${booking.id} erfolgreich reserviert.`,
-        "success"
-      );
-    }
-
-    function resetBooking() {
-      state = {
-        selectedServiceId: "srv-lifting",
-        selectedDate: null,
-        selectedTime: null,
-        latestBooking: null
-      };
-
-      document
-        .getElementById(
-          "booking-form"
-        )
-        .reset();
-
+    function initialize() {
       renderServices();
       renderCalendar();
       renderTimeSlots();
-      updateStep3Summary();
-      validateDateAndTime();
-      goToStep(1);
-    }
+      updateBookingSummary();
 
-    function downloadCalendarFile() {
-      const booking =
-        state.latestBooking;
-
-      if (!booking) {
-        return;
-      }
-
-      const start =
-        booking.date.replaceAll("-", "") +
-        "T" +
-        booking.time.replace(":", "") +
-        "00";
-
-      const endTime =
-        addMinutesToTime(
-          booking.time,
-          BOOKING_BLOCK_MINUTES
-        );
-
-      const end =
-        booking.date.replaceAll("-", "") +
-        "T" +
-        endTime.replace(":", "") +
-        "00";
-
-      const stamp =
-        new Date()
-          .toISOString()
-          .replaceAll("-", "")
-          .replaceAll(":", "")
-          .split(".")[0] +
-        "Z";
-
-      const ics = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//ALISA BEAUTY LAB//DE",
-        "CALSCALE:GREGORIAN",
-        "BEGIN:VEVENT",
-        `UID:${booking.id}@alisabeautylab.de`,
-        `DTSTAMP:${stamp}`,
-        `DTSTART:${start}`,
-        `DTEND:${end}`,
-        `SUMMARY:Termin ALISA BEAUTY LAB - ${booking.serviceTitle}`,
-        `DESCRIPTION:Buchungscode: ${booking.id}\\nBehandlung: ${booking.serviceTitle}\\nSperrzeit: 2 Stunden\\nBetrag: ${booking.price} EUR`,
-        `LOCATION:${STUDIO_ADDRESS}`,
-        "STATUS:CONFIRMED",
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ].join("\r\n");
-
-      const blob =
-        new Blob(
-          [ics],
-          {
-            type: "text/calendar;charset=utf-8"
-          }
-        );
-
-      const url =
-        URL.createObjectURL(blob);
-
-      const link =
-        document.createElement("a");
-
-      link.href = url;
-      link.download =
-        `Termin-${booking.id}.ics`;
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-
-      URL.revokeObjectURL(url);
-
-      showToast(
-        "Kalenderdatei wurde heruntergeladen.",
-        "success"
-      );
-    }
-
-    function sendBookingWhatsApp() {
-      const booking =
-        state.latestBooking;
-
-      if (!booking) {
-        return;
-      }
-
-      const message = [
-        "Hallo Alisa,",
-        "",
-        "ich habe online einen Termin reserviert:",
-        "",
-        `Behandlung: ${booking.serviceTitle}`,
-        `Termin: ${formatDate(
-          booking.date
-        )} um ${booking.time} Uhr`,
-        `Name: ${booking.customer.firstName} ${booking.customer.lastName}`,
-        `Buchungscode: ${booking.id}`,
-        `Betrag: ${formatEuro(
-          booking.price
-        )}`,
-        "Sperrzeit: 2 Stunden"
-      ].join("\n");
-
-      const url =
-        `https://wa.me/${STUDIO_PHONE}?text=` +
-        encodeURIComponent(message);
-
-      window.open(
-        url,
-        "_blank",
-        "noopener,noreferrer"
-      );
-    }
-
-    function openAdminModal() {
-      document
-        .getElementById(
-          "admin-modal"
-        )
-        .classList.remove("hidden");
-
-      document.body.classList.add(
-        "modal-open"
+      elements.mobileMenuButton.addEventListener(
+        "click",
+        toggleMobileMenu
       );
 
       document
-        .getElementById(
-          "admin-pin"
-        )
-        .focus();
-    }
-
-    function closeAdminModal() {
-      document
-        .getElementById(
-          "admin-modal"
-        )
-        .classList.add("hidden");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-    }
-
-    function unlockAdmin(event) {
-      event.preventDefault();
-
-      const pin =
-        document
-          .getElementById(
-            "admin-pin"
-          )
-          .value;
-
-      if (pin !== ADMIN_PIN) {
-        showToast(
-          "Falsche PIN.",
-          "error"
-        );
-
-        document
-          .getElementById(
-            "admin-pin"
-          )
-          .select();
-
-        return;
-      }
-
-      document
-        .getElementById(
-          "pin-screen"
-        )
-        .classList.add("hidden");
-
-      document
-        .getElementById(
-          "admin-dashboard"
-        )
-        .classList.add("visible");
-
-      renderAdminTable();
-
-      showToast(
-        "Studio-Dashboard geöffnet.",
-        "success"
-      );
-    }
-
-    function statusLabel(status) {
-      return {
-        confirmed: "Bestätigt",
-        completed: "Erledigt",
-        cancelled: "Storniert"
-      }[status] || status;
-    }
-
-    function statusClass(status) {
-      return {
-        confirmed: "status-confirmed",
-        completed: "status-completed",
-        cancelled: "status-cancelled"
-      }[status] || "";
-    }
-
-    function renderAdminTable() {
-      const body =
-        document.getElementById(
-          "admin-table-body"
-        );
-
-      const search =
-        document
-          .getElementById(
-            "admin-search"
-          )
-          .value
-          .trim()
-          .toLowerCase();
-
-      const selectedStatus =
-        document
-          .getElementById(
-            "admin-status"
-          )
-          .value;
-
-      const filtered =
-        bookings.filter(
-          booking => {
-            const searchable = [
-              booking.id,
-              booking.serviceTitle,
-              booking.customer.firstName,
-              booking.customer.lastName,
-              booking.customer.phone
-            ]
-              .join(" ")
-              .toLowerCase();
-
-            return (
-              (
-                !search ||
-                searchable.includes(search)
-              ) &&
-              (
-                selectedStatus === "all" ||
-                booking.status === selectedStatus
-              )
-            );
-          }
-        );
-
-      updateAdminMetrics();
-
-      if (!filtered.length) {
-        body.innerHTML = `
-          <tr>
-            <td
-              colspan="6"
-              style="padding:30px;text-align:center;color:#8a7a71;"
-            >
-              Keine Buchungen gefunden.
-            </td>
-          </tr>
-        `;
-
-        return;
-      }
-
-      body.innerHTML =
-        filtered.map(booking => {
-          const cancelled =
-            booking.status === "cancelled";
-
-          const nextStatus =
-            booking.status === "completed"
-              ? "confirmed"
-              : "completed";
-
-          const blockedUntil =
-            addMinutesToTime(
-              booking.time,
-              BOOKING_BLOCK_MINUTES
-            );
-
-          return `
-            <tr>
-
-              <td>
-                <strong>
-                  ${escapeHtml(
-                    booking.id
-                  )}
-                </strong>
-
-                <span class="table-muted">
-                  ${formatDate(
-                    booking.date
-                  )}
-                  · ${booking.time} Uhr
-                  – ${blockedUntil} Uhr
-                </span>
-              </td>
-
-              <td>
-                <strong>
-                  ${escapeHtml(
-                    booking.customer.firstName
-                  )}
-                  ${escapeHtml(
-                    booking.customer.lastName
-                  )}
-                </strong>
-
-                <span class="table-muted">
-                  ${escapeHtml(
-                    booking.customer.phone
-                  )}
-                </span>
-
-                ${
-                  booking.customer.notes
-                    ? `
-                      <span class="table-muted">
-                        ${escapeHtml(
-                          booking.customer.notes
-                        )}
-                      </span>
-                    `
-                    : ""
-                }
-              </td>
-
-              <td>
-                <strong>
-                  ${escapeHtml(
-                    booking.serviceTitle
-                  )}
-                </strong>
-
-                <span class="table-muted">
-                  Sperrzeit: 2 Stunden
-                </span>
-              </td>
-
-              <td>
-                <strong>
-                  ${formatEuro(
-                    booking.price
-                  )}
-                </strong>
-              </td>
-
-              <td>
-                <span
-                  class="status-badge ${statusClass(
-                    booking.status
-                  )}"
-                >
-                  ${statusLabel(
-                    booking.status
-                  )}
-                </span>
-              </td>
-
-              <td>
-                <div class="table-actions">
-
-                  ${
-                    cancelled
-                      ? `
-                        <button
-                          type="button"
-                          class="small-action"
-                          onclick="changeBookingStatus(
-                            '${booking.id}',
-                            'confirmed'
-                          )"
-                          title="Wiederherstellen"
-                        >
-                          ↺
-                        </button>
-                      `
-                      : `
-                        <button
-                          type="button"
-                          class="small-action"
-                          onclick="changeBookingStatus(
-                            '${booking.id}',
-                            '${nextStatus}'
-                          )"
-                          title="Status ändern"
-                        >
-                          ${
-                            booking.status === "completed"
-                              ? "↺"
-                              : "✓"
-                          }
-                        </button>
-
-                        <button
-                          type="button"
-                          class="small-action"
-                          onclick="changeBookingStatus(
-                            '${booking.id}',
-                            'cancelled'
-                          )"
-                          title="Stornieren"
-                        >
-                          ×
-                        </button>
-                      `
-                  }
-
-                  <a
-                    class="small-action"
-                    title="WhatsApp öffnen"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    href="${createCustomerWhatsAppLink(
-                      booking
-                    )}"
-                  >
-                    ◉
-                  </a>
-
-                </div>
-              </td>
-
-            </tr>
-          `;
-        }).join("");
-    }
-
-    function updateAdminMetrics() {
-      const total =
-        bookings.length;
-
-      const active =
-        bookings.filter(
-          booking =>
-            booking.status === "confirmed"
-        ).length;
-
-      const revenue =
-        bookings
-          .filter(
-            booking =>
-              booking.status !== "cancelled"
-          )
-          .reduce(
-            (sum, booking) =>
-              sum + Number(
-                booking.price || 0
-              ),
-            0
-          );
-
-      document
-        .getElementById(
-          "metric-total"
-        )
-        .textContent = total;
-
-      document
-        .getElementById(
-          "metric-active"
-        )
-        .textContent = active;
-
-      document
-        .getElementById(
-          "metric-revenue"
-        )
-        .textContent =
-          formatEuro(revenue);
-    }
-
-    function createCustomerWhatsAppLink(
-      booking
-    ) {
-      const rawPhone =
-        booking.customer.phone
-          .replace(/\D/g, "");
-
-      const phone =
-        rawPhone.startsWith("0")
-          ? "49" + rawPhone.slice(1)
-          : rawPhone;
-
-      const message =
-        `Hallo ${booking.customer.firstName}, ` +
-        `bezüglich deines Termins bei ALISA BEAUTY LAB ` +
-        `am ${formatDate(
-          booking.date
-        )} um ${booking.time} Uhr.`;
-
-      return (
-        `https://wa.me/${phone}?text=` +
-        encodeURIComponent(message)
-      );
-    }
-
-    function changeBookingStatus(
-      bookingId,
-      newStatus
-    ) {
-      const booking =
-        bookings.find(
-          item => item.id === bookingId
-        );
-
-      if (!booking) {
-        return;
-      }
-
-      booking.status =
-        newStatus;
-
-      saveData();
-      renderAdminTable();
-      renderCalendar();
-
-      showToast(
-        `Status wurde auf "${statusLabel(
-          newStatus
-        )}" geändert.`,
-        "success"
-      );
-    }
-
-    function blockDate() {
-      const input =
-        document.getElementById(
-          "block-date"
-        );
-
-      const date =
-        input.value;
-
-      if (!date) {
-        showToast(
-          "Bitte zuerst ein Datum auswählen.",
-          "warning"
-        );
-
-        return;
-      }
-
-      if (!blockedDates.includes(date)) {
-        blockedDates.push(date);
-        saveData();
-        renderCalendar();
-
-        showToast(
-          `${formatDate(
-            date
-          )} wurde gesperrt.`,
-          "success"
-        );
-      } else {
-        showToast(
-          "Dieser Tag ist bereits gesperrt.",
-          "warning"
-        );
-      }
-
-      input.value = "";
-    }
-
-    function exportCsv() {
-      if (!bookings.length) {
-        showToast(
-          "Keine Buchungen vorhanden.",
-          "warning"
-        );
-
-        return;
-      }
-
-      const headers = [
-        "Buchungs-ID",
-        "Status",
-        "Datum",
-        "Startzeit",
-        "Gesperrt bis",
-        "Behandlung",
-        "Preis",
-        "Vorname",
-        "Nachname",
-        "E-Mail",
-        "Telefon",
-        "Notizen"
-      ];
-
-      const rows =
-        bookings.map(booking => {
-          const blockedUntil =
-            addMinutesToTime(
-              booking.time,
-              BOOKING_BLOCK_MINUTES
-            );
-
-          return [
-            booking.id,
-            booking.status,
-            booking.date,
-            booking.time,
-            blockedUntil,
-            booking.serviceTitle,
-            booking.price,
-            booking.customer.firstName,
-            booking.customer.lastName,
-            booking.customer.email,
-            booking.customer.phone,
-            booking.customer.notes
-          ]
-            .map(value =>
-              `"${String(value ?? "")
-                .replaceAll(
-                  '"',
-                  '""'
-                )}"`
-            )
-            .join(";");
+        .querySelectorAll("#mobile-menu a")
+        .forEach(link => {
+          link.addEventListener("click", closeMobileMenu);
         });
 
-      const csv =
-        "\uFEFF" +
-        [
-          headers.join(";"),
-          ...rows
-        ].join("\r\n");
-
-      const blob =
-        new Blob(
-          [csv],
-          {
-            type: "text/csv;charset=utf-8"
-          }
-        );
-
-      const url =
-        URL.createObjectURL(blob);
-
-      const link =
-        document.createElement("a");
-
-      link.href = url;
-      link.download =
-        `alisa-beauty-lab-buchungen-${dateToKey(
-          new Date()
-        )}.csv`;
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-
-      URL.revokeObjectURL(url);
-
-      showToast(
-        "CSV-Datei wurde exportiert.",
-        "success"
-      );
-    }
-
-    function getCookiePreferences() {
-      try {
-        const stored =
-          localStorage.getItem(
-            STORAGE_KEYS.cookies
-          );
-
-        if (!stored) {
-          return {
-            necessary: true,
-            analytics: false,
-            marketing: false,
-            decided: false
-          };
-        }
-
-        return {
-          necessary: true,
-          analytics: false,
-          marketing: false,
-          decided: false,
-          ...JSON.parse(stored)
-        };
-      } catch (error) {
-        return {
-          necessary: true,
-          analytics: false,
-          marketing: false,
-          decided: false
-        };
-      }
-    }
-
-    function saveCookiePreferences(
-      preferences
-    ) {
-      localStorage.setItem(
-        STORAGE_KEYS.cookies,
-        JSON.stringify(preferences)
-      );
-    }
-
-    function showCookieBanner() {
       document
-        .getElementById(
-          "cookie-banner"
-        )
-        .classList.remove("hidden");
-    }
+        .querySelectorAll("[data-service]")
+        .forEach(button => {
+          button.addEventListener("click", () => {
+            selectService(button.dataset.service);
+            goToStep(1);
 
-    function hideCookieBanner() {
-      document
-        .getElementById(
-          "cookie-banner"
-        )
-        .classList.add("hidden");
-    }
+            document
+              .getElementById("booking")
+              .scrollIntoView({
+                behavior: "smooth",
+                block: "start"
+              });
+          });
+        });
 
-    function acceptAllCookies() {
-      saveCookiePreferences({
-        necessary: true,
-        analytics: true,
-        marketing: true,
-        decided: true
+      elements.goStep2.addEventListener("click", () => {
+        goToStep(2);
       });
 
-      hideCookieBanner();
-      closeCookieSettings();
-
-      showToast(
-        "Alle Cookie-Einstellungen wurden gespeichert.",
-        "success"
-      );
-    }
-
-    function rejectOptionalCookies() {
-      saveCookiePreferences({
-        necessary: true,
-        analytics: false,
-        marketing: false,
-        decided: true
+      elements.goStep3.addEventListener("click", () => {
+        goToStep(3);
       });
 
-      hideCookieBanner();
-      closeCookieSettings();
-
-      showToast(
-        "Nur notwendige Speicherungen wurden aktiviert.",
-        "success"
-      );
-    }
-
-    function openCookieSettings() {
-      const preferences =
-        getCookiePreferences();
-
-      document
-        .getElementById(
-          "analytics-cookies"
-        )
-        .checked =
-          Boolean(
-            preferences.analytics
-          );
-
-      document
-        .getElementById(
-          "marketing-cookies"
-        )
-        .checked =
-          Boolean(
-            preferences.marketing
-          );
-
-      document
-        .getElementById(
-          "cookie-settings-modal"
-        )
-        .classList.remove("hidden");
-
-      document.body.classList.add(
-        "modal-open"
-      );
-    }
-
-    function closeCookieSettings() {
-      document
-        .getElementById(
-          "cookie-settings-modal"
-        )
-        .classList.add("hidden");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-    }
-
-    function saveCookieSettings() {
-      saveCookiePreferences({
-        necessary: true,
-        analytics:
-          document
-            .getElementById(
-              "analytics-cookies"
-            )
-            .checked,
-        marketing:
-          document
-            .getElementById(
-              "marketing-cookies"
-            )
-            .checked,
-        decided: true
+      elements.backStep1.addEventListener("click", () => {
+        goToStep(1);
       });
 
-      hideCookieBanner();
-      closeCookieSettings();
+      elements.backStep2.addEventListener("click", () => {
+        goToStep(2);
+      });
 
-      showToast(
-        "Cookie-Einstellungen wurden gespeichert.",
-        "success"
-      );
-    }
-
-    function openLegalModal(type) {
-      const modal =
-        document.getElementById(
-          "legal-modal"
+      elements.previousMonth.addEventListener("click", () => {
+        currentCalendarDate.setMonth(
+          currentCalendarDate.getMonth() - 1
         );
 
-      const imprint =
-        document.getElementById(
-          "legal-imprint"
-        );
-
-      const privacy =
-        document.getElementById(
-          "legal-privacy"
-        );
-
-      imprint.classList.add(
-        "hidden"
-      );
-
-      privacy.classList.add(
-        "hidden"
-      );
-
-      if (type === "imprint") {
-        imprint.classList.remove(
-          "hidden"
-        );
-
-        document
-          .getElementById(
-            "legal-modal-title"
-          )
-          .textContent =
-            "Impressum";
-      }
-
-      if (type === "privacy") {
-        privacy.classList.remove(
-          "hidden"
-        );
-
-        document
-          .getElementById(
-            "legal-modal-title"
-          )
-          .textContent =
-            "Datenschutzerklärung";
-      }
-
-      modal.classList.remove(
-        "hidden"
-      );
-
-      document.body.classList.add(
-        "modal-open"
-      );
-    }
-
-    function closeLegalModal() {
-      document
-        .getElementById(
-          "legal-modal"
-        )
-        .classList.add("hidden");
-
-      document.body.classList.remove(
-        "modal-open"
-      );
-    }
-
-    function showToast(
-      message,
-      type = "info"
-    ) {
-      const container =
-        document.getElementById(
-          "toast-container"
-        );
-
-      const toast =
-        document.createElement(
-          "div"
-        );
-
-      toast.className =
-        `toast ${type}`;
-
-      toast.textContent =
-        message;
-
-      container.appendChild(
-        toast
-      );
-
-      window.setTimeout(
-        () => toast.remove(),
-        4500
-      );
-    }
-
-    document.addEventListener(
-      "keydown",
-      event => {
-        if (event.key !== "Escape") {
-          return;
-        }
-
-        closeAdminModal();
-        closeCookieSettings();
-        closeLegalModal();
-      }
-    );
-
-    document
-      .getElementById(
-        "admin-modal"
-      )
-      .addEventListener(
-        "click",
-        event => {
-          if (
-            event.target.id ===
-            "admin-modal"
-          ) {
-            closeAdminModal();
-          }
-        }
-      );
-
-    document
-      .getElementById(
-        "cookie-settings-modal"
-      )
-      .addEventListener(
-        "click",
-        event => {
-          if (
-            event.target.id ===
-            "cookie-settings-modal"
-          ) {
-            closeCookieSettings();
-          }
-        }
-      );
-
-    document
-      .getElementById(
-        "legal-modal"
-      )
-      .addEventListener(
-        "click",
-        event => {
-          if (
-            event.target.id ===
-            "legal-modal"
-          ) {
-            closeLegalModal();
-          }
-        }
-      );
-
-    document.addEventListener(
-      "DOMContentLoaded",
-      () => {
-        renderServices();
         renderCalendar();
-        renderTimeSlots();
-        updateStep3Summary();
-        validateDateAndTime();
+      });
 
-        const preferences =
-          getCookiePreferences();
+      elements.nextMonth.addEventListener("click", () => {
+        currentCalendarDate.setMonth(
+          currentCalendarDate.getMonth() + 1
+        );
 
-        if (
-          !preferences.decided
-        ) {
-          window.setTimeout(
-            showCookieBanner,
-            350
-          );
+        renderCalendar();
+      });
+
+      elements.bookingForm.addEventListener(
+        "submit",
+        submitBooking
+      );
+
+      elements.calendarDownload.addEventListener(
+        "click",
+        downloadCalendarFile
+      );
+
+      elements.sendWhatsapp.addEventListener(
+        "click",
+        sendBookingWhatsApp
+      );
+
+      elements.newBooking.addEventListener(
+        "click",
+        resetBooking
+      );
+
+      document
+        .querySelectorAll("[data-modal]")
+        .forEach(link => {
+          link.addEventListener("click", event => {
+            event.preventDefault();
+            openLegalModal(link.dataset.modal);
+          });
+        });
+
+      elements.legalModalClose.addEventListener(
+        "click",
+        closeLegalModal
+      );
+
+      elements.legalModal.addEventListener("click", event => {
+        if (event.target === elements.legalModal) {
+          closeLegalModal();
         }
-      }
-    );
+      });
+
+      document.addEventListener("keydown", event => {
+        if (event.key === "Escape") {
+          closeMobileMenu();
+          closeLegalModal();
+        }
+      });
+    }
+
+    initialize();
   </script>
-
 </body>
 </html>
