@@ -11,7 +11,7 @@
     content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting, Wimpernextensions und Online-Terminbuchung."
   >
 
-  <!-- Adobe Fonts: Typekit fda0xlt -->
+  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
 
   <style>
@@ -639,8 +639,7 @@
       gap: 12px;
     }
 
-    .service-option,
-    .addon-option {
+    .service-option {
       position: relative;
       padding: 17px;
       color: var(--brown);
@@ -654,37 +653,32 @@
         transform 0.2s ease;
     }
 
-    .service-option:hover,
-    .addon-option:hover {
+    .service-option:hover {
       transform: translateY(-2px);
       border-color: var(--gold);
     }
 
-    .service-option.selected,
-    .addon-option.selected {
+    .service-option.selected {
       background: rgba(236, 227, 214, 0.84);
       border-color: var(--brown);
       box-shadow: 0 0 0 1px var(--brown);
     }
 
-    .service-header,
-    .addon-header {
+    .service-header {
       display: flex;
       align-items: flex-start;
       justify-content: space-between;
       gap: 10px;
     }
 
-    .service-title,
-    .addon-title {
+    .service-title {
       color: var(--brown-dark);
       font-size: 14px;
       font-weight: 700;
       line-height: 1.35;
     }
 
-    .service-price,
-    .addon-price {
+    .service-price {
       color: var(--brown-dark);
       font-family: var(--font-display);
       font-size: 17px;
@@ -692,8 +686,7 @@
       white-space: nowrap;
     }
 
-    .service-description,
-    .addon-description {
+    .service-description {
       display: block;
       margin-top: 8px;
       color: var(--taupe);
@@ -708,39 +701,6 @@
       margin-top: 11px;
       color: var(--taupe);
       font-size: 11px;
-    }
-
-    .addons-section {
-      margin-top: 30px;
-      padding-top: 24px;
-      border-top: 1px solid var(--gold-light);
-    }
-
-    .addons-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      margin-bottom: 13px;
-    }
-
-    .addons-heading h4 {
-      margin: 0;
-      color: var(--brown-dark);
-      font-family: var(--font-display);
-      font-size: 21px;
-      font-weight: 300;
-    }
-
-    .addons-heading span {
-      color: var(--taupe);
-      font-size: 11px;
-    }
-
-    .addon-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
     }
 
     .booking-footer {
@@ -1849,8 +1809,7 @@
         padding: 23px 17px;
       }
 
-      .service-grid,
-      .addon-grid {
+      .service-grid {
         grid-template-columns: 1fr;
       }
 
@@ -2051,6 +2010,7 @@
         </a>
 
       </div>
+
     </div>
   </header>
 
@@ -2103,6 +2063,7 @@
       <div class="container">
 
         <div class="section-heading">
+
           <span class="label">
             Original Preisliste
           </span>
@@ -2115,6 +2076,7 @@
             Vor jeder Neumodellage findet eine persönliche Beratung statt,
             damit der Look perfekt zu deiner Augenform passt.
           </p>
+
         </div>
 
         <div class="pricing-grid">
@@ -2307,6 +2269,7 @@
       <div class="container">
 
         <div class="section-heading">
+
           <span class="eyebrow">
             Online-Terminbuchung
           </span>
@@ -2319,6 +2282,7 @@
             In wenigen Schritten deinen Termin auswählen – ohne Planity und
             ohne Buchungsgebühr.
           </p>
+
         </div>
 
         <div class="card booking-card">
@@ -2378,32 +2342,13 @@
               </h3>
 
               <p class="booking-step-intro">
-                Wähle zuerst die gewünschte Behandlung aus.
+                Wähle deine gewünschte Behandlung aus.
               </p>
 
               <div
                 id="services-list"
                 class="service-grid"
               ></div>
-
-              <div class="addons-section">
-
-                <div class="addons-heading">
-                  <h4>
-                    Optionale Extras
-                  </h4>
-
-                  <span>
-                    Zubuchbare Pflege
-                  </span>
-                </div>
-
-                <div
-                  id="addons-list"
-                  class="addon-grid"
-                ></div>
-
-              </div>
 
               <div class="booking-footer">
 
@@ -2436,7 +2381,8 @@
               </h3>
 
               <p class="booking-step-intro">
-                Wähle einen freien Tag und anschließend eine Uhrzeit.
+                Die Buchung ist montags bis sonntags möglich. Jeder Termin
+                reserviert ein Zeitfenster von zwei Stunden.
               </p>
 
               <div class="calendar-layout">
@@ -2697,11 +2643,6 @@
                   </div>
 
                   <div class="summary-line">
-                    <span>Extras:</span>
-                    <span id="summary-addons">Keine</span>
-                  </div>
-
-                  <div class="summary-line">
                     <span>Datum:</span>
                     <span id="summary-date">–</span>
                   </div>
@@ -2709,6 +2650,11 @@
                   <div class="summary-line">
                     <span>Uhrzeit:</span>
                     <span id="summary-time">–</span>
+                  </div>
+
+                  <div class="summary-line">
+                    <span>Sperrzeit:</span>
+                    <span>2 Stunden</span>
                   </div>
 
                   <div class="summary-line summary-total">
@@ -2743,9 +2689,8 @@
                 </h3>
 
                 <p>
-                  Dein Termin wurde auf diesem Gerät gespeichert. Speichere
-                  ihn zusätzlich in deinem Kalender oder bestätige ihn per
-                  WhatsApp.
+                  Dein Termin wurde gespeichert. Speichere ihn zusätzlich
+                  in deinem Kalender oder bestätige ihn per WhatsApp.
                 </p>
 
                 <div class="confirmation">
@@ -2768,6 +2713,11 @@
                   <div class="summary-line">
                     <span>Termin:</span>
                     <span id="confirmed-date">–</span>
+                  </div>
+
+                  <div class="summary-line">
+                    <span>Gesperrt bis:</span>
+                    <span id="confirmed-until">–</span>
                   </div>
 
                   <div class="summary-line">
@@ -2826,13 +2776,11 @@
         <div class="about-grid">
 
           <div class="portrait-frame">
-
             <img
               src="images/alisa-portrait.webp"
               alt="Alisa vom ALISA BEAUTY LAB"
               onerror="this.src='https://placehold.co/600x750/FAF6F0/433630?text=Alisa+Beauty+Lab';"
             >
-
           </div>
 
           <div class="about-copy">
@@ -2940,19 +2888,27 @@
 
         <div class="footer-column">
           <h4>
-            Termine
+            Öffnungszeiten
           </h4>
 
           <p>
-            Ausschließlich nach Vereinbarung
+            Montag: ab 18:00 Uhr
           </p>
 
           <p>
-            Montag – Samstag
+            Dienstag: ab 12:00 Uhr
           </p>
 
           <p>
-            Sonntag geschlossen
+            Mittwoch–Freitag: ab 19:00 Uhr
+          </p>
+
+          <p>
+            Samstag–Sonntag: ab 12:00 Uhr
+          </p>
+
+          <p>
+            Buchbar jeweils bis 21:00 Uhr
           </p>
         </div>
 
@@ -3377,8 +3333,8 @@
           </strong>
 
           <p>
-            Diese Speicherungen sind für grundlegende Website-Funktionen,
-            Cookie-Einstellungen und die Demo-Terminbuchung erforderlich.
+            Diese Speicherungen sind für Cookie-Einstellungen und die
+            Demo-Terminbuchung erforderlich.
           </p>
         </div>
 
@@ -3585,12 +3541,10 @@
         </h4>
 
         <p>
-          Diese Website verwendet Adobe Fonts zur einheitlichen Darstellung
-          der Schriftarten. Beim Aufruf der Website kann eine Verbindung zu
+          Diese Website verwendet Adobe Fonts zur Darstellung der
+          Schriftarten. Beim Aufruf der Website kann eine Verbindung zu
           Servern von Adobe hergestellt werden, damit die verwendeten
-          Schriftarten geladen werden können. Dabei können technische
-          Informationen wie die IP-Adresse und Informationen zum Browser
-          verarbeitet werden.
+          Schriftarten geladen werden können.
         </p>
 
         <h4>
@@ -3622,8 +3576,7 @@
         <p>
           Wenn du die WhatsApp- oder Telefon-Schaltfläche nutzt, wird eine
           Verbindung zum jeweiligen Anbieter hergestellt. Dabei gelten
-          zusätzlich die Datenschutzbestimmungen von WhatsApp beziehungsweise
-          deines Telefonanbieters.
+          zusätzlich die Datenschutzbestimmungen der jeweiligen Anbieter.
         </p>
 
         <h4>
@@ -3662,9 +3615,9 @@
     "use strict";
 
     const STORAGE_KEYS = {
-      bookings: "alisa_beauty_lab_bookings_v4",
-      blockedDates: "alisa_beauty_lab_blocked_dates_v4",
-      cookies: "alisa_beauty_lab_cookie_preferences_v4"
+      bookings: "alisa_beauty_lab_bookings_v5",
+      blockedDates: "alisa_beauty_lab_blocked_dates_v5",
+      cookies: "alisa_beauty_lab_cookie_preferences_v5"
     };
 
     const ADMIN_PIN = "2468";
@@ -3674,20 +3627,43 @@
     const STUDIO_ADDRESS =
       "Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen";
 
-    const STUDIO_SLOTS = [
-      "09:30",
-      "11:30",
-      "13:30",
-      "15:30",
-      "17:30"
-    ];
+    /*
+      Jede Buchung blockiert exakt 120 Minuten.
+      Slots werden alle 15 Minuten erzeugt.
+    */
+    const BOOKING_BLOCK_MINUTES = 120;
+
+    const SLOT_INTERVAL_MINUTES = 15;
+
+    /*
+      Öffnungszeiten:
+      0 = Sonntag
+      1 = Montag
+      2 = Dienstag
+      3 = Mittwoch
+      4 = Donnerstag
+      5 = Freitag
+      6 = Samstag
+
+      Die Endzeit 21:00 ist das Ende des buchbaren Zeitfensters.
+      Deshalb ist der letzte Start bei einer zweistündigen Sperrzeit
+      19:00 Uhr.
+    */
+    const OPENING_HOURS = {
+      0: { start: "12:00", end: "21:00" },
+      1: { start: "18:00", end: "21:00" },
+      2: { start: "12:00", end: "21:00" },
+      3: { start: "19:00", end: "21:00" },
+      4: { start: "19:00", end: "21:00" },
+      5: { start: "19:00", end: "21:00" },
+      6: { start: "12:00", end: "21:00" }
+    };
 
     const SERVICES = [
       {
         id: "srv-lifting",
         title: "Wimpernlifting",
         price: 35,
-        duration: 60,
         description:
           "Natürlicher Schwung und optische Verlängerung der eigenen Naturwimpern. Haltbarkeit ca. 6–8 Wochen."
       },
@@ -3695,7 +3671,6 @@
         id: "srv-new-1-1",
         title: "Neuanlage: 1:1 Technik",
         price: 55,
-        duration: 120,
         description:
           "Feiner, eleganter Mascara-Look. Eine synthetische Wimper auf jede Naturwimper."
       },
@@ -3703,7 +3678,6 @@
         id: "srv-new-volume",
         title: "Neuanlage: Volumen 2D–4D",
         price: 65,
-        duration: 135,
         description:
           "Zarte handgemachte Fächer für mehr Dichte und einen weichen, voluminösen Look."
       },
@@ -3711,7 +3685,6 @@
         id: "srv-new-mega",
         title: "Neuanlage: Mega Volumen 5D–8D",
         price: 80,
-        duration: 150,
         description:
           "Maximales Volumen, intensive Dichte und ein ausdrucksstarker Augenaufschlag."
       },
@@ -3719,7 +3692,6 @@
         id: "srv-refill-volume-2w",
         title: "Auffüllen 1:1 & Volumen bis 2 Wochen",
         price: 30,
-        duration: 60,
         description:
           "Regelmäßiges Nachfüllen für eine gepflegte und gleichmäßige Fülle."
       },
@@ -3727,7 +3699,6 @@
         id: "srv-refill-volume-3w",
         title: "Auffüllen 1:1 & Volumen bis 3 Wochen",
         price: 40,
-        duration: 75,
         description:
           "Auffrischen der 1:1- und Volumen-Extensions nach drei Wochen."
       },
@@ -3735,7 +3706,6 @@
         id: "srv-refill-mega-2w",
         title: "Auffüllen Megavolumen bis 2 Wochen",
         price: 40,
-        duration: 75,
         description:
           "Nachfüllen der Megavolumen-Fächer nach bis zu zwei Wochen."
       },
@@ -3743,36 +3713,8 @@
         id: "srv-refill-mega-3w",
         title: "Auffüllen Megavolumen bis 3 Wochen",
         price: 50,
-        duration: 90,
         description:
           "Auffrischen und Erneuern des Megavolumens nach drei Wochen."
-      }
-    ];
-
-    const ADDONS = [
-      {
-        id: "addon-dye",
-        title: "Wimpern färben",
-        price: 5,
-        duration: 15,
-        description:
-          "Intensives Tiefschwarz für die Naturwimpern."
-      },
-      {
-        id: "addon-botox",
-        title: "Keratin / Lash Botox",
-        price: 10,
-        duration: 10,
-        description:
-          "Pflegendes Aufbau-Serum zur Stärkung."
-      },
-      {
-        id: "addon-remove",
-        title: "Fremdarbeit ablösen",
-        price: 15,
-        duration: 25,
-        description:
-          "Schonendes Entfernen alter Extensions."
       }
     ];
 
@@ -3794,7 +3736,6 @@
 
     let state = {
       selectedServiceId: "srv-lifting",
-      selectedAddonIds: [],
       selectedDate: null,
       selectedTime: null,
       latestBooking: null
@@ -3806,15 +3747,15 @@
 
     function loadArray(key, fallback) {
       try {
-        const value =
+        const stored =
           localStorage.getItem(key);
 
-        if (!value) {
+        if (!stored) {
           return clone(fallback);
         }
 
         const parsed =
-          JSON.parse(value);
+          JSON.parse(stored);
 
         return Array.isArray(parsed)
           ? parsed
@@ -3833,6 +3774,18 @@
       localStorage.setItem(
         STORAGE_KEYS.blockedDates,
         JSON.stringify(blockedDates)
+      );
+    }
+
+    function getService(serviceId) {
+      return SERVICES.find(
+        service => service.id === serviceId
+      );
+    }
+
+    function getSelectedService() {
+      return getService(
+        state.selectedServiceId
       );
     }
 
@@ -3882,61 +3835,104 @@
         .replaceAll("'", "&#039;");
     }
 
-    function getService(id) {
-      return SERVICES.find(
-        service => service.id === id
+    function timeToMinutes(time) {
+      const [
+        hours,
+        minutes
+      ] = time
+        .split(":")
+        .map(Number);
+
+      return hours * 60 + minutes;
+    }
+
+    function minutesToTime(totalMinutes) {
+      const hours =
+        Math.floor(totalMinutes / 60);
+
+      const minutes =
+        totalMinutes % 60;
+
+      return `${String(hours).padStart(
+        2,
+        "0"
+      )}:${String(minutes).padStart(
+        2,
+        "0"
+      )}`;
+    }
+
+    function addMinutesToTime(
+      time,
+      minutesToAdd
+    ) {
+      return minutesToTime(
+        timeToMinutes(time) +
+        minutesToAdd
       );
     }
 
-    function getAddon(id) {
-      return ADDONS.find(
-        addon => addon.id === id
-      );
+    function getOpeningHoursForDate(
+      dateString
+    ) {
+      const date =
+        new Date(`${dateString}T12:00:00`);
+
+      return OPENING_HOURS[
+        date.getDay()
+      ];
     }
 
-    function getSelectedService() {
-      return getService(state.selectedServiceId);
-    }
+    function getSlotsForDate(dateString) {
+      const hours =
+        getOpeningHoursForDate(dateString);
 
-    function getSelectedAddons() {
-      return state.selectedAddonIds
-        .map(getAddon)
-        .filter(Boolean);
-    }
-
-    function calculateTotal() {
-      const service =
-        getSelectedService();
-
-      if (!service) {
-        return {
-          price: 0,
-          duration: 0
-        };
+      if (!hours) {
+        return [];
       }
 
-      return getSelectedAddons().reduce(
-        (result, addon) => {
-          result.price += addon.price;
-          result.duration += addon.duration;
+      const start =
+        timeToMinutes(hours.start);
 
-          return result;
-        },
-        {
-          price: service.price,
-          duration: service.duration
-        }
-      );
+      const end =
+        timeToMinutes(hours.end);
+
+      const latestStart =
+        end - BOOKING_BLOCK_MINUTES;
+
+      const slots = [];
+
+      for (
+        let minutes = start;
+        minutes <= latestStart;
+        minutes += SLOT_INTERVAL_MINUTES
+      ) {
+        slots.push(
+          minutesToTime(minutes)
+        );
+      }
+
+      return slots;
+    }
+
+    function getOpeningText(dateString) {
+      const hours =
+        getOpeningHoursForDate(dateString);
+
+      if (!hours) {
+        return "Geschlossen";
+      }
+
+      return `${hours.start}–${hours.end} Uhr`;
     }
 
     function renderServices() {
-      const servicesList =
-        document.getElementById("services-list");
+      const list =
+        document.getElementById(
+          "services-list"
+        );
 
-      const addonsList =
-        document.getElementById("addons-list");
-
-      servicesList.innerHTML =
+      list.innerHTML =
         SERVICES.map(service => {
           const selected =
             service.id === state.selectedServiceId;
@@ -3962,37 +3958,7 @@
               </span>
 
               <span class="service-duration">
-                ⏱ ca. ${service.duration} Min.
-              </span>
-            </button>
-          `;
-        }).join("");
-
-      addonsList.innerHTML =
-        ADDONS.map(addon => {
-          const selected =
-            state.selectedAddonIds.includes(
-              addon.id
-            );
-
-          return `
-            <button
-              type="button"
-              class="addon-option ${selected ? "selected" : ""}"
-              onclick="toggleAddon('${addon.id}')"
-            >
-              <span class="addon-header">
-                <span class="addon-title">
-                  ${escapeHtml(addon.title)}
-                </span>
-
-                <span class="addon-price">
-                  +${formatEuro(addon.price)}
-                </span>
-              </span>
-
-              <span class="addon-description">
-                ${escapeHtml(addon.description)}
+                ⏱ Zeitfenster: 2 Stunden
               </span>
             </button>
           `;
@@ -4003,7 +3969,9 @@
     }
 
     function selectService(serviceId) {
-      state.selectedServiceId = serviceId;
+      state.selectedServiceId =
+        serviceId;
+
       state.selectedTime = null;
 
       renderServices();
@@ -4013,7 +3981,9 @@
       }
     }
 
-    function selectServiceAndScroll(serviceId) {
+    function selectServiceAndScroll(
+      serviceId
+    ) {
       selectService(serviceId);
 
       document
@@ -4026,33 +3996,9 @@
       goToStep(1);
     }
 
-    function toggleAddon(addonId) {
-      if (
-        state.selectedAddonIds.includes(addonId)
-      ) {
-        state.selectedAddonIds =
-          state.selectedAddonIds.filter(
-            id => id !== addonId
-          );
-      } else {
-        state.selectedAddonIds.push(addonId);
-      }
-
-      state.selectedTime = null;
-
-      renderServices();
-
-      if (state.selectedDate) {
-        renderTimeSlots();
-      }
-    }
-
     function updateStep1Summary() {
       const service =
         getSelectedService();
-
-      const total =
-        calculateTotal();
 
       const element =
         document.getElementById(
@@ -4066,55 +4012,47 @@
         return;
       }
 
-      const addonText =
-        state.selectedAddonIds.length
-          ? ` + ${state.selectedAddonIds.length} Extra`
-          : "";
-
       element.textContent =
-        `${service.title}${addonText} · ${formatEuro(total.price)}`;
+        `${service.title} · ${formatEuro(
+          service.price
+        )}`;
     }
 
     function updateStep3Summary() {
       const service =
         getSelectedService();
 
-      const addons =
-        getSelectedAddons();
-
-      const total =
-        calculateTotal();
-
       document
-        .getElementById("summary-treatment")
+        .getElementById(
+          "summary-treatment"
+        )
         .textContent =
           service?.title || "–";
 
       document
-        .getElementById("summary-addons")
-        .textContent =
-          addons.length
-            ? addons.map(
-                addon => addon.title
-              ).join(", ")
-            : "Keine";
-
-      document
-        .getElementById("summary-date")
+        .getElementById(
+          "summary-date"
+        )
         .textContent =
           formatDate(state.selectedDate);
 
       document
-        .getElementById("summary-time")
+        .getElementById(
+          "summary-time"
+        )
         .textContent =
           state.selectedTime
             ? `${state.selectedTime} Uhr`
             : "–";
 
       document
-        .getElementById("summary-price")
+        .getElementById(
+          "summary-price"
+        )
         .textContent =
-          formatEuro(total.price);
+          service
+            ? formatEuro(service.price)
+            : "0 €";
     }
 
     function setActiveStep(step) {
@@ -4299,37 +4237,42 @@
         const isPast =
           date < today;
 
-        const isSunday =
-          date.getDay() === 0;
-
         const isBlocked =
           blockedDates.includes(key);
 
         const unavailable =
-          isPast ||
-          isSunday ||
-          isBlocked;
+          isPast || isBlocked;
 
         const button =
-          document.createElement("button");
+          document.createElement(
+            "button"
+          );
 
         button.type = "button";
-        button.textContent = String(day);
-        button.className = "calendar-day";
+        button.textContent =
+          String(day);
 
-        if (state.selectedDate === key) {
-          button.classList.add("selected");
+        button.className =
+          "calendar-day";
+
+        if (
+          state.selectedDate === key
+        ) {
+          button.classList.add(
+            "selected"
+          );
         }
 
         if (unavailable) {
           button.disabled = true;
-          button.classList.add("unavailable");
+          button.classList.add(
+            "unavailable"
+          );
+
           button.title =
             isBlocked
               ? "Dieser Tag ist gesperrt."
-              : isSunday
-                ? "Sonntags geschlossen."
-                : "Vergangener Tag.";
+              : "Vergangener Tag.";
         } else {
           button.addEventListener(
             "click",
@@ -4343,15 +4286,19 @@
 
     function changeMonth(direction) {
       currentCalendarDate.setMonth(
-        currentCalendarDate.getMonth() + direction
+        currentCalendarDate.getMonth() +
+        direction
       );
 
       renderCalendar();
     }
 
     function selectDate(dateKey) {
-      state.selectedDate = dateKey;
-      state.selectedTime = null;
+      state.selectedDate =
+        dateKey;
+
+      state.selectedTime =
+        null;
 
       renderCalendar();
       renderTimeSlots();
@@ -4359,13 +4306,14 @@
       validateDateAndTime();
     }
 
-    function timeToMinutes(time) {
-      const [
-        hours,
-        minutes
-      ] = time.split(":").map(Number);
-
-      return hours * 60 + minutes;
+    function getBookingsForDate(
+      dateKey
+    ) {
+      return bookings.filter(
+        booking =>
+          booking.date === dateKey &&
+          booking.status !== "cancelled"
+      );
     }
 
     function intervalsOverlap(
@@ -4392,27 +4340,21 @@
       );
     }
 
-    function getBookingsForDate(dateKey) {
-      return bookings.filter(
-        booking =>
-          booking.date === dateKey &&
-          booking.status !== "cancelled"
+    function isSlotAvailable(
+      dateKey,
+      time
+    ) {
+      return !getBookingsForDate(
+        dateKey
+      ).some(booking =>
+        intervalsOverlap(
+          time,
+          BOOKING_BLOCK_MINUTES,
+          booking.time,
+          booking.duration ||
+            BOOKING_BLOCK_MINUTES
+        )
       );
-    }
-
-    function isSlotAvailable(dateKey, time) {
-      const total =
-        calculateTotal();
-
-      return !getBookingsForDate(dateKey)
-        .some(booking =>
-          intervalsOverlap(
-            time,
-            total.duration,
-            booking.time,
-            booking.duration
-          )
-        );
     }
 
     function renderTimeSlots() {
@@ -4439,13 +4381,38 @@
         return;
       }
 
-      display.textContent =
-        `Termine am ${formatDateLong(
+      const opening =
+        getOpeningHoursForDate(
           state.selectedDate
-        )}:`;
+        );
+
+      if (!opening) {
+        display.textContent =
+          "An diesem Tag ist das Studio geschlossen.";
+
+        container.innerHTML = `
+          <div class="empty-state">
+            An diesem Tag sind keine Termine verfügbar.
+          </div>
+        `;
+
+        return;
+      }
+
+      display.textContent =
+        `${formatDateLong(
+          state.selectedDate
+        )} · geöffnet ${getOpeningText(
+          state.selectedDate
+        )}`;
+
+      const slots =
+        getSlotsForDate(
+          state.selectedDate
+        );
 
       container.innerHTML =
-        STUDIO_SLOTS.map(slot => {
+        slots.map(slot => {
           const available =
             isSlotAvailable(
               state.selectedDate,
@@ -4470,7 +4437,7 @@
               </span>
 
               <small>
-                ${available ? "Frei" : "Belegt"}
+                ${available ? "Frei" : "Gesperrt"}
               </small>
             </button>
           `;
@@ -4489,7 +4456,7 @@
         )
       ) {
         showToast(
-          "Dieser Termin ist inzwischen nicht mehr frei.",
+          "Dieser Termin ist nicht mehr frei.",
           "warning"
         );
 
@@ -4497,7 +4464,8 @@
         return;
       }
 
-      state.selectedTime = time;
+      state.selectedTime =
+        time;
 
       renderTimeSlots();
       updateStep3Summary();
@@ -4506,7 +4474,9 @@
 
     function validateDateAndTime() {
       document
-        .getElementById("next-step-2")
+        .getElementById(
+          "next-step-2"
+        )
         .disabled =
           !state.selectedDate ||
           !state.selectedTime;
@@ -4515,27 +4485,37 @@
     function getCustomerData() {
       return {
         firstName: document
-          .getElementById("first-name")
+          .getElementById(
+            "first-name"
+          )
           .value
           .trim(),
 
         lastName: document
-          .getElementById("last-name")
+          .getElementById(
+            "last-name"
+          )
           .value
           .trim(),
 
         email: document
-          .getElementById("email")
+          .getElementById(
+            "email"
+          )
           .value
           .trim(),
 
         phone: document
-          .getElementById("phone")
+          .getElementById(
+            "phone"
+          )
           .value
           .trim(),
 
         notes: document
-          .getElementById("notes")
+          .getElementById(
+            "notes"
+          )
           .value
           .trim()
       };
@@ -4593,60 +4573,69 @@
       const service =
         getSelectedService();
 
-      const addons =
-        getSelectedAddons();
-
-      const total =
-        calculateTotal();
-
       const booking = {
         id: generateBookingCode(),
         serviceId: service.id,
         serviceTitle: service.title,
-        addons: addons.map(
-          addon => addon.id
-        ),
-        addonsSummary: addons.length
-          ? addons.map(
-              addon => addon.title
-            ).join(", ")
-          : "Keine",
         date: state.selectedDate,
         time: state.selectedTime,
-        duration: total.duration,
-        price: total.price,
+        duration: BOOKING_BLOCK_MINUTES,
+        price: service.price,
         customer,
         status: "confirmed",
         createdAt: new Date().toISOString()
       };
 
       bookings.unshift(booking);
-      state.latestBooking = booking;
+      state.latestBooking =
+        booking;
 
       saveData();
 
-      document
-        .getElementById("confirmed-code")
-        .textContent = booking.id;
+      const blockedUntil =
+        addMinutesToTime(
+          booking.time,
+          BOOKING_BLOCK_MINUTES
+        );
 
       document
-        .getElementById("confirmed-name")
+        .getElementById(
+          "confirmed-code"
+        )
+        .textContent =
+          booking.id;
+
+      document
+        .getElementById(
+          "confirmed-name"
+        )
         .textContent =
           `${customer.firstName} ${customer.lastName}`;
 
       document
-        .getElementById("confirmed-service")
+        .getElementById(
+          "confirmed-service"
+        )
         .textContent =
           `${booking.serviceTitle} · ${formatEuro(
             booking.price
           )}`;
 
       document
-        .getElementById("confirmed-date")
+        .getElementById(
+          "confirmed-date"
+        )
         .textContent =
           `${formatDateLong(
             booking.date
           )} um ${booking.time} Uhr`;
+
+      document
+        .getElementById(
+          "confirmed-until"
+        )
+        .textContent =
+          `${blockedUntil} Uhr`;
 
       goToStep(4);
 
@@ -4659,14 +4648,15 @@
     function resetBooking() {
       state = {
         selectedServiceId: "srv-lifting",
-        selectedAddonIds: [],
         selectedDate: null,
         selectedTime: null,
         latestBooking: null
       };
 
       document
-        .getElementById("booking-form")
+        .getElementById(
+          "booking-form"
+        )
         .reset();
 
       renderServices();
@@ -4675,37 +4665,6 @@
       updateStep3Summary();
       validateDateAndTime();
       goToStep(1);
-    }
-
-    function getServiceEndTime(
-      startTime,
-      duration
-    ) {
-      const [
-        hours,
-        minutes
-      ] = startTime
-        .split(":")
-        .map(Number);
-
-      const total =
-        hours * 60 +
-        minutes +
-        duration;
-
-      const endHours =
-        Math.floor(total / 60) % 24;
-
-      const endMinutes =
-        total % 60;
-
-      return `${String(endHours).padStart(
-        2,
-        "0"
-      )}:${String(endMinutes).padStart(
-        2,
-        "0"
-      )}`;
     }
 
     function downloadCalendarFile() {
@@ -4723,9 +4682,9 @@
         "00";
 
       const endTime =
-        getServiceEndTime(
+        addMinutesToTime(
           booking.time,
-          booking.duration
+          BOOKING_BLOCK_MINUTES
         );
 
       const end =
@@ -4753,7 +4712,7 @@
         `DTSTART:${start}`,
         `DTEND:${end}`,
         `SUMMARY:Termin ALISA BEAUTY LAB - ${booking.serviceTitle}`,
-        `DESCRIPTION:Buchungscode: ${booking.id}\\nBehandlung: ${booking.serviceTitle}\\nExtras: ${booking.addonsSummary}\\nBetrag: ${booking.price} EUR`,
+        `DESCRIPTION:Buchungscode: ${booking.id}\\nBehandlung: ${booking.serviceTitle}\\nSperrzeit: 2 Stunden\\nBetrag: ${booking.price} EUR`,
         `LOCATION:${STUDIO_ADDRESS}`,
         "STATUS:CONFIRMED",
         "END:VEVENT",
@@ -4811,7 +4770,8 @@
         `Buchungscode: ${booking.id}`,
         `Betrag: ${formatEuro(
           booking.price
-        )}`
+        )}`,
+        "Sperrzeit: 2 Stunden"
       ].join("\n");
 
       const url =
@@ -4827,22 +4787,32 @@
 
     function openAdminModal() {
       document
-        .getElementById("admin-modal")
+        .getElementById(
+          "admin-modal"
+        )
         .classList.remove("hidden");
 
-      document.body.classList.add("modal-open");
+      document.body.classList.add(
+        "modal-open"
+      );
 
       document
-        .getElementById("admin-pin")
+        .getElementById(
+          "admin-pin"
+        )
         .focus();
     }
 
     function closeAdminModal() {
       document
-        .getElementById("admin-modal")
+        .getElementById(
+          "admin-modal"
+        )
         .classList.add("hidden");
 
-      document.body.classList.remove("modal-open");
+      document.body.classList.remove(
+        "modal-open"
+      );
     }
 
     function unlockAdmin(event) {
@@ -4850,7 +4820,9 @@
 
       const pin =
         document
-          .getElementById("admin-pin")
+          .getElementById(
+            "admin-pin"
+          )
           .value;
 
       if (pin !== ADMIN_PIN) {
@@ -4860,18 +4832,24 @@
         );
 
         document
-          .getElementById("admin-pin")
+          .getElementById(
+            "admin-pin"
+          )
           .select();
 
         return;
       }
 
       document
-        .getElementById("pin-screen")
+        .getElementById(
+          "pin-screen"
+        )
         .classList.add("hidden");
 
       document
-        .getElementById("admin-dashboard")
+        .getElementById(
+          "admin-dashboard"
+        )
         .classList.add("visible");
 
       renderAdminTable();
@@ -4899,49 +4877,57 @@
     }
 
     function renderAdminTable() {
-      const tableBody =
+      const body =
         document.getElementById(
           "admin-table-body"
         );
 
       const search =
         document
-          .getElementById("admin-search")
+          .getElementById(
+            "admin-search"
+          )
           .value
           .trim()
           .toLowerCase();
 
       const selectedStatus =
         document
-          .getElementById("admin-status")
+          .getElementById(
+            "admin-status"
+          )
           .value;
 
       const filtered =
-        bookings.filter(booking => {
-          const searchable = [
-            booking.id,
-            booking.serviceTitle,
-            booking.customer.firstName,
-            booking.customer.lastName,
-            booking.customer.phone
-          ]
-            .join(" ")
-            .toLowerCase();
+        bookings.filter(
+          booking => {
+            const searchable = [
+              booking.id,
+              booking.serviceTitle,
+              booking.customer.firstName,
+              booking.customer.lastName,
+              booking.customer.phone
+            ]
+              .join(" ")
+              .toLowerCase();
 
-          return (
-            (!search ||
-              searchable.includes(search)) &&
-            (
-              selectedStatus === "all" ||
-              booking.status === selectedStatus
-            )
-          );
-        });
+            return (
+              (
+                !search ||
+                searchable.includes(search)
+              ) &&
+              (
+                selectedStatus === "all" ||
+                booking.status === selectedStatus
+              )
+            );
+          }
+        );
 
       updateAdminMetrics();
 
       if (!filtered.length) {
-        tableBody.innerHTML = `
+        body.innerHTML = `
           <tr>
             <td
               colspan="6"
@@ -4955,7 +4941,7 @@
         return;
       }
 
-      tableBody.innerHTML =
+      body.innerHTML =
         filtered.map(booking => {
           const cancelled =
             booking.status === "cancelled";
@@ -4965,17 +4951,28 @@
               ? "confirmed"
               : "completed";
 
+          const blockedUntil =
+            addMinutesToTime(
+              booking.time,
+              BOOKING_BLOCK_MINUTES
+            );
+
           return `
             <tr>
 
               <td>
                 <strong>
-                  ${escapeHtml(booking.id)}
+                  ${escapeHtml(
+                    booking.id
+                  )}
                 </strong>
 
                 <span class="table-muted">
-                  ${formatDate(booking.date)}
+                  ${formatDate(
+                    booking.date
+                  )}
                   · ${booking.time} Uhr
+                  – ${blockedUntil} Uhr
                 </span>
               </td>
 
@@ -5016,16 +5013,15 @@
                 </strong>
 
                 <span class="table-muted">
-                  ${booking.duration} Min.
-                  · ${escapeHtml(
-                    booking.addonsSummary
-                  )}
+                  Sperrzeit: 2 Stunden
                 </span>
               </td>
 
               <td>
                 <strong>
-                  ${formatEuro(booking.price)}
+                  ${formatEuro(
+                    booking.price
+                  )}
                 </strong>
               </td>
 
@@ -5135,19 +5131,28 @@
           );
 
       document
-        .getElementById("metric-total")
+        .getElementById(
+          "metric-total"
+        )
         .textContent = total;
 
       document
-        .getElementById("metric-active")
+        .getElementById(
+          "metric-active"
+        )
         .textContent = active;
 
       document
-        .getElementById("metric-revenue")
-        .textContent = formatEuro(revenue);
+        .getElementById(
+          "metric-revenue"
+        )
+        .textContent =
+          formatEuro(revenue);
     }
 
-    function createCustomerWhatsAppLink(booking) {
+    function createCustomerWhatsAppLink(
+      booking
+    ) {
       const rawPhone =
         booking.customer.phone
           .replace(/\D/g, "");
@@ -5183,7 +5188,8 @@
         return;
       }
 
-      booking.status = newStatus;
+      booking.status =
+        newStatus;
 
       saveData();
       renderAdminTable();
@@ -5221,7 +5227,9 @@
         renderCalendar();
 
         showToast(
-          `${formatDate(date)} wurde gesperrt.`,
+          `${formatDate(
+            date
+          )} wurde gesperrt.`,
           "success"
         );
       } else {
@@ -5248,10 +5256,9 @@
         "Buchungs-ID",
         "Status",
         "Datum",
-        "Uhrzeit",
-        "Dauer",
+        "Startzeit",
+        "Gesperrt bis",
         "Behandlung",
-        "Extras",
         "Preis",
         "Vorname",
         "Nachname",
@@ -5262,14 +5269,19 @@
 
       const rows =
         bookings.map(booking => {
+          const blockedUntil =
+            addMinutesToTime(
+              booking.time,
+              BOOKING_BLOCK_MINUTES
+            );
+
           return [
             booking.id,
             booking.status,
             booking.date,
             booking.time,
-            booking.duration,
+            blockedUntil,
             booking.serviceTitle,
-            booking.addonsSummary,
             booking.price,
             booking.customer.firstName,
             booking.customer.lastName,
@@ -5279,7 +5291,10 @@
           ]
             .map(value =>
               `"${String(value ?? "")
-                .replaceAll('"', '""')}"`
+                .replaceAll(
+                  '"',
+                  '""'
+                )}"`
             )
             .join(";");
         });
@@ -5367,13 +5382,17 @@
 
     function showCookieBanner() {
       document
-        .getElementById("cookie-banner")
+        .getElementById(
+          "cookie-banner"
+        )
         .classList.remove("hidden");
     }
 
     function hideCookieBanner() {
       document
-        .getElementById("cookie-banner")
+        .getElementById(
+          "cookie-banner"
+        )
         .classList.add("hidden");
     }
 
@@ -5416,16 +5435,22 @@
         getCookiePreferences();
 
       document
-        .getElementById("analytics-cookies")
-        .checked = Boolean(
-          preferences.analytics
-        );
+        .getElementById(
+          "analytics-cookies"
+        )
+        .checked =
+          Boolean(
+            preferences.analytics
+          );
 
       document
-        .getElementById("marketing-cookies")
-        .checked = Boolean(
-          preferences.marketing
-        );
+        .getElementById(
+          "marketing-cookies"
+        )
+        .checked =
+          Boolean(
+            preferences.marketing
+          );
 
       document
         .getElementById(
@@ -5433,7 +5458,9 @@
         )
         .classList.remove("hidden");
 
-      document.body.classList.add("modal-open");
+      document.body.classList.add(
+        "modal-open"
+      );
     }
 
     function closeCookieSettings() {
@@ -5443,22 +5470,26 @@
         )
         .classList.add("hidden");
 
-      document.body.classList.remove("modal-open");
+      document.body.classList.remove(
+        "modal-open"
+      );
     }
 
     function saveCookieSettings() {
       saveCookiePreferences({
         necessary: true,
-        analytics: document
-          .getElementById(
-            "analytics-cookies"
-          )
-          .checked,
-        marketing: document
-          .getElementById(
-            "marketing-cookies"
-          )
-          .checked,
+        analytics:
+          document
+            .getElementById(
+              "analytics-cookies"
+            )
+            .checked,
+        marketing:
+          document
+            .getElementById(
+              "marketing-cookies"
+            )
+            .checked,
         decided: true
       });
 
@@ -5487,21 +5518,31 @@
           "legal-privacy"
         );
 
-      imprint.classList.add("hidden");
-      privacy.classList.add("hidden");
+      imprint.classList.add(
+        "hidden"
+      );
+
+      privacy.classList.add(
+        "hidden"
+      );
 
       if (type === "imprint") {
-        imprint.classList.remove("hidden");
+        imprint.classList.remove(
+          "hidden"
+        );
 
         document
           .getElementById(
             "legal-modal-title"
           )
-          .textContent = "Impressum";
+          .textContent =
+            "Impressum";
       }
 
       if (type === "privacy") {
-        privacy.classList.remove("hidden");
+        privacy.classList.remove(
+          "hidden"
+        );
 
         document
           .getElementById(
@@ -5511,8 +5552,13 @@
             "Datenschutzerklärung";
       }
 
-      modal.classList.remove("hidden");
-      document.body.classList.add("modal-open");
+      modal.classList.remove(
+        "hidden"
+      );
+
+      document.body.classList.add(
+        "modal-open"
+      );
     }
 
     function closeLegalModal() {
@@ -5522,7 +5568,9 @@
         )
         .classList.add("hidden");
 
-      document.body.classList.remove("modal-open");
+      document.body.classList.remove(
+        "modal-open"
+      );
     }
 
     function showToast(
@@ -5535,7 +5583,9 @@
         );
 
       const toast =
-        document.createElement("div");
+        document.createElement(
+          "div"
+        );
 
       toast.className =
         `toast ${type}`;
@@ -5543,7 +5593,9 @@
       toast.textContent =
         message;
 
-      container.appendChild(toast);
+      container.appendChild(
+        toast
+      );
 
       window.setTimeout(
         () => toast.remove(),
@@ -5565,7 +5617,9 @@
     );
 
     document
-      .getElementById("admin-modal")
+      .getElementById(
+        "admin-modal"
+      )
       .addEventListener(
         "click",
         event => {
@@ -5595,7 +5649,9 @@
       );
 
     document
-      .getElementById("legal-modal")
+      .getElementById(
+        "legal-modal"
+      )
       .addEventListener(
         "click",
         event => {
@@ -5620,7 +5676,9 @@
         const preferences =
           getCookiePreferences();
 
-        if (!preferences.decided) {
+        if (
+          !preferences.decided
+        ) {
           window.setTimeout(
             showCookieBanner,
             350
