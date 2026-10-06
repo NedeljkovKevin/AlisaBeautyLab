@@ -6,38 +6,15 @@
 
   <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen</title>
 
-  <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
-  
   <meta
     name="description"
-    content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting und Wimpernextensions mit eigener Online-Terminbuchung."
+    content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting, Wimpernextensions und Online-Terminbuchung."
   >
 
+  <!-- Adobe Fonts: Typekit fda0xlt -->
+  <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
+
   <style>
-    @font-face {
-      font-family: "Great Vibes";
-      src: url("fonts/great-vibes.woff2") format("woff2");
-      font-style: normal;
-      font-weight: 400;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Sweet Sans Pro Medium";
-      src: url("fonts/sweet-sans-pro-medium.woff2") format("woff2");
-      font-style: normal;
-      font-weight: 500;
-      font-display: swap;
-    }
-
-    @font-face {
-      font-family: "Goldenbook Bold";
-      src: url("fonts/goldenbook-bold.woff2") format("woff2");
-      font-style: normal;
-      font-weight: 700;
-      font-display: swap;
-    }
-
     :root {
       --sand: #f5efe6;
       --cream: #fffdf9;
@@ -53,6 +30,10 @@
       --red: #8d2525;
       --shadow: 0 15px 45px rgba(67, 54, 48, 0.12);
       --radius: 28px;
+
+      --font-body: "sweet-sans-pro", Arial, sans-serif;
+      --font-display: "goldenbook", Georgia, serif;
+      --font-script: "great-vibes", cursive;
     }
 
     * {
@@ -70,15 +51,16 @@
       background-color: var(--sand);
       background-image:
         linear-gradient(
-          rgba(245, 239, 230, 0.3),
-          rgba(245, 239, 230, 0.3)
+          rgba(245, 239, 230, 0.28),
+          rgba(245, 239, 230, 0.28)
         ),
         url("Hintergrund-muster.jpg");
       background-position: center;
       background-size: cover;
       background-attachment: fixed;
-      font-family: "Sweet Sans Pro Medium", Arial, sans-serif;
-      font-weight: 500;
+      font-family: var(--font-body);
+      font-size: 15px;
+      font-weight: 400;
     }
 
     body.modal-open {
@@ -90,11 +72,6 @@
     textarea,
     select {
       font: inherit;
-    }
-
-    button,
-    a {
-      -webkit-tap-highlight-color: transparent;
     }
 
     button {
@@ -116,23 +93,18 @@
       max-width: 100%;
     }
 
-    .container {
-      width: min(1160px, calc(100% - 32px));
-      margin-inline: auto;
+    strong,
+    b {
+      font-weight: 700;
     }
 
     .hidden {
       display: none !important;
     }
 
-    .font-display {
-      font-family: "Goldenbook Bold", Georgia, serif;
-      font-weight: 700;
-    }
-
-    .font-script {
-      font-family: "Great Vibes", cursive;
-      font-weight: 400;
+    .container {
+      width: min(1160px, calc(100% - 32px));
+      margin-inline: auto;
     }
 
     .announcement-bar {
@@ -168,7 +140,7 @@
     }
 
     .header-inner {
-      min-height: 82px;
+      min-height: 84px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -322,14 +294,15 @@
       max-width: 880px;
       margin: 25px auto 18px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: clamp(42px, 7vw, 78px);
+      font-weight: 300;
       line-height: 1.08;
     }
 
     .hero h1 em {
       color: var(--gold);
-      font-family: "Great Vibes", cursive;
+      font-family: var(--font-script);
       font-size: 1.12em;
       font-style: normal;
       font-weight: 400;
@@ -435,8 +408,9 @@
     .section-heading h2 {
       margin: 0;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: clamp(34px, 5vw, 50px);
+      font-weight: 300;
       line-height: 1.1;
     }
 
@@ -490,8 +464,9 @@
       z-index: 1;
       margin: 0 0 20px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 29px;
+      font-weight: 300;
       text-align: center;
     }
 
@@ -500,8 +475,9 @@
       z-index: 1;
       margin: 0 0 14px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 20px;
+      font-weight: 300;
       text-align: center;
     }
 
@@ -532,8 +508,9 @@
 
     .pricing-row .price {
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 20px;
+      font-weight: 300;
       white-space: nowrap;
     }
 
@@ -572,8 +549,9 @@
       z-index: 1;
       margin: 0 0 10px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 21px;
+      font-weight: 300;
     }
 
     .info-card p {
@@ -644,8 +622,9 @@
     .booking-step h3 {
       margin: 0;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 29px;
+      font-weight: 300;
     }
 
     .booking-step-intro {
@@ -707,8 +686,9 @@
     .service-price,
     .addon-price {
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 17px;
+      font-weight: 300;
       white-space: nowrap;
     }
 
@@ -747,8 +727,9 @@
     .addons-heading h4 {
       margin: 0;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 21px;
+      font-weight: 300;
     }
 
     .addons-heading span {
@@ -804,11 +785,25 @@
       margin-bottom: 19px;
     }
 
-    .calendar-header h4 {
+    .calendar-header h4,
+    .time-box h4,
+    .summary-box h4 {
       margin: 0;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
+      font-weight: 300;
+    }
+
+    .calendar-header h4,
+    .time-box h4 {
       font-size: 21px;
+    }
+
+    .summary-box h4 {
+      margin-bottom: 15px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--gold-light);
+      font-size: 22px;
     }
 
     .icon-button {
@@ -908,13 +903,6 @@
 
     .legend-dot.blocked {
       background: var(--cream-dark);
-    }
-
-    .time-box h4 {
-      margin: 0;
-      color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
-      font-size: 21px;
     }
 
     .selected-date {
@@ -1052,15 +1040,6 @@
       accent-color: var(--brown);
     }
 
-    .summary-box h4 {
-      margin: 0 0 15px;
-      padding-bottom: 12px;
-      color: var(--brown-dark);
-      border-bottom: 1px solid var(--gold-light);
-      font-family: "Goldenbook Bold", Georgia, serif;
-      font-size: 22px;
-    }
-
     .summary-line {
       display: flex;
       justify-content: space-between;
@@ -1085,8 +1064,9 @@
 
     .summary-total span:last-child {
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 20px;
+      font-weight: 300;
     }
 
     .summary-location {
@@ -1119,8 +1099,9 @@
     .success-box h3 {
       margin: 0 0 9px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 34px;
+      font-weight: 300;
     }
 
     .success-box > p {
@@ -1182,8 +1163,9 @@
     .about-copy h2 {
       margin: 12px 0 18px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: clamp(34px, 5vw, 53px);
+      font-weight: 300;
       line-height: 1.05;
     }
 
@@ -1214,8 +1196,9 @@
     .contact-section h2 {
       margin: 0;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 36px;
+      font-weight: 300;
     }
 
     .contact-section p {
@@ -1245,8 +1228,9 @@
 
     .footer-column h3 {
       color: var(--white);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 21px;
+      font-weight: 300;
       letter-spacing: 0.08em;
     }
 
@@ -1287,18 +1271,14 @@
       border: 0;
       font: inherit;
       font-size: 11px;
-      cursor: pointer;
     }
 
     .footer-links button:hover {
       color: var(--white);
     }
 
-    .footer-links a:hover {
-      color: var(--white);
-    }
-
-    .modal-backdrop {
+    .modal-backdrop,
+    .legal-modal-backdrop {
       position: fixed;
       inset: 0;
       z-index: 100;
@@ -1322,6 +1302,20 @@
       box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
     }
 
+    .legal-modal {
+      width: min(760px, 100%);
+      max-height: 90vh;
+      overflow: auto;
+      background: var(--cream);
+      border: 1px solid var(--gold);
+      border-radius: 24px;
+      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
+    }
+
+    .cookie-settings-modal {
+      width: min(650px, 100%);
+    }
+
     .modal-header,
     .legal-modal-header {
       display: flex;
@@ -1336,8 +1330,9 @@
     .modal-title,
     .legal-modal-header h2 {
       margin: 0;
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 25px;
+      font-weight: 300;
     }
 
     .modal-subtitle {
@@ -1375,8 +1370,9 @@
     .pin-screen h3 {
       margin: 17px 0 8px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 27px;
+      font-weight: 300;
     }
 
     .pin-screen p {
@@ -1422,8 +1418,9 @@
 
     .metric-value {
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 26px;
+      font-weight: 300;
     }
 
     .admin-toolbar {
@@ -1611,8 +1608,9 @@
     .cookie-content h2 {
       margin: 0 0 8px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 24px;
+      font-weight: 300;
     }
 
     .cookie-content p {
@@ -1644,32 +1642,6 @@
       font-size: 10px;
     }
 
-    .legal-modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 170;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 18px;
-      background: rgba(42, 33, 29, 0.78);
-      backdrop-filter: blur(8px);
-    }
-
-    .legal-modal {
-      width: min(760px, 100%);
-      max-height: 90vh;
-      overflow: auto;
-      background: var(--cream);
-      border: 1px solid var(--gold);
-      border-radius: 24px;
-      box-shadow: 0 25px 80px rgba(0, 0, 0, 0.3);
-    }
-
-    .cookie-settings-modal {
-      width: min(650px, 100%);
-    }
-
     .legal-content {
       padding: 28px;
       color: var(--brown);
@@ -1680,15 +1652,17 @@
     .legal-content h3 {
       margin: 0 0 18px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 30px;
+      font-weight: 300;
     }
 
     .legal-content h4 {
       margin: 22px 0 5px;
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 18px;
+      font-weight: 300;
     }
 
     .legal-content p {
@@ -1719,8 +1693,9 @@
 
     .cookie-setting-row strong {
       color: var(--brown-dark);
-      font-family: "Goldenbook Bold", Georgia, serif;
+      font-family: var(--font-display);
       font-size: 18px;
+      font-weight: 300;
     }
 
     .cookie-setting-row p {
@@ -1811,9 +1786,6 @@
       .about-copy {
         max-width: 700px;
         margin: 0 auto;
-      }
-
-      .about-copy {
         text-align: center;
       }
     }
@@ -1997,10 +1969,18 @@
       <span class="announcement-dot"></span>
       Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
     </span>
+
     <span>·</span>
-    <span>Persönliche Termine ohne Wartezeiten</span>
+
+    <span>
+      Persönliche Termine ohne Wartezeiten
+    </span>
+
     <span>·</span>
-    <span>0 € Buchungsgebühr</span>
+
+    <span>
+      0 € Buchungsgebühr
+    </span>
   </div>
 
   <header class="site-header">
@@ -2018,11 +1998,25 @@
         >
       </a>
 
-      <nav class="desktop-navigation" aria-label="Hauptnavigation">
-        <a href="#booking-section">Termin buchen</a>
-        <a href="#services">Preise</a>
-        <a href="#about">Über mich</a>
-        <a href="#contact">Kontakt</a>
+      <nav
+        class="desktop-navigation"
+        aria-label="Hauptnavigation"
+      >
+        <a href="#booking-section">
+          Termin buchen
+        </a>
+
+        <a href="#services">
+          Preise
+        </a>
+
+        <a href="#about">
+          Über mich
+        </a>
+
+        <a href="#contact">
+          Kontakt
+        </a>
       </nav>
 
       <div class="header-actions">
@@ -2082,6 +2076,7 @@
         </p>
 
         <div class="hero-buttons">
+
           <a
             href="#booking-section"
             class="button button-primary"
@@ -2095,17 +2090,27 @@
           >
             Preise & Leistungen
           </a>
+
         </div>
 
       </div>
     </section>
 
-    <section id="services" class="section section-light">
+    <section
+      id="services"
+      class="section section-light"
+    >
       <div class="container">
 
         <div class="section-heading">
-          <span class="label">Original Preisliste</span>
-          <h2>Behandlungen & Preise</h2>
+          <span class="label">
+            Original Preisliste
+          </span>
+
+          <h2>
+            Behandlungen & Preise
+          </h2>
+
           <p>
             Vor jeder Neumodellage findet eine persönliche Beratung statt,
             damit der Look perfekt zu deiner Augenform passt.
@@ -2117,19 +2122,30 @@
           <div class="stack">
 
             <div class="card pricing-card">
-              <h3>Wimpernlifting</h3>
+
+              <h3>
+                Wimpernlifting
+              </h3>
 
               <div class="pricing-row">
-                <span>Wimpernlifting</span>
+                <span>
+                  Wimpernlifting
+                </span>
+
                 <span class="line"></span>
-                <span class="price">35 €</span>
+
+                <span class="price">
+                  35 €
+                </span>
               </div>
 
               <div class="pricing-note">
                 Dauer ca. 60 Minuten · Haltbarkeit 6–8 Wochen
               </div>
 
-              <div style="position:relative;z-index:1;margin-top:20px;text-align:center;">
+              <div
+                style="position:relative;z-index:1;margin-top:20px;text-align:center;"
+              >
                 <button
                   type="button"
                   class="button button-primary"
@@ -2138,78 +2154,137 @@
                   Auswählen
                 </button>
               </div>
+
             </div>
 
             <div class="card info-card">
-              <h4>Hinweise zum Auffüllen</h4>
+
+              <h4>
+                Hinweise zum Auffüllen
+              </h4>
+
               <p>
                 Ab der 4. Woche wird der Neupreis verrechnet.
               </p>
+
               <p>
                 Auffüllpreise gelten nur, wenn beim Termin noch mindestens
                 <strong>50 % der Extensions</strong> vorhanden sind.
               </p>
+
             </div>
 
           </div>
 
           <div class="card pricing-card">
 
-            <h3>Wimpernextensions</h3>
+            <h3>
+              Wimpernextensions
+            </h3>
 
-            <h4>Neuanlage:</h4>
+            <h4>
+              Neuanlage:
+            </h4>
 
             <div class="pricing-row">
-              <span>1:1 Technik</span>
+              <span>
+                1:1 Technik
+              </span>
+
               <span class="line"></span>
-              <span class="price">55 €</span>
+
+              <span class="price">
+                55 €
+              </span>
             </div>
 
             <div class="pricing-row">
-              <span>Volumen 2D–4D</span>
+              <span>
+                Volumen 2D–4D
+              </span>
+
               <span class="line"></span>
-              <span class="price">65 €</span>
+
+              <span class="price">
+                65 €
+              </span>
             </div>
 
             <div class="pricing-row">
-              <span>Mega Volumen 5D–8D</span>
+              <span>
+                Mega Volumen 5D–8D
+              </span>
+
               <span class="line"></span>
-              <span class="price">80 €</span>
+
+              <span class="price">
+                80 €
+              </span>
             </div>
 
             <div class="card-divider"></div>
 
-            <h4>Auffüllpreise 1:1 & Volumen</h4>
+            <h4>
+              Auffüllpreise 1:1 & Volumen
+            </h4>
 
             <div class="pricing-row">
-              <span>Bis 2 Wochen</span>
+              <span>
+                Bis 2 Wochen
+              </span>
+
               <span class="line"></span>
-              <span class="price">30 €</span>
+
+              <span class="price">
+                30 €
+              </span>
             </div>
 
             <div class="pricing-row">
-              <span>Bis 3 Wochen</span>
+              <span>
+                Bis 3 Wochen
+              </span>
+
               <span class="line"></span>
-              <span class="price">40 €</span>
+
+              <span class="price">
+                40 €
+              </span>
             </div>
 
             <div class="card-divider"></div>
 
-            <h4>Auffüllpreise Megavolumen</h4>
+            <h4>
+              Auffüllpreise Megavolumen
+            </h4>
 
             <div class="pricing-row">
-              <span>Bis 2 Wochen</span>
+              <span>
+                Bis 2 Wochen
+              </span>
+
               <span class="line"></span>
-              <span class="price">40 €</span>
+
+              <span class="price">
+                40 €
+              </span>
             </div>
 
             <div class="pricing-row">
-              <span>Bis 3 Wochen</span>
+              <span>
+                Bis 3 Wochen
+              </span>
+
               <span class="line"></span>
-              <span class="price">50 €</span>
+
+              <span class="price">
+                50 €
+              </span>
             </div>
 
-            <div style="position:relative;z-index:1;margin-top:24px;text-align:center;">
+            <div
+              style="position:relative;z-index:1;margin-top:24px;text-align:center;"
+            >
               <a
                 href="#booking-section"
                 class="button button-primary"
@@ -2225,12 +2300,21 @@
       </div>
     </section>
 
-    <section id="booking-section" class="section">
+    <section
+      id="booking-section"
+      class="section"
+    >
       <div class="container">
 
         <div class="section-heading">
-          <span class="eyebrow">Online-Terminbuchung</span>
-          <h2>Wunschtermin festlegen</h2>
+          <span class="eyebrow">
+            Online-Terminbuchung
+          </span>
+
+          <h2>
+            Wunschtermin festlegen
+          </h2>
+
           <p>
             In wenigen Schritten deinen Termin auswählen – ohne Planity und
             ohne Buchungsgebühr.
@@ -2241,28 +2325,57 @@
 
           <div class="steps">
 
-            <div class="step active" id="step-indicator-1">
-              <span class="step-number">1</span>
-              <span>Behandlung</span>
+            <div
+              class="step active"
+              id="step-indicator-1"
+            >
+              <span class="step-number">
+                1
+              </span>
+
+              <span>
+                Behandlung
+              </span>
             </div>
 
-            <div class="step" id="step-indicator-2">
-              <span class="step-number">2</span>
-              <span>Datum & Uhrzeit</span>
+            <div
+              class="step"
+              id="step-indicator-2"
+            >
+              <span class="step-number">
+                2
+              </span>
+
+              <span>
+                Datum & Uhrzeit
+              </span>
             </div>
 
-            <div class="step" id="step-indicator-3">
-              <span class="step-number">3</span>
-              <span>Bestätigung</span>
+            <div
+              class="step"
+              id="step-indicator-3"
+            >
+              <span class="step-number">
+                3
+              </span>
+
+              <span>
+                Bestätigung
+              </span>
             </div>
 
           </div>
 
           <div class="booking-content">
 
-            <section id="booking-step-1" class="booking-step">
+            <section
+              id="booking-step-1"
+              class="booking-step"
+            >
 
-              <h3>Behandlung auswählen</h3>
+              <h3>
+                Behandlung auswählen
+              </h3>
 
               <p class="booking-step-intro">
                 Wähle zuerst die gewünschte Behandlung aus.
@@ -2276,8 +2389,13 @@
               <div class="addons-section">
 
                 <div class="addons-heading">
-                  <h4>Optionale Extras</h4>
-                  <span>Zubuchbare Pflege</span>
+                  <h4>
+                    Optionale Extras
+                  </h4>
+
+                  <span>
+                    Zubuchbare Pflege
+                  </span>
                 </div>
 
                 <div
@@ -2297,7 +2415,6 @@
                 </div>
 
                 <button
-                  id="next-step-1"
                   type="button"
                   class="button button-primary"
                   onclick="goToStep(2)"
@@ -2314,7 +2431,9 @@
               class="booking-step hidden"
             >
 
-              <h3>Wunschtermin festlegen</h3>
+              <h3>
+                Wunschtermin festlegen
+              </h3>
 
               <p class="booking-step-intro">
                 Wähle einen freien Tag und anschließend eine Uhrzeit.
@@ -2388,7 +2507,9 @@
 
                 <div class="time-box">
 
-                  <h4>Verfügbare Uhrzeiten</h4>
+                  <h4>
+                    Verfügbare Uhrzeiten
+                  </h4>
 
                   <p
                     id="selected-date-display"
@@ -2439,7 +2560,9 @@
               class="booking-step hidden"
             >
 
-              <h3>Deine Angaben</h3>
+              <h3>
+                Deine Angaben
+              </h3>
 
               <p class="booking-step-intro">
                 Bitte trage deine Daten für die Terminbestätigung ein.
@@ -2462,6 +2585,7 @@
                       <input
                         id="first-name"
                         type="text"
+                        autocomplete="given-name"
                         required
                         placeholder="z. B. Julia"
                       >
@@ -2475,6 +2599,7 @@
                       <input
                         id="last-name"
                         type="text"
+                        autocomplete="family-name"
                         required
                         placeholder="z. B. Schneider"
                       >
@@ -2492,6 +2617,7 @@
                       <input
                         id="email"
                         type="email"
+                        autocomplete="email"
                         required
                         placeholder="name@beispiel.de"
                       >
@@ -2505,6 +2631,7 @@
                       <input
                         id="phone"
                         type="tel"
+                        autocomplete="tel"
                         required
                         placeholder="0178 4537636"
                       >
@@ -2560,7 +2687,9 @@
 
                 <aside class="summary-box">
 
-                  <h4>Buchungsübersicht</h4>
+                  <h4>
+                    Buchungsübersicht
+                  </h4>
 
                   <div class="summary-line">
                     <span>Behandlung:</span>
@@ -2605,15 +2734,18 @@
 
               <div class="success-box">
 
-                <div class="success-icon">✓</div>
+                <div class="success-icon">
+                  ✓
+                </div>
 
                 <h3>
                   Vielen Dank für deine Buchung!
                 </h3>
 
                 <p>
-                  Dein Termin wurde gespeichert. Speichere ihn zusätzlich
-                  in deinem Kalender oder bestätige ihn per WhatsApp.
+                  Dein Termin wurde auf diesem Gerät gespeichert. Speichere
+                  ihn zusätzlich in deinem Kalender oder bestätige ihn per
+                  WhatsApp.
                 </p>
 
                 <div class="confirmation">
@@ -2685,22 +2817,29 @@
       </div>
     </section>
 
-    <section id="about" class="section section-white">
+    <section
+      id="about"
+      class="section section-white"
+    >
       <div class="container">
 
         <div class="about-grid">
 
           <div class="portrait-frame">
+
             <img
               src="images/alisa-portrait.webp"
               alt="Alisa vom ALISA BEAUTY LAB"
               onerror="this.src='https://placehold.co/600x750/FAF6F0/433630?text=Alisa+Beauty+Lab';"
             >
+
           </div>
 
           <div class="about-copy">
 
-            <span class="label">Über mich</span>
+            <span class="label">
+              Über mich
+            </span>
 
             <h2>
               Schön, dass du hier bist!
@@ -2731,12 +2870,19 @@
       </div>
     </section>
 
-    <section id="contact" class="section section-light contact-section">
+    <section
+      id="contact"
+      class="section section-light contact-section"
+    >
       <div class="container">
 
-        <div class="contact-icon">⌖</div>
+        <div class="contact-icon">
+          ⌖
+        </div>
 
-        <h2>Studio Treuchtlingen</h2>
+        <h2>
+          Studio Treuchtlingen
+        </h2>
 
         <p>
           Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
@@ -2782,7 +2928,9 @@
       <div class="footer-grid">
 
         <div class="footer-column">
-          <h3>ALISA BEAUTY LAB</h3>
+          <h3>
+            ALISA BEAUTY LAB
+          </h3>
 
           <p>
             Professionelles Wimpernstudio für natürliche Ästhetik,
@@ -2791,7 +2939,9 @@
         </div>
 
         <div class="footer-column">
-          <h4>Termine</h4>
+          <h4>
+            Termine
+          </h4>
 
           <p>
             Ausschließlich nach Vereinbarung
@@ -2807,7 +2957,9 @@
         </div>
 
         <div class="footer-column">
-          <h4>Kontakt</h4>
+          <h4>
+            Kontakt
+          </h4>
 
           <p>
             Bürgermeister-Sommer-Straße 34
@@ -2827,7 +2979,9 @@
         </div>
 
         <div class="footer-column">
-          <h4>Studio-Management</h4>
+          <h4>
+            Studio-Management
+          </h4>
 
           <p>
             Buchungen, gesperrte Tage und CSV-Export verwalten.
@@ -2920,9 +3074,15 @@
 
       </div>
 
-      <div id="pin-screen" class="pin-screen">
+      <div
+        id="pin-screen"
+        class="pin-screen"
+      >
 
-        <div class="success-icon" style="width:56px;height:56px;margin-bottom:0;">
+        <div
+          class="success-icon"
+          style="width:56px;height:56px;margin-bottom:0;"
+        >
           🔒
         </div>
 
@@ -3038,10 +3198,21 @@
               class="toolbar-select"
               onchange="renderAdminTable()"
             >
-              <option value="all">Alle Status</option>
-              <option value="confirmed">Bestätigt</option>
-              <option value="completed">Erledigt</option>
-              <option value="cancelled">Storniert</option>
+              <option value="all">
+                Alle Status
+              </option>
+
+              <option value="confirmed">
+                Bestätigt
+              </option>
+
+              <option value="completed">
+                Erledigt
+              </option>
+
+              <option value="cancelled">
+                Storniert
+              </option>
             </select>
 
           </div>
@@ -3117,9 +3288,9 @@
         </h2>
 
         <p>
-          Wir verwenden notwendige Cookies, damit diese Website technisch
-          funktioniert. Optionale Cookies für Statistik oder Marketing werden
-          nur aktiviert, wenn du zustimmst.
+          Wir verwenden notwendige Speichermechanismen für die Website und
+          Terminbuchung. Optionale Dienste werden nur aktiviert, wenn du
+          ihnen ausdrücklich zustimmst.
         </p>
 
         <a
@@ -3202,12 +3373,12 @@
 
         <div>
           <strong>
-            Notwendige Cookies
+            Notwendige Speicherungen
           </strong>
 
           <p>
-            Diese Cookies sind für die grundlegenden Funktionen der Website
-            erforderlich und können nicht deaktiviert werden.
+            Diese Speicherungen sind für grundlegende Website-Funktionen,
+            Cookie-Einstellungen und die Demo-Terminbuchung erforderlich.
           </p>
         </div>
 
@@ -3217,6 +3388,7 @@
             checked
             disabled
           >
+
           <span class="slider"></span>
         </label>
 
@@ -3226,7 +3398,7 @@
 
         <div>
           <strong>
-            Statistik-Cookies
+            Statistik-Dienste
           </strong>
 
           <p>
@@ -3239,6 +3411,7 @@
             id="analytics-cookies"
             type="checkbox"
           >
+
           <span class="slider"></span>
         </label>
 
@@ -3248,7 +3421,7 @@
 
         <div>
           <strong>
-            Marketing-Cookies
+            Marketing-Dienste
           </strong>
 
           <p>
@@ -3262,6 +3435,7 @@
             id="marketing-cookies"
             type="checkbox"
           >
+
           <span class="slider"></span>
         </label>
 
@@ -3371,10 +3545,9 @@
         </p>
 
         <p class="legal-warning">
-          Hinweis: Bitte ergänze vor der Veröffentlichung deine korrekten
-          rechtlichen Unternehmensdaten, gegebenenfalls Steuernummer,
-          Umsatzsteuer-ID und zuständige Aufsichtsbehörde. Die Angaben müssen
-          rechtlich geprüft werden.
+          Bitte ergänze vor der Veröffentlichung deine vollständigen
+          rechtlichen Unternehmensdaten. Die Angaben sollten rechtlich
+          geprüft werden.
         </p>
 
       </div>
@@ -3408,7 +3581,20 @@
         </p>
 
         <h4>
-          2. Buchungsformular
+          2. Adobe Fonts
+        </h4>
+
+        <p>
+          Diese Website verwendet Adobe Fonts zur einheitlichen Darstellung
+          der Schriftarten. Beim Aufruf der Website kann eine Verbindung zu
+          Servern von Adobe hergestellt werden, damit die verwendeten
+          Schriftarten geladen werden können. Dabei können technische
+          Informationen wie die IP-Adresse und Informationen zum Browser
+          verarbeitet werden.
+        </p>
+
+        <h4>
+          3. Buchungsformular
         </h4>
 
         <p>
@@ -3419,23 +3605,14 @@
         </p>
 
         <h4>
-          3. Rechtsgrundlage
-        </h4>
-
-        <p>
-          Die Verarbeitung erfolgt zur Durchführung der gewünschten
-          Terminreservierung beziehungsweise zur Beantwortung deiner Anfrage.
-        </p>
-
-        <h4>
           4. Speicherung
         </h4>
 
         <p>
-          In der aktuellen Demo-Version werden Buchungen lokal im Browser
-          gespeichert. Für den späteren Live-Betrieb muss die Speicherung
-          über einen abgesicherten Server und eine datenschutzkonforme
-          Datenbank umgesetzt werden.
+          In dieser Demo-Version werden Buchungen lokal im Browser gespeichert.
+          Für den echten Live-Betrieb muss die Speicherung über einen
+          abgesicherten Server und eine datenschutzkonforme Datenbank
+          umgesetzt werden.
         </p>
 
         <h4>
@@ -3450,13 +3627,13 @@
         </p>
 
         <h4>
-          6. Cookies
+          6. Cookie-Einstellungen
         </h4>
 
         <p>
-          Notwendige Funktionen der Website können technisch erforderliche
-          Speichermechanismen verwenden. Optionale Statistik- oder
-          Marketingfunktionen werden nur nach deiner Auswahl aktiviert.
+          Die Website speichert deine Cookie-Auswahl lokal im Browser. Die
+          Auswahl kann jederzeit über den Link „Cookie-Einstellungen“ in der
+          Fußzeile geändert werden.
         </p>
 
         <h4>
@@ -3471,8 +3648,8 @@
 
         <p class="legal-warning">
           Diese Datenschutzerklärung ist eine technische Vorlage und ersetzt
-          keine individuelle rechtliche Prüfung. Vor dem Livegang sollte sie
-          an die tatsächlich eingesetzten Dienste angepasst werden.
+          keine individuelle rechtliche Prüfung. Vor dem Livegang muss sie an
+          die tatsächlich eingesetzten Dienste angepasst werden.
         </p>
 
       </div>
@@ -3485,9 +3662,9 @@
     "use strict";
 
     const STORAGE_KEYS = {
-      bookings: "alisa_beauty_lab_bookings_v3",
-      blockedDates: "alisa_beauty_lab_blocked_dates_v3",
-      cookiePreferences: "alisa_beauty_lab_cookie_preferences_v3"
+      bookings: "alisa_beauty_lab_bookings_v4",
+      blockedDates: "alisa_beauty_lab_blocked_dates_v4",
+      cookies: "alisa_beauty_lab_cookie_preferences_v4"
     };
 
     const ADMIN_PIN = "2468";
@@ -3578,60 +3755,39 @@
         title: "Wimpern färben",
         price: 5,
         duration: 15,
-        description: "Intensives Tiefschwarz für die Naturwimpern."
+        description:
+          "Intensives Tiefschwarz für die Naturwimpern."
       },
       {
         id: "addon-botox",
         title: "Keratin / Lash Botox",
         price: 10,
         duration: 10,
-        description: "Pflegendes Aufbau-Serum zur Stärkung."
+        description:
+          "Pflegendes Aufbau-Serum zur Stärkung."
       },
       {
         id: "addon-remove",
         title: "Fremdarbeit ablösen",
         price: 15,
         duration: 25,
-        description: "Schonendes Entfernen alter Extensions."
+        description:
+          "Schonendes Entfernen alter Extensions."
       }
     ];
 
-    const defaultBookings = [
-      {
-        id: "ALISA-2026-1042",
-        serviceId: "srv-new-volume",
-        serviceTitle: "Neuanlage: Volumen 2D–4D",
-        addons: ["addon-botox"],
-        addonsSummary: "Keratin / Lash Botox",
-        date: "2026-10-14",
-        time: "13:30",
-        duration: 145,
-        price: 75,
-        customer: {
-          firstName: "Julia",
-          lastName: "Müller",
-          email: "julia.m@beispiel.de",
-          phone: "0171 2345678",
-          notes: "Sensible Augen, Erstbehandlung"
-        },
-        status: "confirmed",
-        createdAt: "2026-10-06T10:15:00"
-      }
-    ];
+    const DEFAULT_BOOKINGS = [];
 
-    const defaultBlockedDates = [
-      "2026-10-25",
-      "2026-11-01"
-    ];
+    const DEFAULT_BLOCKED_DATES = [];
 
-    let bookings = loadStorage(
+    let bookings = loadArray(
       STORAGE_KEYS.bookings,
-      defaultBookings
+      DEFAULT_BOOKINGS
     );
 
-    let blockedDates = loadStorage(
+    let blockedDates = loadArray(
       STORAGE_KEYS.blockedDates,
-      defaultBlockedDates
+      DEFAULT_BLOCKED_DATES
     );
 
     let currentCalendarDate = new Date();
@@ -3644,29 +3800,31 @@
       latestBooking: null
     };
 
-    function cloneValue(value) {
+    function clone(value) {
       return JSON.parse(JSON.stringify(value));
     }
 
-    function loadStorage(key, fallback) {
+    function loadArray(key, fallback) {
       try {
-        const stored = localStorage.getItem(key);
+        const value =
+          localStorage.getItem(key);
 
-        if (!stored) {
-          return cloneValue(fallback);
+        if (!value) {
+          return clone(fallback);
         }
 
-        const parsed = JSON.parse(stored);
+        const parsed =
+          JSON.parse(value);
 
         return Array.isArray(parsed)
           ? parsed
-          : cloneValue(fallback);
+          : clone(fallback);
       } catch (error) {
-        return cloneValue(fallback);
+        return clone(fallback);
       }
     }
 
-    function saveStorage() {
+    function saveData() {
       localStorage.setItem(
         STORAGE_KEYS.bookings,
         JSON.stringify(bookings)
@@ -3675,51 +3833,6 @@
       localStorage.setItem(
         STORAGE_KEYS.blockedDates,
         JSON.stringify(blockedDates)
-      );
-    }
-
-    function getService(serviceId) {
-      return SERVICES.find(
-        service => service.id === serviceId
-      );
-    }
-
-    function getAddon(addonId) {
-      return ADDONS.find(
-        addon => addon.id === addonId
-      );
-    }
-
-    function getSelectedService() {
-      return getService(state.selectedServiceId);
-    }
-
-    function getSelectedAddons() {
-      return state.selectedAddonIds
-        .map(getAddon)
-        .filter(Boolean);
-    }
-
-    function calculateTotal() {
-      const service = getSelectedService();
-
-      if (!service) {
-        return {
-          price: 0,
-          duration: 0
-        };
-      }
-
-      return getSelectedAddons().reduce(
-        (total, addon) => {
-          total.price += addon.price;
-          total.duration += addon.duration;
-          return total;
-        },
-        {
-          price: service.price,
-          duration: service.duration
-        }
       );
     }
 
@@ -3746,9 +3859,8 @@
         return "–";
       }
 
-      const date = new Date(
-        `${dateString}T12:00:00`
-      );
+      const date =
+        new Date(`${dateString}T12:00:00`);
 
       return new Intl.DateTimeFormat(
         "de-DE",
@@ -3770,6 +3882,53 @@
         .replaceAll("'", "&#039;");
     }
 
+    function getService(id) {
+      return SERVICES.find(
+        service => service.id === id
+      );
+    }
+
+    function getAddon(id) {
+      return ADDONS.find(
+        addon => addon.id === id
+      );
+    }
+
+    function getSelectedService() {
+      return getService(state.selectedServiceId);
+    }
+
+    function getSelectedAddons() {
+      return state.selectedAddonIds
+        .map(getAddon)
+        .filter(Boolean);
+    }
+
+    function calculateTotal() {
+      const service =
+        getSelectedService();
+
+      if (!service) {
+        return {
+          price: 0,
+          duration: 0
+        };
+      }
+
+      return getSelectedAddons().reduce(
+        (result, addon) => {
+          result.price += addon.price;
+          result.duration += addon.duration;
+
+          return result;
+        },
+        {
+          price: service.price,
+          duration: service.duration
+        }
+      );
+    }
+
     function renderServices() {
       const servicesList =
         document.getElementById("services-list");
@@ -3779,13 +3938,13 @@
 
       servicesList.innerHTML =
         SERVICES.map(service => {
-          const isSelected =
+          const selected =
             service.id === state.selectedServiceId;
 
           return `
             <button
               type="button"
-              class="service-option ${isSelected ? "selected" : ""}"
+              class="service-option ${selected ? "selected" : ""}"
               onclick="selectService('${service.id}')"
             >
               <span class="service-header">
@@ -3811,13 +3970,15 @@
 
       addonsList.innerHTML =
         ADDONS.map(addon => {
-          const isSelected =
-            state.selectedAddonIds.includes(addon.id);
+          const selected =
+            state.selectedAddonIds.includes(
+              addon.id
+            );
 
           return `
             <button
               type="button"
-              class="addon-option ${isSelected ? "selected" : ""}"
+              class="addon-option ${selected ? "selected" : ""}"
               onclick="toggleAddon('${addon.id}')"
             >
               <span class="addon-header">
@@ -3843,7 +4004,13 @@
 
     function selectService(serviceId) {
       state.selectedServiceId = serviceId;
+      state.selectedTime = null;
+
       renderServices();
+
+      if (state.selectedDate) {
+        renderTimeSlots();
+      }
     }
 
     function selectServiceAndScroll(serviceId) {
@@ -3860,7 +4027,9 @@
     }
 
     function toggleAddon(addonId) {
-      if (state.selectedAddonIds.includes(addonId)) {
+      if (
+        state.selectedAddonIds.includes(addonId)
+      ) {
         state.selectedAddonIds =
           state.selectedAddonIds.filter(
             id => id !== addonId
@@ -3869,18 +4038,31 @@
         state.selectedAddonIds.push(addonId);
       }
 
+      state.selectedTime = null;
+
       renderServices();
+
+      if (state.selectedDate) {
+        renderTimeSlots();
+      }
     }
 
     function updateStep1Summary() {
-      const service = getSelectedService();
-      const total = calculateTotal();
+      const service =
+        getSelectedService();
 
-      const summary =
-        document.getElementById("step1-summary");
+      const total =
+        calculateTotal();
+
+      const element =
+        document.getElementById(
+          "step1-summary"
+        );
 
       if (!service) {
-        summary.textContent = "Bitte wählen";
+        element.textContent =
+          "Bitte wählen";
+
         return;
       }
 
@@ -3889,49 +4071,68 @@
           ? ` + ${state.selectedAddonIds.length} Extra`
           : "";
 
-      summary.textContent =
+      element.textContent =
         `${service.title}${addonText} · ${formatEuro(total.price)}`;
     }
 
     function updateStep3Summary() {
-      const service = getSelectedService();
-      const addons = getSelectedAddons();
-      const total = calculateTotal();
+      const service =
+        getSelectedService();
 
-      document.getElementById("summary-treatment")
-        .textContent = service?.title || "–";
+      const addons =
+        getSelectedAddons();
 
-      document.getElementById("summary-addons")
-        .textContent = addons.length
-          ? addons.map(addon => addon.title).join(", ")
-          : "Keine";
+      const total =
+        calculateTotal();
 
-      document.getElementById("summary-date")
-        .textContent = formatDate(state.selectedDate);
+      document
+        .getElementById("summary-treatment")
+        .textContent =
+          service?.title || "–";
 
-      document.getElementById("summary-time")
-        .textContent = state.selectedTime
-          ? `${state.selectedTime} Uhr`
-          : "–";
+      document
+        .getElementById("summary-addons")
+        .textContent =
+          addons.length
+            ? addons.map(
+                addon => addon.title
+              ).join(", ")
+            : "Keine";
 
-      document.getElementById("summary-price")
-        .textContent = formatEuro(total.price);
+      document
+        .getElementById("summary-date")
+        .textContent =
+          formatDate(state.selectedDate);
+
+      document
+        .getElementById("summary-time")
+        .textContent =
+          state.selectedTime
+            ? `${state.selectedTime} Uhr`
+            : "–";
+
+      document
+        .getElementById("summary-price")
+        .textContent =
+          formatEuro(total.price);
     }
 
-    function setActiveStep(stepNumber) {
+    function setActiveStep(step) {
       [1, 2, 3].forEach(number => {
         document
-          .getElementById(`step-indicator-${number}`)
+          .getElementById(
+            `step-indicator-${number}`
+          )
           .classList.toggle(
             "active",
-            number === stepNumber
+            number === step
           );
       });
     }
 
-    function goToStep(stepNumber) {
+    function goToStep(step) {
       if (
-        stepNumber === 2 &&
+        step === 2 &&
         !state.selectedServiceId
       ) {
         showToast(
@@ -3943,9 +4144,11 @@
       }
 
       if (
-        stepNumber === 3 &&
-        (!state.selectedDate ||
-          !state.selectedTime)
+        step === 3 &&
+        (
+          !state.selectedDate ||
+          !state.selectedTime
+        )
       ) {
         showToast(
           "Bitte Datum und Uhrzeit auswählen.",
@@ -3957,21 +4160,23 @@
 
       [1, 2, 3, 4].forEach(number => {
         const section =
-          document.getElementById(`booking-step-${number}`);
+          document.getElementById(
+            `booking-step-${number}`
+          );
 
         if (section) {
           section.classList.toggle(
             "hidden",
-            number !== stepNumber
+            number !== step
           );
         }
       });
 
-      if (stepNumber <= 3) {
-        setActiveStep(stepNumber);
+      if (step <= 3) {
+        setActiveStep(step);
       }
 
-      if (stepNumber === 2) {
+      if (step === 2) {
         renderCalendar();
 
         if (state.selectedDate) {
@@ -3979,7 +4184,7 @@
         }
       }
 
-      if (stepNumber === 3) {
+      if (step === 3) {
         updateStep3Summary();
       }
 
@@ -3992,25 +4197,29 @@
     }
 
     function dateToKey(date) {
-      const year = date.getFullYear();
-      const month = String(
-        date.getMonth() + 1
-      ).padStart(2, "0");
+      const year =
+        date.getFullYear();
 
-      const day = String(
-        date.getDate()
-      ).padStart(2, "0");
+      const month =
+        String(
+          date.getMonth() + 1
+        ).padStart(2, "0");
+
+      const day =
+        String(
+          date.getDate()
+        ).padStart(2, "0");
 
       return `${year}-${month}-${day}`;
     }
 
     function renderCalendar() {
-      const monthYear =
+      const title =
         document.getElementById(
           "calendar-month-year"
         );
 
-      const calendarGrid =
+      const grid =
         document.getElementById(
           "calendar-grid"
         );
@@ -4021,7 +4230,7 @@
       const month =
         currentCalendarDate.getMonth();
 
-      monthYear.textContent =
+      title.textContent =
         new Intl.DateTimeFormat(
           "de-DE",
           {
@@ -4030,13 +4239,10 @@
           }
         ).format(currentCalendarDate);
 
-      calendarGrid.innerHTML = "";
+      grid.innerHTML = "";
 
       const firstDay =
         new Date(year, month, 1);
-
-      const daysInMonth =
-        new Date(year, month + 1, 0).getDate();
 
       let startIndex =
         firstDay.getDay() - 1;
@@ -4045,18 +4251,32 @@
         startIndex = 6;
       }
 
+      const daysInMonth =
+        new Date(
+          year,
+          month + 1,
+          0
+        ).getDate();
+
       for (
         let index = 0;
         index < startIndex;
         index++
       ) {
-        calendarGrid.appendChild(
+        grid.appendChild(
           document.createElement("div")
         );
       }
 
-      const today = new Date();
-      today.setHours(0, 0, 0, 0);
+      const today =
+        new Date();
+
+      today.setHours(
+        0,
+        0,
+        0,
+        0
+      );
 
       for (
         let day = 1;
@@ -4066,23 +4286,28 @@
         const date =
           new Date(year, month, day);
 
-        date.setHours(0, 0, 0, 0);
+        date.setHours(
+          0,
+          0,
+          0,
+          0
+        );
 
-        const dateKey =
+        const key =
           dateToKey(date);
-
-        const isSunday =
-          date.getDay() === 0;
 
         const isPast =
           date < today;
 
-        const isBlocked =
-          blockedDates.includes(dateKey);
+        const isSunday =
+          date.getDay() === 0;
 
-        const isUnavailable =
-          isSunday ||
+        const isBlocked =
+          blockedDates.includes(key);
+
+        const unavailable =
           isPast ||
+          isSunday ||
           isBlocked;
 
         const button =
@@ -4092,26 +4317,27 @@
         button.textContent = String(day);
         button.className = "calendar-day";
 
-        if (state.selectedDate === dateKey) {
+        if (state.selectedDate === key) {
           button.classList.add("selected");
         }
 
-        if (isUnavailable) {
+        if (unavailable) {
           button.disabled = true;
           button.classList.add("unavailable");
-          button.title = isBlocked
-            ? "Dieser Tag ist gesperrt."
-            : isSunday
-              ? "Sonntags geschlossen."
-              : "Vergangener Tag.";
+          button.title =
+            isBlocked
+              ? "Dieser Tag ist gesperrt."
+              : isSunday
+                ? "Sonntags geschlossen."
+                : "Vergangener Tag.";
         } else {
           button.addEventListener(
             "click",
-            () => selectDate(dateKey)
+            () => selectDate(key)
           );
         }
 
-        calendarGrid.appendChild(button);
+        grid.appendChild(button);
       }
     }
 
@@ -4133,51 +4359,13 @@
       validateDateAndTime();
     }
 
-    function getBookingsForDate(dateKey) {
-      return bookings.filter(booking => {
-        return (
-          booking.date === dateKey &&
-          booking.status !== "cancelled"
-        );
-      });
-    }
-
-    function timeToMinutes(timeString) {
+    function timeToMinutes(time) {
       const [
         hours,
         minutes
-      ] = timeString
-        .split(":")
-        .map(Number);
+      ] = time.split(":").map(Number);
 
       return hours * 60 + minutes;
-    }
-
-    function getServiceEndTime(
-      startTime,
-      durationMinutes
-    ) {
-      const [
-        hours,
-        minutes
-      ] = startTime
-        .split(":")
-        .map(Number);
-
-      const totalMinutes =
-        hours * 60 +
-        minutes +
-        durationMinutes;
-
-      const endHours =
-        Math.floor(totalMinutes / 60) % 24;
-
-      const endMinutes =
-        totalMinutes % 60;
-
-      return `${String(endHours).padStart(2, "0")}:${String(
-        endMinutes
-      ).padStart(2, "0")}`;
     }
 
     function intervalsOverlap(
@@ -4204,22 +4392,27 @@
       );
     }
 
-    function isSlotAvailable(
-      dateKey,
-      time
-    ) {
+    function getBookingsForDate(dateKey) {
+      return bookings.filter(
+        booking =>
+          booking.date === dateKey &&
+          booking.status !== "cancelled"
+      );
+    }
+
+    function isSlotAvailable(dateKey, time) {
       const total =
         calculateTotal();
 
       return !getBookingsForDate(dateKey)
-        .some(booking => {
-          return intervalsOverlap(
+        .some(booking =>
+          intervalsOverlap(
             time,
             total.duration,
             booking.time,
             booking.duration
-          );
-        });
+          )
+        );
     }
 
     function renderTimeSlots() {
@@ -4247,7 +4440,9 @@
       }
 
       display.textContent =
-        `Termine am ${formatDateLong(state.selectedDate)}:`;
+        `Termine am ${formatDateLong(
+          state.selectedDate
+        )}:`;
 
       container.innerHTML =
         STUDIO_SLOTS.map(slot => {
@@ -4270,7 +4465,10 @@
                 ? `onclick="selectTime('${slot}')"`
                 : "disabled"}
             >
-              <span>${slot} Uhr</span>
+              <span>
+                ${slot} Uhr
+              </span>
+
               <small>
                 ${available ? "Frei" : "Belegt"}
               </small>
@@ -4291,7 +4489,7 @@
         )
       ) {
         showToast(
-          "Dieser Termin wurde gerade vergeben.",
+          "Dieser Termin ist inzwischen nicht mehr frei.",
           "warning"
         );
 
@@ -4309,7 +4507,8 @@
     function validateDateAndTime() {
       document
         .getElementById("next-step-2")
-        .disabled = !state.selectedDate ||
+        .disabled =
+          !state.selectedDate ||
           !state.selectedTime;
     }
 
@@ -4344,10 +4543,14 @@
 
     function generateBookingCode() {
       const timestamp =
-        Date.now().toString().slice(-6);
+        Date.now()
+          .toString()
+          .slice(-6);
 
       const random =
-        Math.floor(Math.random() * 90 + 10);
+        Math.floor(
+          Math.random() * 90 + 10
+        );
 
       return `ALISA-${timestamp}-${random}`;
     }
@@ -4375,7 +4578,7 @@
         )
       ) {
         showToast(
-          "Dieser Termin wurde gerade vergeben. Bitte wähle einen anderen.",
+          "Dieser Termin wurde gerade vergeben.",
           "error"
         );
 
@@ -4420,7 +4623,7 @@
       bookings.unshift(booking);
       state.latestBooking = booking;
 
-      saveStorage();
+      saveData();
 
       document
         .getElementById("confirmed-code")
@@ -4434,12 +4637,16 @@
       document
         .getElementById("confirmed-service")
         .textContent =
-          `${booking.serviceTitle} · ${formatEuro(booking.price)}`;
+          `${booking.serviceTitle} · ${formatEuro(
+            booking.price
+          )}`;
 
       document
         .getElementById("confirmed-date")
         .textContent =
-          `${formatDateLong(booking.date)} um ${booking.time} Uhr`;
+          `${formatDateLong(
+            booking.date
+          )} um ${booking.time} Uhr`;
 
       goToStep(4);
 
@@ -4470,6 +4677,37 @@
       goToStep(1);
     }
 
+    function getServiceEndTime(
+      startTime,
+      duration
+    ) {
+      const [
+        hours,
+        minutes
+      ] = startTime
+        .split(":")
+        .map(Number);
+
+      const total =
+        hours * 60 +
+        minutes +
+        duration;
+
+      const endHours =
+        Math.floor(total / 60) % 24;
+
+      const endMinutes =
+        total % 60;
+
+      return `${String(endHours).padStart(
+        2,
+        "0"
+      )}:${String(endMinutes).padStart(
+        2,
+        "0"
+      )}`;
+    }
+
     function downloadCalendarFile() {
       const booking =
         state.latestBooking;
@@ -4478,7 +4716,7 @@
         return;
       }
 
-      const startDate =
+      const start =
         booking.date.replaceAll("-", "") +
         "T" +
         booking.time.replace(":", "") +
@@ -4490,18 +4728,19 @@
           booking.duration
         );
 
-      const endDate =
+      const end =
         booking.date.replaceAll("-", "") +
         "T" +
         endTime.replace(":", "") +
         "00";
 
-      const timestamp =
+      const stamp =
         new Date()
           .toISOString()
           .replaceAll("-", "")
           .replaceAll(":", "")
-          .split(".")[0] + "Z";
+          .split(".")[0] +
+        "Z";
 
       const ics = [
         "BEGIN:VCALENDAR",
@@ -4510,9 +4749,9 @@
         "CALSCALE:GREGORIAN",
         "BEGIN:VEVENT",
         `UID:${booking.id}@alisabeautylab.de`,
-        `DTSTAMP:${timestamp}`,
-        `DTSTART:${startDate}`,
-        `DTEND:${endDate}`,
+        `DTSTAMP:${stamp}`,
+        `DTSTART:${start}`,
+        `DTEND:${end}`,
         `SUMMARY:Termin ALISA BEAUTY LAB - ${booking.serviceTitle}`,
         `DESCRIPTION:Buchungscode: ${booking.id}\\nBehandlung: ${booking.serviceTitle}\\nExtras: ${booking.addonsSummary}\\nBetrag: ${booking.price} EUR`,
         `LOCATION:${STUDIO_ADDRESS}`,
@@ -4565,10 +4804,14 @@
         "ich habe online einen Termin reserviert:",
         "",
         `Behandlung: ${booking.serviceTitle}`,
-        `Termin: ${formatDate(booking.date)} um ${booking.time} Uhr`,
+        `Termin: ${formatDate(
+          booking.date
+        )} um ${booking.time} Uhr`,
         `Name: ${booking.customer.firstName} ${booking.customer.lastName}`,
         `Buchungscode: ${booking.id}`,
-        `Betrag: ${formatEuro(booking.price)}`
+        `Betrag: ${formatEuro(
+          booking.price
+        )}`
       ].join("\n");
 
       const url =
@@ -4656,7 +4899,7 @@
     }
 
     function renderAdminTable() {
-      const body =
+      const tableBody =
         document.getElementById(
           "admin-table-body"
         );
@@ -4685,21 +4928,20 @@
             .join(" ")
             .toLowerCase();
 
-          const matchesSearch =
-            !search ||
-            searchable.includes(search);
-
-          const matchesStatus =
-            selectedStatus === "all" ||
-            booking.status === selectedStatus;
-
-          return matchesSearch && matchesStatus;
+          return (
+            (!search ||
+              searchable.includes(search)) &&
+            (
+              selectedStatus === "all" ||
+              booking.status === selectedStatus
+            )
+          );
         });
 
       updateAdminMetrics();
 
       if (!filtered.length) {
-        body.innerHTML = `
+        tableBody.innerHTML = `
           <tr>
             <td
               colspan="6"
@@ -4713,17 +4955,15 @@
         return;
       }
 
-      body.innerHTML =
+      tableBody.innerHTML =
         filtered.map(booking => {
-          const isCancelled =
+          const cancelled =
             booking.status === "cancelled";
 
           const nextStatus =
             booking.status === "completed"
               ? "confirmed"
-              : booking.status === "cancelled"
-                ? "confirmed"
-                : "completed";
+              : "completed";
 
           return `
             <tr>
@@ -4805,20 +5045,29 @@
                 <div class="table-actions">
 
                   ${
-                    !isCancelled
+                    cancelled
                       ? `
                         <button
                           type="button"
                           class="small-action"
-                          title="${
-                            booking.status === "completed"
-                              ? "Wieder aktivieren"
-                              : "Als erledigt markieren"
-                          }"
+                          onclick="changeBookingStatus(
+                            '${booking.id}',
+                            'confirmed'
+                          )"
+                          title="Wiederherstellen"
+                        >
+                          ↺
+                        </button>
+                      `
+                      : `
+                        <button
+                          type="button"
+                          class="small-action"
                           onclick="changeBookingStatus(
                             '${booking.id}',
                             '${nextStatus}'
                           )"
+                          title="Status ändern"
                         >
                           ${
                             booking.status === "completed"
@@ -4826,38 +5075,19 @@
                               : "✓"
                           }
                         </button>
-                      `
-                      : `
-                        <button
-                          type="button"
-                          class="small-action"
-                          title="Wiederherstellen"
-                          onclick="changeBookingStatus(
-                            '${booking.id}',
-                            'confirmed'
-                          )"
-                        >
-                          ↺
-                        </button>
-                      `
-                  }
 
-                  ${
-                    !isCancelled
-                      ? `
                         <button
                           type="button"
                           class="small-action"
-                          title="Termin stornieren"
                           onclick="changeBookingStatus(
                             '${booking.id}',
                             'cancelled'
                           )"
+                          title="Stornieren"
                         >
                           ×
                         </button>
                       `
-                      : ""
                   }
 
                   <a
@@ -4886,17 +5116,21 @@
 
       const active =
         bookings.filter(
-          booking => booking.status === "confirmed"
+          booking =>
+            booking.status === "confirmed"
         ).length;
 
       const revenue =
         bookings
           .filter(
-            booking => booking.status !== "cancelled"
+            booking =>
+              booking.status !== "cancelled"
           )
           .reduce(
             (sum, booking) =>
-              sum + Number(booking.price || 0),
+              sum + Number(
+                booking.price || 0
+              ),
             0
           );
 
@@ -4914,22 +5148,24 @@
     }
 
     function createCustomerWhatsAppLink(booking) {
-      const cleanPhone =
+      const rawPhone =
         booking.customer.phone
           .replace(/\D/g, "");
 
-      const internationalPhone =
-        cleanPhone.startsWith("0")
-          ? "49" + cleanPhone.slice(1)
-          : cleanPhone;
+      const phone =
+        rawPhone.startsWith("0")
+          ? "49" + rawPhone.slice(1)
+          : rawPhone;
 
       const message =
         `Hallo ${booking.customer.firstName}, ` +
         `bezüglich deines Termins bei ALISA BEAUTY LAB ` +
-        `am ${formatDate(booking.date)} um ${booking.time} Uhr.`;
+        `am ${formatDate(
+          booking.date
+        )} um ${booking.time} Uhr.`;
 
       return (
-        `https://wa.me/${internationalPhone}?text=` +
+        `https://wa.me/${phone}?text=` +
         encodeURIComponent(message)
       );
     }
@@ -4949,7 +5185,7 @@
 
       booking.status = newStatus;
 
-      saveStorage();
+      saveData();
       renderAdminTable();
       renderCalendar();
 
@@ -4967,10 +5203,10 @@
           "block-date"
         );
 
-      const dateKey =
+      const date =
         input.value;
 
-      if (!dateKey) {
+      if (!date) {
         showToast(
           "Bitte zuerst ein Datum auswählen.",
           "warning"
@@ -4979,13 +5215,13 @@
         return;
       }
 
-      if (!blockedDates.includes(dateKey)) {
-        blockedDates.push(dateKey);
-        saveStorage();
+      if (!blockedDates.includes(date)) {
+        blockedDates.push(date);
+        saveData();
         renderCalendar();
 
         showToast(
-          `${formatDate(dateKey)} wurde gesperrt.`,
+          `${formatDate(date)} wurde gesperrt.`,
           "success"
         );
       } else {
@@ -5041,10 +5277,10 @@
             booking.customer.phone,
             booking.customer.notes
           ]
-            .map(value => {
-              return `"${String(value ?? "")
-                .replaceAll('"', '""')}"`;
-            })
+            .map(value =>
+              `"${String(value ?? "")
+                .replaceAll('"', '""')}"`
+            )
             .join(";");
         });
 
@@ -5091,7 +5327,7 @@
       try {
         const stored =
           localStorage.getItem(
-            STORAGE_KEYS.cookiePreferences
+            STORAGE_KEYS.cookies
           );
 
         if (!stored) {
@@ -5120,9 +5356,11 @@
       }
     }
 
-    function saveCookiePreferences(preferences) {
+    function saveCookiePreferences(
+      preferences
+    ) {
       localStorage.setItem(
-        STORAGE_KEYS.cookiePreferences,
+        STORAGE_KEYS.cookies,
         JSON.stringify(preferences)
       );
     }
@@ -5168,7 +5406,7 @@
       closeCookieSettings();
 
       showToast(
-        "Nur notwendige Cookies wurden aktiviert.",
+        "Nur notwendige Speicherungen wurden aktiviert.",
         "success"
       );
     }
@@ -5179,14 +5417,20 @@
 
       document
         .getElementById("analytics-cookies")
-        .checked = preferences.analytics;
+        .checked = Boolean(
+          preferences.analytics
+        );
 
       document
         .getElementById("marketing-cookies")
-        .checked = preferences.marketing;
+        .checked = Boolean(
+          preferences.marketing
+        );
 
       document
-        .getElementById("cookie-settings-modal")
+        .getElementById(
+          "cookie-settings-modal"
+        )
         .classList.remove("hidden");
 
       document.body.classList.add("modal-open");
@@ -5194,7 +5438,9 @@
 
     function closeCookieSettings() {
       document
-        .getElementById("cookie-settings-modal")
+        .getElementById(
+          "cookie-settings-modal"
+        )
         .classList.add("hidden");
 
       document.body.classList.remove("modal-open");
@@ -5204,10 +5450,14 @@
       saveCookiePreferences({
         necessary: true,
         analytics: document
-          .getElementById("analytics-cookies")
+          .getElementById(
+            "analytics-cookies"
+          )
           .checked,
         marketing: document
-          .getElementById("marketing-cookies")
+          .getElementById(
+            "marketing-cookies"
+          )
           .checked,
         decided: true
       });
@@ -5244,7 +5494,9 @@
         imprint.classList.remove("hidden");
 
         document
-          .getElementById("legal-modal-title")
+          .getElementById(
+            "legal-modal-title"
+          )
           .textContent = "Impressum";
       }
 
@@ -5252,7 +5504,9 @@
         privacy.classList.remove("hidden");
 
         document
-          .getElementById("legal-modal-title")
+          .getElementById(
+            "legal-modal-title"
+          )
           .textContent =
             "Datenschutzerklärung";
       }
@@ -5263,10 +5517,38 @@
 
     function closeLegalModal() {
       document
-        .getElementById("legal-modal")
+        .getElementById(
+          "legal-modal"
+        )
         .classList.add("hidden");
 
       document.body.classList.remove("modal-open");
+    }
+
+    function showToast(
+      message,
+      type = "info"
+    ) {
+      const container =
+        document.getElementById(
+          "toast-container"
+        );
+
+      const toast =
+        document.createElement("div");
+
+      toast.className =
+        `toast ${type}`;
+
+      toast.textContent =
+        message;
+
+      container.appendChild(toast);
+
+      window.setTimeout(
+        () => toast.remove(),
+        4500
+      );
     }
 
     document.addEventListener(
@@ -5276,9 +5558,9 @@
           return;
         }
 
+        closeAdminModal();
         closeCookieSettings();
         closeLegalModal();
-        closeAdminModal();
       }
     );
 
@@ -5288,7 +5570,8 @@
         "click",
         event => {
           if (
-            event.target.id === "admin-modal"
+            event.target.id ===
+            "admin-modal"
           ) {
             closeAdminModal();
           }
@@ -5296,7 +5579,9 @@
       );
 
     document
-      .getElementById("cookie-settings-modal")
+      .getElementById(
+        "cookie-settings-modal"
+      )
       .addEventListener(
         "click",
         event => {
@@ -5315,7 +5600,8 @@
         "click",
         event => {
           if (
-            event.target.id === "legal-modal"
+            event.target.id ===
+            "legal-modal"
           ) {
             closeLegalModal();
           }
@@ -5331,10 +5617,10 @@
         updateStep3Summary();
         validateDateAndTime();
 
-        const cookiePreferences =
+        const preferences =
           getCookiePreferences();
 
-        if (!cookiePreferences.decided) {
+        if (!preferences.decided) {
           window.setTimeout(
             showCookieBanner,
             350
