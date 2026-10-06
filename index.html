@@ -6,65 +6,43 @@
     name="viewport"
     content="width=device-width, initial-scale=1, viewport-fit=cover"
   >
+  <meta
+    name="description"
+    content="ALISA BEAUTY LAB in Treuchtlingen – professionelle Wimpernbehandlungen, Wimpernlifting, Wimpernextensions und persönliche Online-Terminbuchung."
+  >
+  <meta name="theme-color" content="#2d2421">
 
   <title>ALISA BEAUTY LAB | Wimpernstudio Treuchtlingen</title>
 
-  <meta
-    name="description"
-    content="ALISA BEAUTY LAB in Treuchtlingen – Wimpernlifting, Wimpernextensions und persönliche Online-Terminbuchung."
-  >
-
-  <meta name="theme-color" content="#f6efe7">
-
-  <link
-    rel="preload"
-    as="image"
-    href="AlisaLogoQuertransparent.jpg"
-  >
-
-  <link
-    rel="preload"
-    as="image"
-    href="Hintergrund-muster.jpg"
-  >
-
-  <link
-    rel="stylesheet"
-    href="https://use.typekit.net/fda0xlt.css"
-  >
+  <link rel="preload" href="AlisaLogoQuertransparent.jpg" as="image">
+  <link rel="preload" href="Hintergrund-muster.jpg" as="image">
 
   <style>
     :root {
-      --canvas: #f6efe7;
-      --canvas-deep: #eadbc9;
-      --surface: #fffdfa;
-      --surface-soft: rgba(255, 253, 250, 0.76);
-      --surface-muted: #f1e6d9;
-
-      --espresso: #2b211e;
-      --brown: #5b4940;
-      --taupe: #837168;
-      --taupe-light: #bba99b;
-
-      --gold: #b28a4a;
-      --gold-soft: rgba(178, 138, 74, 0.24);
-      --gold-border: rgba(178, 138, 74, 0.44);
-
-      --green: #1c9c5a;
-      --danger: #9a3b3b;
-
+      --ivory: #fbf7f1;
+      --ivory-deep: #f2e7da;
+      --sand: #e8d8c7;
+      --taupe: #927d70;
+      --taupe-dark: #6f594e;
+      --espresso: #352925;
+      --espresso-deep: #241b18;
+      --gold: #b8955d;
+      --gold-soft: rgba(184, 149, 93, 0.32);
+      --gold-faint: rgba(184, 149, 93, 0.16);
       --white: #ffffff;
-      --shadow-soft: 0 20px 60px rgba(68, 48, 37, 0.09);
-      --shadow-hover: 0 24px 65px rgba(68, 48, 37, 0.16);
+      --whatsapp: #25d366;
+      --success: #1a7543;
+      --danger: #9c3131;
 
-      --radius-xs: 12px;
-      --radius-sm: 18px;
-      --radius-md: 26px;
-      --radius-lg: 38px;
+      --font-display: Georgia, "Times New Roman", serif;
+      --font-body: "Helvetica Neue", Arial, sans-serif;
 
-      --font-body: "sweet-sans-pro", Arial, sans-serif;
-      --font-display: "ivypresto-display", Georgia, serif;
-      --font-script: "great-vibes", cursive;
+      --shadow-soft: 0 16px 44px rgba(53, 41, 37, 0.10);
+      --shadow-card: 0 24px 64px rgba(53, 41, 37, 0.12);
+
+      --radius-lg: 28px;
+      --radius-md: 18px;
+      --radius-sm: 12px;
 
       --container: 1180px;
       --header-height: 82px;
@@ -76,24 +54,22 @@
 
     html {
       scroll-behavior: smooth;
-      scroll-padding-top: calc(var(--header-height) + 22px);
+      scroll-padding-top: calc(var(--header-height) + 18px);
     }
 
     body {
       min-width: 320px;
       min-height: 100vh;
       margin: 0;
-      overflow-x: hidden;
-      color: var(--brown);
+      color: var(--espresso);
       background:
         linear-gradient(
-          rgba(246, 239, 231, 0.84),
-          rgba(246, 239, 231, 0.94)
+          rgba(251, 247, 241, 0.88),
+          rgba(251, 247, 241, 0.88)
         ),
         url("Hintergrund-muster.jpg") center / cover fixed;
       font-family: var(--font-body);
       font-size: 16px;
-      font-weight: 400;
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
@@ -120,44 +96,17 @@
       cursor: pointer;
     }
 
-    button:disabled {
-      cursor: not-allowed;
-      opacity: 0.52;
-    }
-
     img {
       display: block;
       max-width: 100%;
     }
 
     ::selection {
-      color: var(--surface);
-      background: var(--brown);
-    }
-
-    .skip-link {
-      position: fixed;
-      top: 12px;
-      left: 12px;
-      z-index: 500;
-      padding: 11px 16px;
-      color: var(--surface);
+      color: var(--white);
       background: var(--espresso);
-      border-radius: 999px;
-      transform: translateY(-180%);
-      transition: transform 0.2s ease;
     }
 
-    .skip-link:focus {
-      transform: translateY(0);
-    }
-
-    .container {
-      width: min(var(--container), calc(100% - 48px));
-      margin-inline: auto;
-    }
-
-    .visually-hidden {
+    .sr-only {
       position: absolute;
       width: 1px;
       height: 1px;
@@ -173,41 +122,59 @@
       display: none !important;
     }
 
-    .announcement {
-      padding: 9px max(20px, env(safe-area-inset-right)) 10px max(20px, env(safe-area-inset-left));
-      color: rgba(255, 253, 250, 0.88);
-      background: var(--espresso);
-      border-bottom: 1px solid rgba(178, 138, 74, 0.36);
+    .container {
+      width: min(var(--container), calc(100% - 48px));
+      margin-inline: auto;
+    }
+
+    .icon {
+      width: 19px;
+      height: 19px;
+      flex: 0 0 auto;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.8;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .announcement-bar {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 8px 16px;
+      color: rgba(255, 255, 255, 0.84);
+      background: var(--espresso-deep);
+      border-bottom: 1px solid rgba(184, 149, 93, 0.28);
       font-size: 11px;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.09em;
       text-align: center;
       text-transform: uppercase;
     }
 
-    .announcement-inner {
+    .announcement-content {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 15px;
-      flex-wrap: wrap;
+      gap: 12px;
     }
 
     .announcement-dot {
       width: 6px;
       height: 6px;
-      display: inline-block;
       border-radius: 50%;
       background: var(--gold);
-      box-shadow: 0 0 0 4px rgba(178, 138, 74, 0.12);
+      box-shadow: 0 0 0 4px rgba(184, 149, 93, 0.14);
     }
 
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 100;
+      z-index: 80;
       min-height: var(--header-height);
-      background: rgba(255, 253, 250, 0.86);
-      border-bottom: 1px solid rgba(178, 138, 74, 0.16);
+      background: rgba(251, 247, 241, 0.92);
+      border-bottom: 1px solid rgba(184, 149, 93, 0.18);
       backdrop-filter: blur(16px);
       -webkit-backdrop-filter: blur(16px);
     }
@@ -217,50 +184,50 @@
       display: grid;
       grid-template-columns: minmax(180px, 250px) 1fr auto;
       align-items: center;
-      gap: 26px;
+      gap: 28px;
     }
 
     .brand {
-      width: min(250px, 100%);
-      display: inline-flex;
-      align-items: center;
+      display: block;
+      width: 100%;
+      max-width: 240px;
     }
 
     .brand img {
       width: 100%;
       height: auto;
-      mix-blend-mode: multiply;
+      object-fit: contain;
     }
 
     .desktop-nav {
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: clamp(18px, 2.5vw, 36px);
+      gap: clamp(14px, 2vw, 30px);
     }
 
     .desktop-nav a {
       position: relative;
-      padding: 11px 0;
-      color: var(--brown);
+      padding: 12px 0;
+      color: var(--taupe-dark);
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.11em;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
-      transition: color 0.2s ease;
+      transition: color 180ms ease;
     }
 
     .desktop-nav a::after {
       position: absolute;
       right: 0;
-      bottom: 2px;
+      bottom: 5px;
       left: 0;
       height: 1px;
       content: "";
       background: var(--gold);
       transform: scaleX(0);
       transform-origin: center;
-      transition: transform 0.22s ease;
+      transition: transform 180ms ease;
     }
 
     .desktop-nav a:hover,
@@ -273,129 +240,155 @@
       transform: scaleX(1);
     }
 
-    .header-cta {
-      min-height: 46px;
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .header-action {
+      min-width: 44px;
+      min-height: 44px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 0 18px;
-      color: var(--surface);
-      background: var(--espresso);
-      border: 1px solid var(--espresso);
+      gap: 7px;
+      padding: 0 13px;
+      border: 1px solid transparent;
       border-radius: 999px;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
       transition:
-        background 0.2s ease,
-        border-color 0.2s ease,
-        transform 0.2s ease;
+        transform 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease,
+        color 180ms ease;
     }
 
-    .header-cta:hover {
-      background: var(--brown);
-      border-color: var(--brown);
+    .header-action:hover {
       transform: translateY(-2px);
     }
 
-    .mobile-menu-button {
-      width: 46px;
-      height: 46px;
+    .header-action-book {
+      color: var(--white);
+      background: var(--espresso);
+      border-color: var(--espresso);
+    }
+
+    .header-action-book:hover {
+      background: var(--espresso-deep);
+    }
+
+    .header-action-whatsapp {
+      color: var(--white);
+      background: var(--whatsapp);
+      border-color: var(--whatsapp);
+    }
+
+    .header-action-whatsapp:hover {
+      background: #1db95a;
+      border-color: #1db95a;
+    }
+
+    .header-action-phone {
+      color: var(--espresso);
+      background: rgba(255, 255, 255, 0.65);
+      border-color: var(--gold-soft);
+    }
+
+    .header-action-phone:hover {
+      color: var(--white);
+      background: var(--taupe-dark);
+      border-color: var(--taupe-dark);
+    }
+
+    .menu-toggle {
       display: none;
+      width: 44px;
+      height: 44px;
       align-items: center;
       justify-content: center;
       padding: 0;
       color: var(--espresso);
       background: transparent;
-      border: 1px solid var(--gold-border);
+      border: 1px solid var(--gold-soft);
       border-radius: 50%;
     }
 
-    .menu-icon,
-    .menu-icon::before,
-    .menu-icon::after {
-      width: 18px;
-      height: 1px;
+    .menu-toggle span,
+    .menu-toggle::before,
+    .menu-toggle::after {
       display: block;
-      background: currentColor;
-      transition: transform 0.2s ease;
-    }
-
-    .menu-icon {
-      position: relative;
-    }
-
-    .menu-icon::before,
-    .menu-icon::after {
-      position: absolute;
-      left: 0;
+      width: 18px;
+      height: 1.5px;
       content: "";
+      background: currentColor;
+      transition: transform 180ms ease, opacity 180ms ease;
     }
 
-    .menu-icon::before {
-      top: -6px;
+    .menu-toggle::before {
+      transform: translateY(-6px);
     }
 
-    .menu-icon::after {
-      top: 6px;
+    .menu-toggle::after {
+      transform: translateY(4px);
     }
 
-    .mobile-menu-button[aria-expanded="true"] .menu-icon {
-      background: transparent;
+    .menu-toggle[aria-expanded="true"] span {
+      opacity: 0;
     }
 
-    .mobile-menu-button[aria-expanded="true"] .menu-icon::before {
-      transform: translateY(6px) rotate(45deg);
+    .menu-toggle[aria-expanded="true"]::before {
+      transform: translateY(1px) rotate(45deg);
     }
 
-    .mobile-menu-button[aria-expanded="true"] .menu-icon::after {
-      transform: translateY(-6px) rotate(-45deg);
+    .menu-toggle[aria-expanded="true"]::after {
+      transform: translateY(-1px) rotate(-45deg);
     }
 
     .mobile-menu {
       position: fixed;
-      inset: calc(var(--header-height) + 31px) 16px auto;
-      z-index: 95;
+      inset: calc(var(--header-height) + 36px) 0 0;
+      z-index: 70;
       display: none;
-      padding: 16px;
-      background: rgba(255, 253, 250, 0.98);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-sm);
-      box-shadow: var(--shadow-hover);
+      padding: 22px 24px calc(30px + env(safe-area-inset-bottom));
+      background: rgba(251, 247, 241, 0.98);
+      overflow-y: auto;
     }
 
     .mobile-menu.is-open {
+      display: block;
+    }
+
+    .mobile-menu nav {
       display: grid;
-      gap: 4px;
+      gap: 6px;
+      max-width: 520px;
+      margin: 0 auto 28px;
     }
 
-    .mobile-menu a {
-      min-height: 52px;
-      display: flex;
-      align-items: center;
-      padding: 0 14px;
+    .mobile-menu nav a {
+      padding: 18px 0;
+      border-bottom: 1px solid var(--gold-faint);
       color: var(--espresso);
-      border-bottom: 1px solid rgba(178, 138, 74, 0.16);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      font-family: var(--font-display);
+      font-size: 27px;
+      line-height: 1.1;
     }
 
-    .mobile-menu a:last-child {
-      margin-top: 10px;
-      color: var(--surface);
-      background: var(--espresso);
-      border: 0;
-      border-radius: 999px;
-      justify-content: center;
+    .mobile-menu-actions {
+      display: grid;
+      gap: 10px;
+      max-width: 520px;
+      margin: 0 auto;
     }
 
     .hero {
       position: relative;
-      min-height: 680px;
       display: grid;
+      min-height: 650px;
       place-items: center;
       padding: 110px 0 124px;
       overflow: hidden;
@@ -405,34 +398,24 @@
     .hero::before {
       position: absolute;
       inset: 0;
-      z-index: -2;
       content: "";
       background:
+        radial-gradient(
+          circle at 50% 20%,
+          rgba(255, 255, 255, 0.64),
+          rgba(255, 255, 255, 0) 45%
+        ),
         linear-gradient(
-          90deg,
-          rgba(246, 239, 231, 0.72),
-          rgba(255, 253, 250, 0.74),
-          rgba(246, 239, 231, 0.72)
+          180deg,
+          rgba(251, 247, 241, 0.24),
+          rgba(251, 247, 241, 0.60)
         );
-    }
-
-    .hero::after {
-      position: absolute;
-      top: 10%;
-      left: 50%;
-      z-index: -1;
-      width: min(980px, 110vw);
-      aspect-ratio: 1;
-      content: "";
-      border: 1px solid rgba(178, 138, 74, 0.2);
-      border-radius: 50%;
-      transform: translateX(-50%);
-      box-shadow:
-        0 0 0 55px rgba(255, 253, 250, 0.22),
-        0 0 0 110px rgba(178, 138, 74, 0.06);
+      pointer-events: none;
     }
 
     .hero-content {
+      position: relative;
+      z-index: 1;
       max-width: 960px;
     }
 
@@ -441,15 +424,14 @@
       align-items: center;
       justify-content: center;
       gap: 9px;
-      min-height: 34px;
-      padding: 0 14px;
-      color: var(--brown);
-      background: rgba(255, 253, 250, 0.72);
-      border: 1px solid var(--gold-border);
+      padding: 9px 15px;
+      color: var(--taupe-dark);
+      background: rgba(255, 255, 255, 0.54);
+      border: 1px solid var(--gold-soft);
       border-radius: 999px;
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.16em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
     }
 
@@ -461,47 +443,54 @@
       background: var(--gold);
     }
 
-    .hero h1 {
-      max-width: 900px;
-      margin: 25px auto 21px;
-      color: var(--espresso);
+    h1,
+    h2,
+    h3,
+    h4 {
+      margin-top: 0;
+      color: var(--espresso-deep);
       font-family: var(--font-display);
-      font-size: clamp(49px, 7vw, 88px);
       font-weight: 400;
+    }
+
+    .hero h1 {
+      max-width: 930px;
+      margin: 24px auto 20px;
+      font-size: clamp(48px, 6.8vw, 84px);
+      line-height: 0.99;
       letter-spacing: -0.045em;
-      line-height: 0.98;
     }
 
     .hero h1 em {
       display: inline-block;
-      margin-inline: 0.06em;
       color: var(--gold);
-      font-family: var(--font-script);
-      font-size: 1.12em;
-      font-style: normal;
-      font-weight: 400;
-      letter-spacing: 0;
+      font-style: italic;
+      white-space: nowrap;
     }
 
     .hero-copy {
       max-width: 620px;
       margin: 0 auto;
-      color: var(--taupe);
+      color: var(--taupe-dark);
       font-size: 16px;
       line-height: 1.8;
     }
 
     .hero-actions,
-    .contact-actions {
+    .contact-actions,
+    .success-actions {
       display: flex;
-      justify-content: center;
-      gap: 12px;
       flex-wrap: wrap;
-      margin-top: 32px;
+      justify-content: center;
+      gap: 11px;
+    }
+
+    .hero-actions {
+      margin-top: 34px;
     }
 
     .button {
-      min-height: 52px;
+      min-height: 50px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -509,17 +498,16 @@
       padding: 0 22px;
       border: 1px solid transparent;
       border-radius: 999px;
-      font-size: 10px;
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.11em;
       text-align: center;
       text-transform: uppercase;
       transition:
-        transform 0.2s ease,
-        color 0.2s ease,
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease;
+        transform 180ms ease,
+        color 180ms ease,
+        background 180ms ease,
+        border-color 180ms ease;
     }
 
     .button:hover {
@@ -527,76 +515,50 @@
     }
 
     .button-primary {
-      color: var(--surface);
+      color: var(--white);
       background: var(--espresso);
       border-color: var(--espresso);
-      box-shadow: 0 10px 24px rgba(43, 33, 30, 0.16);
     }
 
     .button-primary:hover {
-      background: var(--brown);
-      border-color: var(--brown);
-      box-shadow: 0 14px 30px rgba(43, 33, 30, 0.22);
+      background: var(--espresso-deep);
+      border-color: var(--espresso-deep);
     }
 
     .button-secondary {
       color: var(--espresso);
-      background: rgba(255, 253, 250, 0.72);
-      border-color: var(--gold-border);
+      background: rgba(255, 255, 255, 0.68);
+      border-color: var(--gold-soft);
     }
 
     .button-secondary:hover {
-      background: var(--surface);
+      background: var(--white);
       border-color: var(--gold);
     }
 
     .button-whatsapp {
       color: var(--white);
-      background: var(--green);
-      border-color: var(--green);
+      background: var(--whatsapp);
+      border-color: var(--whatsapp);
     }
 
     .button-whatsapp:hover {
-      background: #16874c;
-      border-color: #16874c;
-    }
-
-    .hero-trust {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      margin-top: 36px;
-      color: var(--taupe);
-      font-size: 11px;
-    }
-
-    .hero-trust span {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-    }
-
-    .hero-trust span::before {
-      width: 5px;
-      height: 5px;
-      content: "";
-      border-radius: 50%;
-      background: var(--gold);
+      background: #1db95a;
+      border-color: #1db95a;
     }
 
     .section {
-      padding: 110px 0;
+      padding: 112px 0;
     }
 
     .section-surface {
-      background: rgba(255, 253, 250, 0.6);
-      border-block: 1px solid rgba(178, 138, 74, 0.16);
+      background: rgba(255, 253, 250, 0.78);
+      border-top: 1px solid var(--gold-faint);
+      border-bottom: 1px solid var(--gold-faint);
     }
 
     .section-heading {
-      max-width: 740px;
+      max-width: 720px;
       margin: 0 auto 54px;
       text-align: center;
     }
@@ -607,47 +569,42 @@
       color: var(--taupe);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.20em;
       text-transform: uppercase;
     }
 
-    .section-heading h2,
-    .about-copy h2,
-    .contact-section h2 {
-      margin: 0;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: clamp(39px, 5.2vw, 62px);
-      font-weight: 400;
-      letter-spacing: -0.04em;
+    .section-heading h2 {
+      margin-bottom: 15px;
+      font-size: clamp(39px, 5vw, 60px);
       line-height: 1.04;
+      letter-spacing: -0.04em;
     }
 
     .section-heading p {
-      margin: 16px auto 0;
-      color: var(--taupe);
+      margin: 0;
+      color: var(--taupe-dark);
       font-size: 15px;
       line-height: 1.8;
     }
 
-    .price-layout {
+    .pricing-layout {
       display: grid;
-      grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+      grid-template-columns: 0.84fr 1.16fr;
       align-items: start;
-      gap: 24px;
+      gap: 26px;
     }
 
     .price-stack {
       display: grid;
-      gap: 24px;
+      gap: 22px;
     }
 
     .card {
       position: relative;
       overflow: hidden;
-      background: var(--surface-soft);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-md);
+      background: rgba(255, 253, 250, 0.88);
+      border: 1px solid var(--gold-soft);
+      border-radius: var(--radius-lg);
       box-shadow: var(--shadow-soft);
     }
 
@@ -655,143 +612,131 @@
       position: absolute;
       inset: 7px;
       content: "";
-      border: 1px solid rgba(178, 138, 74, 0.18);
-      border-radius: calc(var(--radius-md) - 6px);
+      border: 1px solid rgba(184, 149, 93, 0.16);
+      border-radius: calc(var(--radius-lg) - 6px);
       pointer-events: none;
     }
 
-    .price-card {
-      padding: 38px;
+    .pricing-card {
+      padding: 36px;
     }
 
-    .price-card > * {
+    .pricing-card > * {
       position: relative;
       z-index: 1;
     }
 
-    .price-card h3 {
-      margin: 0 0 26px;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: 36px;
-      font-weight: 400;
-      letter-spacing: -0.03em;
+    .pricing-card h3 {
+      margin-bottom: 24px;
+      font-size: 35px;
       text-align: center;
     }
 
-    .price-card h4 {
-      margin: 30px 0 12px;
-      color: var(--brown);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.16em;
+    .pricing-card h4 {
+      margin: 30px 0 14px;
+      font-size: 21px;
       text-align: center;
-      text-transform: uppercase;
     }
 
-    .price-card h4:first-of-type {
+    .pricing-card h4:first-of-type {
       margin-top: 0;
     }
 
-    .price-row {
-      display: grid;
-      grid-template-columns: auto 1fr auto;
-      align-items: end;
-      gap: 12px;
+    .pricing-row {
+      display: flex;
+      align-items: baseline;
+      gap: 11px;
       padding: 11px 0;
-      color: var(--brown);
+      color: var(--taupe-dark);
       font-size: 15px;
     }
 
-    .price-line {
+    .pricing-row .line {
+      flex: 1;
+      min-width: 16px;
       height: 1px;
-      margin-bottom: 7px;
       background: linear-gradient(
-        to right,
-        rgba(178, 138, 74, 0.06),
-        rgba(178, 138, 74, 0.6)
+        90deg,
+        rgba(184, 149, 93, 0.10),
+        rgba(184, 149, 93, 0.72)
       );
     }
 
     .price {
       color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 24px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
+      font-size: 22px;
       white-space: nowrap;
     }
 
-    .price-divider {
+    .card-divider {
       height: 1px;
-      margin: 22px 0;
-      background: var(--gold-soft);
+      margin: 20px 0;
+      background: var(--gold-faint);
     }
 
-    .price-note {
-      margin: 21px 0 0;
-      padding-top: 17px;
+    .pricing-note {
+      margin: 22px 0 0;
+      padding-top: 18px;
       color: var(--taupe);
-      border-top: 1px solid var(--gold-soft);
+      border-top: 1px solid var(--gold-faint);
       font-size: 12px;
       line-height: 1.7;
       text-align: center;
     }
 
     .card-action {
-      margin-top: 25px;
-      text-align: center;
+      display: flex;
+      justify-content: center;
+      margin-top: 24px;
     }
 
-    .info-card {
-      padding: 31px;
+    .notice-card {
+      padding: 28px;
+      color: var(--taupe-dark);
       background:
         linear-gradient(
-          135deg,
-          rgba(239, 227, 213, 0.92),
-          rgba(255, 253, 250, 0.9)
-        );
+          rgba(242, 231, 218, 0.80),
+          rgba(242, 231, 218, 0.80)
+        ),
+        url("Hintergrund-muster.jpg") center / cover;
       text-align: center;
     }
 
-    .info-card h3 {
+    .notice-card > * {
       position: relative;
       z-index: 1;
-      margin: 0 0 12px;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 400;
-      letter-spacing: -0.03em;
     }
 
-    .info-card p {
-      position: relative;
-      z-index: 1;
-      max-width: 430px;
-      margin: 8px auto;
-      color: var(--taupe);
+    .notice-card h3 {
+      margin-bottom: 10px;
+      font-size: 25px;
+    }
+
+    .notice-card p {
+      max-width: 450px;
+      margin: 7px auto;
       font-size: 13px;
-      line-height: 1.72;
+      line-height: 1.7;
     }
 
     .booking-shell {
       overflow: hidden;
-      background: rgba(255, 253, 250, 0.86);
-      border: 1px solid var(--gold-border);
+      background: rgba(255, 253, 250, 0.94);
+      border: 1px solid var(--gold-soft);
       border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
+      box-shadow: var(--shadow-card);
     }
 
     .booking-progress {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      background: rgba(239, 227, 213, 0.56);
-      border-bottom: 1px solid var(--gold-soft);
+      background: rgba(242, 231, 218, 0.66);
+      border-bottom: 1px solid var(--gold-faint);
     }
 
-    .booking-step-indicator {
-      min-height: 84px;
+    .progress-step {
+      min-height: 78px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -801,89 +746,83 @@
       border-bottom: 3px solid transparent;
       font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.06em;
+      letter-spacing: 0.04em;
       text-align: center;
       text-transform: uppercase;
-      transition:
-        color 0.2s ease,
-        border-color 0.2s ease;
     }
 
-    .booking-step-indicator.active {
+    .progress-step.is-active {
       color: var(--espresso);
       border-bottom-color: var(--espresso);
     }
 
     .step-number {
-      width: 29px;
-      height: 29px;
-      display: inline-grid;
-      place-items: center;
+      width: 26px;
+      height: 26px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       flex: 0 0 auto;
-      color: var(--brown);
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
+      color: var(--taupe-dark);
+      background: var(--white);
+      border: 1px solid var(--gold-soft);
       border-radius: 50%;
       font-size: 11px;
     }
 
-    .booking-step-indicator.active .step-number {
-      color: var(--surface);
+    .progress-step.is-active .step-number {
+      color: var(--white);
       background: var(--espresso);
       border-color: var(--espresso);
     }
 
     .booking-content {
-      padding: clamp(24px, 4vw, 50px);
+      padding: 46px;
     }
 
     .booking-panel h3 {
-      margin: 0;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: clamp(31px, 4vw, 42px);
-      font-weight: 400;
-      letter-spacing: -0.035em;
+      margin-bottom: 8px;
+      font-size: 34px;
+      line-height: 1.1;
     }
 
     .booking-intro {
-      margin: 8px 0 28px;
+      margin: 0 0 28px;
       color: var(--taupe);
       font-size: 14px;
-      line-height: 1.7;
     }
 
     .service-grid {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 14px;
+      gap: 13px;
     }
 
     .service-option {
-      min-height: 170px;
+      min-height: 154px;
       display: flex;
       flex-direction: column;
-      padding: 21px;
-      color: var(--brown);
-      background: var(--surface);
-      border: 1px solid rgba(178, 138, 74, 0.25);
-      border-radius: var(--radius-sm);
+      padding: 20px;
+      color: var(--espresso);
+      background: var(--white);
+      border: 1px solid var(--gold-faint);
+      border-radius: var(--radius-md);
       text-align: left;
       transition:
-        border-color 0.2s ease,
-        background 0.2s ease,
-        box-shadow 0.2s ease,
-        transform 0.2s ease;
+        transform 180ms ease,
+        border-color 180ms ease,
+        box-shadow 180ms ease,
+        background 180ms ease;
     }
 
     .service-option:hover {
+      transform: translateY(-3px);
       border-color: var(--gold);
-      box-shadow: 0 14px 26px rgba(68, 48, 37, 0.08);
-      transform: translateY(-2px);
+      box-shadow: 0 13px 28px rgba(53, 41, 37, 0.08);
     }
 
-    .service-option.selected {
-      background: #f5ebdf;
+    .service-option.is-selected {
+      background: rgba(242, 231, 218, 0.62);
       border-color: var(--espresso);
       box-shadow: 0 0 0 1px var(--espresso);
     }
@@ -895,9 +834,8 @@
       gap: 14px;
     }
 
-    .service-title {
-      max-width: 75%;
-      color: var(--espresso);
+    .service-name {
+      color: var(--espresso-deep);
       font-size: 14px;
       font-weight: 700;
       line-height: 1.35;
@@ -906,9 +844,7 @@
     .service-price {
       color: var(--espresso);
       font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 400;
-      letter-spacing: -0.02em;
+      font-size: 20px;
       white-space: nowrap;
     }
 
@@ -917,18 +853,19 @@
       margin-top: 10px;
       color: var(--taupe);
       font-size: 12px;
-      line-height: 1.6;
+      line-height: 1.58;
     }
 
-    .service-meta {
-      display: block;
+    .service-duration {
+      display: flex;
+      align-items: center;
+      gap: 6px;
       margin-top: auto;
-      padding-top: 15px;
-      color: var(--taupe);
-      font-size: 10px;
+      padding-top: 14px;
+      color: var(--taupe-dark);
+      font-size: 11px;
       font-weight: 700;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
+      letter-spacing: 0.03em;
     }
 
     .booking-footer {
@@ -936,41 +873,38 @@
       align-items: center;
       justify-content: space-between;
       gap: 16px;
-      margin-top: 31px;
+      margin-top: 32px;
       padding-top: 25px;
-      border-top: 1px solid var(--gold-soft);
+      border-top: 1px solid var(--gold-faint);
     }
 
-    .booking-summary-text {
+    .booking-selection {
       color: var(--taupe);
       font-size: 13px;
     }
 
-    .booking-summary-text strong {
+    .booking-selection strong {
       display: block;
       margin-top: 3px;
       color: var(--espresso);
-      font-size: 14px;
     }
 
-    .calendar-layout,
-    .form-layout {
+    .calendar-layout {
       display: grid;
-      grid-template-columns: minmax(0, 1.2fr) minmax(270px, 0.8fr);
-      align-items: start;
+      grid-template-columns: minmax(0, 1.15fr) minmax(290px, 0.85fr);
       gap: 24px;
     }
 
-    .calendar-box,
-    .time-box,
-    .summary-box {
-      padding: 24px;
-      background: rgba(246, 239, 231, 0.62);
-      border: 1px solid var(--gold-soft);
-      border-radius: var(--radius-sm);
+    .calendar-card,
+    .time-card,
+    .summary-card {
+      padding: 23px;
+      background: rgba(242, 231, 218, 0.48);
+      border: 1px solid var(--gold-faint);
+      border-radius: var(--radius-md);
     }
 
-    .calendar-header {
+    .calendar-top {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -978,132 +912,114 @@
       margin-bottom: 22px;
     }
 
-    .calendar-header h4,
-    .time-box h4,
-    .summary-box h4 {
+    .calendar-top h4,
+    .time-card h4,
+    .summary-card h4 {
       margin: 0;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: 25px;
-      font-weight: 400;
-      letter-spacing: -0.025em;
+      font-size: 23px;
     }
 
     .icon-button {
       width: 42px;
       height: 42px;
-      display: inline-grid;
-      place-items: center;
-      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       color: var(--espresso);
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
+      background: var(--white);
+      border: 1px solid var(--gold-faint);
       border-radius: 50%;
-      font-size: 24px;
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        transform 0.2s ease;
+      transition: color 180ms ease, background 180ms ease;
     }
 
     .icon-button:hover {
-      color: var(--surface);
+      color: var(--white);
       background: var(--espresso);
-      transform: translateY(-1px);
     }
 
-    .weekdays,
+    .calendar-weekdays,
     .calendar-grid {
       display: grid;
       grid-template-columns: repeat(7, minmax(0, 1fr));
       gap: 6px;
     }
 
-    .weekdays {
-      margin-bottom: 8px;
+    .calendar-weekdays {
+      margin-bottom: 7px;
       color: var(--taupe);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
       text-align: center;
       text-transform: uppercase;
     }
 
     .calendar-day {
-      min-height: 46px;
-      display: grid;
-      place-items: center;
+      min-height: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
       padding: 0;
-      color: var(--brown);
-      background: var(--surface);
-      border: 1px solid rgba(178, 138, 74, 0.22);
-      border-radius: 12px;
-      font-size: 12px;
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+      color: var(--espresso);
+      background: var(--white);
+      border: 1px solid var(--gold-faint);
+      border-radius: 11px;
+      font-size: 13px;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
     }
 
     .calendar-day:not(:disabled):hover,
-    .calendar-day.selected {
-      color: var(--surface);
+    .calendar-day.is-selected {
+      color: var(--white);
       background: var(--espresso);
       border-color: var(--espresso);
     }
 
-    .calendar-day.today:not(.selected) {
-      border-color: var(--gold);
-      box-shadow: inset 0 0 0 1px var(--gold);
-    }
-
-    .calendar-day.unavailable {
-      color: rgba(131, 113, 104, 0.45);
-      background: rgba(234, 219, 201, 0.48);
+    .calendar-day:disabled {
+      color: rgba(111, 89, 78, 0.36);
+      background: rgba(232, 216, 199, 0.58);
       border-color: transparent;
+      cursor: not-allowed;
     }
 
     .calendar-legend {
       display: flex;
-      justify-content: center;
-      gap: 18px;
       flex-wrap: wrap;
-      margin-top: 19px;
-      padding-top: 15px;
+      gap: 13px;
+      margin-top: 18px;
+      padding-top: 14px;
       color: var(--taupe);
-      border-top: 1px solid var(--gold-soft);
+      border-top: 1px solid var(--gold-faint);
       font-size: 10px;
     }
 
     .legend-item {
       display: inline-flex;
       align-items: center;
-      gap: 7px;
+      gap: 6px;
     }
 
     .legend-dot {
       width: 9px;
       height: 9px;
-      display: inline-block;
       border-radius: 50%;
       background: var(--espresso);
     }
 
     .legend-dot.free {
-      background: var(--surface);
+      background: var(--white);
       border: 1px solid var(--gold);
     }
 
     .legend-dot.blocked {
-      background: var(--canvas-deep);
+      background: var(--sand);
     }
 
     .selected-date {
-      min-height: 22px;
-      margin: 8px 0 17px;
+      min-height: 24px;
+      margin: 9px 0 17px;
       color: var(--taupe);
       font-size: 12px;
-      line-height: 1.5;
     }
 
     .time-slots {
@@ -1113,55 +1029,52 @@
     }
 
     .time-slot {
-      min-height: 50px;
-      display: flex;
+      min-height: 47px;
+      display: inline-flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 0 13px;
-      color: var(--brown);
-      background: var(--surface);
-      border: 1px solid rgba(178, 138, 74, 0.28);
-      border-radius: var(--radius-xs);
+      justify-content: center;
+      padding: 0 10px;
+      color: var(--espresso);
+      background: var(--white);
+      border: 1px solid var(--gold-faint);
+      border-radius: 12px;
       font-size: 12px;
-      transition:
-        color 0.2s ease,
-        background 0.2s ease,
-        border-color 0.2s ease;
+      font-weight: 700;
+      transition: color 180ms ease, background 180ms ease, border-color 180ms ease;
     }
 
     .time-slot:hover:not(:disabled),
-    .time-slot.selected {
-      color: var(--surface);
+    .time-slot.is-selected {
+      color: var(--white);
       background: var(--espresso);
       border-color: var(--espresso);
     }
 
-    .time-slot small {
-      color: var(--taupe);
-      font-size: 10px;
-    }
-
-    .time-slot.selected small {
-      color: rgba(255, 253, 250, 0.7);
-    }
-
-    .time-slot.booked {
-      color: var(--taupe);
-      background: var(--canvas-deep);
+    .time-slot:disabled {
+      color: rgba(111, 89, 78, 0.42);
+      background: rgba(232, 216, 199, 0.66);
+      border-color: transparent;
+      cursor: not-allowed;
       text-decoration: line-through;
     }
 
     .empty-state {
       grid-column: 1 / -1;
-      padding: 28px 16px;
+      padding: 25px 14px;
       color: var(--taupe);
-      background: rgba(255, 253, 250, 0.54);
-      border: 1px dashed var(--gold-border);
-      border-radius: var(--radius-xs);
+      background: rgba(255, 255, 255, 0.48);
+      border: 1px solid var(--gold-faint);
+      border-radius: 12px;
       font-size: 12px;
       line-height: 1.6;
       text-align: center;
+    }
+
+    .form-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+      gap: 26px;
+      align-items: start;
     }
 
     .form-row {
@@ -1177,52 +1090,45 @@
     label {
       display: block;
       margin-bottom: 8px;
-      color: var(--brown);
+      color: var(--taupe-dark);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.10em;
       text-transform: uppercase;
     }
 
     input,
-    textarea,
-    select {
+    textarea {
       width: 100%;
       color: var(--espresso);
-      background: rgba(255, 253, 250, 0.92);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-xs);
-      outline: none;
+      background: rgba(255, 255, 255, 0.88);
+      border: 1px solid var(--gold-soft);
+      border-radius: 12px;
+      outline: 0;
       font-size: 14px;
-      transition:
-        border-color 0.2s ease,
-        box-shadow 0.2s ease,
-        background 0.2s ease;
+      transition: border-color 180ms ease, box-shadow 180ms ease;
     }
 
-    input,
-    select {
-      min-height: 50px;
+    input {
+      min-height: 49px;
       padding: 0 14px;
     }
 
     textarea {
-      min-height: 110px;
+      min-height: 104px;
       padding: 14px;
       resize: vertical;
     }
 
     input::placeholder,
     textarea::placeholder {
-      color: var(--taupe-light);
+      color: rgba(111, 89, 78, 0.52);
     }
 
     input:focus,
-    textarea:focus,
-    select:focus {
-      background: var(--surface);
+    textarea:focus {
       border-color: var(--espresso);
-      box-shadow: 0 0 0 4px rgba(178, 138, 74, 0.13);
+      box-shadow: 0 0 0 4px rgba(184, 149, 93, 0.18);
     }
 
     .consent {
@@ -1243,20 +1149,14 @@
       height: 18px;
       min-height: 18px;
       flex: 0 0 auto;
-      margin-top: 1px;
+      margin-top: 2px;
       accent-color: var(--espresso);
     }
 
-    .summary-box {
-      position: sticky;
-      top: calc(var(--header-height) + 24px);
-      background: rgba(246, 239, 231, 0.82);
-    }
-
-    .summary-box h4 {
+    .summary-card h4 {
       margin-bottom: 16px;
       padding-bottom: 15px;
-      border-bottom: 1px solid var(--gold-soft);
+      border-bottom: 1px solid var(--gold-faint);
     }
 
     .summary-line {
@@ -1265,165 +1165,159 @@
       gap: 16px;
       margin: 12px 0;
       color: var(--taupe);
-      font-size: 12px;
+      font-size: 13px;
     }
 
-    .summary-line span:last-child {
-      max-width: 66%;
+    .summary-line strong {
+      max-width: 65%;
       color: var(--espresso);
-      font-weight: 700;
+      font-size: 13px;
       text-align: right;
     }
 
     .summary-total {
-      margin-top: 17px;
-      padding-top: 16px;
-      border-top: 1px solid var(--gold-soft);
+      margin-top: 18px;
+      padding-top: 15px;
+      border-top: 1px solid var(--gold-faint);
     }
 
-    .summary-total span:last-child {
+    .summary-total strong {
       font-family: var(--font-display);
       font-size: 23px;
       font-weight: 400;
-      letter-spacing: -0.02em;
     }
 
-    .summary-location {
+    .summary-address {
       margin: 20px 0 0;
+      padding-top: 17px;
       color: var(--taupe);
-      font-size: 11px;
+      border-top: 1px solid var(--gold-faint);
+      font-size: 12px;
       line-height: 1.65;
     }
 
-    .success-box {
-      max-width: 670px;
-      padding: 12px 0;
+    .success-panel {
+      max-width: 640px;
       margin: 0 auto;
       text-align: center;
     }
 
     .success-icon {
-      width: 70px;
-      height: 70px;
-      display: inline-grid;
+      width: 68px;
+      height: 68px;
+      display: grid;
       place-items: center;
-      margin-bottom: 20px;
-      color: #176a40;
-      background: #e6f6eb;
-      border: 1px solid #abd9bb;
+      margin: 0 auto 20px;
+      color: var(--success);
+      background: #e4f5eb;
+      border: 1px solid #a8d9b9;
       border-radius: 50%;
-      font-size: 31px;
     }
 
-    .success-box h3 {
-      margin: 0 0 10px;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: clamp(34px, 4.4vw, 48px);
-      font-weight: 400;
-      letter-spacing: -0.04em;
+    .success-icon .icon {
+      width: 31px;
+      height: 31px;
     }
 
-    .success-box > p {
+    .success-panel h3 {
+      margin-bottom: 10px;
+      font-size: 38px;
+    }
+
+    .success-panel > p {
       margin: 0;
       color: var(--taupe);
       font-size: 14px;
-      line-height: 1.7;
+      line-height: 1.75;
     }
 
-    .confirmation {
-      margin: 29px auto 24px;
-      padding: 23px;
-      background: rgba(246, 239, 231, 0.74);
-      border: 1px solid var(--gold-soft);
-      border-radius: var(--radius-sm);
+    .confirmation-box {
+      margin: 28px auto 24px;
+      padding: 22px;
+      color: var(--taupe);
+      background: rgba(242, 231, 218, 0.48);
+      border: 1px solid var(--gold-faint);
+      border-radius: var(--radius-md);
       text-align: left;
     }
 
     .about-grid {
       display: grid;
-      grid-template-columns: minmax(300px, 0.84fr) minmax(0, 1.16fr);
+      grid-template-columns: minmax(280px, 0.82fr) minmax(0, 1.18fr);
       align-items: center;
-      gap: clamp(38px, 6vw, 86px);
+      gap: clamp(40px, 6vw, 82px);
     }
 
     .portrait-frame {
-      width: min(100%, 410px);
       aspect-ratio: 4 / 5;
+      max-width: 365px;
       padding: 9px;
       margin-inline: auto;
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid var(--gold-soft);
+      border-radius: 30px;
+      box-shadow: var(--shadow-card);
     }
 
     .portrait-placeholder {
       width: 100%;
       height: 100%;
       display: grid;
-      place-items: center;
       align-content: center;
-      gap: 14px;
-      overflow: hidden;
+      justify-items: center;
+      gap: 15px;
       color: var(--espresso);
       background:
         linear-gradient(
           145deg,
-          rgba(255, 253, 250, 0.64),
-          rgba(229, 211, 193, 0.55)
+          rgba(255, 255, 255, 0.44),
+          rgba(232, 216, 199, 0.60)
         ),
         url("Hintergrund-muster.jpg") center / cover;
-      border-radius: calc(var(--radius-lg) - 9px);
+      border-radius: 21px;
       text-align: center;
     }
 
     .portrait-placeholder-mark {
       font-family: var(--font-display);
-      font-size: clamp(45px, 6vw, 66px);
-      font-weight: 400;
-      letter-spacing: 0.08em;
+      font-size: clamp(36px, 5vw, 54px);
+      letter-spacing: 0.10em;
     }
 
     .portrait-placeholder-line {
-      width: 62px;
+      width: 58px;
       height: 1px;
       background: var(--gold);
     }
 
     .portrait-placeholder-caption {
-      color: var(--taupe);
+      color: var(--taupe-dark);
       font-size: 10px;
       font-weight: 700;
-      letter-spacing: 0.19em;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
     }
 
     .about-copy {
-      max-width: 620px;
+      max-width: 610px;
     }
 
     .about-copy .section-label {
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .about-copy h2 {
       margin-bottom: 20px;
+      font-size: clamp(42px, 5vw, 61px);
+      line-height: 1.03;
+      letter-spacing: -0.045em;
     }
 
     .about-copy p {
       margin: 0 0 15px;
-      color: var(--brown);
+      color: var(--taupe-dark);
       font-size: 15px;
-      line-height: 1.82;
-    }
-
-    .about-signature {
-      margin-top: 24px;
-      color: var(--gold);
-      font-family: var(--font-script);
-      font-size: 42px;
-      line-height: 1;
+      line-height: 1.85;
     }
 
     .contact-section {
@@ -1431,56 +1325,69 @@
     }
 
     .contact-icon {
-      width: 58px;
-      height: 58px;
-      display: inline-grid;
+      width: 60px;
+      height: 60px;
+      display: grid;
       place-items: center;
-      margin-bottom: 16px;
+      margin: 0 auto 18px;
       color: var(--espresso);
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
+      background: rgba(242, 231, 218, 0.88);
+      border: 1px solid var(--gold-soft);
       border-radius: 50%;
-      font-size: 24px;
+    }
+
+    .contact-icon .icon {
+      width: 25px;
+      height: 25px;
     }
 
     .contact-section h2 {
-      font-size: clamp(38px, 5vw, 58px);
+      margin-bottom: 9px;
+      font-size: clamp(38px, 5vw, 54px);
+      line-height: 1.08;
     }
 
-    .contact-section > p {
-      margin: 12px auto 0;
+    .contact-section > .container > p {
+      margin: 0 0 27px;
       color: var(--taupe);
       font-size: 15px;
     }
 
     .site-footer {
-      padding: 76px 0 30px;
-      color: rgba(255, 253, 250, 0.78);
-      background: var(--espresso);
-      border-top: 1px solid rgba(178, 138, 74, 0.3);
+      padding: 74px 0 28px;
+      color: rgba(255, 255, 255, 0.74);
+      background: var(--espresso-deep);
+      border-top: 1px solid rgba(184, 149, 93, 0.25);
     }
 
     .footer-grid {
       display: grid;
-      grid-template-columns: 1.3fr 1fr 1fr;
+      grid-template-columns: 1.2fr 1fr 1fr;
       gap: 42px;
-      padding-bottom: 44px;
+      padding-bottom: 38px;
     }
 
     .footer-brand {
-      width: min(260px, 100%);
-      margin-bottom: 18px;
-      filter: grayscale(1) brightness(3.5) contrast(0.6);
-      opacity: 0.94;
+      max-width: 220px;
+      margin-bottom: 16px;
+      filter: grayscale(1) brightness(3);
+      opacity: 0.9;
     }
 
     .footer-column h3,
     .footer-column h4 {
-      margin: 0 0 15px;
+      color: var(--white);
+    }
+
+    .footer-column h3 {
+      margin-bottom: 14px;
+      font-size: 24px;
     }
 
     .footer-column h4 {
+      margin-bottom: 16px;
       color: var(--gold);
+      font-family: var(--font-body);
       font-size: 10px;
       font-weight: 700;
       letter-spacing: 0.18em;
@@ -1490,335 +1397,232 @@
     .footer-column p,
     .footer-column a {
       margin: 7px 0;
-      color: rgba(255, 253, 250, 0.68);
-      font-size: 12px;
+      color: rgba(255, 255, 255, 0.66);
+      font-size: 13px;
       line-height: 1.7;
     }
 
-    .footer-column a {
-      transition: color 0.2s ease;
-    }
-
     .footer-column a:hover {
-      color: var(--surface);
+      color: var(--white);
     }
 
     .footer-bottom {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 18px;
-      padding-top: 24px;
-      color: rgba(255, 253, 250, 0.45);
-      border-top: 1px solid rgba(255, 253, 250, 0.12);
+      gap: 20px;
+      padding-top: 23px;
+      color: rgba(255, 255, 255, 0.45);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
       font-size: 11px;
     }
 
     .footer-links {
       display: flex;
-      gap: 19px;
       flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 18px;
     }
 
     .footer-links a {
       color: inherit;
-      transition: color 0.2s ease;
     }
 
     .footer-links a:hover {
-      color: var(--surface);
-    }
-
-    .floating-contact {
-      position: fixed;
-      right: max(18px, env(safe-area-inset-right));
-      bottom: max(18px, env(safe-area-inset-bottom));
-      z-index: 80;
-      width: 56px;
-      height: 56px;
-      display: grid;
-      place-items: center;
       color: var(--white);
-      background: var(--green);
-      border: 2px solid rgba(255, 255, 255, 0.76);
-      border-radius: 50%;
-      box-shadow: 0 12px 26px rgba(28, 156, 90, 0.3);
-      font-size: 23px;
-      transition:
-        transform 0.2s ease,
-        background 0.2s ease;
-    }
-
-    .floating-contact:hover {
-      background: #16874c;
-      transform: translateY(-3px) scale(1.04);
-    }
-
-    .modal-backdrop {
-      position: fixed;
-      inset: 0;
-      z-index: 200;
-      display: grid;
-      place-items: center;
-      padding: 20px;
-      background: rgba(43, 33, 30, 0.72);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-    }
-
-    .modal {
-      width: min(640px, 100%);
-      max-height: min(720px, 90vh);
-      overflow: auto;
-      background: var(--surface);
-      border: 1px solid var(--gold-border);
-      border-radius: var(--radius-md);
-      box-shadow: 0 30px 90px rgba(0, 0, 0, 0.3);
-    }
-
-    .modal-header {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 24px 25px;
-      color: var(--surface);
-      background: var(--espresso);
-    }
-
-    .modal-header h2 {
-      margin: 0;
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-    }
-
-    .modal-close {
-      width: 40px;
-      height: 40px;
-      display: inline-grid;
-      place-items: center;
-      padding: 0;
-      color: var(--surface);
-      background: transparent;
-      border: 1px solid rgba(255, 253, 250, 0.3);
-      border-radius: 50%;
-      font-size: 25px;
-    }
-
-    .modal-close:hover {
-      background: rgba(255, 253, 250, 0.12);
-    }
-
-    .modal-content {
-      padding: 26px;
-      color: var(--brown);
-      font-size: 13px;
-      line-height: 1.75;
-    }
-
-    .modal-content h3 {
-      margin: 0 0 16px;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: 31px;
-      font-weight: 400;
-      letter-spacing: -0.03em;
-    }
-
-    .modal-content h4 {
-      margin: 22px 0 6px;
-      color: var(--espresso);
-      font-family: var(--font-display);
-      font-size: 19px;
-      font-weight: 400;
-    }
-
-    .modal-content p {
-      margin: 10px 0;
-    }
-
-    .modal-content a {
-      text-decoration: underline;
-      text-underline-offset: 3px;
     }
 
     .toast-container {
       position: fixed;
       right: 18px;
-      bottom: 86px;
-      z-index: 300;
-      width: min(370px, calc(100% - 36px));
+      bottom: calc(18px + env(safe-area-inset-bottom));
+      z-index: 200;
       display: grid;
       gap: 9px;
+      width: min(370px, calc(100% - 36px));
     }
 
     .toast {
       padding: 15px 17px;
-      color: var(--surface);
+      color: var(--white);
       background: var(--espresso);
       border-left: 4px solid var(--gold);
-      border-radius: var(--radius-xs);
-      box-shadow: var(--shadow-hover);
-      font-size: 12px;
-      line-height: 1.55;
+      border-radius: 13px;
+      box-shadow: var(--shadow-card);
+      font-size: 13px;
+      line-height: 1.5;
+      animation: toast-in 220ms ease-out;
     }
 
     .toast.success {
-      border-left-color: #65ca91;
+      border-left-color: #55cc89;
     }
 
     .toast.error {
-      background: #7d2929;
-      border-left-color: #f3a7a7;
+      background: #7d2626;
+      border-left-color: #ffadad;
+    }
+
+    @keyframes toast-in {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     :focus-visible {
-      outline: 3px solid rgba(178, 138, 74, 0.6);
+      outline: 3px solid rgba(184, 149, 93, 0.62);
       outline-offset: 3px;
     }
 
-    @media (max-width: 1020px) {
+    @media (max-width: 1080px) {
       .header-inner {
         grid-template-columns: minmax(170px, 230px) 1fr auto;
+        gap: 18px;
+      }
+
+      .desktop-nav {
         gap: 16px;
+      }
+
+      .desktop-nav a {
+        font-size: 10px;
+      }
+
+      .header-action-label {
+        display: none;
+      }
+
+      .header-action {
+        width: 44px;
+        padding: 0;
+      }
+
+      .pricing-layout,
+      .calendar-layout,
+      .form-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .summary-card {
+        max-width: 100%;
+      }
+
+      .about-grid {
+        grid-template-columns: 1fr;
+        gap: 42px;
+      }
+
+      .about-copy {
+        max-width: 710px;
+        margin: 0 auto;
+        text-align: center;
+      }
+
+      .about-copy .section-label {
+        margin-inline: auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 68px;
+      }
+
+      .container {
+        width: min(var(--container), calc(100% - 30px));
+      }
+
+      .announcement-bar {
+        min-height: 34px;
+        padding: 7px 13px;
+        font-size: 9px;
+        line-height: 1.35;
+      }
+
+      .announcement-content span:last-child {
+        display: none;
+      }
+
+      .header-inner {
+        grid-template-columns: minmax(130px, 1fr) auto auto;
+        gap: 8px;
+      }
+
+      .brand {
+        max-width: 166px;
       }
 
       .desktop-nav {
         display: none;
       }
 
-      .header-inner {
-        grid-template-columns: minmax(170px, 230px) 1fr auto;
+      .header-actions {
+        gap: 5px;
       }
 
-      .header-cta {
-        justify-self: end;
+      .header-action {
+        width: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        padding: 0;
       }
 
-      .mobile-menu-button {
+      .header-action .icon {
+        width: 18px;
+        height: 18px;
+      }
+
+      .menu-toggle {
         display: inline-flex;
       }
 
-      .price-layout,
-      .calendar-layout,
-      .form-layout,
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-copy {
-        max-width: 700px;
-        margin-inline: auto;
-        text-align: center;
-      }
-
-      .summary-box {
-        position: static;
-      }
-
-      .footer-grid {
-        grid-template-columns: 1.3fr 1fr;
-      }
-    }
-
-    @media (max-width: 680px) {
-      :root {
-        --header-height: 70px;
-      }
-
-      body {
-        background-attachment: scroll;
-      }
-
-      .container {
-        width: min(100% - 28px, var(--container));
-      }
-
-      .announcement {
-        min-height: 35px;
-        display: grid;
-        place-items: center;
-        padding: 8px 14px;
-        font-size: 9px;
-        line-height: 1.35;
-      }
-
-      .announcement-inner span:not(:first-child) {
-        display: none;
-      }
-
-      .header-inner {
-        min-height: var(--header-height);
-        grid-template-columns: minmax(0, 164px) 1fr auto;
-        gap: 10px;
-      }
-
-      .brand {
-        width: 164px;
-      }
-
-      .header-cta {
-        display: none;
-      }
-
-      .mobile-menu-button {
-        width: 44px;
-        height: 44px;
-      }
-
       .mobile-menu {
-        inset: calc(var(--header-height) + 27px) 12px auto;
+        inset: calc(var(--header-height) + 34px) 0 0;
       }
 
       .hero {
-        min-height: 610px;
-        padding: 76px 0 82px;
+        min-height: 595px;
+        padding: 76px 0 88px;
       }
 
-      .hero::after {
-        width: 135vw;
-        top: 14%;
-        box-shadow:
-          0 0 0 35px rgba(255, 253, 250, 0.22),
-          0 0 0 70px rgba(178, 138, 74, 0.06);
+      .eyebrow {
+        max-width: 100%;
+        padding: 8px 13px;
+        font-size: 9px;
+        letter-spacing: 0.12em;
       }
 
       .hero h1 {
-        margin-top: 21px;
-        font-size: clamp(44px, 13vw, 62px);
-        line-height: 1.01;
+        margin-top: 22px;
+        font-size: clamp(43px, 12.2vw, 61px);
+        line-height: 1.02;
       }
 
       .hero-copy {
-        max-width: 33ch;
+        max-width: 35ch;
         font-size: 14px;
         line-height: 1.75;
       }
 
       .hero-actions,
-      .contact-actions {
+      .contact-actions,
+      .success-actions {
         display: grid;
         grid-template-columns: 1fr;
         width: min(100%, 360px);
         margin-inline: auto;
       }
 
-      .hero-actions {
-        margin-top: 28px;
-      }
-
       .hero-actions .button,
-      .contact-actions .button {
+      .contact-actions .button,
+      .success-actions .button {
         width: 100%;
-      }
-
-      .hero-trust {
-        max-width: 300px;
-        gap: 9px 14px;
-        margin-inline: auto;
-        font-size: 10px;
       }
 
       .section {
@@ -1826,65 +1630,56 @@
       }
 
       .section-heading {
-        margin-bottom: 36px;
+        margin-bottom: 35px;
       }
 
-      .section-heading h2,
-      .about-copy h2,
-      .contact-section h2 {
-        font-size: clamp(36px, 10.6vw, 48px);
+      .section-heading h2 {
+        font-size: clamp(38px, 10.5vw, 50px);
       }
 
       .section-heading p {
         font-size: 14px;
       }
 
-      .price-card {
-        padding: 29px 20px;
+      .pricing-card,
+      .booking-content {
+        padding: 25px 18px;
       }
 
-      .price-card h3 {
-        font-size: 32px;
+      .pricing-card h3 {
+        font-size: 31px;
       }
 
-      .price-row {
+      .pricing-row {
         gap: 8px;
         font-size: 14px;
       }
 
       .price {
-        font-size: 21px;
-      }
-
-      .booking-shell {
-        border-radius: var(--radius-md);
+        font-size: 20px;
       }
 
       .booking-progress {
         overflow: hidden;
       }
 
-      .booking-step-indicator {
-        min-height: 69px;
+      .progress-step {
+        min-height: 66px;
         flex-direction: column;
         gap: 4px;
-        padding: 8px 5px;
+        padding: 8px 4px;
         font-size: 8px;
-        letter-spacing: 0.04em;
+        letter-spacing: 0.03em;
       }
 
       .step-number {
         width: 23px;
         height: 23px;
-        font-size: 9px;
-      }
-
-      .booking-content {
-        padding: 25px 17px;
+        font-size: 10px;
       }
 
       .booking-panel h3 {
-        font-size: 33px;
+        font-size: 30px;
       }
 
       .booking-intro {
@@ -1892,80 +1687,76 @@
         font-size: 13px;
       }
 
-      .service-grid,
-      .form-row {
+      .service-grid {
         grid-template-columns: 1fr;
       }
 
       .service-option {
-        min-height: 148px;
-        padding: 18px;
-      }
-
-      .service-title {
-        max-width: 76%;
+        min-height: 138px;
       }
 
       .booking-footer {
         align-items: stretch;
         flex-direction: column;
+        margin-top: 26px;
+        padding-top: 20px;
       }
 
       .booking-footer .button {
         width: 100%;
       }
 
-      .booking-footer .button-secondary {
-        order: 2;
-      }
-
-      .calendar-box,
-      .time-box,
-      .summary-box {
+      .calendar-card,
+      .time-card,
+      .summary-card {
         padding: 18px 14px;
       }
 
-      .calendar-header h4,
-      .time-box h4,
-      .summary-box h4 {
-        font-size: 23px;
+      .calendar-top h4,
+      .time-card h4,
+      .summary-card h4 {
+        font-size: 21px;
       }
 
       .calendar-day {
         min-height: 40px;
-        font-size: 11px;
+        border-radius: 9px;
+        font-size: 12px;
       }
 
-      .weekdays,
+      .calendar-weekdays,
       .calendar-grid {
         gap: 4px;
       }
 
-      .calendar-legend {
-        gap: 10px;
-        font-size: 9px;
-      }
-
       .time-slots {
-        gap: 7px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
       }
 
-      .time-slot {
-        min-height: 48px;
-        padding: 0 10px;
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+
+      .success-panel h3 {
+        font-size: 32px;
+      }
+
+      .confirmation-box {
+        padding: 17px;
+      }
+
+      .summary-line {
+        font-size: 12px;
       }
 
       .portrait-frame {
-        width: min(100%, 355px);
-      }
-
-      .about-copy p {
-        font-size: 14px;
+        max-width: 330px;
       }
 
       .footer-grid {
         grid-template-columns: 1fr;
-        gap: 31px;
+        gap: 28px;
       }
 
       .footer-bottom {
@@ -1977,33 +1768,35 @@
       .footer-links {
         justify-content: center;
       }
+    }
 
-      .floating-contact {
-        right: 14px;
-        bottom: max(14px, env(safe-area-inset-bottom));
-        width: 53px;
-        height: 53px;
+    @media (max-width: 360px) {
+      .brand {
+        max-width: 140px;
       }
 
-      .toast-container {
-        right: 14px;
-        bottom: 79px;
-        width: calc(100% - 28px);
+      .header-inner {
+        gap: 4px;
       }
 
-      .modal-backdrop {
-        align-items: end;
-        padding: 10px;
+      .header-actions {
+        gap: 3px;
       }
 
-      .modal {
-        max-height: 88vh;
-        border-radius: var(--radius-sm);
+      .header-action,
+      .menu-toggle {
+        width: 38px;
+        min-width: 38px;
+        height: 38px;
+        min-height: 38px;
       }
 
-      .modal-header,
-      .modal-content {
-        padding: 20px;
+      .hero h1 {
+        font-size: 42px;
+      }
+
+      .calendar-day {
+        min-height: 36px;
       }
     }
 
@@ -2012,39 +1805,30 @@
       *::before,
       *::after {
         scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
       }
     }
   </style>
 </head>
 
 <body>
-  <a class="skip-link" href="#main-content">
-    Direkt zum Inhalt
-  </a>
-
-  <div class="announcement">
-    <div class="announcement-inner">
-      <span>
-        <i class="announcement-dot"></i>
-        Bürgermeister-Sommer-Straße 34 · Treuchtlingen
-      </span>
-      <span>Persönliche Termine ohne Wartezeit</span>
-      <span>Keine Buchungsgebühr</span>
+  <div class="announcement-bar">
+    <div class="announcement-content">
+      <span class="announcement-dot" aria-hidden="true"></span>
+      <span>Persönliche Termine im Studio Treuchtlingen</span>
+      <span>· Ohne Buchungsgebühr</span>
     </div>
   </div>
 
   <header class="site-header">
     <div class="container header-inner">
-      <a
-        class="brand"
-        href="#main-content"
-        aria-label="ALISA BEAUTY LAB – Startseite"
-      >
+      <a class="brand" href="#top" aria-label="ALISA BEAUTY LAB Startseite">
         <img
           src="AlisaLogoQuertransparent.jpg"
           alt="ALISA BEAUTY LAB"
+          width="1240"
+          height="499"
         >
       </a>
 
@@ -2055,41 +1839,104 @@
         <a href="#contact">Kontakt</a>
       </nav>
 
-      <a class="header-cta" href="#booking">
-        Termin buchen
-      </a>
+      <div class="header-actions">
+        <a
+          class="header-action header-action-book"
+          href="#booking"
+          aria-label="Termin buchen"
+          title="Termin buchen"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="3.5" y="5.5" width="17" height="15" rx="2"></rect>
+            <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17"></path>
+          </svg>
+          <span class="header-action-label">Termin</span>
+        </a>
 
-      <button
-        id="mobile-menu-button"
-        class="mobile-menu-button"
-        type="button"
-        aria-label="Menü öffnen"
-        aria-controls="mobile-menu"
-        aria-expanded="false"
-      >
-        <span class="menu-icon"></span>
-      </button>
+        <a
+          class="header-action header-action-whatsapp"
+          href="https://wa.me/491784537636?text=Hallo%20Alisa%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="WhatsApp-Nachricht schreiben"
+          title="WhatsApp schreiben"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M20.5 11.4a8.4 8.4 0 0 1-12.4 7.4L3.5 20l1.2-4.4A8.4 8.4 0 1 1 20.5 11.4Z"></path>
+            <path d="M8.5 7.6c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.5.6c.4.8 1.2 1.6 2 2l.6-.5c.2-.2.4-.2.7-.1l1.8.8c.4.2.5.3.5.5v.5c0 .3 0 .5-.5.7-.5.2-1.3.3-2.3 0-1.1-.3-2.4-1.2-3.5-2.3-1.1-1.1-2-2.4-2.3-3.5-.3-1-.2-1.8 0-2.3Z"></path>
+          </svg>
+          <span class="header-action-label">WhatsApp</span>
+        </a>
+
+        <a
+          class="header-action header-action-phone"
+          href="tel:+491784537636"
+          aria-label="0178 4537636 anrufen"
+          title="Jetzt anrufen"
+        >
+          <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6.6 3.9 9.1 3c.6-.2 1.2.1 1.4.7l1.1 3.3c.2.5 0 1-.4 1.3L9.6 9.5a14.5 14.5 0 0 0 4.9 4.9l1.2-1.6c.3-.4.8-.6 1.3-.4l3.3 1.1c.6.2.9.8.7 1.4l-.9 2.5c-.2.6-.8 1-1.5.9C10.8 17.4 6.6 13.2 5.7 5.4c-.1-.7.3-1.3.9-1.5Z"></path>
+          </svg>
+          <span class="header-action-label">Anrufen</span>
+        </a>
+
+        <button
+          id="menu-toggle"
+          class="menu-toggle"
+          type="button"
+          aria-label="Menü öffnen"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </header>
 
-  <nav
-    id="mobile-menu"
-    class="mobile-menu"
-    aria-label="Mobile Hauptnavigation"
-  >
-    <a href="#services">Leistungen & Preise</a>
-    <a href="#booking">Online buchen</a>
-    <a href="#about">Über Alisa</a>
-    <a href="#contact">Studio & Kontakt</a>
-    <a href="#booking">Wunschtermin reservieren</a>
-  </nav>
+  <div id="mobile-menu" class="mobile-menu" aria-hidden="true">
+    <nav aria-label="Mobile Hauptnavigation">
+      <a href="#services">Leistungen & Preise</a>
+      <a href="#booking">Termin buchen</a>
+      <a href="#about">Über Alisa</a>
+      <a href="#contact">Kontakt & Anfahrt</a>
+    </nav>
 
-  <main id="main-content">
+    <div class="mobile-menu-actions">
+      <a class="button button-primary" href="#booking">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="3.5" y="5.5" width="17" height="15" rx="2"></rect>
+          <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17"></path>
+        </svg>
+        Termin buchen
+      </a>
+
+      <a
+        class="button button-whatsapp"
+        href="https://wa.me/491784537636?text=Hallo%20Alisa%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.5 11.4a8.4 8.4 0 0 1-12.4 7.4L3.5 20l1.2-4.4A8.4 8.4 0 1 1 20.5 11.4Z"></path>
+          <path d="M8.5 7.6c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.5.6c.4.8 1.2 1.6 2 2l.6-.5c.2-.2.4-.2.7-.1l1.8.8c.4.2.5.3.5.5v.5c0 .3 0 .5-.5.7-.5.2-1.3.3-2.3 0-1.1-.3-2.4-1.2-3.5-2.3-1.1-1.1-2-2.4-2.3-3.5-.3-1-.2-1.8 0-2.3Z"></path>
+        </svg>
+        WhatsApp schreiben
+      </a>
+
+      <a class="button button-secondary" href="tel:+491784537636">
+        <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6.6 3.9 9.1 3c.6-.2 1.2.1 1.4.7l1.1 3.3c.2.5 0 1-.4 1.3L9.6 9.5a14.5 14.5 0 0 0 4.9 4.9l1.2-1.6c.3-.4.8-.6 1.3-.4l3.3 1.1c.6.2.9.8.7 1.4l-.9 2.5c-.2.6-.8 1-1.5.9C10.8 17.4 6.6 13.2 5.7 5.4c-.1-.7.3-1.3.9-1.5Z"></path>
+        </svg>
+        0178 4537636 anrufen
+      </a>
+    </div>
+  </div>
+
+  <main id="top">
     <section class="hero">
       <div class="container hero-content">
-        <span class="eyebrow">
-          Exklusives Wimpern-Atelier in Treuchtlingen
-        </span>
+        <span class="eyebrow">Exklusives Wimpern-Atelier in Treuchtlingen</span>
 
         <h1>
           Präzision & Feingefühl für deinen
@@ -2099,23 +1946,21 @@
 
         <p class="hero-copy">
           Professionelle Wimpernbehandlungen, individuelle Stylings und
-          liebevolle Detailarbeit – in persönlicher, ruhiger Atmosphäre.
+          liebevolle Detailarbeit – persönlich, entspannt und ganz auf dich abgestimmt.
         </p>
 
         <div class="hero-actions">
           <a class="button button-primary" href="#booking">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <rect x="3.5" y="5.5" width="17" height="15" rx="2"></rect>
+              <path d="M7.5 3.5v4M16.5 3.5v4M3.5 10h17"></path>
+            </svg>
             Wunschtermin reservieren
           </a>
 
           <a class="button button-secondary" href="#services">
-            Preise ansehen
+            Preise & Leistungen
           </a>
-        </div>
-
-        <div class="hero-trust" aria-label="Vorteile">
-          <span>Persönliche Beratung</span>
-          <span>Individueller Look</span>
-          <span>Ohne Buchungsgebühr</span>
         </div>
       </div>
     </section>
@@ -2123,112 +1968,98 @@
     <section id="services" class="section section-surface">
       <div class="container">
         <div class="section-heading">
-          <span class="section-label">Leistungen & Preise</span>
-
-          <h2>
-            Dein Look.<br>
-            Individuell abgestimmt.
-          </h2>
-
+          <span class="section-label">Preisliste</span>
+          <h2>Behandlungen & Preise</h2>
           <p>
-            Vor jeder Neumodellage besprechen wir gemeinsam Form, Effekt und
-            Stil – damit das Ergebnis perfekt zu dir und deiner Augenform
-            passt.
+            Vor jeder Neumodellage findet eine persönliche Beratung statt,
+            damit dein Look ideal zu deiner Augenform passt.
           </p>
         </div>
 
-        <div class="price-layout">
+        <div class="pricing-layout">
           <div class="price-stack">
-            <article class="card price-card">
+            <article class="card pricing-card">
               <h3>Wimpernlifting</h3>
 
-              <div class="price-row">
+              <div class="pricing-row">
                 <span>Wimpernlifting</span>
-                <span class="price-line"></span>
+                <span class="line"></span>
                 <span class="price">35 €</span>
               </div>
 
-              <p class="price-note">
+              <p class="pricing-note">
                 Dauer ca. 60 Minuten · Haltbarkeit ca. 6–8 Wochen
               </p>
 
               <div class="card-action">
-                <button
-                  class="button button-primary"
-                  type="button"
-                  data-service="srv-lifting"
-                >
-                  Behandlung wählen
+                <button class="button button-primary" type="button" data-select-service="lifting">
+                  Wimpernlifting auswählen
                 </button>
               </div>
             </article>
 
-            <aside class="card info-card">
+            <aside class="card notice-card">
               <h3>Hinweise zum Auffüllen</h3>
-
+              <p>Ab der 4. Woche wird der Neupreis verrechnet.</p>
               <p>
-                Ab der 4. Woche wird der Neupreis verrechnet.
-              </p>
-
-              <p>
-                Auffüllpreise gelten, wenn beim Termin noch mindestens
+                Auffüllpreise gelten nur, wenn beim Termin noch mindestens
                 <strong>50 % der Extensions</strong> vorhanden sind.
               </p>
             </aside>
           </div>
 
-          <article class="card price-card">
+          <article class="card pricing-card">
             <h3>Wimpernextensions</h3>
 
             <h4>Neuanlage</h4>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>1:1 Technik</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">55 €</span>
             </div>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Volumen 2D–4D</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">65 €</span>
             </div>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Mega Volumen 5D–8D</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">80 €</span>
             </div>
 
-            <div class="price-divider"></div>
+            <div class="card-divider"></div>
 
             <h4>Auffüllen 1:1 & Volumen</h4>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Bis 2 Wochen</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">30 €</span>
             </div>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Bis 3 Wochen</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">40 €</span>
             </div>
 
-            <div class="price-divider"></div>
+            <div class="card-divider"></div>
 
             <h4>Auffüllen Megavolumen</h4>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Bis 2 Wochen</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">40 €</span>
             </div>
 
-            <div class="price-row">
+            <div class="pricing-row">
               <span>Bis 3 Wochen</span>
-              <span class="price-line"></span>
+              <span class="line"></span>
               <span class="price">50 €</span>
             </div>
 
@@ -2245,101 +2076,74 @@
     <section id="booking" class="section">
       <div class="container">
         <div class="section-heading">
-          <span class="eyebrow">Online-Terminbuchung</span>
-
-          <h2 style="margin-top: 17px;">
-            Wunschtermin festlegen
-          </h2>
-
+          <span class="section-label">Online-Terminbuchung</span>
+          <h2>Wunschtermin festlegen</h2>
           <p>
-            Wähle Behandlung, Datum und Uhrzeit in wenigen Schritten aus.
-            Deine Anfrage wird anschließend direkt gespeichert.
+            Wähle Behandlung, Datum und Uhrzeit in wenigen Schritten aus –
+            unkompliziert und ohne Buchungsgebühr.
           </p>
         </div>
 
         <div class="booking-shell">
-          <div class="booking-progress" aria-label="Buchungsfortschritt">
-            <div
-              id="step-indicator-1"
-              class="booking-step-indicator active"
-            >
+          <div class="booking-progress" aria-label="Fortschritt der Buchung">
+            <div id="progress-1" class="progress-step is-active">
               <span class="step-number">1</span>
               <span>Behandlung</span>
             </div>
 
-            <div
-              id="step-indicator-2"
-              class="booking-step-indicator"
-            >
+            <div id="progress-2" class="progress-step">
               <span class="step-number">2</span>
               <span>Datum & Uhrzeit</span>
             </div>
 
-            <div
-              id="step-indicator-3"
-              class="booking-step-indicator"
-            >
+            <div id="progress-3" class="progress-step">
               <span class="step-number">3</span>
-              <span>Deine Angaben</span>
+              <span>Kontaktdaten</span>
             </div>
           </div>
 
           <div class="booking-content">
             <section id="booking-step-1" class="booking-panel">
               <h3>Behandlung auswählen</h3>
-
               <p class="booking-intro">
-                Wähle die Behandlung, die du buchen möchtest.
+                Wähle die gewünschte Behandlung aus. Du kannst deine Auswahl vor der Reservierung jederzeit ändern.
               </p>
 
-              <div
-                id="services-list"
-                class="service-grid"
-              ></div>
+              <div id="service-grid" class="service-grid"></div>
 
               <div class="booking-footer">
-                <div class="booking-summary-text">
-                  Ausgewählte Behandlung
-                  <strong id="step1-summary">
-                    Bitte wählen
-                  </strong>
+                <div class="booking-selection">
+                  Deine Auswahl:
+                  <strong id="selected-service-text">Wimpernlifting · 35 €</strong>
                 </div>
 
-                <button
-                  id="go-step-2"
-                  class="button button-primary"
-                  type="button"
-                >
+                <button id="to-step-2" class="button button-primary" type="button">
                   Weiter zu Datum & Uhrzeit
                 </button>
               </div>
             </section>
 
-            <section
-              id="booking-step-2"
-              class="booking-panel hidden"
-            >
-              <h3>Wunschtermin wählen</h3>
-
+            <section id="booking-step-2" class="booking-panel hidden">
+              <h3>Datum & Uhrzeit wählen</h3>
               <p class="booking-intro">
                 Jeder Termin reserviert ein Zeitfenster von zwei Stunden.
               </p>
 
               <div class="calendar-layout">
-                <div class="calendar-box">
-                  <div class="calendar-header">
+                <div class="calendar-card">
+                  <div class="calendar-top">
                     <button
                       id="previous-month"
                       class="icon-button"
                       type="button"
                       aria-label="Vorheriger Monat"
                     >
-                      ‹
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m15 18-6-6 6-6"></path>
+                      </svg>
                     </button>
 
-                    <h4 id="calendar-month-year">
-                      Monat Jahr
-                    </h4>
+                    <h4 id="calendar-title">Monat Jahr</h4>
 
                     <button
                       id="next-month"
@@ -2347,11 +2151,13 @@
                       type="button"
                       aria-label="Nächster Monat"
                     >
-                      ›
+                      <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m9 18 6-6-6-6"></path>
+                      </svg>
                     </button>
                   </div>
 
-                  <div class="weekdays" aria-hidden="true">
+                  <div class="calendar-weekdays" aria-hidden="true">
                     <span>Mo</span>
                     <span>Di</span>
                     <span>Mi</span>
@@ -2361,80 +2167,56 @@
                     <span>So</span>
                   </div>
 
-                  <div
-                    id="calendar-grid"
-                    class="calendar-grid"
-                    aria-label="Kalender"
-                  ></div>
+                  <div id="calendar-grid" class="calendar-grid"></div>
 
                   <div class="calendar-legend">
                     <span class="legend-item">
-                      <i class="legend-dot"></i>
+                      <span class="legend-dot"></span>
                       Ausgewählt
                     </span>
 
                     <span class="legend-item">
-                      <i class="legend-dot free"></i>
+                      <span class="legend-dot free"></span>
                       Frei
                     </span>
 
                     <span class="legend-item">
-                      <i class="legend-dot blocked"></i>
+                      <span class="legend-dot blocked"></span>
                       Nicht verfügbar
                     </span>
                   </div>
                 </div>
 
-                <div class="time-box">
+                <div class="time-card">
                   <h4>Freie Uhrzeiten</h4>
 
-                  <p
-                    id="selected-date-display"
-                    class="selected-date"
-                  >
+                  <p id="selected-date-label" class="selected-date">
                     Bitte wähle zuerst ein Datum.
                   </p>
 
-                  <div
-                    id="time-slots"
-                    class="time-slots"
-                  >
+                  <div id="time-slots" class="time-slots">
                     <div class="empty-state">
-                      Wähle ein Datum im Kalender aus, um freie Uhrzeiten zu
-                      sehen.
+                      Wähle ein Datum im Kalender, um freie Uhrzeiten zu sehen.
                     </div>
                   </div>
                 </div>
               </div>
 
               <div class="booking-footer">
-                <button
-                  id="back-step-1"
-                  class="button button-secondary"
-                  type="button"
-                >
+                <button id="back-to-step-1" class="button button-secondary" type="button">
                   Zurück
                 </button>
 
-                <button
-                  id="go-step-3"
-                  class="button button-primary"
-                  type="button"
-                  disabled
-                >
-                  Weiter zu deinen Angaben
+                <button id="to-step-3" class="button button-primary" type="button" disabled>
+                  Weiter zu Kontaktdaten
                 </button>
               </div>
             </section>
 
-            <section
-              id="booking-step-3"
-              class="booking-panel hidden"
-            >
+            <section id="booking-step-3" class="booking-panel hidden">
               <h3>Deine Angaben</h3>
-
               <p class="booking-intro">
-                Bitte gib deine Kontaktdaten für die Terminbestätigung ein.
+                Trage deine Daten ein, damit die Terminreservierung zugeordnet werden kann.
               </p>
 
               <div class="form-layout">
@@ -2442,7 +2224,6 @@
                   <div class="form-row">
                     <div class="form-group">
                       <label for="first-name">Vorname *</label>
-
                       <input
                         id="first-name"
                         name="firstName"
@@ -2455,7 +2236,6 @@
 
                     <div class="form-group">
                       <label for="last-name">Nachname *</label>
-
                       <input
                         id="last-name"
                         name="lastName"
@@ -2470,7 +2250,6 @@
                   <div class="form-row">
                     <div class="form-group">
                       <label for="email">E-Mail-Adresse *</label>
-
                       <input
                         id="email"
                         name="email"
@@ -2483,7 +2262,6 @@
 
                     <div class="form-group">
                       <label for="phone">Telefon / WhatsApp *</label>
-
                       <input
                         id="phone"
                         name="phone"
@@ -2496,10 +2274,7 @@
                   </div>
 
                   <div class="form-group">
-                    <label for="notes">
-                      Wünsche oder Empfindlichkeiten
-                    </label>
-
+                    <label for="notes">Wünsche oder Empfindlichkeiten</label>
                     <textarea
                       id="notes"
                       name="notes"
@@ -2508,67 +2283,53 @@
                   </div>
 
                   <label class="consent">
-                    <input
-                      id="consent"
-                      name="consent"
-                      type="checkbox"
-                      required
-                    >
-
+                    <input id="consent" name="consent" type="checkbox" required>
                     <span>
-                      Ich bestätige die Reservierung. Eine kostenlose Absage
-                      ist bis zu 24 Stunden vor dem Termin möglich. Die
-                      Bezahlung erfolgt vor Ort.
+                      Ich bestätige die Reservierung. Eine kostenlose Absage ist bis
+                      24 Stunden vor dem Termin möglich. Die Bezahlung erfolgt vor Ort.
                     </span>
                   </label>
 
                   <div class="booking-footer">
-                    <button
-                      id="back-step-2"
-                      class="button button-secondary"
-                      type="button"
-                    >
+                    <button id="back-to-step-2" class="button button-secondary" type="button">
                       Datum anpassen
                     </button>
 
-                    <button
-                      class="button button-primary"
-                      type="submit"
-                    >
+                    <button class="button button-primary" type="submit">
                       Termin reservieren
                     </button>
                   </div>
                 </form>
 
-                <aside class="summary-box">
+                <aside class="summary-card">
                   <h4>Buchungsübersicht</h4>
 
                   <div class="summary-line">
                     <span>Behandlung</span>
-                    <span id="summary-treatment">–</span>
+                    <strong id="summary-service">Wimpernlifting</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Datum</span>
-                    <span id="summary-date">–</span>
+                    <strong id="summary-date">–</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Uhrzeit</span>
-                    <span id="summary-time">–</span>
+                    <strong id="summary-time">–</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Zeitfenster</span>
-                    <span>2 Stunden</span>
+                    <strong>2 Stunden</strong>
                   </div>
 
                   <div class="summary-line summary-total">
                     <span>Betrag</span>
-                    <span id="summary-price">0 €</span>
+                    <strong id="summary-price">35 €</strong>
                   </div>
 
-                  <p class="summary-location">
+                  <p class="summary-address">
                     Bürgermeister-Sommer-Straße 34<br>
                     91757 Treuchtlingen
                   </p>
@@ -2576,73 +2337,63 @@
               </div>
             </section>
 
-            <section
-              id="booking-step-4"
-              class="booking-panel hidden"
-            >
-              <div class="success-box">
-                <div class="success-icon">✓</div>
+            <section id="booking-step-4" class="booking-panel hidden">
+              <div class="success-panel">
+                <div class="success-icon" aria-hidden="true">
+                  <svg class="icon" viewBox="0 0 24 24">
+                    <path d="m5 12 4.2 4.2L19 6.5"></path>
+                  </svg>
+                </div>
 
-                <h3>Dein Termin ist reserviert.</h3>
+                <h3>Vielen Dank!</h3>
 
                 <p>
-                  Vielen Dank für deine Buchung. Deine Terminübersicht findest
-                  du hier – du kannst sie direkt per WhatsApp bestätigen.
+                  Deine Terminreservierung wurde in dieser Demo lokal gespeichert.
+                  Für den Live-Betrieb sollte die Buchung an ein sicheres Buchungssystem
+                  oder einen Server angebunden werden.
                 </p>
 
-                <div class="confirmation">
+                <div class="confirmation-box">
                   <div class="summary-line">
                     <span>Buchungscode</span>
-                    <span id="confirmed-code">–</span>
+                    <strong id="confirmation-code">–</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Name</span>
-                    <span id="confirmed-name">–</span>
+                    <strong id="confirmation-name">–</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Leistung</span>
-                    <span id="confirmed-service">–</span>
+                    <strong id="confirmation-service">–</strong>
                   </div>
 
                   <div class="summary-line">
                     <span>Termin</span>
-                    <span id="confirmed-date">–</span>
-                  </div>
-
-                  <div class="summary-line">
-                    <span>Studio</span>
-                    <span>Treuchtlingen</span>
+                    <strong id="confirmation-date">–</strong>
                   </div>
                 </div>
 
-                <div class="contact-actions">
-                  <button
-                    id="calendar-download"
-                    class="button button-primary"
-                    type="button"
-                  >
-                    Kalenderdatei speichern
-                  </button>
-
-                  <button
-                    id="send-whatsapp"
+                <div class="success-actions">
+                  <a
+                    id="confirmation-whatsapp"
                     class="button button-whatsapp"
-                    type="button"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
+                    <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.5 11.4a8.4 8.4 0 0 1-12.4 7.4L3.5 20l1.2-4.4A8.4 8.4 0 1 1 20.5 11.4Z"></path>
+                      <path d="M8.5 7.6c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.5.6c.4.8 1.2 1.6 2 2l.6-.5c.2-.2.4-.2.7-.1l1.8.8c.4.2.5.3.5.5v.5c0 .3 0 .5-.5.7-.5.2-1.3.3-2.3 0-1.1-.3-2.4-1.2-3.5-2.3-1.1-1.1-2-2.4-2.3-3.5-.3-1-.2-1.8 0-2.3Z"></path>
+                    </svg>
                     Per WhatsApp bestätigen
+                  </a>
+
+                  <button id="new-booking" class="button button-secondary" type="button">
+                    Weitere Buchung
                   </button>
                 </div>
-
-                <button
-                  id="new-booking"
-                  class="button button-secondary"
-                  type="button"
-                  style="margin-top: 18px;"
-                >
-                  Weitere Buchung
-                </button>
               </div>
             </section>
           </div>
@@ -2654,45 +2405,33 @@
       <div class="container">
         <div class="about-grid">
           <div class="portrait-frame">
-            <div
-              class="portrait-placeholder"
-              role="img"
-              aria-label="Portrait von Alisa folgt"
-            >
+            <div class="portrait-placeholder" aria-label="Portrait von Alisa folgt">
               <span class="portrait-placeholder-mark">ALISA</span>
               <span class="portrait-placeholder-line"></span>
-              <span class="portrait-placeholder-caption">
-                Persönlich für dich da
-              </span>
+              <span class="portrait-placeholder-caption">Persönlich für dich da</span>
             </div>
           </div>
 
           <div class="about-copy">
-            <span class="section-label">Über Alisa</span>
+            <span class="section-label">Über mich</span>
 
-            <h2>
-              Schön, dass du hier bist.
-            </h2>
+            <h2>Schön, dass du hier bist.</h2>
 
             <p>
               Ich bin Alisa und seit 2025 mit voller Leidenschaft in der
-              Beauty-Branche tätig. Mein Ziel ist es, deine natürliche
-              Schönheit zu unterstreichen – mit Präzision, Liebe zum Detail
-              und einem sicheren Gespür für Ästhetik.
+              Beauty-Branche tätig. Mein Ziel ist es, deine natürliche Schönheit
+              mit Präzision, Liebe zum Detail und einem sicheren Gespür für Ästhetik zu unterstreichen.
             </p>
 
             <p>
               Regelmäßige Weiterbildungen sind für mich selbstverständlich,
-              damit ich dir moderne Techniken und eine gleichbleibend hohe
-              Qualität anbieten kann.
+              damit ich dir moderne Techniken und eine gleichbleibend hohe Qualität anbieten kann.
             </p>
 
             <p>
-              Ich freue mich darauf, dich bald persönlich in meinem
-              Treuchtlinger Studio kennenzulernen.
+              Ich freue mich darauf, dich bald persönlich in meinem Studio
+              in Treuchtlingen kennenzulernen.
             </p>
-
-            <div class="about-signature">Alisa</div>
           </div>
         </div>
       </div>
@@ -2700,15 +2439,16 @@
 
     <section id="contact" class="section contact-section">
       <div class="container">
-        <div class="contact-icon">⌖</div>
-
-        <span class="section-label">Dein Termin bei ALISA BEAUTY LAB</span>
+        <div class="contact-icon" aria-hidden="true">
+          <svg class="icon" viewBox="0 0 24 24">
+            <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+            <circle cx="12" cy="10" r="2.4"></circle>
+          </svg>
+        </div>
 
         <h2>Studio Treuchtlingen</h2>
 
-        <p>
-          Bürgermeister-Sommer-Straße 34 · 91757 Treuchtlingen
-        </p>
+        <p>Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen</p>
 
         <div class="contact-actions">
           <a
@@ -2717,22 +2457,30 @@
             target="_blank"
             rel="noopener noreferrer"
           >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20 10c0 5-8 11-8 11S4 15 4 10a8 8 0 1 1 16 0Z"></path>
+              <circle cx="12" cy="10" r="2.4"></circle>
+            </svg>
             Route planen
           </a>
 
           <a
             class="button button-whatsapp"
-            href="https://wa.me/491784537636?text=Hallo%20Alisa,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
+            href="https://wa.me/491784537636?text=Hallo%20Alisa%2C%20ich%20habe%20eine%20Frage."
             target="_blank"
             rel="noopener noreferrer"
           >
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M20.5 11.4a8.4 8.4 0 0 1-12.4 7.4L3.5 20l1.2-4.4A8.4 8.4 0 1 1 20.5 11.4Z"></path>
+              <path d="M8.5 7.6c.2-.5.4-.5.7-.5h.5c.2 0 .4.1.5.5l.8 1.8c.1.3.1.5-.1.7l-.5.6c.4.8 1.2 1.6 2 2l.6-.5c.2-.2.4-.2.7-.1l1.8.8c.4.2.5.3.5.5v.5c0 .3 0 .5-.5.7-.5.2-1.3.3-2.3 0-1.1-.3-2.4-1.2-3.5-2.3-1.1-1.1-2-2.4-2.3-3.5-.3-1-.2-1.8 0-2.3Z"></path>
+            </svg>
             WhatsApp schreiben
           </a>
 
-          <a
-            class="button button-secondary"
-            href="tel:+491784537636"
-          >
+          <a class="button button-secondary" href="tel:+491784537636">
+            <svg class="icon" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M6.6 3.9 9.1 3c.6-.2 1.2.1 1.4.7l1.1 3.3c.2.5 0 1-.4 1.3L9.6 9.5a14.5 14.5 0 0 0 4.9 4.9l1.2-1.6c.3-.4.8-.6 1.3-.4l3.3 1.1c.6.2.9.8.7 1.4l-.9 2.5c-.2.6-.8 1-1.5.9C10.8 17.4 6.6 13.2 5.7 5.4c-.1-.7.3-1.3.9-1.5Z"></path>
+            </svg>
             0178 4537636 anrufen
           </a>
         </div>
@@ -2751,14 +2499,13 @@
           >
 
           <p>
-            Professionelles Wimpernstudio für Wimpernlifting,
-            Wimpernextensions und natürliche Ästhetik in Treuchtlingen.
+            Professionelles Wimpernstudio für natürliche Ästhetik,
+            Wimpernlifting und Wimpernextensions in Treuchtlingen.
           </p>
         </div>
 
         <div class="footer-column">
           <h4>Öffnungszeiten</h4>
-
           <p>Montag: ab 18:00 Uhr</p>
           <p>Dienstag: ab 12:00 Uhr</p>
           <p>Mittwoch–Freitag: ab 19:00 Uhr</p>
@@ -2768,18 +2515,9 @@
 
         <div class="footer-column">
           <h4>Kontakt</h4>
-
-          <p>
-            Bürgermeister-Sommer-Straße 34<br>
-            91757 Treuchtlingen
-          </p>
-
-          <p>
-            <a href="tel:+491784537636">
-              0178 4537636
-            </a>
-          </p>
-
+          <p>Bürgermeister-Sommer-Straße 34</p>
+          <p>91757 Treuchtlingen</p>
+          <p><a href="tel:+491784537636">0178 4537636</a></p>
           <p>
             <a href="mailto:alisa.prykhodko07@gmail.com">
               alisa.prykhodko07@gmail.com
@@ -2789,72 +2527,23 @@
       </div>
 
       <div class="footer-bottom">
-        <span>
-          © 2026 ALISA BEAUTY LAB. Alle Rechte vorbehalten.
-        </span>
+        <span>© <span id="current-year"></span> ALISA BEAUTY LAB. Alle Rechte vorbehalten.</span>
 
         <div class="footer-links">
-          <a href="#" data-modal="imprint">Impressum</a>
-          <a href="#" data-modal="privacy">Datenschutz</a>
+          <a href="#impressum">Impressum</a>
+          <a href="#datenschutz">Datenschutz</a>
         </div>
       </div>
     </div>
   </footer>
 
-  <a
-    class="floating-contact"
-    href="https://wa.me/491784537636?text=Hallo%20Alisa,%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20Termin."
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp Nachricht an ALISA BEAUTY LAB schreiben"
-  >
-    ◉
-  </a>
-
-  <div
-    id="legal-modal"
-    class="modal-backdrop hidden"
-    role="dialog"
-    aria-modal="true"
-    aria-labelledby="legal-modal-title"
-  >
-    <div class="modal">
-      <div class="modal-header">
-        <h2 id="legal-modal-title">Informationen</h2>
-
-        <button
-          id="legal-modal-close"
-          class="modal-close"
-          type="button"
-          aria-label="Fenster schließen"
-        >
-          ×
-        </button>
-      </div>
-
-      <div id="legal-modal-content" class="modal-content"></div>
-    </div>
-  </div>
-
-  <div
-    id="toast-container"
-    class="toast-container"
-    aria-live="polite"
-    aria-atomic="true"
-  ></div>
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
 
   <script>
     "use strict";
 
     const STUDIO_PHONE = "491784537636";
-    const STUDIO_ADDRESS =
-      "Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen";
-
-    const STORAGE_KEYS = {
-      bookings: "alisa_beauty_lab_bookings_v6"
-    };
-
-    const BOOKING_BLOCK_MINUTES = 120;
+    const BOOKING_DURATION_MINUTES = 120;
     const SLOT_INTERVAL_MINUTES = 30;
 
     const OPENING_HOURS = {
@@ -2869,157 +2558,106 @@
 
     const SERVICES = [
       {
-        id: "srv-lifting",
+        id: "lifting",
         title: "Wimpernlifting",
         price: 35,
-        description:
-          "Natürlicher Schwung und eine optische Verlängerung deiner eigenen Naturwimpern."
+        description: "Natürlicher Schwung und optische Verlängerung der eigenen Naturwimpern."
       },
       {
-        id: "srv-new-1-1",
+        id: "new-1-1",
         title: "Neuanlage: 1:1 Technik",
         price: 55,
-        description:
-          "Feiner, eleganter Mascara-Look – eine Extension auf jede Naturwimper."
+        description: "Feiner Mascara-Look mit einer Extension auf jeder Naturwimper."
       },
       {
-        id: "srv-new-volume",
+        id: "new-volume",
         title: "Neuanlage: Volumen 2D–4D",
         price: 65,
-        description:
-          "Zarte Fächer für mehr Dichte und einen weichen, voluminösen Look."
+        description: "Zarte Fächer für mehr Dichte und einen weichen, voluminösen Look."
       },
       {
-        id: "srv-new-mega",
+        id: "new-mega",
         title: "Neuanlage: Mega Volumen 5D–8D",
         price: 80,
-        description:
-          "Intensive Dichte und ein ausdrucksstarker Augenaufschlag."
+        description: "Maximales Volumen für einen besonders ausdrucksstarken Augenaufschlag."
       },
       {
-        id: "srv-refill-volume-2w",
+        id: "refill-volume-2",
         title: "Auffüllen 1:1 & Volumen bis 2 Wochen",
         price: 30,
-        description:
-          "Regelmäßiges Auffüllen für eine gepflegte und gleichmäßige Fülle."
+        description: "Regelmäßiges Nachfüllen für eine gepflegte, gleichmäßige Fülle."
       },
       {
-        id: "srv-refill-volume-3w",
+        id: "refill-volume-3",
         title: "Auffüllen 1:1 & Volumen bis 3 Wochen",
         price: 40,
-        description:
-          "Auffrischen deiner 1:1- oder Volumen-Extensions nach drei Wochen."
+        description: "Auffrischung der 1:1- und Volumen-Extensions nach bis zu drei Wochen."
       },
       {
-        id: "srv-refill-mega-2w",
+        id: "refill-mega-2",
         title: "Auffüllen Megavolumen bis 2 Wochen",
         price: 40,
-        description:
-          "Nachfüllen der Megavolumen-Fächer innerhalb von zwei Wochen."
+        description: "Nachfüllen der Megavolumen-Fächer nach bis zu zwei Wochen."
       },
       {
-        id: "srv-refill-mega-3w",
+        id: "refill-mega-3",
         title: "Auffüllen Megavolumen bis 3 Wochen",
         price: 50,
-        description:
-          "Auffrischen und Erneuern des Megavolumens nach drei Wochen."
+        description: "Auffrischung und Erneuerung des Megavolumens nach bis zu drei Wochen."
       }
     ];
 
     const state = {
-      selectedServiceId: "srv-lifting",
+      activeStep: 1,
+      selectedServiceId: "lifting",
       selectedDate: null,
       selectedTime: null,
-      latestBooking: null,
-      currentStep: 1
+      calendarDate: new Date(),
+      latestBooking: null
     };
 
-    let currentCalendarDate = new Date();
-    currentCalendarDate.setDate(1);
-
-    let bookings = loadBookings();
-
     const elements = {
-      body: document.body,
-      mobileMenuButton: document.getElementById("mobile-menu-button"),
+      menuToggle: document.getElementById("menu-toggle"),
       mobileMenu: document.getElementById("mobile-menu"),
-      servicesList: document.getElementById("services-list"),
-      step1Summary: document.getElementById("step1-summary"),
-      calendarMonthYear: document.getElementById("calendar-month-year"),
+      serviceGrid: document.getElementById("service-grid"),
+      selectedServiceText: document.getElementById("selected-service-text"),
+      calendarTitle: document.getElementById("calendar-title"),
       calendarGrid: document.getElementById("calendar-grid"),
-      selectedDateDisplay: document.getElementById("selected-date-display"),
+      selectedDateLabel: document.getElementById("selected-date-label"),
       timeSlots: document.getElementById("time-slots"),
-      goStep2: document.getElementById("go-step-2"),
-      goStep3: document.getElementById("go-step-3"),
-      backStep1: document.getElementById("back-step-1"),
-      backStep2: document.getElementById("back-step-2"),
+      toStep2: document.getElementById("to-step-2"),
+      toStep3: document.getElementById("to-step-3"),
+      backToStep1: document.getElementById("back-to-step-1"),
+      backToStep2: document.getElementById("back-to-step-2"),
       previousMonth: document.getElementById("previous-month"),
       nextMonth: document.getElementById("next-month"),
       bookingForm: document.getElementById("booking-form"),
-      summaryTreatment: document.getElementById("summary-treatment"),
+      summaryService: document.getElementById("summary-service"),
       summaryDate: document.getElementById("summary-date"),
       summaryTime: document.getElementById("summary-time"),
       summaryPrice: document.getElementById("summary-price"),
-      calendarDownload: document.getElementById("calendar-download"),
-      sendWhatsapp: document.getElementById("send-whatsapp"),
-      newBooking: document.getElementById("new-booking"),
-      legalModal: document.getElementById("legal-modal"),
-      legalModalTitle: document.getElementById("legal-modal-title"),
-      legalModalContent: document.getElementById("legal-modal-content"),
-      legalModalClose: document.getElementById("legal-modal-close"),
-      toastContainer: document.getElementById("toast-container")
+      toastContainer: document.getElementById("toast-container"),
+      confirmationCode: document.getElementById("confirmation-code"),
+      confirmationName: document.getElementById("confirmation-name"),
+      confirmationService: document.getElementById("confirmation-service"),
+      confirmationDate: document.getElementById("confirmation-date"),
+      confirmationWhatsapp: document.getElementById("confirmation-whatsapp"),
+      newBooking: document.getElementById("new-booking")
     };
 
-    function loadBookings() {
-      try {
-        const stored = localStorage.getItem(STORAGE_KEYS.bookings);
-
-        if (!stored) {
-          return [];
-        }
-
-        const parsed = JSON.parse(stored);
-        return Array.isArray(parsed) ? parsed : [];
-      } catch {
-        return [];
-      }
-    }
-
-    function saveBookings() {
-      localStorage.setItem(
-        STORAGE_KEYS.bookings,
-        JSON.stringify(bookings)
-      );
-    }
-
     function getSelectedService() {
-      return SERVICES.find(
-        service => service.id === state.selectedServiceId
-      );
+      return SERVICES.find(service => service.id === state.selectedServiceId);
     }
 
     function formatEuro(value) {
-      return `${Number(value).toLocaleString("de-DE")} €`;
-    }
-
-    function dateToKey(date) {
-      const year = date.getFullYear();
-      const month = String(date.getMonth() + 1).padStart(2, "0");
-      const day = String(date.getDate()).padStart(2, "0");
-
-      return `${year}-${month}-${day}`;
+      return new Intl.NumberFormat("de-DE", {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0
+      }).format(value);
     }
 
     function formatDate(dateString) {
-      if (!dateString) {
-        return "–";
-      }
-
-      const [year, month, day] = dateString.split("-");
-      return `${day}.${month}.${year}`;
-    }
-
-    function formatDateLong(dateString) {
       if (!dateString) {
         return "–";
       }
@@ -3034,6 +2672,24 @@
       }).format(date);
     }
 
+    function formatShortDate(dateString) {
+      if (!dateString) {
+        return "–";
+      }
+
+      const [year, month, day] = dateString.split("-");
+
+      return `${day}.${month}.${year}`;
+    }
+
+    function toDateKey(date) {
+      const year = date.getFullYear();
+      const month = String(date.getMonth() + 1).padStart(2, "0");
+      const day = String(date.getDate()).padStart(2, "0");
+
+      return `${year}-${month}-${day}`;
+    }
+
     function timeToMinutes(time) {
       const [hours, minutes] = time.split(":").map(Number);
       return hours * 60 + minutes;
@@ -3046,661 +2702,37 @@
       return `${String(hours).padStart(2, "0")}:${String(minutes).padStart(2, "0")}`;
     }
 
-    function addMinutesToTime(time, minutes) {
-      return minutesToTime(timeToMinutes(time) + minutes);
-    }
-
-    function getOpeningHoursForDate(dateString) {
-      const date = new Date(`${dateString}T12:00:00`);
-      return OPENING_HOURS[date.getDay()];
-    }
-
     function getSlotsForDate(dateString) {
-      const hours = getOpeningHoursForDate(dateString);
+      const date = new Date(`${dateString}T12:00:00`);
+      const hours = OPENING_HOURS[date.getDay()];
 
       if (!hours) {
         return [];
       }
 
-      const slots = [];
       const start = timeToMinutes(hours.start);
-      const latestStart =
-        timeToMinutes(hours.end) - BOOKING_BLOCK_MINUTES;
+      const latestStart = timeToMinutes(hours.end) - BOOKING_DURATION_MINUTES;
+      const slots = [];
 
-      for (
-        let minutes = start;
-        minutes <= latestStart;
-        minutes += SLOT_INTERVAL_MINUTES
-      ) {
-        slots.push(minutesToTime(minutes));
+      for (let minute = start; minute <= latestStart; minute += SLOT_INTERVAL_MINUTES) {
+        slots.push(minutesToTime(minute));
       }
 
       return slots;
     }
 
-    function isSlotBooked(date, time) {
-      const start = timeToMinutes(time);
-      const end = start + BOOKING_BLOCK_MINUTES;
-
-      return bookings.some(booking => {
-        if (
-          booking.date !== date ||
-          booking.status === "cancelled"
-        ) {
-          return false;
-        }
-
-        const bookingStart = timeToMinutes(booking.time);
-        const bookingEnd = bookingStart + BOOKING_BLOCK_MINUTES;
-
-        return start < bookingEnd && end > bookingStart;
-      });
-    }
-
-    function isDateAvailable(dateKey) {
+    function isPastDate(date) {
       const today = new Date();
       today.setHours(0, 0, 0, 0);
 
-      const date = new Date(`${dateKey}T12:00:00`);
+      const compareDate = new Date(date);
+      compareDate.setHours(0, 0, 0, 0);
 
-      if (date < today) {
-        return false;
-      }
-
-      return getSlotsForDate(dateKey).length > 0;
-    }
-
-    function renderServices() {
-      elements.servicesList.innerHTML = SERVICES.map(service => {
-        const isSelected =
-          service.id === state.selectedServiceId;
-
-        return `
-          <button
-            class="service-option ${isSelected ? "selected" : ""}"
-            type="button"
-            data-service-id="${service.id}"
-            aria-pressed="${isSelected}"
-          >
-            <span class="service-option-header">
-              <span class="service-title">
-                ${escapeHtml(service.title)}
-              </span>
-
-              <span class="service-price">
-                ${formatEuro(service.price)}
-              </span>
-            </span>
-
-            <span class="service-description">
-              ${escapeHtml(service.description)}
-            </span>
-
-            <span class="service-meta">
-              Zeitfenster · 2 Stunden
-            </span>
-          </button>
-        `;
-      }).join("");
-
-      document
-        .querySelectorAll("[data-service-id]")
-        .forEach(button => {
-          button.addEventListener("click", () => {
-            selectService(button.dataset.serviceId);
-          });
-        });
-
-      updateBookingSummary();
-    }
-
-    function selectService(serviceId) {
-      state.selectedServiceId = serviceId;
-      state.selectedTime = null;
-
-      renderServices();
-      renderTimeSlots();
-    }
-
-    function renderCalendar() {
-      const year = currentCalendarDate.getFullYear();
-      const month = currentCalendarDate.getMonth();
-
-      const monthName = new Intl.DateTimeFormat("de-DE", {
-        month: "long",
-        year: "numeric"
-      }).format(currentCalendarDate);
-
-      elements.calendarMonthYear.textContent =
-        monthName.charAt(0).toUpperCase() + monthName.slice(1);
-
-      const firstDay = new Date(year, month, 1);
-      const lastDay = new Date(year, month + 1, 0);
-
-      const mondayOffset = (firstDay.getDay() + 6) % 7;
-      const totalDays = lastDay.getDate();
-
-      let calendarMarkup = "";
-
-      for (let i = 0; i < mondayOffset; i += 1) {
-        calendarMarkup += "<span aria-hidden='true'></span>";
-      }
-
-      for (let day = 1; day <= totalDays; day += 1) {
-        const date = new Date(year, month, day);
-        const dateKey = dateToKey(date);
-        const isAvailable = isDateAvailable(dateKey);
-        const isSelected = dateKey === state.selectedDate;
-        const isToday = dateKey === dateToKey(new Date());
-
-        const classes = [
-          "calendar-day",
-          !isAvailable ? "unavailable" : "",
-          isSelected ? "selected" : "",
-          isToday ? "today" : ""
-        ].filter(Boolean).join(" ");
-
-        const label = formatDateLong(dateKey);
-
-        calendarMarkup += `
-          <button
-            class="${classes}"
-            type="button"
-            data-date="${dateKey}"
-            aria-label="${label}"
-            ${!isAvailable ? "disabled" : ""}
-          >
-            ${day}
-          </button>
-        `;
-      }
-
-      elements.calendarGrid.innerHTML = calendarMarkup;
-
-      document
-        .querySelectorAll("[data-date]")
-        .forEach(button => {
-          button.addEventListener("click", () => {
-            selectDate(button.dataset.date);
-          });
-        });
-    }
-
-    function selectDate(dateKey) {
-      state.selectedDate = dateKey;
-      state.selectedTime = null;
-
-      renderCalendar();
-      renderTimeSlots();
-      updateBookingSummary();
-    }
-
-    function renderTimeSlots() {
-      elements.goStep3.disabled = !(
-        state.selectedDate &&
-        state.selectedTime
-      );
-
-      if (!state.selectedDate) {
-        elements.selectedDateDisplay.textContent =
-          "Bitte wähle zuerst ein Datum.";
-
-        elements.timeSlots.innerHTML = `
-          <div class="empty-state">
-            Wähle ein Datum im Kalender aus, um freie Uhrzeiten zu sehen.
-          </div>
-        `;
-
-        return;
-      }
-
-      const hours = getOpeningHoursForDate(state.selectedDate);
-      const slots = getSlotsForDate(state.selectedDate);
-
-      elements.selectedDateDisplay.textContent =
-        `${formatDateLong(state.selectedDate)} · Öffnungszeit ${hours.start}–${hours.end} Uhr`;
-
-      const availableSlots = slots.filter(
-        time => !isSlotBooked(state.selectedDate, time)
-      );
-
-      if (!availableSlots.length) {
-        elements.timeSlots.innerHTML = `
-          <div class="empty-state">
-            An diesem Tag sind keine freien Zeitfenster mehr verfügbar.
-            Bitte wähle ein anderes Datum.
-          </div>
-        `;
-
-        return;
-      }
-
-      elements.timeSlots.innerHTML = slots.map(time => {
-        const isBooked = isSlotBooked(state.selectedDate, time);
-        const isSelected = time === state.selectedTime;
-        const endTime = addMinutesToTime(
-          time,
-          BOOKING_BLOCK_MINUTES
-        );
-
-        return `
-          <button
-            class="time-slot ${isBooked ? "booked" : ""} ${isSelected ? "selected" : ""}"
-            type="button"
-            data-time="${time}"
-            ${isBooked ? "disabled" : ""}
-          >
-            <span>${time} Uhr</span>
-            <small>bis ${endTime}</small>
-          </button>
-        `;
-      }).join("");
-
-      document
-        .querySelectorAll("[data-time]")
-        .forEach(button => {
-          button.addEventListener("click", () => {
-            state.selectedTime = button.dataset.time;
-
-            renderTimeSlots();
-            updateBookingSummary();
-          });
-        });
-    }
-
-    function updateBookingSummary() {
-      const service = getSelectedService();
-
-      elements.step1Summary.textContent = service
-        ? `${service.title} · ${formatEuro(service.price)}`
-        : "Bitte wählen";
-
-      elements.summaryTreatment.textContent =
-        service?.title || "–";
-
-      elements.summaryDate.textContent =
-        formatDate(state.selectedDate);
-
-      elements.summaryTime.textContent = state.selectedTime
-        ? `${state.selectedTime} Uhr`
-        : "–";
-
-      elements.summaryPrice.textContent = service
-        ? formatEuro(service.price)
-        : "0 €";
-    }
-
-    function goToStep(step) {
-      if (step === 2 && !state.selectedServiceId) {
-        showToast(
-          "Bitte wähle zuerst eine Behandlung aus.",
-          "error"
-        );
-
-        return;
-      }
-
-      if (
-        step === 3 &&
-        (!state.selectedDate || !state.selectedTime)
-      ) {
-        showToast(
-          "Bitte wähle zuerst Datum und Uhrzeit aus.",
-          "error"
-        );
-
-        return;
-      }
-
-      [1, 2, 3, 4].forEach(number => {
-        document
-          .getElementById(`booking-step-${number}`)
-          .classList.toggle("hidden", number !== step);
-      });
-
-      [1, 2, 3].forEach(number => {
-        document
-          .getElementById(`step-indicator-${number}`)
-          .classList.toggle("active", number === step);
-      });
-
-      state.currentStep = step;
-
-      if (step === 2) {
-        renderCalendar();
-        renderTimeSlots();
-      }
-
-      if (step === 3) {
-        updateBookingSummary();
-      }
-
-      document
-        .getElementById("booking")
-        .scrollIntoView({
-          behavior: "smooth",
-          block: "start"
-        });
-    }
-
-    function submitBooking(event) {
-      event.preventDefault();
-
-      const form = elements.bookingForm;
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      if (!state.selectedDate || !state.selectedTime) {
-        showToast(
-          "Bitte wähle zuerst Datum und Uhrzeit aus.",
-          "error"
-        );
-
-        goToStep(2);
-        return;
-      }
-
-      if (isSlotBooked(state.selectedDate, state.selectedTime)) {
-        showToast(
-          "Dieses Zeitfenster wurde gerade vergeben. Bitte wähle einen anderen Termin.",
-          "error"
-        );
-
-        goToStep(2);
-        renderTimeSlots();
-        return;
-      }
-
-      const service = getSelectedService();
-
-      const booking = {
-        id: createBookingCode(),
-        serviceId: service.id,
-        serviceTitle: service.title,
-        price: service.price,
-        date: state.selectedDate,
-        time: state.selectedTime,
-        firstName: form.elements.firstName.value.trim(),
-        lastName: form.elements.lastName.value.trim(),
-        email: form.elements.email.value.trim(),
-        phone: form.elements.phone.value.trim(),
-        notes: form.elements.notes.value.trim(),
-        status: "confirmed",
-        createdAt: new Date().toISOString()
-      };
-
-      bookings.push(booking);
-      saveBookings();
-
-      state.latestBooking = booking;
-
-      document.getElementById("confirmed-code").textContent =
-        booking.id;
-
-      document.getElementById("confirmed-name").textContent =
-        `${booking.firstName} ${booking.lastName}`;
-
-      document.getElementById("confirmed-service").textContent =
-        booking.serviceTitle;
-
-      document.getElementById("confirmed-date").textContent =
-        `${formatDateLong(booking.date)} · ${booking.time} Uhr`;
-
-      goToStep(4);
-      showToast(
-        "Dein Termin wurde erfolgreich reserviert.",
-        "success"
-      );
-    }
-
-    function createBookingCode() {
-      const random = Math.random()
-        .toString(36)
-        .slice(2, 7)
-        .toUpperCase();
-
-      return `ABL-${random}`;
-    }
-
-    function resetBooking() {
-      state.selectedServiceId = "srv-lifting";
-      state.selectedDate = null;
-      state.selectedTime = null;
-      state.latestBooking = null;
-
-      elements.bookingForm.reset();
-
-      renderServices();
-      renderCalendar();
-      renderTimeSlots();
-      updateBookingSummary();
-      goToStep(1);
-    }
-
-    function downloadCalendarFile() {
-      const booking = state.latestBooking;
-
-      if (!booking) {
-        return;
-      }
-
-      const start = `${booking.date.replaceAll("-", "")}T${booking.time.replace(":", "")}00`;
-      const endTime = addMinutesToTime(
-        booking.time,
-        BOOKING_BLOCK_MINUTES
-      );
-
-      const end = `${booking.date.replaceAll("-", "")}T${endTime.replace(":", "")}00`;
-
-      const icsContent = [
-        "BEGIN:VCALENDAR",
-        "VERSION:2.0",
-        "PRODID:-//ALISA BEAUTY LAB//Terminbuchung//DE",
-        "BEGIN:VEVENT",
-        `UID:${booking.id}@alisabeautylab.de`,
-        `DTSTAMP:${new Date().toISOString().replace(/[-:]/g, "").replace(/\.\d{3}/, "")}`,
-        `DTSTART:${start}`,
-        `DTEND:${end}`,
-        `SUMMARY:${booking.serviceTitle} – ALISA BEAUTY LAB`,
-        `LOCATION:${STUDIO_ADDRESS}`,
-        `DESCRIPTION:Termin bei ALISA BEAUTY LAB. Buchungscode: ${booking.id}`,
-        "END:VEVENT",
-        "END:VCALENDAR"
-      ].join("\r\n");
-
-      const blob = new Blob(
-        [icsContent],
-        {
-          type: "text/calendar;charset=utf-8"
-        }
-      );
-
-      const url = URL.createObjectURL(blob);
-      const link = document.createElement("a");
-
-      link.href = url;
-      link.download = `alisa-beauty-lab-${booking.date}.ics`;
-
-      document.body.appendChild(link);
-      link.click();
-      link.remove();
-
-      URL.revokeObjectURL(url);
-    }
-
-    function sendBookingWhatsApp() {
-      const booking = state.latestBooking;
-
-      if (!booking) {
-        return;
-      }
-
-      const message = [
-        "Hallo Alisa,",
-        "",
-        "ich bestätige hiermit meinen Termin:",
-        `Behandlung: ${booking.serviceTitle}`,
-        `Datum: ${formatDateLong(booking.date)}`,
-        `Uhrzeit: ${booking.time} Uhr`,
-        `Buchungscode: ${booking.id}`,
-        "",
-        `Name: ${booking.firstName} ${booking.lastName}`
-      ].join("\n");
-
-      const url =
-        `https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(message)}`;
-
-      window.open(url, "_blank", "noopener,noreferrer");
-    }
-
-    function toggleMobileMenu() {
-      const isOpen =
-        elements.mobileMenuButton.getAttribute("aria-expanded") ===
-        "true";
-
-      elements.mobileMenuButton.setAttribute(
-        "aria-expanded",
-        String(!isOpen)
-      );
-
-      elements.mobileMenuButton.setAttribute(
-        "aria-label",
-        isOpen ? "Menü öffnen" : "Menü schließen"
-      );
-
-      elements.mobileMenu.classList.toggle("is-open", !isOpen);
-      elements.body.classList.toggle("menu-open", !isOpen);
-    }
-
-    function closeMobileMenu() {
-      elements.mobileMenuButton.setAttribute(
-        "aria-expanded",
-        "false"
-      );
-
-      elements.mobileMenuButton.setAttribute(
-        "aria-label",
-        "Menü öffnen"
-      );
-
-      elements.mobileMenu.classList.remove("is-open");
-      elements.body.classList.remove("menu-open");
-    }
-
-    function openLegalModal(type) {
-      const legalContent = {
-        imprint: {
-          title: "Impressum",
-          content: `
-            <h3>Impressum</h3>
-
-            <p>
-              <strong>ALISA BEAUTY LAB</strong><br>
-              Alisa Prykhodko
-            </p>
-
-            <p>
-              Bürgermeister-Sommer-Straße 34<br>
-              91757 Treuchtlingen<br>
-              Deutschland
-            </p>
-
-            <p>
-              Telefon:
-              <a href="tel:+491784537636">
-                +49 178 4537636
-              </a>
-            </p>
-
-            <p>
-              E-Mail:
-              <a href="mailto:alisa.prykhodko07@gmail.com">
-                alisa.prykhodko07@gmail.com
-              </a>
-            </p>
-
-            <h4>Verantwortlich für den Inhalt</h4>
-
-            <p>
-              Alisa Prykhodko<br>
-              Bürgermeister-Sommer-Straße 34<br>
-              91757 Treuchtlingen
-            </p>
-          `
-        },
-
-        privacy: {
-          title: "Datenschutz",
-          content: `
-            <h3>Datenschutzerklärung</h3>
-
-            <h4>Verantwortliche Stelle</h4>
-
-            <p>
-              Verantwortlich für die Verarbeitung personenbezogener Daten ist
-              Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757
-              Treuchtlingen.
-            </p>
-
-            <h4>Terminbuchung</h4>
-
-            <p>
-              Bei einer Buchung werden die eingegebenen Kontaktdaten,
-              Terminwünsche und freiwilligen Hinweise zur Bearbeitung der
-              Reservierung verarbeitet.
-            </p>
-
-            <h4>Lokale Demo-Speicherung</h4>
-
-            <p>
-              Diese technische Demo speichert Buchungen ausschließlich lokal
-              im Browser. Für den Live-Betrieb ist eine abgesicherte,
-              datenschutzkonforme Server- und Datenbanklösung erforderlich.
-            </p>
-
-            <h4>Externe Dienste</h4>
-
-            <p>
-              Bei Nutzung von Telefon-, WhatsApp- oder Kartenlinks gelten
-              zusätzlich die Datenschutzbestimmungen der jeweiligen Anbieter.
-            </p>
-
-            <h4>Wichtiger Hinweis</h4>
-
-            <p>
-              Diese Erklärung ist eine technische Vorlage und muss vor dem
-              Livegang rechtlich an die tatsächlich eingesetzten Dienste
-              angepasst werden.
-            </p>
-          `
-        }
-      };
-
-      const content = legalContent[type];
-
-      if (!content) {
-        return;
-      }
-
-      elements.legalModalTitle.textContent = content.title;
-      elements.legalModalContent.innerHTML = content.content;
-
-      elements.legalModal.classList.remove("hidden");
-      elements.body.classList.add("modal-open");
-      elements.legalModalClose.focus();
-    }
-
-    function closeLegalModal() {
-      elements.legalModal.classList.add("hidden");
-      elements.body.classList.remove("modal-open");
+      return compareDate < today;
     }
 
     function showToast(message, type = "default") {
       const toast = document.createElement("div");
-
       toast.className = `toast ${type}`;
       toast.textContent = message;
 
@@ -3708,132 +2740,422 @@
 
       window.setTimeout(() => {
         toast.remove();
-      }, 4500);
+      }, 4200);
     }
 
-    function escapeHtml(value) {
-      return String(value ?? "")
-        .replaceAll("&", "&amp;")
-        .replaceAll("<", "&lt;")
-        .replaceAll(">", "&gt;")
-        .replaceAll('"', "&quot;")
-        .replaceAll("'", "&#039;");
+    function closeMobileMenu() {
+      elements.mobileMenu.classList.remove("is-open");
+      elements.mobileMenu.setAttribute("aria-hidden", "true");
+      elements.menuToggle.setAttribute("aria-expanded", "false");
+      elements.menuToggle.setAttribute("aria-label", "Menü öffnen");
+      document.body.classList.remove("menu-open");
     }
 
-    function initialize() {
+    function toggleMobileMenu() {
+      const isOpen = elements.mobileMenu.classList.toggle("is-open");
+
+      elements.mobileMenu.setAttribute("aria-hidden", String(!isOpen));
+      elements.menuToggle.setAttribute("aria-expanded", String(isOpen));
+      elements.menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Menü schließen" : "Menü öffnen"
+      );
+
+      document.body.classList.toggle("menu-open", isOpen);
+    }
+
+    function setActiveStep(step) {
+      state.activeStep = step;
+
+      [1, 2, 3].forEach(number => {
+        const panel = document.getElementById(`booking-step-${number}`);
+        const progress = document.getElementById(`progress-${number}`);
+
+        panel.classList.toggle("hidden", number !== step);
+        progress.classList.toggle("is-active", number === step);
+      });
+
+      document.getElementById("booking-step-4").classList.add("hidden");
+
+      updateSummary();
+
+      if (step === 2) {
+        renderCalendar();
+        renderTimeSlots();
+      }
+
+      if (step === 3) {
+        updateSummary();
+      }
+    }
+
+    function showConfirmation() {
+      [1, 2, 3].forEach(number => {
+        document.getElementById(`booking-step-${number}`).classList.add("hidden");
+        document.getElementById(`progress-${number}`).classList.remove("is-active");
+      });
+
+      document.getElementById("booking-step-4").classList.remove("hidden");
+    }
+
+    function renderServices() {
+      const selectedService = getSelectedService();
+
+      elements.serviceGrid.innerHTML = SERVICES.map(service => {
+        const isSelected = service.id === state.selectedServiceId;
+
+        return `
+          <button
+            class="service-option ${isSelected ? "is-selected" : ""}"
+            type="button"
+            data-service-id="${service.id}"
+            aria-pressed="${isSelected}"
+          >
+            <span class="service-option-header">
+              <span class="service-name">${service.title}</span>
+              <span class="service-price">${formatEuro(service.price)}</span>
+            </span>
+
+            <span class="service-description">${service.description}</span>
+
+            <span class="service-duration">Zeitfenster: 2 Stunden</span>
+          </button>
+        `;
+      }).join("");
+
+      elements.selectedServiceText.textContent =
+        `${selectedService.title} · ${formatEuro(selectedService.price)}`;
+
+      document.querySelectorAll("[data-service-id]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.selectedServiceId = button.dataset.serviceId;
+          state.selectedTime = null;
+
+          renderServices();
+          renderTimeSlots();
+          updateSummary();
+        });
+      });
+    }
+
+    function selectServiceAndOpenBooking(serviceId) {
+      state.selectedServiceId = serviceId;
+      state.selectedTime = null;
+
+      renderServices();
+      updateSummary();
+      setActiveStep(1);
+
+      document.getElementById("booking").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+    }
+
+    function renderCalendar() {
+      const year = state.calendarDate.getFullYear();
+      const month = state.calendarDate.getMonth();
+      const firstDay = new Date(year, month, 1);
+      const lastDay = new Date(year, month + 1, 0);
+      const firstWeekday = (firstDay.getDay() + 6) % 7;
+
+      elements.calendarTitle.textContent = new Intl.DateTimeFormat("de-DE", {
+        month: "long",
+        year: "numeric"
+      }).format(state.calendarDate);
+
+      let calendarHtml = "";
+
+      for (let i = 0; i < firstWeekday; i += 1) {
+        calendarHtml += "<span></span>";
+      }
+
+      for (let day = 1; day <= lastDay.getDate(); day += 1) {
+        const date = new Date(year, month, day);
+        const dateKey = toDateKey(date);
+        const past = isPastDate(date);
+        const selected = dateKey === state.selectedDate;
+
+        calendarHtml += `
+          <button
+            class="calendar-day ${selected ? "is-selected" : ""}"
+            type="button"
+            data-date="${dateKey}"
+            ${past ? "disabled" : ""}
+            aria-label="${formatDate(dateKey)}"
+            aria-pressed="${selected}"
+          >
+            ${day}
+          </button>
+        `;
+      }
+
+      elements.calendarGrid.innerHTML = calendarHtml;
+
+      document.querySelectorAll(".calendar-day[data-date]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.selectedDate = button.dataset.date;
+          state.selectedTime = null;
+
+          renderCalendar();
+          renderTimeSlots();
+          updateSummary();
+        });
+      });
+    }
+
+    function renderTimeSlots() {
+      if (!state.selectedDate) {
+        elements.selectedDateLabel.textContent = "Bitte wähle zuerst ein Datum.";
+        elements.timeSlots.innerHTML = `
+          <div class="empty-state">
+            Wähle ein Datum im Kalender, um freie Uhrzeiten zu sehen.
+          </div>
+        `;
+        elements.toStep3.disabled = true;
+        return;
+      }
+
+      const slots = getSlotsForDate(state.selectedDate);
+
+      elements.selectedDateLabel.textContent =
+        `${formatDate(state.selectedDate)} · freie Startzeiten`;
+
+      if (!slots.length) {
+        elements.timeSlots.innerHTML = `
+          <div class="empty-state">
+            Für dieses Datum sind aktuell keine buchbaren Zeiten verfügbar.
+          </div>
+        `;
+        elements.toStep3.disabled = true;
+        return;
+      }
+
+      elements.timeSlots.innerHTML = slots.map(time => {
+        const selected = time === state.selectedTime;
+
+        return `
+          <button
+            class="time-slot ${selected ? "is-selected" : ""}"
+            type="button"
+            data-time="${time}"
+            aria-pressed="${selected}"
+          >
+            ${time} Uhr
+          </button>
+        `;
+      }).join("");
+
+      document.querySelectorAll(".time-slot[data-time]").forEach(button => {
+        button.addEventListener("click", () => {
+          state.selectedTime = button.dataset.time;
+
+          renderTimeSlots();
+          updateSummary();
+
+          elements.toStep3.disabled = false;
+        });
+      });
+
+      elements.toStep3.disabled = !state.selectedTime;
+    }
+
+    function updateSummary() {
+      const service = getSelectedService();
+
+      elements.summaryService.textContent = service.title;
+      elements.summaryDate.textContent = formatShortDate(state.selectedDate);
+      elements.summaryTime.textContent = state.selectedTime
+        ? `${state.selectedTime} Uhr`
+        : "–";
+      elements.summaryPrice.textContent = formatEuro(service.price);
+
+      elements.selectedServiceText.textContent =
+        `${service.title} · ${formatEuro(service.price)}`;
+    }
+
+    function generateBookingCode() {
+      const random = Math.random().toString(36).slice(2, 7).toUpperCase();
+      return `ABL-${random}`;
+    }
+
+    function validateBookingForm() {
+      const requiredFields = [
+        document.getElementById("first-name"),
+        document.getElementById("last-name"),
+        document.getElementById("email"),
+        document.getElementById("phone")
+      ];
+
+      const firstInvalid = requiredFields.find(field => !field.value.trim());
+
+      if (firstInvalid) {
+        firstInvalid.focus();
+        showToast("Bitte fülle alle Pflichtfelder aus.", "error");
+        return false;
+      }
+
+      const email = document.getElementById("email");
+
+      if (!email.validity.valid) {
+        email.focus();
+        showToast("Bitte gib eine gültige E-Mail-Adresse ein.", "error");
+        return false;
+      }
+
+      if (!document.getElementById("consent").checked) {
+        document.getElementById("consent").focus();
+        showToast("Bitte bestätige die Reservierung.", "error");
+        return false;
+      }
+
+      return true;
+    }
+
+    function submitBooking(event) {
+      event.preventDefault();
+
+      if (!state.selectedDate || !state.selectedTime) {
+        showToast("Bitte wähle zuerst Datum und Uhrzeit.", "error");
+        setActiveStep(2);
+        return;
+      }
+
+      if (!validateBookingForm()) {
+        return;
+      }
+
+      const service = getSelectedService();
+      const firstName = document.getElementById("first-name").value.trim();
+      const lastName = document.getElementById("last-name").value.trim();
+      const bookingCode = generateBookingCode();
+
+      state.latestBooking = {
+        code: bookingCode,
+        name: `${firstName} ${lastName}`,
+        service: service.title,
+        date: state.selectedDate,
+        time: state.selectedTime,
+        price: service.price
+      };
+
+      const whatsappMessage = [
+        "Hallo Alisa,",
+        "",
+        "ich habe eine Terminreservierung vorgenommen:",
+        `Name: ${state.latestBooking.name}`,
+        `Behandlung: ${state.latestBooking.service}`,
+        `Termin: ${formatDate(state.latestBooking.date)} um ${state.latestBooking.time} Uhr`,
+        `Buchungscode: ${state.latestBooking.code}`
+      ].join("\n");
+
+      elements.confirmationCode.textContent = state.latestBooking.code;
+      elements.confirmationName.textContent = state.latestBooking.name;
+      elements.confirmationService.textContent = state.latestBooking.service;
+      elements.confirmationDate.textContent =
+        `${formatDate(state.latestBooking.date)} · ${state.latestBooking.time} Uhr`;
+
+      elements.confirmationWhatsapp.href =
+        `https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(whatsappMessage)}`;
+
+      showConfirmation();
+      showToast("Deine Terminreservierung wurde gespeichert.", "success");
+    }
+
+    function resetBooking() {
+      state.activeStep = 1;
+      state.selectedServiceId = "lifting";
+      state.selectedDate = null;
+      state.selectedTime = null;
+      state.latestBooking = null;
+
+      elements.bookingForm.reset();
       renderServices();
       renderCalendar();
       renderTimeSlots();
-      updateBookingSummary();
+      updateSummary();
+      setActiveStep(1);
 
-      elements.mobileMenuButton.addEventListener(
-        "click",
-        toggleMobileMenu
-      );
-
-      document
-        .querySelectorAll("#mobile-menu a")
-        .forEach(link => {
-          link.addEventListener("click", closeMobileMenu);
-        });
-
-      document
-        .querySelectorAll("[data-service]")
-        .forEach(button => {
-          button.addEventListener("click", () => {
-            selectService(button.dataset.service);
-            goToStep(1);
-
-            document
-              .getElementById("booking")
-              .scrollIntoView({
-                behavior: "smooth",
-                block: "start"
-              });
-          });
-        });
-
-      elements.goStep2.addEventListener("click", () => {
-        goToStep(2);
-      });
-
-      elements.goStep3.addEventListener("click", () => {
-        goToStep(3);
-      });
-
-      elements.backStep1.addEventListener("click", () => {
-        goToStep(1);
-      });
-
-      elements.backStep2.addEventListener("click", () => {
-        goToStep(2);
-      });
-
-      elements.previousMonth.addEventListener("click", () => {
-        currentCalendarDate.setMonth(
-          currentCalendarDate.getMonth() - 1
-        );
-
-        renderCalendar();
-      });
-
-      elements.nextMonth.addEventListener("click", () => {
-        currentCalendarDate.setMonth(
-          currentCalendarDate.getMonth() + 1
-        );
-
-        renderCalendar();
-      });
-
-      elements.bookingForm.addEventListener(
-        "submit",
-        submitBooking
-      );
-
-      elements.calendarDownload.addEventListener(
-        "click",
-        downloadCalendarFile
-      );
-
-      elements.sendWhatsapp.addEventListener(
-        "click",
-        sendBookingWhatsApp
-      );
-
-      elements.newBooking.addEventListener(
-        "click",
-        resetBooking
-      );
-
-      document
-        .querySelectorAll("[data-modal]")
-        .forEach(link => {
-          link.addEventListener("click", event => {
-            event.preventDefault();
-            openLegalModal(link.dataset.modal);
-          });
-        });
-
-      elements.legalModalClose.addEventListener(
-        "click",
-        closeLegalModal
-      );
-
-      elements.legalModal.addEventListener("click", event => {
-        if (event.target === elements.legalModal) {
-          closeLegalModal();
-        }
-      });
-
-      document.addEventListener("keydown", event => {
-        if (event.key === "Escape") {
-          closeMobileMenu();
-          closeLegalModal();
-        }
+      document.getElementById("booking").scrollIntoView({
+        behavior: "smooth",
+        block: "start"
       });
     }
 
-    initialize();
+    elements.menuToggle.addEventListener("click", toggleMobileMenu);
+
+    document.querySelectorAll(".mobile-menu a").forEach(link => {
+      link.addEventListener("click", closeMobileMenu);
+    });
+
+    document.querySelectorAll("[data-select-service]").forEach(button => {
+      button.addEventListener("click", () => {
+        selectServiceAndOpenBooking(button.dataset.selectService);
+      });
+    });
+
+    elements.toStep2.addEventListener("click", () => {
+      setActiveStep(2);
+    });
+
+    elements.backToStep1.addEventListener("click", () => {
+      setActiveStep(1);
+    });
+
+    elements.toStep3.addEventListener("click", () => {
+      if (!state.selectedDate || !state.selectedTime) {
+        showToast("Bitte wähle zuerst Datum und Uhrzeit.", "error");
+        return;
+      }
+
+      setActiveStep(3);
+    });
+
+    elements.backToStep2.addEventListener("click", () => {
+      setActiveStep(2);
+    });
+
+    elements.previousMonth.addEventListener("click", () => {
+      const currentMonth = new Date();
+      currentMonth.setDate(1);
+
+      const previousMonth = new Date(
+        state.calendarDate.getFullYear(),
+        state.calendarDate.getMonth() - 1,
+        1
+      );
+
+      if (previousMonth >= currentMonth) {
+        state.calendarDate = previousMonth;
+        renderCalendar();
+      }
+    });
+
+    elements.nextMonth.addEventListener("click", () => {
+      state.calendarDate = new Date(
+        state.calendarDate.getFullYear(),
+        state.calendarDate.getMonth() + 1,
+        1
+      );
+
+      renderCalendar();
+    });
+
+    elements.bookingForm.addEventListener("submit", submitBooking);
+    elements.newBooking.addEventListener("click", resetBooking);
+
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape") {
+        closeMobileMenu();
+      }
+    });
+
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    renderServices();
+    renderCalendar();
+    renderTimeSlots();
+    updateSummary();
   </script>
 </body>
 </html>
