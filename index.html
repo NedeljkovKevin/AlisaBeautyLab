@@ -7,13 +7,63 @@
   <meta name="description" content="ALISA BEAUTY LAB in Treuchtlingen – Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit direkter Online-Terminbuchung und persönlicher Beratung.">
   <meta name="theme-color" content="#251b18">
 
-  <!-- Adobe Fonts -->
+  <!-- Adobe Fonts (bleibt unverändert erhalten) -->
   <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
-  
-  <!-- Google Fonts Fallbacks -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,600&family=Great+Vibes&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/webp" href="AlisaLogoQuertransparent.webp">
+
+  <!-- Open Graph & Social Media Sharing (Punkt V.2) -->
+  <meta property="og:title" content="ALISA BEAUTY LAB | Exklusives Wimpern-Atelier Treuchtlingen">
+  <meta property="og:description" content="Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit persönlicher Beratung in Treuchtlingen.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:image" content="AlisaLogoQuertransparent.webp">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Local SEO Structured Data Schema.org (Punkt V.1) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BeautySalon",
+    "name": "ALISA BEAUTY LAB",
+    "description": "Exklusives Wimpern-Atelier Treuchtlingen für Wimpernlifting, Neuanlagen (1:1 & Volumen) und Refills.",
+    "image": "AlisaLogoQuertransparent.webp",
+    "telephone": "+49 178 4537636",
+    "email": "alisa.prykhodko07@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Bürgermeister-Sommer-Straße 34",
+      "addressLocality": "Treuchtlingen",
+      "postalCode": "91757",
+      "addressCountry": "DE"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "48.9555",
+      "longitude": "10.9101"
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday"],
+        "opens": "18:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Tuesday", "Saturday", "Sunday"],
+        "opens": "12:00",
+        "closes": "21:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
+        "opens": "19:00",
+        "closes": "21:00"
+      }
+    ],
+    "priceRange": "30€ - 80€"
+  }
+  </script>
 
   <style>
     /* ==========================================================================
@@ -307,9 +357,10 @@
       position: fixed; inset: 0; background: rgba(255, 253, 249, 0.98);
       backdrop-filter: blur(15px); -webkit-backdrop-filter: blur(15px);
       z-index: 105; display: flex; flex-direction: column; align-items: center;
-      justify-content: center; gap: 30px; opacity: 0; pointer-events: none; transition: opacity 0.4s;
+      justify-content: center; gap: 30px; opacity: 0; pointer-events: none;
+      visibility: hidden; transition: opacity 0.4s, visibility 0.4s;
     }
-    .mobile-nav-overlay.open { opacity: 1; pointer-events: auto; }
+    .mobile-nav-overlay.open { opacity: 1; pointer-events: auto; visibility: visible; }
     .mobile-nav-overlay a { font-family: var(--font-serif); font-size: 28px; color: var(--brown-deep); text-decoration: none; }
 
     /* ==========================================================================
@@ -370,6 +421,10 @@
       border: 1px solid var(--border-gold); box-shadow: var(--shadow-md);
       overflow: hidden; cursor: ew-resize; background: var(--bg-dark);
       user-select: none; -webkit-user-select: none;
+      touch-action: pan-y; outline: none;
+    }
+    .ba-slider-wrapper:focus-visible {
+      box-shadow: 0 0 0 3px var(--gold-bright);
     }
     .ba-slider-img { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
     .ba-after-layer { clip-path: inset(0 50% 0 0); z-index: 2; }
@@ -510,6 +565,38 @@
     .reveal-on-scroll.is-revealed { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.15s; }
     .reveal-delay-2 { transition-delay: 0.3s; }
+
+    /* Accessibility & Usability (Punkt IV.1 & V.4) */
+    .visually-hidden {
+      position: absolute !important; width: 1px !important; height: 1px !important;
+      padding: 0 !important; margin: -1px !important; overflow: hidden !important;
+      clip: rect(0, 0, 0, 0) !important; white-space: nowrap !important; border: 0 !important;
+    }
+    .lux-form-label {
+      display: block; font-size: 11px; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--brown-deep); margin-bottom: 6px;
+    }
+    .form-grid-row {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;
+    }
+
+    /* Marquee Pause on Hover & Reduced Motion (Punkt V.4) */
+    .marquee-strip:hover .marquee-track {
+      animation-play-state: paused;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee-track { animation: none !important; }
+      .hero-glow-orb { animation: none !important; }
+      .reveal-on-scroll { transition: none !important; opacity: 1 !important; transform: none !important; }
+    }
+
+    /* Mobile Form & Tabs Responsiveness (Punkt III.2) */
+    @media (max-width: 600px) {
+      .form-grid-row { grid-template-columns: 1fr; gap: 12px; }
+      .cockpit-step-tab { padding: 12px 6px !important; gap: 6px !important; font-size: 11px !important; }
+      .cockpit-step-tab span:not(:first-child) { font-size: 10px; letter-spacing: 0; }
+      #cockpit-body { padding: 24px 16px !important; }
+    }
   </style>
 </head>
 <body>
@@ -592,12 +679,13 @@
     </div>
   </header>
 
-  <!-- Mobile Navigation Overlay -->
-  <div id="mobileNav" class="mobile-nav-overlay">
-    <button style="position:absolute; top:30px; right:30px; background:none; border:none; font-size:40px; color:var(--brown-deep); cursor:pointer;" onclick="closeMobileMenu()">×</button>
+  <!-- Mobile Navigation Overlay (Punkt IV.2) -->
+  <div id="mobileNav" class="mobile-nav-overlay" aria-hidden="true">
+    <button style="position:absolute; top:30px; right:30px; background:none; border:none; font-size:40px; color:var(--brown-deep); cursor:pointer;" aria-label="Menü schließen" onclick="closeMobileMenu()">×</button>
     <a href="#looks" onclick="closeMobileMenu()">Preise & Looks</a>
-    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="#booking-section" onclick="closeMobileMenu()">Online Reservierung</a>
+    <a href="#quiz" onclick="closeMobileMenu()">Look-Finder</a>
+    <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="#atelier" onclick="closeMobileMenu()">Über mich</a>
     <a href="#location" onclick="closeMobileMenu()">Studio & Anfahrt</a>
   </div>
@@ -637,18 +725,18 @@
 
         <!-- Before / After Interaktiver Slider -->
         <div class="reveal-on-scroll reveal-delay-2" style="margin-top:20px;">
-          <div class="ba-slider-wrapper" id="baSlider">
-            <!-- Vorher Bild (Hinten) -->
-            <img src="https://images.unsplash.com/photo-1512290900672-1f55b9e0787a?auto=format&fit=crop&w=1200&q=80" alt="Vorher" class="ba-slider-img">
+          <div class="ba-slider-wrapper" id="baSlider" role="slider" aria-label="Vorher-Nachher-Vergleich Wimpernlifting" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
+            <!-- Vorher Bild (Hinten) - DSGVO-konformer lokaler SVG-Platzhalter (Punkt II.2) -->
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_bef%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_bef%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23a3958c%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23a3958c%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3ENATURWIMPERN%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23a3958c%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3EVor%20der%20Behandlung%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Vorher: Naturwimpern vor der Behandlung" class="ba-slider-img">
             <span class="ba-badge before">Vor der Behandlung</span>
             
-            <!-- Nachher Bild (Vorne, wird per clip-path maskiert) -->
-            <img src="https://images.unsplash.com/photo-1583001809873-a128495da465?auto=format&fit=crop&w=1200&q=80" alt="Nach dem Lifting" class="ba-slider-img ba-after-layer" id="baAfterImg">
+            <!-- Nachher Bild (Vorne) - DSGVO-konformer lokaler SVG-Platzhalter (Punkt II.2) -->
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_aft%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_aft%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23dfbc77%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23dfbc77%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3EPERFEKTER%20SCHWUNG%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23dfbc77%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3ENach%20dem%20Lifting%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Nachher: Wimpernlifting Ergebnis" class="ba-slider-img ba-after-layer" id="baAfterImg">
             <span class="ba-badge after" style="z-index:6;">✦ Nach dem Lifting</span>
             
             <!-- Regler -->
             <div class="ba-handle-line" id="baHandleLine"></div>
-            <div class="ba-handle-btn" id="baHandleBtn">‹ ›</div>
+            <div class="ba-handle-btn" id="baHandleBtn" aria-hidden="true">‹ ›</div>
           </div>
         </div>
 
@@ -699,7 +787,7 @@
           </p>
         </div>
 
-        <div style="display:grid; gap:28px; margin-top:50px; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));">
+        <div style="display:grid; gap:28px; margin-top:50px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
           
           <!-- Card 1: Wimpernlifting -->
           <div class="treatment-luxury-card reveal-on-scroll">
@@ -744,6 +832,24 @@
             <div style="display:flex; gap:10px;">
               <button type="button" class="btn-lux btn-lux-secondary" style="flex:1;" onclick="preselectAndScroll('srv-new-volume')">Soft</button>
               <button type="button" class="btn-lux btn-booking" style="flex:1;" onclick="preselectAndScroll('srv-new-mega')">Mega</button>
+            </div>
+          </div>
+
+          <!-- Card 4: Refill & Auffüllen (Punkt III.1) -->
+          <div class="treatment-luxury-card reveal-on-scroll">
+            <div style="position:absolute; top:18px; right:22px; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; padding:4px 12px; border-radius:99px; background:rgba(195,157,88,0.16); border:1px solid var(--border-gold); font-weight:700;">Auffrischen</div>
+            <h3 style="font-family:var(--font-serif); font-size:26px; color:var(--brown-deep); margin-bottom:8px;">Refill & Auffüllen</h3>
+            <div style="font-family:var(--font-serif); font-size:32px; font-weight:600; color:var(--brown-deep); margin-bottom:16px;">30 € – 50 €</div>
+            <p style="font-size:13.5px; color:var(--taupe); line-height:1.7; flex-grow:1;">
+              Regelmäßige Auffrischung für dauerhafte Fülle. Empfohlen alle 2 bis 3 Wochen (solange noch ca. 50 % der Extensions vorhanden sind).
+            </p>
+            <ul class="treatment-card-features" style="list-style:none; border-top:1px solid var(--border-gold-light); padding-top:18px; margin:20px 0;">
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1:1 & Volumen: 2 Wo. 30 € | 3 Wo. 40 €</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mega Volumen: 2 Wo. 40 € | 3 Wo. 50 €</li>
+            </ul>
+            <div style="display:flex; gap:10px;">
+              <button type="button" class="btn-lux btn-lux-secondary" style="flex:1;" onclick="preselectAndScroll('srv-refill-vol-2w')">Refill 2 Wo.</button>
+              <button type="button" class="btn-lux btn-booking" style="flex:1;" onclick="preselectAndScroll('srv-refill-vol-3w')">Refill 3 Wo.</button>
             </div>
           </div>
         </div>
@@ -815,9 +921,9 @@
                 <!-- Cal -->
                 <div style="background:rgba(246,239,230,0.7); border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:24px;">
                   <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:22px;">
-                    <button class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0; width:38px;" onclick="navigateMonth(-1)">‹</button>
+                    <button id="cal-prev-btn" class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0; width:38px;" aria-label="Vorheriger Monat" onclick="navigateMonth(-1)">‹</button>
                     <div id="calendar-title-display" style="font-family:var(--font-serif); font-size:22px; font-weight:500;">Monat</div>
-                    <button class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0; width:38px;" onclick="navigateMonth(1)">›</button>
+                    <button id="cal-next-btn" class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0; width:38px;" aria-label="Nächster Monat" onclick="navigateMonth(1)">›</button>
                   </div>
                   <div style="display:grid; grid-template-columns:repeat(7,1fr); text-align:center; font-size:11px; font-weight:700; color:var(--taupe); margin-bottom:10px;">
                     <span>Mo</span><span>Di</span><span>Mi</span><span>Do</span><span>Fr</span><span>Sa</span><span>So</span>
@@ -848,19 +954,34 @@
               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; margin-top:24px;">
                 
                 <form id="appointment-form" onsubmit="handleFormSubmission(event)">
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
-                    <div><input id="inp-firstname" type="text" class="lux-input" required placeholder="Vorname *"></div>
-                    <div><input id="inp-lastname" type="text" class="lux-input" required placeholder="Nachname *"></div>
+                  <div class="form-grid-row">
+                    <div>
+                      <label for="inp-firstname" class="lux-form-label">Vorname *</label>
+                      <input id="inp-firstname" type="text" class="lux-input" required placeholder="z. B. Julia" autocomplete="given-name">
+                    </div>
+                    <div>
+                      <label for="inp-lastname" class="lux-form-label">Nachname *</label>
+                      <input id="inp-lastname" type="text" class="lux-input" required placeholder="z. B. Schmidt" autocomplete="family-name">
+                    </div>
                   </div>
-                  <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px; margin-bottom:16px;">
-                    <div><input id="inp-phone" type="tel" class="lux-input" required placeholder="Handy / WhatsApp *"></div>
-                    <div><input id="inp-email" type="email" class="lux-input" required placeholder="E-Mail *"></div>
+                  <div class="form-grid-row">
+                    <div>
+                      <label for="inp-phone" class="lux-form-label">Handy / WhatsApp *</label>
+                      <input id="inp-phone" type="tel" class="lux-input" required placeholder="0178 1234567" autocomplete="tel">
+                    </div>
+                    <div>
+                      <label for="inp-email" class="lux-form-label">E-Mail *</label>
+                      <input id="inp-email" type="email" class="lux-input" required placeholder="julia@beispiel.de" autocomplete="email">
+                    </div>
                   </div>
-                  <textarea id="inp-notes" rows="3" class="lux-input" style="margin-bottom:16px;" placeholder="Besondere Wünsche oder Hinweise..."></textarea>
+                  <div style="margin-bottom:16px;">
+                    <label for="inp-notes" class="lux-form-label">Besondere Wünsche oder Hinweise</label>
+                    <textarea id="inp-notes" rows="3" class="lux-input" placeholder="Allergien, empfindliche Augen, Wunsch-Biegung..."></textarea>
+                  </div>
                   
                   <div style="display:flex; gap:10px; margin-bottom:24px;">
                     <input id="inp-consent" type="checkbox" required style="accent-color:var(--brown-deep); margin-top:4px;">
-                    <label for="inp-consent" style="font-size:12px; color:var(--taupe); line-height:1.5;">Ich bestätige die Buchung. Zahlung vor Ort. Storno bis 24h vorher frei.</label>
+                    <label for="inp-consent" style="font-size:12px; color:var(--taupe); line-height:1.5;">Ich reserviere verbindlich. Bezahlung erfolgt vor Ort. Stornierung bis 24 Std. vorher kostenlos.</label>
                   </div>
                   
                   <div style="display:flex; justify-content:space-between;">
@@ -927,7 +1048,7 @@
         <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:60px; align-items:center;">
           <div class="reveal-on-scroll" style="position:relative; max-width:360px; margin:0 auto;">
             <div style="position:absolute; inset:-10px; border:1px solid var(--border-gold); border-radius:36px; transform:rotate(-2deg);"></div>
-            <img src="images/alisa-portrait.webp" alt="Alisa - Gründerin" style="width:100%; border-radius:28px; box-shadow:var(--shadow-lg); background:var(--sand-dark); aspect-ratio:4/5; object-fit:cover;" onerror="this.src='https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80';">
+            <img src="images/alisa-portrait.webp" alt="Alisa - Gründerin & Lash Stylistin" style="width:100%; border-radius:28px; box-shadow:var(--shadow-lg); background:var(--sand-dark); aspect-ratio:4/5; object-fit:cover;" onerror="this.src='data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%20800%201000%22%20width%3D%22800%22%20height%3D%221000%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22pbg%22%20cx%3D%2250%25%22%20cy%3D%2240%25%22%20r%3D%2260%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%233a2a24%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%231f1614%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23pbg%29%22/%3E%0A%20%20%3Crect%20x%3D%2220%22%20y%3D%2220%22%20width%3D%22760%22%20height%3D%22960%22%20fill%3D%22none%22%20stroke%3D%22%23c39d58%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.3%22%20rx%3D%2220%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28400%2C%20480%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-100%22%20r%3D%2290%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%222%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%22-75%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2270%22%20fill%3D%22%23dfbc77%22%3EAP%3C/text%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-130%2C120%20C-130%2C-10%20130%2C-10%20130%2C120%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%222%22%20stroke-opacity%3D%220.6%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%22190%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2234%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%222%22%3EAlisa%20Prykhodko%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22230%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2214%22%20fill%3D%22%23c39d58%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3EPortrait-Platzhalter%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E';">
           </div>
           <div class="reveal-on-scroll reveal-delay-1">
             <span class="section-eyebrow">Persönlich & Herzlich</span>
@@ -1061,30 +1182,42 @@
   <!-- Modals & Overlays -->
   <div id="toast-tray" class="toast-tray"></div>
 
-  <!-- Admin Modal -->
-  <div id="admin-modal" class="modal-overlay" role="dialog" aria-modal="true">
-    <div class="modal-content">
+  <!-- Admin Modal (Punkt I.2 & I.3) -->
+  <div id="admin-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
+    <div class="modal-content" style="max-width: 820px;">
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-gold-light); padding-bottom:15px; margin-bottom: 20px;">
-        <h3 style="font-family:var(--font-serif); font-size: 24px; color:var(--brown-deep);">Studio Management</h3>
-        <button type="button" class="modal-close" onclick="closeAdminModal()">×</button>
+        <h3 id="admin-modal-title" style="font-family:var(--font-serif); font-size: 24px; color:var(--brown-deep);">Studio Management</h3>
+        <button type="button" class="modal-close" aria-label="Fenster schließen" onclick="closeAdminModal()">×</button>
       </div>
 
       <!-- PIN View -->
-      <div id="admin-pin-view" style="max-width:320px; margin: 40px auto; text-align:center;">
+      <div id="admin-pin-view" style="max-width:340px; margin: 30px auto; text-align:center;">
         <div style="font-size:36px; margin-bottom:12px;">🔒</div>
         <h4 style="font-family:var(--font-serif); font-size:24px; color:var(--brown-deep); margin-bottom:8px;">PIN eingeben</h4>
-        <p style="color:var(--taupe); font-size:12.5px; margin-bottom:20px;">Demo-Zugang: <strong>2468</strong></p>
+        <p style="color:var(--taupe); font-size:12.5px; margin-bottom:20px;">Initialer PIN: <strong>2468</strong> (kann im Dashboard geändert werden)</p>
 
         <form onsubmit="verifyAdminPin(event)">
-          <input id="admin-pin-input" type="password" inputmode="numeric" maxlength="8" class="lux-input" style="text-align:center; font-size:20px; letter-spacing:0.2em; margin-bottom:14px;" required placeholder="••••">
-          <button type="submit" class="btn-lux btn-booking" style="width:100%;">Freischalten</button>
+          <label for="admin-pin-input" class="visually-hidden">Admin PIN</label>
+          <input id="admin-pin-input" type="password" inputmode="numeric" maxlength="8" class="lux-input" style="text-align:center; font-size:22px; letter-spacing:0.25em; margin-bottom:14px;" required placeholder="••••">
+          <button id="admin-login-btn" type="submit" class="btn-lux btn-booking" style="width:100%;">Freischalten</button>
         </form>
       </div>
 
       <!-- Dashboard View -->
       <div id="admin-dashboard-view" class="hidden">
-        <p style="margin-bottom: 20px; color: var(--taupe); font-size: 14px;">Buchungen und Sperrtage verwalten.</p>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(180px, 1fr)); gap:12px; margin-bottom:24px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
+          <div>
+            <h4 style="font-family:var(--font-serif); font-size:20px; color:var(--brown-deep);">Buchungsübersicht &amp; Verwaltung</h4>
+            <p style="color:var(--taupe); font-size:13px;">Termine prüfen, stornieren und Sperrtage verwalten.</p>
+          </div>
+          <div style="display:flex; gap:10px;">
+            <button type="button" class="btn-lux btn-booking" style="min-height:36px; font-size:10.5px; padding:0 14px;" onclick="exportBookingsCsv()">Buchungen als CSV</button>
+            <button type="button" class="btn-lux btn-lux-secondary" style="min-height:36px; font-size:10.5px; padding:0 14px;" onclick="logoutAdmin()">Abmelden</button>
+          </div>
+        </div>
+
+        <!-- Stat Kacheln -->
+        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px; margin-bottom:24px;">
           <div style="padding:16px; background:#fff; border-radius:12px; border:1px solid rgba(195,157,88,0.3);">
             <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Termine Gesamt</span>
             <div id="adm-count-total" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:var(--brown-deep);">0</div>
@@ -1093,11 +1226,42 @@
             <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Bestätigt</span>
             <div id="adm-count-active" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:#177344;">0</div>
           </div>
+          <div style="padding:16px; background:#fff; border-radius:12px; border:1px solid rgba(195,157,88,0.3);">
+            <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Storniert</span>
+            <div id="adm-count-cancelled" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:#b33a3a;">0</div>
+          </div>
         </div>
 
-        <div style="display:flex; gap:8px; margin-bottom: 20px;">
-          <input id="adm-block-date" type="date" class="lux-input" style="padding:8px 12px; font-size:12px;">
-          <button type="button" class="btn-lux btn-booking" style="min-height:38px; padding:0 14px; font-size:11px;" onclick="blockCalendarDay()">Tag sperren</button>
+        <!-- Sperrtage Steuerung -->
+        <div style="background:#fff; border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:18px; margin-bottom:24px;">
+          <h5 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep); margin-bottom:12px;">Sperrtage verwalten</h5>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
+            <input id="adm-block-date" type="date" class="lux-input" style="padding:8px 12px; font-size:13px; max-width:200px;">
+            <button type="button" class="btn-lux btn-booking" style="min-height:38px; padding:0 16px; font-size:11px;" onclick="blockCalendarDay()">Tag sperren</button>
+          </div>
+          <div id="adm-blocked-days-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
+        </div>
+
+        <!-- Terminliste -->
+        <div style="background:#fff; border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:18px; margin-bottom:24px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+            <h5 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep);">Gebuchte Termine</h5>
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="btn-lux btn-booking" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('all')">Alle</button>
+              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('confirmed')">Aktiv</button>
+              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('cancelled')">Storniert</button>
+            </div>
+          </div>
+          <div id="adm-bookings-table-container" style="max-height:320px; overflow-y:auto;"></div>
+        </div>
+
+        <!-- PIN ändern -->
+        <div style="background:rgba(246,239,230,0.7); border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:16px;">
+          <h5 style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep); margin-bottom:8px;">Admin PIN ändern</h5>
+          <form onsubmit="changeAdminPin(event)" style="display:flex; gap:10px; flex-wrap:wrap;">
+            <input id="adm-new-pin-input" type="password" maxlength="8" class="lux-input" style="padding:8px 12px; font-size:13px; max-width:200px;" placeholder="Neuer PIN (z. B. 4-stellig)" required>
+            <button type="submit" class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0 16px; font-size:11px;">Neuen PIN speichern</button>
+          </form>
         </div>
       </div>
     </div>
@@ -1111,27 +1275,53 @@
         <button type="button" class="modal-close" onclick="closeLegalModal()">×</button>
       </div>
       <div style="line-height:1.75; font-size:13.5px; color:var(--brown);">
+        <!-- Impressum gem. § 5 DDG (Punkt II.4) -->
         <div id="legal-imprint-text" class="hidden">
+          <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h4>
           <p><strong>ALISA BEAUTY LAB</strong><br>Inhaberin: Alisa Prykhodko<br>Bürgermeister-Sommer-Straße 34<br>91757 Treuchtlingen<br>Deutschland</p>
-          <p style="margin-top:10px;">Telefon: <a href="tel:+491784537636">+49 178 4537636</a><br>E-Mail: <a href="mailto:alisa.prykhodko07@gmail.com">alisa.prykhodko07@gmail.com</a></p>
+          
+          <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Kontakt</h4>
+          <p>Telefon: <a href="tel:+491784537636" style="color:var(--brown-deep); font-weight:600;">+49 178 4537636</a><br>E-Mail: <a href="mailto:alisa.prykhodko07@gmail.com" style="color:var(--brown-deep);">alisa.prykhodko07@gmail.com</a></p>
+          
+          <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Umsatzsteuer</h4>
+          <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). <em>(Hinweis: Falls eine USt-IdNr. vorliegt, bitte hier eintragen).</em></p>
+          
+          <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Berufsbezeichnung & Kammerzugehörigkeit</h4>
+          <p>Tätigkeit: Kosmetische Dienstleistungen / Lash Stylistin<br>Zuständige Kammer: Handwerkskammer für Mittelfranken, Sulzbacher Str. 11–15, 90489 Nürnberg.</p>
+          
+          <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Verbraucherstreitbeilegung & Online-Schlichtung (§ 36 VSBG)</h4>
+          <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://ec.europa.eu/consumers/odr</a>.<br>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
         </div>
+
+        <!-- Datenschutzerklärung gem. DSGVO (Punkt II.5) -->
         <div id="legal-privacy-text" class="hidden">
-          <p>Verantwortlich für die Datenverarbeitung auf dieser Website ist Alisa Prykhodko.</p>
-          <p style="margin-top:10px;"><strong>1. Datenerfassung bei Terminbuchung:</strong><br>Zur Buchung werden Name, Telefonnummer und E-Mail-Adresse ausschließlich zur Terminabwicklung lokal verarbeitet.</p>
+          <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Datenschutzerklärung</h4>
+          <p><strong>1. Verantwortliche Stelle:</strong><br>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen<br>Telefon: +49 178 4537636 | E-Mail: alisa.prykhodko07@gmail.com</p>
+
+          <p style="margin-top:12px;"><strong>2. Bereitstellung der Website &amp; Server-Logfiles:</strong><br>Beim Aufruf dieser Website erfasst der Webserver automatisch technische Informationen (z. B. IP-Adresse, Browsertyp, Datum und Uhrzeit des Zugriffs). Diese Daten sind technisch erforderlich, um die Website fehlerfrei und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO).</p>
+
+          <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Browserspeicher (Local Storage), um deine getroffenen Buchungsauswahlen (ausgewählter Look, Datum, Uhrzeit) sowie deine Bestätigung des Datenschutzhinweises auf deinem Endgerät zu speichern. Es werden keine Profiling- oder Werbe-Cookies eingesetzt (Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG).</p>
+
+          <p style="margin-top:12px;"><strong>4. Erfassung von Daten bei der Terminreservierung:</strong><br>Die im Buchungsformular eingegebenen Daten (Vorname, Nachname, Telefonnummer, E-Mail-Adresse und Notizen) werden ausschließlich zum Zweck der Terminvereinbarung, Vorbereitung und Durchführung der kosmetischen Behandlung verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO – vorvertragliche Maßnahmen und Vertragserfüllung). Die Daten werden vertraulich behandelt und nicht an unbefugte Dritte weitergegeben.</p>
+
+          <p style="margin-top:12px;"><strong>5. Kontaktaufnahme via WhatsApp:</strong><br>Wenn du die angebotenen WhatsApp-Schaltflächen anklickst, wirst du direkt zu WhatsApp weitergeleitet. Dienstanbieter ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Bei der Nutzung gelten die Datenschutzbestimmungen von WhatsApp. Die Nutzung dieses Kommunikationskanals ist freiwillig.</p>
+
+          <p style="margin-top:12px;"><strong>6. Adobe Typekit Web Fonts:</strong><br>Zur einheitlichen typografischen Gestaltung nutzt diese Website Webfonts von Adobe Typekit. Beim Aufruf lädt dein Browser die Schriftarten direkt von Adobe-Servern, wobei deine IP-Adresse übermittelt wird.</p>
+
+          <p style="margin-top:12px;"><strong>7. Deine Rechte als betroffene Person:</strong><br>Du hast im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten Daten (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Zudem steht dir ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Bayerisches Landesamt für Datenschutzaufsicht, BayLDA, Promenade 18, 91522 Ansbach).</p>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Cookie Banner -->
+  <!-- Cookie- & Datenschutzhinweis (Punkt II.3) -->
   <div id="cookie-banner" class="cookie-banner">
     <div>
-      <h4 style="font-family:var(--font-serif); font-size: 20px; color:var(--brown-deep); margin-bottom: 4px;">Privatsphäre & Funktionalität</h4>
-      <p style="font-size: 13px; color: var(--taupe); max-width: 600px;">Wir nutzen notwendige lokale Speicherung für den reibungslosen Ablauf der Buchung.</p>
+      <h4 style="font-family:var(--font-serif); font-size: 20px; color:var(--brown-deep); margin-bottom: 4px;">Privatsphäre &amp; Datenschutz</h4>
+      <p style="font-size: 13px; color: var(--taupe); max-width: 620px;">Wir nutzen lokale Speicherung auf deinem Endgerät ausschließlich für die technische Abwicklung der Terminbuchung. Es werden keine Werbe- oder Tracking-Cookies eingesetzt.</p>
     </div>
     <div style="display:flex; gap: 10px;">
-      <button type="button" class="btn-lux btn-lux-secondary" onclick="acceptNecessaryCookies()">Notwendige</button>
-      <button type="button" class="btn-lux btn-booking" onclick="acceptAllCookies()">Akzeptieren</button>
+      <button type="button" class="btn-lux btn-booking" onclick="acceptNecessaryCookies()">Verstanden &amp; Fortfahren</button>
     </div>
   </div>
 
@@ -1144,30 +1334,35 @@
     const STORAGE_KEY_BOOKINGS = "alisa_beauty_lab_bookings_v16";
     const STORAGE_KEY_BLOCKED = "alisa_beauty_lab_blocked_v16";
     const STORAGE_KEY_COOKIES = "alisa_beauty_lab_cookies_v16";
-    const ADMIN_PIN = "2468";
+    const STORAGE_KEY_PIN_HASH = "alisa_beauty_lab_admin_hash_v16";
+    // Standard-PIN: 2468 (als SHA-256 Hash hinterlegt, Punkt I.2)
+    const DEFAULT_PIN_HASH = "a1fb4e703a9ef1fa4936801721ff285a97ac85330856674412e054892afe6972";
     const STUDIO_PHONE = "491784537636";
+    
+    // Alle Termine dauern weiterhin 120 Minuten (Punkt I.8)
     const BLOCK_DURATION_MINUTES = 120;
-    const TIME_INTERVAL_MINUTES = 15;
+    // 30-Minuten-Taktung verhindert tote 15-Minuten-Lücken
+    const TIME_INTERVAL_MINUTES = 30;
 
     const OPENING_SCHEDULE = {
-      0: { start: "12:00", end: "21:00" }, 
-      1: { start: "18:00", end: "21:00" }, 
-      2: { start: "12:00", end: "21:00" }, 
-      3: { start: "19:00", end: "21:00" }, 
-      4: { start: "19:00", end: "21:00" }, 
-      5: { start: "19:00", end: "21:00" }, 
-      6: { start: "12:00", end: "21:00" }  
+      0: { start: "12:00", end: "21:00" }, // Sonntag
+      1: { start: "18:00", end: "21:00" }, // Montag
+      2: { start: "12:00", end: "21:00" }, // Dienstag
+      3: { start: "19:00", end: "21:00" }, // Mittwoch
+      4: { start: "19:00", end: "21:00" }, // Donnerstag
+      5: { start: "19:00", end: "21:00" }, // Freitag
+      6: { start: "12:00", end: "21:00" }  // Samstag
     };
 
     const CATALOGUE = [
-      { id: "srv-lifting", title: "Wimpernlifting inkl. Pflege", price: 35, desc: "Natürlicher Schwung mit Tiefenpflege für deine Naturwimpern." },
-      { id: "srv-new-1-1", title: "Neuanlage: 1:1 Technik", price: 55, desc: "Feinster Mascara-Effekt. Eine Seidenwimper pro Naturwimper." },
-      { id: "srv-new-volume", title: "Neuanlage: Volumen Soft (2D–4D)", price: 65, desc: "Zarte handgefächerte Wimpern für federleichte Dichte." },
-      { id: "srv-new-mega", title: "Neuanlage: Mega Volumen (5D–8D)", price: 80, desc: "Hypnotisierend tiefer Glamour-Look mit dichter Fülle." },
-      { id: "srv-refill-vol-2w", title: "Refill 1:1 & Volumen (bis 2 Wo.)", price: 30, desc: "Regelmäßige Pflege für perfekten Erhalt." },
-      { id: "srv-refill-vol-3w", title: "Refill 1:1 & Volumen (bis 3 Wo.)", price: 40, desc: "Auffrischung & Ausgleich nach 3 Wochen." },
-      { id: "srv-refill-mega-2w", title: "Refill Mega (bis 2 Wo.)", price: 40, desc: "Refill für dichtes Mega-Volumen." },
-      { id: "srv-refill-mega-3w", title: "Refill Mega (bis 3 Wo.)", price: 50, desc: "Formkorrektur & Neuausrichtung nach 3 Wochen." }
+      { id: "srv-lifting", title: "Wimpernlifting inkl. Pflege", price: 35, duration: 120, desc: "Natürlicher Schwung mit Tiefenpflege für deine Naturwimpern." },
+      { id: "srv-new-1-1", title: "Neuanlage: 1:1 Technik", price: 55, duration: 120, desc: "Feinster Mascara-Effekt. Eine Seidenwimper pro Naturwimper." },
+      { id: "srv-new-volume", title: "Neuanlage: Volumen Soft (2D–4D)", price: 65, duration: 120, desc: "Zarte handgefächerte Wimpern für federleichte Dichte." },
+      { id: "srv-new-mega", title: "Neuanlage: Mega Volumen (5D–8D)", price: 80, duration: 120, desc: "Hypnotisierend tiefer Glamour-Look mit dichter Fülle." },
+      { id: "srv-refill-vol-2w", title: "Refill 1:1 & Volumen (bis 2 Wo.)", price: 30, duration: 120, desc: "Regelmäßige Pflege für perfekten Erhalt." },
+      { id: "srv-refill-vol-3w", title: "Refill 1:1 & Volumen (bis 3 Wo.)", price: 40, duration: 120, desc: "Auffrischung & Ausgleich nach 3 Wochen." },
+      { id: "srv-refill-mega-2w", title: "Refill Mega (bis 2 Wo.)", price: 40, duration: 120, desc: "Refill für dichtes Mega-Volumen." },
+      { id: "srv-refill-mega-3w", title: "Refill Mega (bis 3 Wo.)", price: 50, duration: 120, desc: "Formkorrektur & Neuausrichtung nach 3 Wochen." }
     ];
 
     const TESTIMONIALS = [
@@ -1178,7 +1373,7 @@
 
     const FAQ = [
       ["Wie lange hält ein Wimpernlifting?", "6–8 Wochen, bis die Naturwimpern nachgewachsen sind. Es ist wasser- und wischfest."],
-      ["Wie lange dauert ein Termin?", "Pro Termin reserviere ich dir 120 Minuten, ohne Hektik und ohne Parallelbehandlung."],
+      ["Wie lange dauert ein Termin?", "Pro Termin reserviere ich dir ein privates Zeitfenster von 120 Minuten, ohne Hektik und ohne Parallelbehandlung."],
       ["Ab wann ist ein Refill möglich?", "Ein Auffüllen lohnt sich, solange noch mindestens 50 % der Wimpern vorhanden sind. Ab der 4. Woche ist eine Neuanlage nötig."],
       ["Ich habe empfindliche Augen oder Allergien.", "Schreib das bitte bei der Buchung unter „Besondere Wünsche“, ich arbeite nur mit hautfreundlichen Materialien."]
     ];
@@ -1187,13 +1382,15 @@
     let blockedDays = fetchStored(STORAGE_KEY_BLOCKED, []) || [];
     let viewCalendarDate = new Date();
     let giftAmount = 50;
+    let failedPinAttempts = 0;
+    let adminFilterState = "all";
     
     let bookingState = {
       serviceId: "srv-lifting", date: null, time: null, recentBooking: null
     };
 
     /* ==========================================================================
-       UTILITIES & STORAGE
+       UTILITIES & STORAGE (Bereinigt von Duplikaten, Punkt I.4)
        ========================================================================== */
     function fetchStored(key, fallback) {
       try { 
@@ -1209,12 +1406,18 @@
       localStorage.setItem(STORAGE_KEY_BOOKINGS, JSON.stringify(appointments));
       localStorage.setItem(STORAGE_KEY_BLOCKED, JSON.stringify(blockedDays));
     }
-    function minutesFromTimeString(t) { const [h, m] = t.split(":").map(Number); return h * 60 + m; }
-    function timeStringFromMinutes(min) { const h = Math.floor(min / 60); const m = min % 60; return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`; }
-    function formatCurrency(val) { return `${Number(val).toLocaleString("de-DE")}\u00A0€`; }
-    function formatDateDisplay(ymd) { if (!ymd) return "–"; const [y, m, d] = ymd.split("-"); return `${d}.${m}.${y}`; }
-    
-    /* ENDZEIT KORREKTUR (Punkt 7): Endzeit minus Block-Dauer für alle Tage */
+
+    async function computeSha256(str) {
+      const buffer = new TextEncoder().encode(str);
+      const digest = await crypto.subtle.digest("SHA-256", buffer);
+      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
+    }
+
+    function minutesFromTimeString(t) { 
+      const [h, m] = t.split(":").map(Number); 
+      return h * 60 + m; 
+    }
+
     function timeStringFromMinutes(min) { 
       const h = Math.floor(min / 60); 
       const m = min % 60; 
@@ -1222,7 +1425,7 @@
     }
 
     function formatCurrency(val) { 
-      return `${Number(val).toLocaleString("de-DE")} €`; 
+      return `${Number(val).toLocaleString("de-DE")}\u00A0€`; 
     }
 
     function formatDateDisplay(ymd) { 
@@ -1230,13 +1433,13 @@
       const [y, m, d] = ymd.split("-"); 
       return `${d}.${m}.${y}`; 
     }
-    
-    /* ENDZEIT KORREKTUR: Endzeit minus Block-Dauer für alle Tage */
+
     const lastStart = day => minutesFromTimeString(OPENING_SCHEDULE[day].end) - BLOCK_DURATION_MINUTES;
 
     /* Toasts */
     function displayToast(msg, type = "success") {
       const tray = document.getElementById("toast-tray");
+      if (!tray) return;
       const item = document.createElement("div");
       item.className = `toast-msg ${type}`;
       item.textContent = msg;
@@ -1284,7 +1487,7 @@
       selectBookingService(id);
       proceedToStep(2);
       document.getElementById("booking-section").scrollIntoView({ behavior: "smooth" });
-    }
+    };
 
     /* CALENDAR ENGINE */
     function checkSlotAvailable(ymd, timeStr) {
@@ -1314,11 +1517,22 @@
     function renderCalendar() {
       const title = document.getElementById("calendar-title-display");
       const grid = document.getElementById("calendar-grid-cells");
+      const btnPrev = document.getElementById("cal-prev-btn");
+      const btnNext = document.getElementById("cal-next-btn");
+      if (!title || !grid) return;
       
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+
       const year = viewCalendarDate.getFullYear();
       const month = viewCalendarDate.getMonth();
       title.textContent = new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric" }).format(viewCalendarDate);
       grid.innerHTML = "";
+
+      // Navigation-Sperren (Punkt I.6): Keine Navigation vor aktuellen Monat oder über 3 Monate hinaus
+      const monthDiff = (year - today.getFullYear()) * 12 + (month - today.getMonth());
+      if (btnPrev) btnPrev.disabled = (monthDiff <= 0);
+      if (btnNext) btnNext.disabled = (monthDiff >= 3);
 
       const firstOfMonth = new Date(year, month, 1);
       let startDay = firstOfMonth.getDay() - 1;
@@ -1329,11 +1543,8 @@
         grid.appendChild(document.createElement("div"));
       }
 
-      const today = new Date(); 
-      today.setHours(0, 0, 0, 0);
-      const maxDate = new Date(); 
-      maxDate.setMonth(maxDate.getMonth() + 3); 
-      maxDate.setHours(23, 59, 59);
+      // Sicheres 3-Monats-Limit ohne JS-Überlauf-Bug
+      const maxDate = new Date(today.getFullYear(), today.getMonth() + 3, today.getDate(), 23, 59, 59);
 
       for (let d = 1; d <= daysInMonth; d++) {
         const cellDate = new Date(year, month, d);
@@ -1368,13 +1579,12 @@
           btn.style.background = "rgba(230,222,212,0.4)";
           btn.style.cursor = "not-allowed";
         } else {
-          // Sperrtage komplett blockieren, wenn nichts mehr frei
           if (dayHasFree(ymd)) {
             btn.classList.add("has-free");
             btn.onclick = () => selectDay(ymd);
           } else {
             btn.disabled = true;
-            btn.title = "Keine Termine mehr frei";
+            btn.title = "Keine freien Termine verfügbar";
             btn.style.opacity = "0.35"; 
             btn.style.background = "rgba(230,222,212,0.4)";
             btn.style.cursor = "not-allowed";
@@ -1385,10 +1595,15 @@
     }
 
     window.navigateMonth = function(delta) {
-      viewCalendarDate.setDate(1);
-      viewCalendarDate.setMonth(viewCalendarDate.getMonth() + delta);
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const targetMonthDate = new Date(viewCalendarDate.getFullYear(), viewCalendarDate.getMonth() + delta, 1);
+      const diff = (targetMonthDate.getFullYear() - today.getFullYear()) * 12 + (targetMonthDate.getMonth() - today.getMonth());
+      if (diff < 0 || diff > 3) return; // Begrenzung beachten
+
+      viewCalendarDate = targetMonthDate;
       renderCalendar();
-    }
+    };
 
     function selectDay(ymd) {
       bookingState.date = ymd;
@@ -1416,7 +1631,14 @@
       const lStart = lastStart(dObj.getDay());
 
       titleEl.textContent = new Intl.DateTimeFormat("de-DE", { weekday: "long", day: "2-digit", month: "2-digit" }).format(dObj);
-      hoursEl.textContent = `Termine starten ${sched.start} – ${timeStringFromMinutes(lStart)} Uhr`;
+      
+      // Korrektur für gleiche Start-/Endzeit (Punkt I.7)
+      const lastStartStr = timeStringFromMinutes(lStart);
+      if (sched.start === lastStartStr) {
+        hoursEl.textContent = `Termin startet um ${sched.start} Uhr (Dauer: 120 Min.)`;
+      } else {
+        hoursEl.textContent = `Mögliche Startzeiten: ${sched.start} bis ${lastStartStr} Uhr (Dauer: 120 Min.)`;
+      }
 
       let out = "";
       for (let m = minutesFromTimeString(sched.start); m <= lStart; m += TIME_INTERVAL_MINUTES) {
@@ -1525,6 +1747,7 @@
       displayToast("Erfolgreich reserviert!", "success");
     };
 
+    /* Kalender-Export mit UTF-8 BOM für fehlerfreie Umlaute (Punkt III.4) */
     window.exportCalendarIcs = function() {
       const b = bookingState.recentBooking;
       if (!b) return;
@@ -1536,11 +1759,12 @@
         `UID:${b.id}@alisabeautylab.de`, `DTSTAMP:${new Date().toISOString().replaceAll(/[-:]/g, "").split(".")[0]}Z`,
         `DTSTART:${dateClean}T${startClean}`, `DTEND:${dateClean}T${endClean}`,
         `SUMMARY:Wimperntermin ALISA BEAUTY LAB - ${b.serviceTitle}`,
-        `DESCRIPTION:Buchungscode: ${b.id}\\nBehandlung: ${b.serviceTitle}\\nBetrag: ${b.price} EUR`,
+        `DESCRIPTION:Buchungscode: ${b.id}\nBehandlung: ${b.serviceTitle}\nBetrag: ${b.price} EUR`,
         `LOCATION:Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen`,
         "STATUS:CONFIRMED", "END:VEVENT", "END:VCALENDAR"
       ].join("\r\n");
-      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
+      
+      const blob = new Blob(["\ufeff" + ics], { type: "text/calendar;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a"); 
       a.href = url; 
@@ -1554,7 +1778,8 @@
     window.sendConfirmationWhatsApp = function() {
       const b = bookingState.recentBooking;
       if (!b) return;
-      const text = `Hallo Alisa,\nich habe einen Termin reserviert:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n🏷️ Code: ${b.id}\nIch freue mich darauf!`;
+      const notesLine = b.customer.notes ? `\n📝 Hinweis: ${b.customer.notes}` : "";
+      const text = `Hallo Alisa,\nich habe einen Termin reserviert:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n📞 ${b.customer.phone}${notesLine}\n🏷️ Code: ${b.id}\nIch freue mich darauf!`;
       window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(text)}`, "_blank");
     };
 
@@ -1633,10 +1858,11 @@
     };
 
     /* ==========================================================================
-       MODALS, LEGAL & ADMIN
+       ADMIN MANAGEMENT & PIN SECURITY (Punkt I.2 & I.3)
        ========================================================================== */
     window.openAdminModal = function() {
       document.getElementById("admin-modal").classList.add("open");
+      document.getElementById("admin-pin-input").value = "";
       document.getElementById("admin-pin-input").focus();
       document.body.classList.add("modal-open");
     };
@@ -1646,17 +1872,68 @@
       document.body.classList.remove("modal-open");
     };
 
-    window.verifyAdminPin = function(e) {
+    window.logoutAdmin = function() {
+      document.getElementById("admin-dashboard-view").classList.add("hidden");
+      document.getElementById("admin-pin-view").classList.remove("hidden");
+      document.getElementById("admin-pin-input").value = "";
+    };
+
+    window.verifyAdminPin = async function(e) {
       e.preventDefault();
-      if (document.getElementById("admin-pin-input").value === ADMIN_PIN) {
+      if (failedPinAttempts >= 5) {
+        displayToast("Zu viele Fehlversuche. Bitte kurz warten.", "error");
+        return;
+      }
+
+      const inputVal = document.getElementById("admin-pin-input").value.trim();
+      const enteredHash = await computeSha256(inputVal);
+      const storedHash = localStorage.getItem(STORAGE_KEY_PIN_HASH) || DEFAULT_PIN_HASH;
+
+      if (enteredHash === storedHash) {
+        failedPinAttempts = 0;
         document.getElementById("admin-pin-view").classList.add("hidden");
         document.getElementById("admin-dashboard-view").classList.remove("hidden");
-        document.getElementById("adm-count-total").textContent = appointments.length;
-        document.getElementById("adm-count-active").textContent = appointments.filter(a => a.status === "confirmed").length;
-        displayToast("Erfolgreich eingeloggt", "success");
+        refreshAdminStats();
+        renderAdminBookings(adminFilterState);
+        renderAdminBlockedDays();
+        displayToast("Erfolgreich freigeschaltet", "success");
       } else {
-        displayToast("PIN inkorrekt", "error");
+        failedPinAttempts++;
+        displayToast(`PIN inkorrekt (${failedPinAttempts}/5 Versuche)`, "error");
       }
+    };
+
+    function refreshAdminStats() {
+      document.getElementById("adm-count-total").textContent = appointments.length;
+      document.getElementById("adm-count-active").textContent = appointments.filter(a => a.status === "confirmed").length;
+      document.getElementById("adm-count-cancelled").textContent = appointments.filter(a => a.status === "cancelled").length;
+    }
+
+    window.changeAdminPin = async function(e) {
+      e.preventDefault();
+      const newPin = document.getElementById("adm-new-pin-input").value.trim();
+      if (newPin.length < 4) {
+        return displayToast("Der PIN sollte mindestens 4 Stellen haben.", "warning");
+      }
+      const newHash = await computeSha256(newPin);
+      localStorage.setItem(STORAGE_KEY_PIN_HASH, newHash);
+      document.getElementById("adm-new-pin-input").value = "";
+      displayToast("Admin-PIN erfolgreich geändert!", "success");
+    };
+
+    window.renderAdminBlockedDays = function() {
+      const container = document.getElementById("adm-blocked-days-list");
+      if (!container) return;
+      if (blockedDays.length === 0) {
+        container.innerHTML = '<span style="font-size:12px; color:var(--taupe);">Keine Sperrtage eingetragen.</span>';
+        return;
+      }
+      container.innerHTML = blockedDays.map(ymd => `
+        <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(195,157,88,0.15); border:1px solid var(--border-gold); padding:4px 10px; border-radius:99px; font-size:12px; color:var(--brown-deep);">
+          📅 ${formatDateDisplay(ymd)}
+          <button type="button" onclick="unblockCalendarDay('${ymd}')" title="Sperrung aufheben" style="background:none; border:none; cursor:pointer; color:#b33a3a; font-weight:bold; font-size:13px; line-height:1;">✕</button>
+        </span>
+      `).join("");
     };
 
     window.blockCalendarDay = function() {
@@ -1666,10 +1943,121 @@
         blockedDays.push(ymd);
         persistData();
         renderCalendar();
+        renderAdminBlockedDays();
         displayToast("Tag gesperrt", "success");
+      } else {
+        displayToast("Dieser Tag ist bereits gesperrt", "warning");
       }
     };
 
+    window.unblockCalendarDay = function(ymd) {
+      blockedDays = blockedDays.filter(d => d !== ymd);
+      persistData();
+      renderCalendar();
+      renderAdminBlockedDays();
+      displayToast("Tag wieder freigegeben", "success");
+    };
+
+    window.renderAdminBookings = function(filter = "all") {
+      adminFilterState = filter;
+      const container = document.getElementById("adm-bookings-table-container");
+      if (!container) return;
+
+      const list = appointments.filter(a => {
+        if (filter === "all") return true;
+        return a.status === filter;
+      });
+
+      if (list.length === 0) {
+        container.innerHTML = '<div style="text-align:center; padding:24px; color:var(--taupe); font-size:13px;">Keine Buchungen in dieser Kategorie vorhanden.</div>';
+        return;
+      }
+
+      container.innerHTML = list.map(a => {
+        const isCancelled = a.status === "cancelled";
+        return `
+          <div style="border:1px solid ${isCancelled ? 'rgba(179,58,58,0.3)' : 'var(--border-gold-light)'}; background:${isCancelled ? 'rgba(179,58,58,0.03)' : '#fff'}; border-radius:10px; padding:14px; margin-bottom:10px; font-size:12.5px;">
+            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
+              <div>
+                <strong style="color:var(--brown-deep); font-size:14px;">${a.customer.firstName} ${a.customer.lastName}</strong>
+                <span style="display:inline-block; margin-left:8px; padding:2px 8px; border-radius:99px; font-size:10px; font-weight:700; text-transform:uppercase; background:${isCancelled ? 'rgba(179,58,58,0.15)' : 'rgba(23,115,68,0.15)'}; color:${isCancelled ? '#b33a3a' : '#177344'};">
+                  ${isCancelled ? 'Storniert' : 'Bestätigt'}
+                </span>
+              </div>
+              <div style="font-family:var(--font-serif); font-size:16px; font-weight:600; color:var(--gold-dark);">${formatCurrency(a.price)}</div>
+            </div>
+            <div style="color:var(--taupe); margin-bottom:6px;">
+              ✨ <strong>${a.serviceTitle}</strong> | 📅 <strong>${formatDateDisplay(a.date)}</strong> um <strong>${a.time} Uhr</strong> (Code: <code>${a.id}</code>)
+            </div>
+            <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:8px; font-size:12px;">
+              <a href="tel:${a.customer.phone}" style="color:var(--brown-deep); text-decoration:none;">📞 ${a.customer.phone}</a>
+              <a href="https://wa.me/${a.customer.phone.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener noreferrer" style="color:#128c7e; text-decoration:none;">💬 WhatsApp</a>
+              <a href="mailto:${a.customer.email}" style="color:var(--taupe); text-decoration:none;">✉️ ${a.customer.email}</a>
+            </div>
+            ${a.customer.notes ? `<div style="font-size:11.5px; background:rgba(244,236,225,0.6); padding:6px 10px; border-radius:6px; margin-bottom:8px; color:var(--brown);"><em>Hinweis:</em> ${a.customer.notes}</div>` : ''}
+            <div style="display:flex; justify-content:flex-end; gap:8px;">
+              ${!isCancelled ? `<button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#b33a3a; border-color:rgba(179,58,58,0.4);" onclick="cancelAppointment('${a.id}')">Stornieren</button>` : ''}
+              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#786a62;" onclick="deleteAppointment('${a.id}')">Löschen</button>
+            </div>
+          </div>
+        `;
+      }).join("");
+    };
+
+    window.cancelAppointment = function(id) {
+      if (!confirm("Diesen Termin wirklich stornieren?")) return;
+      const app = appointments.find(a => a.id === id);
+      if (app) {
+        app.status = "cancelled";
+        persistData();
+        renderCalendar();
+        refreshAdminStats();
+        renderAdminBookings(adminFilterState);
+        displayToast("Termin wurde storniert", "success");
+      }
+    };
+
+    window.deleteAppointment = function(id) {
+      if (!confirm("Diesen Termin endgültig aus der Liste löschen?")) return;
+      appointments = appointments.filter(a => a.id !== id);
+      persistData();
+      renderCalendar();
+      refreshAdminStats();
+      renderAdminBookings(adminFilterState);
+      displayToast("Termin gelöscht", "success");
+    };
+
+    window.exportBookingsCsv = function() {
+      if (appointments.length === 0) return displayToast("Keine Buchungen vorhanden", "warning");
+      const headers = ["Buchungscode", "Status", "Datum", "Uhrzeit", "Behandlung", "Preis", "Vorname", "Nachname", "Telefon", "E-Mail", "Notizen"];
+      const rows = appointments.map(a => [
+        a.id,
+        a.status,
+        a.date,
+        a.time,
+        `"${(a.serviceTitle || '').replace(/"/g, '""')}"`,
+        a.price,
+        `"${(a.customer.firstName || '').replace(/"/g, '""')}"`,
+        `"${(a.customer.lastName || '').replace(/"/g, '""')}"`,
+        `"${(a.customer.phone || '').replace(/"/g, '""')}"`,
+        `"${(a.customer.email || '').replace(/"/g, '""')}"`,
+        `"${(a.customer.notes || '').replace(/"/g, '""')}"`
+      ]);
+      const csvContent = "\ufeff" + [headers.join(";"), ...rows.map(r => r.join(";"))].join("\r\n");
+      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement("a"); 
+      a.href = url; 
+      a.download = `Termine-AlisaBeautyLab-${new Date().toISOString().slice(0, 10)}.csv`;
+      document.body.appendChild(a); 
+      a.click(); 
+      a.remove(); 
+      URL.revokeObjectURL(url);
+    };
+
+    /* ==========================================================================
+       MODALS, LEGAL & PRIVACY
+       ========================================================================== */
     window.openLegalView = function(type) {
       const modal = document.getElementById("legal-modal-overlay");
       const imprint = document.getElementById("legal-imprint-text");
@@ -1689,40 +2077,46 @@
       document.body.classList.remove("modal-open");
     };
 
-    window.acceptAllCookies = function() {
-      localStorage.setItem(STORAGE_KEY_COOKIES, "all");
-      document.getElementById("cookie-banner").classList.remove("show");
-      displayToast("Cookies akzeptiert", "success");
-    };
-    
     window.acceptNecessaryCookies = function() {
       localStorage.setItem(STORAGE_KEY_COOKIES, "necessary");
       document.getElementById("cookie-banner").classList.remove("show");
-      displayToast("Notwendige Cookies gespeichert", "success");
+      displayToast("Datenschutzhinweis bestätigt", "success");
     };
     
     window.showCookieSettings = function() {
       document.getElementById("cookie-banner").classList.add("show");
     };
 
-    /* MOBILE MENU LOGIC */
+    /* MOBILE NAVIGATION */
     window.toggleMobileMenu = function() {
       const menu = document.getElementById("mobileNav");
       if (menu.classList.contains("open")) {
         closeMobileMenu();
       } else { 
         menu.classList.add("open"); 
+        menu.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open"); 
       }
     };
     
     window.closeMobileMenu = function() {
-      document.getElementById("mobileNav").classList.remove("open");
+      const menu = document.getElementById("mobileNav");
+      menu.classList.remove("open");
+      menu.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
     };
 
+    // Tastatur-Bedienung: Escape schließt alle Modals & Menüs
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeMobileMenu();
+        closeAdminModal();
+        closeLegalModal();
+      }
+    });
+
     /* ==========================================================================
-       INITIALIZATION & SCROLL FX
+       INITIALIZATION & SCROLL FX (Punkt V.3 Throttled)
        ========================================================================== */
     document.addEventListener("DOMContentLoaded", () => {
       renderTreatmentOptions();
@@ -1733,13 +2127,11 @@
       const cookieState = localStorage.getItem(STORAGE_KEY_COOKIES);
       if(!cookieState) setTimeout(() => document.getElementById("cookie-banner").classList.add("show"), 1000);
 
-      // Populate FAQ
       const faqContainer = document.getElementById("faq-container");
       if(faqContainer) {
         faqContainer.innerHTML = FAQ.map(f => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
       }
 
-      // Populate Testimonials
       const testContainer = document.getElementById("testimonial-track");
       if(testContainer) {
         testContainer.innerHTML = TESTIMONIALS.map(t => `
@@ -1751,7 +2143,6 @@
         `).join("");
       }
 
-      // Scroll Reveal
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) { 
@@ -1762,22 +2153,31 @@
       }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
       document.querySelectorAll(".reveal-on-scroll").forEach(el => revealObserver.observe(el));
 
-      // Header & Scroll Progress
+      // Performance: Throttling mit requestAnimationFrame (Punkt V.3)
       const header = document.getElementById("siteHeader");
       const progressBar = document.getElementById("scrollProgressBar");
+      let isScrolling = false;
+
       window.addEventListener("scroll", () => {
-        const scrolled = window.scrollY;
-        const progress = (scrolled / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-        
-        if (progressBar) progressBar.style.width = `${progress}%`;
-        
-        if (header) {
-          if (scrolled > 60) header.classList.add("scrolled");
-          else header.classList.remove("scrolled");
+        if (!isScrolling) {
+          window.requestAnimationFrame(() => {
+            const scrolled = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = docHeight > 0 ? (scrolled / docHeight) * 100 : 0;
+            
+            if (progressBar) progressBar.style.width = `${progress}%`;
+            
+            if (header) {
+              if (scrolled > 60) header.classList.add("scrolled");
+              else header.classList.remove("scrolled");
+            }
+            isScrolling = false;
+          });
+          isScrolling = true;
         }
       }, { passive: true });
 
-      // Before/After Slider Logic (Modern Clip-Path Method)
+      // Before/After Slider mit Touch-Scroll-Fix & Barrierefreiheit (Punkt I.5 & IV.3)
       const baSlider = document.getElementById("baSlider");
       const baAfterImg = document.getElementById("baAfterImg");
       const baHandleLine = document.getElementById("baHandleLine");
@@ -1785,7 +2185,10 @@
 
       if (baSlider && baAfterImg && baHandleLine && baHandleBtn) {
         let isDragging = false;
-        
+        let startX = 0;
+        let startY = 0;
+        let isTouchHorizontal = null;
+
         const updateSlider = (clientX) => {
           const rect = baSlider.getBoundingClientRect();
           let xPos = clientX - rect.left;
@@ -1796,6 +2199,7 @@
           baAfterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
           baHandleLine.style.left = `${percentage}%`;
           baHandleBtn.style.left = `${percentage}%`;
+          baSlider.setAttribute("aria-valuenow", Math.round(percentage));
         };
 
         baSlider.addEventListener("mousedown", (e) => { 
@@ -1812,22 +2216,62 @@
           updateSlider(e.clientX); 
         });
 
-        // Touch Events mit verbesserter Unterstützung
+        // Touch Events mit Erkennung horizontal vs. vertikal (behebt Scroll-Einfrieren)
         baSlider.addEventListener("touchstart", (e) => { 
-          isDragging = true; 
-          updateSlider(e.touches[0].clientX); 
+          if (e.touches.length === 1) {
+            isDragging = true;
+            isTouchHorizontal = null;
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+          }
         }, { passive: true });
         
         window.addEventListener("touchend", () => { 
           isDragging = false; 
+          isTouchHorizontal = null;
         });
         
         window.addEventListener("touchmove", (e) => { 
-          if (!isDragging) return; 
-          // Browser Scrollen auf dem Slider verhindern wenn interagiert wird
-          if (e.cancelable) e.preventDefault();
-          updateSlider(e.touches[0].clientX); 
+          if (!isDragging || e.touches.length !== 1) return; 
+          const currentX = e.touches[0].clientX;
+          const currentY = e.touches[0].clientY;
+          const diffX = Math.abs(currentX - startX);
+          const diffY = Math.abs(currentY - startY);
+
+          if (isTouchHorizontal === null) {
+            if (diffX > 6 || diffY > 6) {
+              isTouchHorizontal = diffX > diffY;
+            }
+          }
+
+          if (isTouchHorizontal === true) {
+            if (e.cancelable) e.preventDefault();
+            updateSlider(currentX);
+          } else if (isTouchHorizontal === false) {
+            // Normales vertikales Scrollen erlauben
+            isDragging = false;
+          }
         }, { passive: false });
+
+        // Barrierefreie Tastatur-Steuerung mit Pfeiltasten
+        baSlider.addEventListener("keydown", (e) => {
+          let currentVal = parseFloat(baHandleLine.style.left) || 50;
+          if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
+            e.preventDefault();
+            const newVal = Math.max(0, currentVal - 5);
+            baAfterImg.style.clipPath = `inset(0 ${100 - newVal}% 0 0)`;
+            baHandleLine.style.left = `${newVal}%`;
+            baHandleBtn.style.left = `${newVal}%`;
+            baSlider.setAttribute("aria-valuenow", Math.round(newVal));
+          } else if (e.key === "ArrowRight" || e.key === "ArrowUp") {
+            e.preventDefault();
+            const newVal = Math.min(100, currentVal + 5);
+            baAfterImg.style.clipPath = `inset(0 ${100 - newVal}% 0 0)`;
+            baHandleLine.style.left = `${newVal}%`;
+            baHandleBtn.style.left = `${newVal}%`;
+            baSlider.setAttribute("aria-valuenow", Math.round(newVal));
+          }
+        });
       }
     });
   </script>
