@@ -49,7 +49,7 @@
       --shadow-md: 0 10px 30px rgba(37, 27, 24, 0.08);
       --shadow-lg: 0 20px 50px rgba(37, 27, 24, 0.12);
 
-      /* SCHRIFTDEFINITIONEN NACH VORGABE */
+      /* SCHRIFTDEFINITIONEN */
       --font-serif: "ivypresto-display", "Cormorant Garamond", Georgia, serif;
       --font-body: "sweet-sans-pro", "Montserrat", system-ui, -apple-system, sans-serif;
       --font-brand: "goldenbook", "Cormorant Garamond", serif;
@@ -63,7 +63,11 @@
       --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
     }
 
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after { 
+      box-sizing: border-box; 
+      margin: 0; 
+      padding: 0; 
+    }
 
     /* Vererbung für Formulare und Buttons aktivieren */
     button, input, textarea, select { font: inherit; }
@@ -107,9 +111,7 @@
       transition: width 0.1s linear;
     }
 
-    /* ==========================================================================
-       HEADER & NAVIGATION
-       ========================================================================== */
+    /* Top Announcement Bar */
     .top-announcement {
       background: linear-gradient(90deg, #1f1614 0%, #2e221d 50%, #1f1614 100%);
       color: #ede3d8;
@@ -140,6 +142,7 @@
       50% { transform: scale(1.4); opacity: 0.65; }
     }
     
+    /* Header */
     .site-header {
       position: sticky; top: 0; z-index: 100;
       background: rgba(255, 253, 249, 0.96);
@@ -160,23 +163,22 @@
     }
     .site-header.scrolled .header-inner { height: 70px; }
 
+    /* Logo */
     .brand-logo-link {
       display: inline-flex; align-items: center; text-decoration: none;
       transition: transform 0.25s var(--ease-luxury), opacity 0.25s;
     }
     .brand-logo-link:hover { opacity: 0.92; transform: scale(0.99); }
-    
     .brand-logo-img {
       max-height: 52px;
       width: min(280px, 28vw);
       object-fit: contain;
     }
-    
     .logo-brand-fallback { display: flex; flex-direction: column; line-height: 1; }
     .logo-main-text { font-family: var(--font-brand); font-size: 20px; letter-spacing: 0.12em; color: var(--brown-deep); font-weight: 500; white-space: nowrap; }
     .logo-sub-text { font-size: 8px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--gold-dark); margin-top: 3px; font-weight: 600; white-space: nowrap; }
 
-    /* Stacked Navigation Links */
+    /* Navigation */
     .nav-links { display: none; align-items: center; gap: 32px; }
     @media (min-width: 1040px) { .nav-links { display: flex; } }
     .nav-links a {
@@ -309,7 +311,7 @@
     }
     .hero-headline {
       font-family: var(--font-serif); font-size: clamp(38px, 6.4vw, 76px);
-      line-height: 1.08; font-weight: 300; letter-spacing: -0.015em; color: var(--brown-deep); margin-bottom: 22px;
+      line-height: 1.15; font-weight: 300; letter-spacing: -0.015em; color: var(--brown-deep); margin-bottom: 22px;
     }
     .hero-headline em {
       font-family: var(--font-script); font-style: normal; font-weight: 400; font-size: 1.15em;
@@ -372,13 +374,13 @@
        ========================================================================== */
     .section-spacing { padding: 95px 0; position: relative; }
     @media (max-width: 768px) { .section-spacing { padding: 65px 0; } }
-    .u-head { text-align: center; max-width: 680px; margin: 0 auto 40px; }
+    .u-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: 8px; font-size: 11px;
       letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold-dark); margin-bottom: 12px; font-weight: 700;
     }
-    .section-title { font-family: var(--font-serif); font-size: clamp(32px, 4.8vw, 56px); line-height: 1.1; font-weight: 300; color: var(--brown-deep); margin-bottom: 16px; }
-    .section-description { font-size: 15px; color: var(--taupe); line-height: 1.75; font-weight: 400; margin-inline: auto; }
+    .section-title { font-family: var(--font-serif); font-size: clamp(32px, 4.8vw, 56px); line-height: 1.15; font-weight: 300; color: var(--brown-deep); margin-bottom: 16px; }
+    .section-description { font-size: 15px; color: var(--taupe); line-height: 1.75; font-weight: 400; margin-inline: auto; margin-bottom: 1.5rem; }
     
     .glass-panel {
       background: var(--bg-card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -408,7 +410,11 @@
     .quiz-bar { height: 3px; background: var(--sand-dark); border-radius: 3px; margin-bottom: 26px; overflow: hidden; }
     .quiz-bar i { display: block; height: 100%; background: var(--gold-gradient); transition: width 0.5s var(--ease-luxury); }
     .quiz-opts { display: grid; gap: 12px; margin-top: 22px; }
-    .quiz-opts .service-select-pill { min-height: 0; padding: 16px 20px; font-size: 14px; color: var(--brown-deep); font-weight: 600; cursor:pointer; background:#fff; border:1px solid var(--border-gold-light); border-radius:var(--radius-md); animation: quizIn 0.45s var(--ease-luxury) both; transition:all 0.3s; }
+    .quiz-opts .service-select-pill { 
+      min-height: 0; padding: 16px 20px; font-size: 14px; color: var(--brown-deep); font-weight: 600; 
+      cursor:pointer; background:#fff; border:1px solid var(--border-gold-light); 
+      border-radius:var(--radius-md); animation: quizIn 0.45s var(--ease-luxury) both; transition:all 0.3s; 
+    }
     .quiz-opts .service-select-pill:hover { border-color:var(--gold); transform:translateY(-2px); box-shadow:var(--shadow-sm); }
     @keyframes quizIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 
@@ -419,7 +425,7 @@
     .faq summary::-webkit-details-marker { display: none; }
     .faq summary::after { content: "+"; color: var(--gold-dark); font-size: 22px; line-height: 1; transition: transform 0.3s; }
     .faq details[open] summary::after { transform: rotate(45deg); }
-    .faq details p { padding: 0 0 20px; color: var(--taupe); font-size: 14px; animation: quizIn 0.4s both; }
+    .faq details p { padding: 0 0 20px; color: var(--taupe); font-size: 14px; animation: quizIn 0.4s both; line-height: 1.6; }
 
     .gift-box { max-width: 760px; margin: 0 auto; padding: 44px 32px; text-align: center; }
     .gift-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 26px 0; }
@@ -429,7 +435,21 @@
     /* ==========================================================================
        BOOKING ENGINE
        ========================================================================== */
-    .booking-cockpit-frame { background: linear-gradient(145deg, rgba(255, 253, 249, 0.98) 0%, rgba(247, 240, 231, 0.95) 100%); border: 1px solid var(--border-gold); border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); overflow:hidden;}
+    .booking-cockpit-frame { 
+      background: linear-gradient(145deg, rgba(255, 253, 249, 0.98) 0%, rgba(247, 240, 231, 0.95) 100%); 
+      border: 1px solid var(--border-gold); border-radius: var(--radius-lg); 
+      box-shadow: var(--shadow-lg); overflow:hidden;
+    }
+    
+    .cockpit-tabs-container {
+      display: grid; grid-template-columns: repeat(3, 1fr); 
+      background: rgba(245,237,227,0.85); border-bottom: 1px solid var(--border-gold-light);
+    }
+    .cockpit-step-tab {
+      padding: 20px 16px; text-align: center; display: flex; align-items: center; 
+      justify-content: center; gap: 12px; cursor: pointer; transition: all 0.3s;
+    }
+    
     .cal-day { position: relative; }
     .cal-day.has-free::after { content: ""; position: absolute; bottom: 4px; left: 50%; width: 4px; height: 4px; margin-left: -2px; border-radius: 50%; background: var(--gold); }
     .cal-day.selected.has-free::after { background: var(--gold-bright); }
@@ -573,7 +593,6 @@
           Präzision & Feingefühl für deinen <em>perfekten</em> Augenaufschlag.
         </h1>
         
-        <!-- SVG Animated Lash Graphic -->
         <div class="reveal-on-scroll reveal-delay-2">
           <p class="hero-subparagraph">
             Vergiss Mascara. Erlebe meisterhafte Wimpernbehandlungen, individuelle Look-Kreationen und pure Entspannung in liebevoller Studio-Atmosphäre.
@@ -648,7 +667,7 @@
             <span class="section-eyebrow">Studio Preisübersicht</span>
             <h2 class="section-title">Behandlungen & Looks</h2>
           </div>
-          <p class="section-description" style="max-width:600px;">
+          <p class="section-description" style="max-width:600px; margin-inline: 0; margin-bottom: 0;">
             Jede Neuanlage startet mit einer typgerechten Beratung, um Biegung, Schwung und Dicke exakt an deine Augenform anzupassen.
           </p>
         </div>
@@ -729,17 +748,17 @@
         </div>
 
         <div class="booking-cockpit-frame reveal-on-scroll">
-          <div style="display:grid; grid-template-columns:repeat(3,1fr); background:rgba(245,237,227,0.85); border-bottom:1px solid var(--border-gold-light);">
-            <div class="cockpit-step-tab active" id="tab-1" onclick="jumpToStep(1)" style="padding:20px 16px; text-align:center; display:flex; align-items:center; justify-content:center; gap:12px; color:var(--brown-deep); font-size:12px; font-weight:700; cursor:pointer; border-right:1px solid var(--border-gold-light); background:rgba(255,253,249,0.95); position:relative;">
+          <div class="cockpit-tabs-container">
+            <div class="cockpit-step-tab" id="tab-1" onclick="jumpToStep(1)" style="color:var(--brown-deep); font-size:12px; font-weight:700; border-right:1px solid var(--border-gold-light); background:rgba(255,253,249,0.95); position:relative;">
               <span style="width:24px; height:24px; border-radius:50%; background:var(--brown-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-size:11px;">1</span>
               <span>Behandlung</span>
               <div style="position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--gold-dark);"></div>
             </div>
-            <div class="cockpit-step-tab" id="tab-2" onclick="jumpToStep(2)" style="padding:20px 16px; text-align:center; display:flex; align-items:center; justify-content:center; gap:12px; color:var(--taupe); font-size:12px; font-weight:600; cursor:pointer; border-right:1px solid var(--border-gold-light);">
+            <div class="cockpit-step-tab" id="tab-2" onclick="jumpToStep(2)" style="color:var(--taupe); font-size:12px; font-weight:600; border-right:1px solid var(--border-gold-light);">
               <span style="width:24px; height:24px; border-radius:50%; background:rgba(195,157,88,0.2); border:1px solid var(--border-gold); color:var(--brown-deep); display:flex; align-items:center; justify-content:center; font-size:11px;">2</span>
               <span>Datum & Zeit</span>
             </div>
-            <div class="cockpit-step-tab" id="tab-3" onclick="jumpToStep(3)" style="padding:20px 16px; text-align:center; display:flex; align-items:center; justify-content:center; gap:12px; color:var(--taupe); font-size:12px; font-weight:600; cursor:pointer;">
+            <div class="cockpit-step-tab" id="tab-3" onclick="jumpToStep(3)" style="color:var(--taupe); font-size:12px; font-weight:600;">
               <span style="width:24px; height:24px; border-radius:50%; background:rgba(195,157,88,0.2); border:1px solid var(--border-gold); color:var(--brown-deep); display:flex; align-items:center; justify-content:center; font-size:11px;">3</span>
               <span>Bestätigung</span>
             </div>
@@ -908,7 +927,7 @@
       <div class="container">
         <div class="reveal-on-scroll">
           
-          <!-- Outer Double-Border Wrapper (Für den feinen Doppelrahmen-Effekt aus dem Bild) -->
+          <!-- Outer Double-Border Wrapper -->
           <div style="padding: 10px; border: 1px solid var(--border-gold-light); border-radius: 34px; max-width: 1020px; margin: 0 auto; background: rgba(255, 253, 249, 0.3);">
             
             <!-- Inner Glass Card -->
@@ -935,7 +954,6 @@
               
               <!-- Action Buttons -->
               <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
-                
                 <!-- Maps Button -->
                 <a href="https://maps.google.com/?q=Bürgermeister-Sommer-Straße+34,+91757+Treuchtlingen" target="_blank" class="btn-lux btn-booking" style="padding: 0 28px;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
@@ -954,7 +972,6 @@
                 <a href="tel:+491784537636" class="btn-lux btn-lux-secondary" style="padding: 0 28px;">
                   0178 4537636 Anrufen
                 </a>
-                
               </div>
               
             </div>
@@ -963,14 +980,13 @@
         </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer" style="background:#1c1412; color:#ede3d8; border-top:1px solid rgba(195, 157, 88, 0.35); padding:70px 0 32px; font-size:13px;">
     <div class="container">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom: 25px;">
         
-        <!-- Updated Footer Logo Block -->
+        <!-- Footer Logo Block -->
         <div>
           <a href="#" class="footer-logo-link" aria-label="ALISA BEAUTY LAB Startseite">
             <img 
@@ -1153,19 +1169,42 @@
        UTILITIES & STORAGE
        ========================================================================== */
     function fetchStored(key, fallback) {
-      try { const item = localStorage.getItem(key); return item ? JSON.parse(item) : fallback; } 
-      catch (e) { return fallback; }
+      try { 
+        const item = localStorage.getItem(key); 
+        return item ? JSON.parse(item) : fallback; 
+      } 
+      catch (e) { 
+        return fallback; 
+      }
     }
+
     function persistData() {
       localStorage.setItem(STORAGE_KEY_BOOKINGS, JSON.stringify(appointments));
       localStorage.setItem(STORAGE_KEY_BLOCKED, JSON.stringify(blockedDays));
     }
-    function minutesFromTimeString(t) { const [h, m] = t.split(":").map(Number); return h * 60 + m; }
-    function timeStringFromMinutes(min) { const h = Math.floor(min / 60); const m = min % 60; return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`; }
-    function formatCurrency(val) { return `${Number(val).toLocaleString("de-DE")} €`; }
-    function formatDateDisplay(ymd) { if (!ymd) return "–"; const [y, m, d] = ymd.split("-"); return `${d}.${m}.${y}`; }
+
+    function minutesFromTimeString(t) { 
+      const [h, m] = t.split(":").map(Number); 
+      return h * 60 + m; 
+    }
+
+    function timeStringFromMinutes(min) { 
+      const h = Math.floor(min / 60); 
+      const m = min % 60; 
+      return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`; 
+    }
+
+    function formatCurrency(val) { 
+      return `${Number(val).toLocaleString("de-DE")} €`; 
+    }
+
+    function formatDateDisplay(ymd) { 
+      if (!ymd) return "–"; 
+      const [y, m, d] = ymd.split("-"); 
+      return `${d}.${m}.${y}`; 
+    }
     
-    /* ENDZEIT KORREKTUR (Punkt 7): Endzeit minus Block-Dauer für alle Tage */
+    /* ENDZEIT KORREKTUR: Endzeit minus Block-Dauer für alle Tage */
     const lastStart = day => minutesFromTimeString(OPENING_SCHEDULE[day].end) - BLOCK_DURATION_MINUTES;
 
     /* Toasts */
@@ -1214,7 +1253,7 @@
       validateStep2();
     }
 
-    function preselectAndScroll(id) {
+    window.preselectAndScroll = function(id) {
       selectBookingService(id);
       proceedToStep(2);
       document.getElementById("booking-section").scrollIntoView({ behavior: "smooth" });
@@ -1259,10 +1298,15 @@
       if (startDay < 0) startDay = 6;
       const daysInMonth = new Date(year, month + 1, 0).getDate();
 
-      for (let i = 0; i < startDay; i++) grid.appendChild(document.createElement("div"));
+      for (let i = 0; i < startDay; i++) {
+        grid.appendChild(document.createElement("div"));
+      }
 
-      const today = new Date(); today.setHours(0, 0, 0, 0);
-      const maxDate = new Date(); maxDate.setMonth(maxDate.getMonth() + 3); maxDate.setHours(23, 59, 59);
+      const today = new Date(); 
+      today.setHours(0, 0, 0, 0);
+      const maxDate = new Date(); 
+      maxDate.setMonth(maxDate.getMonth() + 3); 
+      maxDate.setHours(23, 59, 59);
 
       for (let d = 1; d <= daysInMonth; d++) {
         const cellDate = new Date(year, month, d);
@@ -1286,15 +1330,18 @@
         }
 
         if (cellDate > maxDate) {
-          btn.disabled = true; btn.title = "Maximal 3 Monate im Voraus buchbar";
-          btn.style.opacity = "0.35"; btn.style.background = "rgba(230,222,212,0.4)";
+          btn.disabled = true; 
+          btn.title = "Maximal 3 Monate im Voraus buchbar";
+          btn.style.opacity = "0.35"; 
+          btn.style.background = "rgba(230,222,212,0.4)";
           btn.style.cursor = "not-allowed";
         } else if (isPast || isBlocked) {
           btn.disabled = true;
-          btn.style.opacity = "0.35"; btn.style.background = "rgba(230,222,212,0.4)";
+          btn.style.opacity = "0.35"; 
+          btn.style.background = "rgba(230,222,212,0.4)";
           btn.style.cursor = "not-allowed";
         } else {
-          // Bugfix: Sperrtage, an denen keine Zeiten mehr frei sind, nun komplett blockieren!
+          // Sperrtage komplett blockieren, wenn nichts mehr frei
           if (dayHasFree(ymd)) {
             btn.classList.add("has-free");
             btn.onclick = () => selectDay(ymd);
@@ -1310,7 +1357,7 @@
       }
     }
 
-    function navigateMonth(delta) {
+    window.navigateMonth = function(delta) {
       viewCalendarDate.setDate(1);
       viewCalendarDate.setMonth(viewCalendarDate.getMonth() + delta);
       renderCalendar();
@@ -1373,8 +1420,12 @@
     }
 
     window.jumpToStep = function(step) {
-      if (step === 2 && !bookingState.serviceId) { displayToast("Bitte Behandlung wählen.", "warning"); return; }
-      if (step === 3 && (!bookingState.date || !bookingState.time)) { displayToast("Bitte Zeit wählen.", "warning"); return; }
+      if (step === 2 && !bookingState.serviceId) { 
+        displayToast("Bitte Behandlung wählen.", "warning"); return; 
+      }
+      if (step === 3 && (!bookingState.date || !bookingState.time)) { 
+        displayToast("Bitte Zeit wählen.", "warning"); return; 
+      }
       proceedToStep(step);
     };
 
@@ -1382,32 +1433,45 @@
       [1, 2, 3, 4].forEach(i => {
         const panel = document.getElementById(`step-panel-${i}`);
         const tab = document.getElementById(`tab-${i}`);
+        
         if (panel) panel.classList.toggle("hidden", i !== targetStep);
         
         if (tab) {
           const num = tab.querySelector('span');
           if (i === targetStep) {
-            tab.style.color = "var(--brown-deep)"; tab.style.background = "rgba(255,253,249,0.95)";
-            num.style.background = "var(--brown-deep)"; num.style.color = "#fff";
+            tab.style.color = "var(--brown-deep)"; 
+            tab.style.background = "rgba(255,253,249,0.95)";
+            num.style.background = "var(--brown-deep)"; 
+            num.style.color = "#fff";
             tab.querySelector('div')?.remove();
             tab.insertAdjacentHTML('beforeend', '<div style="position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--gold-dark);"></div>');
           } else {
-            tab.style.color = "var(--taupe)"; tab.style.background = "transparent";
-            num.style.background = "rgba(195,157,88,0.2)"; num.style.color = "var(--brown-deep)";
+            tab.style.color = "var(--taupe)"; 
+            tab.style.background = "transparent";
+            num.style.background = "rgba(195,157,88,0.2)"; 
+            num.style.color = "var(--brown-deep)";
             tab.querySelector('div')?.remove();
           }
         }
       });
-      if (targetStep === 2) { renderCalendar(); renderSlotsForDate(); validateStep2(); }
+      if (targetStep === 2) { 
+        renderCalendar(); 
+        renderSlotsForDate(); 
+        validateStep2(); 
+      }
       document.getElementById("booking-section").scrollIntoView({ behavior: "smooth" });
     };
 
     window.handleFormSubmission = function(e) {
       e.preventDefault();
-      if (!bookingState.date || !bookingState.time) { proceedToStep(2); return; }
+      if (!bookingState.date || !bookingState.time) { 
+        proceedToStep(2); return; 
+      }
       if (!checkSlotAvailable(bookingState.date, bookingState.time)) {
         displayToast("Termin gerade vergeben. Bitte wähle eine andere Zeit.", "error");
-        renderSlotsForDate(); proceedToStep(2); return;
+        renderSlotsForDate(); 
+        proceedToStep(2); 
+        return;
       }
 
       const srv = CATALOGUE.find(s => s.id === bookingState.serviceId);
@@ -1451,8 +1515,13 @@
       ].join("\r\n");
       const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
       const url = URL.createObjectURL(blob);
-      const a = document.createElement("a"); a.href = url; a.download = `Termin-${b.id}.ics`;
-      document.body.appendChild(a); a.click(); a.remove(); URL.revokeObjectURL(url);
+      const a = document.createElement("a"); 
+      a.href = url; 
+      a.download = `Termin-${b.id}.ics`;
+      document.body.appendChild(a); 
+      a.click(); 
+      a.remove(); 
+      URL.revokeObjectURL(url);
     };
 
     window.sendConfirmationWhatsApp = function() {
@@ -1463,9 +1532,14 @@
     };
 
     window.startFreshBooking = function() {
-      bookingState.date = null; bookingState.time = null; bookingState.recentBooking = null;
+      bookingState.date = null; 
+      bookingState.time = null; 
+      bookingState.recentBooking = null;
       document.getElementById("appointment-form").reset();
-      renderTreatmentOptions(); renderCalendar(); renderSlotsForDate(); proceedToStep(1);
+      renderTreatmentOptions(); 
+      renderCalendar(); 
+      renderSlotsForDate(); 
+      proceedToStep(1);
     };
 
     /* ==========================================================================
@@ -1479,7 +1553,8 @@
     let qi = 0, qs = {};
     
     function renderQuiz() {
-      const box = document.getElementById("quiz-body"); if (!box) return;
+      const box = document.getElementById("quiz-body"); 
+      if (!box) return;
       if (qi >= Q.length) {
         const id = Object.entries(qs).sort((a, b) => b[1] - a[1])[0][0], srv = CATALOGUE.find(s => s.id === id);
         box.innerHTML = `
@@ -1501,16 +1576,34 @@
         <div class="quiz-opts">${q.o.map((o, i) => `<button type="button" class="service-select-pill" style="animation-delay:${i * 70}ms" onclick="quizPick(${i})">${o[0]}</button>`).join("")}</div>`;
     }
     
-    window.quizPick = function(i) { for (const [k, v] of Object.entries(Q[qi].o[i][1])) qs[k] = (qs[k] || 0) + v; qi++; renderQuiz(); };
-    window.quizReset = function() { qi = 0; qs = {}; renderQuiz(); };
+    window.quizPick = function(i) { 
+      for (const [k, v] of Object.entries(Q[qi].o[i][1])) {
+        qs[k] = (qs[k] || 0) + v; 
+      }
+      qi++; 
+      renderQuiz(); 
+    };
+    
+    window.quizReset = function() { 
+      qi = 0; 
+      qs = {}; 
+      renderQuiz(); 
+    };
 
     function renderGifts() {
       const container = document.getElementById("gift-chips-container");
       if(!container) return;
       container.innerHTML = [30, 50, 80, 100].map(v => `<button type="button" class="gift-chip ${v === giftAmount ? "on" : ""}" data-v="${v}" onclick="giftPick(${v})">${v} €</button>`).join("");
     }
-    window.giftPick = function(v) { giftAmount = v; renderGifts(); };
-    window.giftSend = function() { window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(`Hallo Alisa, ich möchte gern einen Geschenkgutschein über ${giftAmount} € bestellen.`)}`, "_blank"); };
+    
+    window.giftPick = function(v) { 
+      giftAmount = v; 
+      renderGifts(); 
+    };
+    
+    window.giftSend = function() { 
+      window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(`Hallo Alisa, ich möchte gern einen Geschenkgutschein über ${giftAmount} € bestellen.`)}`, "_blank"); 
+    };
 
     /* ==========================================================================
        MODALS, LEGAL & ADMIN
@@ -1518,8 +1611,9 @@
     window.openAdminModal = function() {
       document.getElementById("admin-modal").classList.add("open");
       document.getElementById("admin-pin-input").focus();
-      document.body.classList.add("modal-open"); // Fix: Blockiert Hintergrund-Scrollen
+      document.body.classList.add("modal-open");
     };
+    
     window.closeAdminModal = function() {
       document.getElementById("admin-modal").classList.remove("open");
       document.body.classList.remove("modal-open");
@@ -1553,12 +1647,16 @@
       const modal = document.getElementById("legal-modal-overlay");
       const imprint = document.getElementById("legal-imprint-text");
       const privacy = document.getElementById("legal-privacy-text");
+      
       document.getElementById("legal-modal-title").textContent = type === "imprint" ? "Impressum" : "Datenschutzerklärung";
+      
       imprint.classList.toggle("hidden", type !== "imprint");
       privacy.classList.toggle("hidden", type !== "privacy");
+      
       modal.classList.add("open");
-      document.body.classList.add("modal-open"); // Fix: Blockiert Hintergrund-Scrollen
+      document.body.classList.add("modal-open");
     };
+    
     window.closeLegalModal = function() {
       document.getElementById("legal-modal-overlay").classList.remove("open");
       document.body.classList.remove("modal-open");
@@ -1569,11 +1667,13 @@
       document.getElementById("cookie-banner").classList.remove("show");
       displayToast("Cookies akzeptiert", "success");
     };
+    
     window.acceptNecessaryCookies = function() {
       localStorage.setItem(STORAGE_KEY_COOKIES, "necessary");
       document.getElementById("cookie-banner").classList.remove("show");
       displayToast("Notwendige Cookies gespeichert", "success");
     };
+    
     window.showCookieSettings = function() {
       document.getElementById("cookie-banner").classList.add("show");
     };
@@ -1581,9 +1681,14 @@
     /* MOBILE MENU LOGIC */
     window.toggleMobileMenu = function() {
       const menu = document.getElementById("mobileNav");
-      if (menu.classList.contains("open")) closeMobileMenu();
-      else { menu.classList.add("open"); document.body.classList.add("modal-open"); }
+      if (menu.classList.contains("open")) {
+        closeMobileMenu();
+      } else { 
+        menu.classList.add("open"); 
+        document.body.classList.add("modal-open"); 
+      }
     };
+    
     window.closeMobileMenu = function() {
       document.getElementById("mobileNav").classList.remove("open");
       document.body.classList.remove("modal-open");
@@ -1603,7 +1708,9 @@
 
       // Populate FAQ
       const faqContainer = document.getElementById("faq-container");
-      if(faqContainer) faqContainer.innerHTML = FAQ.map(f => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+      if(faqContainer) {
+        faqContainer.innerHTML = FAQ.map(f => `<details><summary>${f[0]}</summary><p>${f[1]}</p></details>`).join("");
+      }
 
       // Populate Testimonials
       const testContainer = document.getElementById("testimonial-track");
@@ -1620,7 +1727,10 @@
       // Scroll Reveal
       const revealObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
-          if (entry.isIntersecting) { entry.target.classList.add("is-revealed"); revealObserver.unobserve(entry.target); }
+          if (entry.isIntersecting) { 
+            entry.target.classList.add("is-revealed"); 
+            revealObserver.unobserve(entry.target); 
+          }
         });
       }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
       document.querySelectorAll(".reveal-on-scroll").forEach(el => revealObserver.observe(el));
@@ -1631,7 +1741,9 @@
       window.addEventListener("scroll", () => {
         const scrolled = window.scrollY;
         const progress = (scrolled / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
+        
         if (progressBar) progressBar.style.width = `${progress}%`;
+        
         if (header) {
           if (scrolled > 60) header.classList.add("scrolled");
           else header.classList.remove("scrolled");
@@ -1646,24 +1758,49 @@
 
       if (baSlider && baAfterImg && baHandleLine && baHandleBtn) {
         let isDragging = false;
+        
         const updateSlider = (clientX) => {
           const rect = baSlider.getBoundingClientRect();
           let xPos = clientX - rect.left;
           if (xPos < 0) xPos = 0;
           if (xPos > rect.width) xPos = rect.width;
           const percentage = (xPos / rect.width) * 100;
+          
           baAfterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
           baHandleLine.style.left = `${percentage}%`;
           baHandleBtn.style.left = `${percentage}%`;
         };
 
-        baSlider.addEventListener("mousedown", (e) => { isDragging = true; updateSlider(e.clientX); });
-        window.addEventListener("mouseup", () => { isDragging = false; });
-        window.addEventListener("mousemove", (e) => { if (!isDragging) return; updateSlider(e.clientX); });
+        baSlider.addEventListener("mousedown", (e) => { 
+          isDragging = true; 
+          updateSlider(e.clientX); 
+        });
+        
+        window.addEventListener("mouseup", () => { 
+          isDragging = false; 
+        });
+        
+        window.addEventListener("mousemove", (e) => { 
+          if (!isDragging) return; 
+          updateSlider(e.clientX); 
+        });
 
-        baSlider.addEventListener("touchstart", (e) => { isDragging = true; updateSlider(e.touches[0].clientX); }, { passive: true });
-        window.addEventListener("touchend", () => { isDragging = false; });
-        window.addEventListener("touchmove", (e) => { if (!isDragging) return; updateSlider(e.touches[0].clientX); }, { passive: true });
+        // Touch Events mit verbesserter Unterstützung
+        baSlider.addEventListener("touchstart", (e) => { 
+          isDragging = true; 
+          updateSlider(e.touches[0].clientX); 
+        }, { passive: true });
+        
+        window.addEventListener("touchend", () => { 
+          isDragging = false; 
+        });
+        
+        window.addEventListener("touchmove", (e) => { 
+          if (!isDragging) return; 
+          // Browser Scrollen auf dem Slider verhindern wenn interagiert wird
+          if (e.cancelable) e.preventDefault();
+          updateSlider(e.touches[0].clientX); 
+        }, { passive: false });
       }
     });
   </script>
