@@ -86,14 +86,31 @@
     body {
       min-height: 100vh;
       background-color: var(--sand);
+      line-height: 1.65;
+      position: relative;
+    }
+
+    /* Fixed Background Fix für iOS/Mobile (Behebt Darstellungsfehler bei fixed + cover) */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
       background-image: 
         radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.88), rgba(244, 236, 225, 0.95)),
         url("Hintergrund-muster.jpg"); 
       background-repeat: no-repeat;
       background-position: top center;
       background-size: cover;
-      background-attachment: fixed;
-      line-height: 1.65;
+    }
+
+    /* Weniger Weiß-Deckkraft auf Mobilgeräten, damit das Hintergrundmuster stärker durchscheint */
+    @media (max-width: 768px) {
+      body::before {
+        background-image: 
+          radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.72), rgba(244, 236, 225, 0.90)),
+          url("Hintergrund-muster.jpg"); 
+      }
     }
 
     body.modal-open { overflow: hidden; }
@@ -122,6 +139,14 @@
       position: relative;
       z-index: 70;
     }
+
+    /* Blendet die dunkelbraune Leiste auf mobilen Geräten komplett aus */
+    @media (max-width: 1039px) {
+      .top-announcement {
+        display: none;
+      }
+    }
+
     .top-announcement-inner {
       display: flex;
       justify-content: space-between;
@@ -374,7 +399,7 @@
        SECTIONS & GLASS CARDS
        ========================================================================== */
     .section-spacing { padding: 95px 0; position: relative; }
-    @media (max-width: 768px) { .section-spacing { padding: 65px 0; } }
+    @media (max-width: 768px) { .section-spacing { padding: 75px 0; } } /* Etwas mehr Luft für die mobile Ansicht */
     .u-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: 8px; font-size: 11px;
