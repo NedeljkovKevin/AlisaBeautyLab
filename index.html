@@ -108,8 +108,9 @@
     @media (max-width: 768px) {
       body::before {
         background-image: 
-          radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.72), rgba(244, 236, 225, 0.90)),
+          radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.45), rgba(244, 236, 225, 0.85)),
           url("Hintergrund-muster.jpg"); 
+        background-position: center center;
       }
     }
 
@@ -1208,12 +1209,12 @@
       localStorage.setItem(STORAGE_KEY_BOOKINGS, JSON.stringify(appointments));
       localStorage.setItem(STORAGE_KEY_BLOCKED, JSON.stringify(blockedDays));
     }
-
-    function minutesFromTimeString(t) { 
-      const [h, m] = t.split(":").map(Number); 
-      return h * 60 + m; 
-    }
-
+    function minutesFromTimeString(t) { const [h, m] = t.split(":").map(Number); return h * 60 + m; }
+    function timeStringFromMinutes(min) { const h = Math.floor(min / 60); const m = min % 60; return `${String(h).padStart(2, "0")}:${String(m).padStart(2, "0")}`; }
+    function formatCurrency(val) { return `${Number(val).toLocaleString("de-DE")}\u00A0€`; }
+    function formatDateDisplay(ymd) { if (!ymd) return "–"; const [y, m, d] = ymd.split("-"); return `${d}.${m}.${y}`; }
+    
+    /* ENDZEIT KORREKTUR (Punkt 7): Endzeit minus Block-Dauer für alle Tage */
     function timeStringFromMinutes(min) { 
       const h = Math.floor(min / 60); 
       const m = min % 60; 
@@ -1255,8 +1256,8 @@
         return `
           <div style="background:#fff; border:1px solid ${isSelected ? 'var(--gold-dark)' : 'var(--border-gold-light)'}; border-radius:var(--radius-md); padding:20px; cursor:pointer; transition:all 0.3s; box-shadow:${isSelected ? '0 0 0 2px var(--gold-dark)' : '0 4px 14px rgba(0,0,0,0.03)'};" onclick="selectBookingService('${srv.id}')">
             <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
-              <strong style="color:var(--brown-deep); font-size:15px;">${srv.title}</strong>
-              <span style="font-family:var(--font-serif); font-size:20px; font-weight:600; color:var(--gold-dark);">${formatCurrency(srv.price)}</span>
+              <strong style="color:var(--brown-deep); font-size:15px; margin-right:12px;">${srv.title}</strong>
+              <span style="font-family:var(--font-serif); font-size:20px; font-weight:600; color:var(--gold-dark); white-space:nowrap; flex-shrink:0;">${formatCurrency(srv.price)}</span>
             </div>
             <p style="font-size:12px; color:var(--taupe); line-height:1.5;">${srv.desc}</p>
           </div>
