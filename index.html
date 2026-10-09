@@ -7,11 +7,11 @@
   <meta name="description" content="ALISA BEAUTY LAB in Treuchtlingen – Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit direkter Online-Terminbuchung und persönlicher Beratung.">
   <meta name="theme-color" content="#251b18">
 
-  <!-- Adobe Fonts (bleibt unverändert erhalten) -->
+  <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
   <link rel="icon" type="image/webp" href="AlisaLogoQuertransparent.webp">
 
-  <!-- Open Graph & Social Media Sharing (Punkt V.2) -->
+  <!-- Open Graph & Social Media Sharing -->
   <meta property="og:title" content="ALISA BEAUTY LAB | Exklusives Wimpern-Atelier Treuchtlingen">
   <meta property="og:description" content="Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit persönlicher Beratung in Treuchtlingen.">
   <meta property="og:type" content="website">
@@ -19,7 +19,7 @@
   <meta property="og:image" content="AlisaLogoQuertransparent.webp">
   <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Local SEO Structured Data Schema.org (Punkt V.1) -->
+  <!-- Local SEO Structured Data Schema.org (BeautySalon) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -119,7 +119,6 @@
       padding: 0; 
     }
 
-    /* Vererbung für Formulare und Buttons aktivieren */
     button, input, textarea, select { font: inherit; }
 
     html {
@@ -140,7 +139,7 @@
       position: relative;
     }
 
-    /* Fixed Background Fix für iOS/Mobile (Behebt Darstellungsfehler bei fixed + cover) */
+    /* Fixed Background Fix für iOS/Mobile */
     body::before {
       content: "";
       position: fixed;
@@ -154,7 +153,6 @@
       background-size: cover;
     }
 
-    /* Weniger Weiß-Deckkraft auf Mobilgeräten, damit das Hintergrundmuster stärker durchscheint */
     @media (max-width: 768px) {
       body::before {
         background-image: 
@@ -191,11 +189,8 @@
       z-index: 70;
     }
 
-    /* Blendet die dunkelbraune Leiste auf mobilen Geräten komplett aus */
     @media (max-width: 1039px) {
-      .top-announcement {
-        display: none;
-      }
+      .top-announcement { display: none; }
     }
 
     .top-announcement-inner {
@@ -392,8 +387,8 @@
     }
     .hero-headline em {
       font-family: var(--font-script); font-style: normal; font-weight: 400; font-size: 1.2em;
-      padding: 10px 16px 18px; /* Gibt dem Browser Platz nach oben und unten, um die Schnörkel zu zeichnen */
-      margin: -10px -8px -18px; /* Zieht diesen Platz fürs Layout wieder ab, damit die Zeilenabstände eng bleiben */
+      padding: 10px 16px 18px;
+      margin: -10px -8px -18px;
       background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
       display: inline-block; vertical-align: middle; line-height: 0.8;
     }
@@ -455,7 +450,7 @@
        SECTIONS & GLASS CARDS
        ========================================================================== */
     .section-spacing { padding: 95px 0; position: relative; }
-    @media (max-width: 768px) { .section-spacing { padding: 75px 0; } } /* Etwas mehr Luft für die mobile Ansicht */
+    @media (max-width: 768px) { .section-spacing { padding: 75px 0; } }
     .u-head { text-align: center; max-width: 680px; margin: 0 auto 50px; }
     .section-eyebrow {
       display: inline-flex; align-items: center; gap: 8px; font-size: 11px;
@@ -543,7 +538,7 @@
     .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; padding: 20px; }
     .modal-overlay.open { opacity: 1; pointer-events: auto; }
     .modal-content { background: var(--bg-surface); padding: 36px 30px; border-radius: var(--radius-md); max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; border: 1px solid var(--border-gold); box-shadow: var(--shadow-lg); }
-    .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--brown-deep); line-height: 1; }
+    .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--brown-deep); line-height: 1; border:none; background:none; }
 
     .toast-tray { position: fixed; right: 20px; bottom: 24px; z-index: 2100; display: flex; flex-direction: column; gap: 10px; width: min(380px, calc(100% - 40px)); pointer-events: none; }
     .toast-msg { pointer-events: auto; padding: 14px 18px; background: var(--brown-deep); color: #ffffff; border-left: 4px solid var(--gold); border-radius: var(--radius-sm); font-size: 13px; box-shadow: var(--shadow-lg); animation: toastIn 0.3s ease; }
@@ -580,7 +575,7 @@
       display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 16px;
     }
 
-    /* Marquee Pause on Hover & Reduced Motion (Punkt V.4) */
+    /* Marquee Pause on Hover & Reduced Motion */
     .marquee-strip:hover .marquee-track {
       animation-play-state: paused;
     }
@@ -590,7 +585,7 @@
       .reveal-on-scroll { transition: none !important; opacity: 1 !important; transform: none !important; }
     }
 
-    /* Mobile Form & Tabs Responsiveness (Punkt III.2) */
+    /* Mobile Form & Tabs Responsiveness */
     @media (max-width: 600px) {
       .form-grid-row { grid-template-columns: 1fr; gap: 12px; }
       .cockpit-step-tab { padding: 12px 6px !important; gap: 6px !important; font-size: 11px !important; }
@@ -634,7 +629,6 @@
           id="mainBrandLogo"
           onerror="this.style.display='none'; document.getElementById('logoFallback').classList.remove('hidden');"
         >
-        <!-- High-End Fallback -->
         <div id="logoFallback" class="logo-brand-fallback hidden">
           <span class="logo-main-text">ALISA BEAUTY LAB</span>
           <span class="logo-sub-text">Wimpern-Atelier Treuchtlingen</span>
@@ -726,11 +720,11 @@
         <!-- Before / After Interaktiver Slider -->
         <div class="reveal-on-scroll reveal-delay-2" style="margin-top:20px;">
           <div class="ba-slider-wrapper" id="baSlider" role="slider" aria-label="Vorher-Nachher-Vergleich Wimpernlifting" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
-            <!-- Vorher Bild (Hinten) - DSGVO-konformer lokaler SVG-Platzhalter (Punkt II.2) -->
+            <!-- Vorher Bild (Hinten) -->
             <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_bef%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_bef%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23a3958c%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23a3958c%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3ENATURWIMPERN%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23a3958c%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3EVor%20der%20Behandlung%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Vorher: Naturwimpern vor der Behandlung" class="ba-slider-img">
             <span class="ba-badge before">Vor der Behandlung</span>
             
-            <!-- Nachher Bild (Vorne) - DSGVO-konformer lokaler SVG-Platzhalter (Punkt II.2) -->
+            <!-- Nachher Bild (Vorne) -->
             <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_aft%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_aft%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23dfbc77%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23dfbc77%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3EPERFEKTER%20SCHWUNG%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23dfbc77%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3ENach%20dem%20Lifting%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Nachher: Wimpernlifting Ergebnis" class="ba-slider-img ba-after-layer" id="baAfterImg">
             <span class="ba-badge after" style="z-index:6;">✦ Nach dem Lifting</span>
             
@@ -751,7 +745,6 @@
         <div class="marquee-item"><span>WIMPERNLIFTING MIT KERATINPFLEGE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUTFREUNDLICHE PREMIUM-KLEBER</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>TYPGERECHTER SCHWUNG & FÜLLE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
-        <!-- Loop Duplication für 4K Bildschirme -->
         <div class="marquee-item"><span>NATÜRLICHE ELEGANZ</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUCHZARTE SEIDENWIMPERN</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>WIMPERNLIFTING MIT KERATINPFLEGE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
@@ -835,7 +828,7 @@
             </div>
           </div>
 
-          <!-- Card 4: Refill & Auffüllen (Punkt III.1) -->
+          <!-- Card 4: Refill & Auffüllen -->
           <div class="treatment-luxury-card reveal-on-scroll">
             <div style="position:absolute; top:18px; right:22px; font-size:9px; letter-spacing:0.16em; text-transform:uppercase; padding:4px 12px; border-radius:99px; background:rgba(195,157,88,0.16); border:1px solid var(--border-gold); font-weight:700;">Auffrischen</div>
             <h3 style="font-family:var(--font-serif); font-size:26px; color:var(--brown-deep); margin-bottom:8px;">Refill & Auffüllen</h3>
@@ -863,9 +856,7 @@
           <span class="section-eyebrow">Stimmen</span>
           <h2 class="section-title">Was Kundinnen sagen</h2>
         </div>
-        <div class="t-track reveal-on-scroll" id="testimonial-track">
-          <!-- Dynamically populated via JS -->
-        </div>
+        <div class="t-track reveal-on-scroll" id="testimonial-track"></div>
       </div>
     </section>
 
@@ -948,7 +939,7 @@
               </div>
             </div>
 
-            <!-- Step 3 -->
+            <!-- Step 3 (Punkt IV.1 & Quick-Fix 3: Validiertes Telefonfeld & Accessibility) -->
             <div id="step-panel-3" class="hidden">
               <h3 style="font-family:var(--font-serif); font-size:26px; color:var(--brown-deep); margin-bottom:8px;">Kontaktdaten & Abschluss</h3>
               <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:30px; margin-top:24px;">
@@ -967,7 +958,16 @@
                   <div class="form-grid-row">
                     <div>
                       <label for="inp-phone" class="lux-form-label">Handy / WhatsApp *</label>
-                      <input id="inp-phone" type="tel" class="lux-input" required placeholder="0178 1234567" autocomplete="tel">
+                      <input 
+                        id="inp-phone" 
+                        type="tel" 
+                        class="lux-input" 
+                        required 
+                        placeholder="0178 1234567" 
+                        autocomplete="tel"
+                        pattern="[0-9+ \-\/]{7,25}"
+                        title="Bitte eine gültige Telefon- oder Handynummer eingeben"
+                      >
                     </div>
                     <div>
                       <label for="inp-email" class="lux-form-label">E-Mail *</label>
@@ -1002,14 +1002,14 @@
               </div>
             </div>
 
-            <!-- Step 4 -->
+            <!-- Step 4 (Quick-Fix 3: Klarer WhatsApp-Label-Text) -->
             <div id="step-panel-4" class="hidden" style="text-align:center;">
                <div style="width:70px; height:70px; border-radius:50%; background:var(--gold-gradient); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 20px;">✓</div>
                <h3 style="font-family:var(--font-serif); font-size:34px; margin-bottom:8px;">Erfolgreich reserviert!</h3>
                <p style="color:var(--taupe); margin-bottom:24px;">Wir freuen uns auf deinen Besuch. Dein Buchungscode lautet: <strong id="voucher-code" style="color:var(--brown-deep);"></strong></p>
                <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
                  <button type="button" class="btn-lux btn-booking" onclick="exportCalendarIcs()">In Kalender sichern (.ics)</button>
-                 <button type="button" class="btn-lux btn-whatsapp" onclick="sendConfirmationWhatsApp()">Bestätigung via WhatsApp</button>
+                 <button type="button" class="btn-lux btn-whatsapp" onclick="sendConfirmationWhatsApp()">Buchung an Alisa senden (WhatsApp)</button>
                </div>
                <button type="button" class="btn-lux btn-lux-secondary" style="margin-top:24px;" onclick="startFreshBooking()">Weiteren Termin buchen</button>
             </div>
@@ -1075,16 +1075,12 @@
       <div class="container">
         <div class="reveal-on-scroll">
           
-          <!-- Outer Double-Border Wrapper -->
           <div style="padding: 10px; border: 1px solid var(--border-gold-light); border-radius: 34px; max-width: 1020px; margin: 0 auto; background: rgba(255, 253, 249, 0.3);">
             
-            <!-- Inner Glass Card -->
             <div class="glass-panel" style="padding: 75px 40px; text-align: center; border-radius: 24px; border: 1px solid var(--border-gold);">
               
-              <!-- Eyebrow mit Pin Icon -->
               <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:26px;">
                 <div style="width:46px; height:46px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold-dark); background:rgba(195, 157, 88, 0.1);">
-                  <!-- Map Pin Icon (gefüllt) -->
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
                     <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                   </svg>
@@ -1092,17 +1088,13 @@
                 <span style="font-size:12px; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold-dark); font-weight:700;">Studio Treuchtlingen</span>
               </div>
               
-              <!-- Headline -->
               <h2 class="section-title" style="margin-bottom: 22px;">Komm vorbei & entspanne dich</h2>
               
-              <!-- Address -->
               <p style="font-size: 16px; color: var(--brown-deep); font-weight: 500; margin-bottom: 50px; letter-spacing: 0.02em;">
                 Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
               </p>
               
-              <!-- Action Buttons -->
               <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
-                <!-- Maps Button -->
                 <a href="https://maps.google.com/?q=Bürgermeister-Sommer-Straße+34,+91757+Treuchtlingen" target="_blank" class="btn-lux btn-booking" style="padding: 0 28px;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
@@ -1111,12 +1103,10 @@
                   Route in Google Maps
                 </a>
                 
-                <!-- WhatsApp Button -->
                 <a href="https://wa.me/491784537636" target="_blank" rel="noopener noreferrer" class="btn-lux btn-whatsapp" style="padding: 0 28px;">
                   WhatsApp schreiben
                 </a>
                 
-                <!-- Phone Button -->
                 <a href="tel:+491784537636" class="btn-lux btn-lux-secondary" style="padding: 0 28px;">
                   0178 4537636 Anrufen
                 </a>
@@ -1134,7 +1124,6 @@
     <div class="container">
       <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:40px; padding-bottom:50px; border-bottom:1px solid rgba(255,255,255,0.1); margin-bottom: 25px;">
         
-        <!-- Footer Logo Block -->
         <div>
           <a href="#" class="footer-logo-link" aria-label="ALISA BEAUTY LAB Startseite">
             <img 
@@ -1179,10 +1168,10 @@
     </div>
   </footer>
 
-  <!-- Modals & Overlays -->
+  <!-- Toasts -->
   <div id="toast-tray" class="toast-tray"></div>
 
-  <!-- Admin Modal (Punkt I.2 & I.3) -->
+  <!-- Admin Modal -->
   <div id="admin-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
     <div class="modal-content" style="max-width: 820px;">
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-gold-light); padding-bottom:15px; margin-bottom: 20px;">
@@ -1268,14 +1257,13 @@
   </div>
 
   <!-- Legal Modal -->
-  <div id="legal-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true">
+  <div id="legal-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
     <div class="modal-content">
       <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-gold-light); padding-bottom:15px; margin-bottom: 20px;">
         <h3 id="legal-modal-title" style="font-family:var(--font-serif); font-size: 24px; color:var(--brown-deep);">Rechtliche Hinweise</h3>
-        <button type="button" class="modal-close" onclick="closeLegalModal()">×</button>
+        <button type="button" class="modal-close" aria-label="Fenster schließen" onclick="closeLegalModal()">×</button>
       </div>
       <div style="line-height:1.75; font-size:13.5px; color:var(--brown);">
-        <!-- Impressum gem. § 5 DDG (Punkt II.4) -->
         <div id="legal-imprint-text" class="hidden">
           <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Angaben gemäß § 5 Digitale-Dienste-Gesetz (DDG)</h4>
           <p><strong>ALISA BEAUTY LAB</strong><br>Inhaberin: Alisa Prykhodko<br>Bürgermeister-Sommer-Straße 34<br>91757 Treuchtlingen<br>Deutschland</p>
@@ -1284,7 +1272,7 @@
           <p>Telefon: <a href="tel:+491784537636" style="color:var(--brown-deep); font-weight:600;">+49 178 4537636</a><br>E-Mail: <a href="mailto:alisa.prykhodko07@gmail.com" style="color:var(--brown-deep);">alisa.prykhodko07@gmail.com</a></p>
           
           <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Umsatzsteuer</h4>
-          <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung). <em>(Hinweis: Falls eine USt-IdNr. vorliegt, bitte hier eintragen).</em></p>
+          <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
           
           <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Berufsbezeichnung & Kammerzugehörigkeit</h4>
           <p>Tätigkeit: Kosmetische Dienstleistungen / Lash Stylistin<br>Zuständige Kammer: Handwerkskammer für Mittelfranken, Sulzbacher Str. 11–15, 90489 Nürnberg.</p>
@@ -1293,7 +1281,6 @@
           <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a href="https://ec.europa.eu/consumers/odr" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://ec.europa.eu/consumers/odr</a>.<br>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
         </div>
 
-        <!-- Datenschutzerklärung gem. DSGVO (Punkt II.5) -->
         <div id="legal-privacy-text" class="hidden">
           <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Datenschutzerklärung</h4>
           <p><strong>1. Verantwortliche Stelle:</strong><br>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen<br>Telefon: +49 178 4537636 | E-Mail: alisa.prykhodko07@gmail.com</p>
@@ -1314,7 +1301,7 @@
     </div>
   </div>
 
-  <!-- Cookie- & Datenschutzhinweis (Punkt II.3) -->
+  <!-- Cookie- & Datenschutzhinweis -->
   <div id="cookie-banner" class="cookie-banner">
     <div>
       <h4 style="font-family:var(--font-serif); font-size: 20px; color:var(--brown-deep); margin-bottom: 4px;">Privatsphäre &amp; Datenschutz</h4>
@@ -1335,23 +1322,23 @@
     const STORAGE_KEY_BLOCKED = "alisa_beauty_lab_blocked_v16";
     const STORAGE_KEY_COOKIES = "alisa_beauty_lab_cookies_v16";
     const STORAGE_KEY_PIN_HASH = "alisa_beauty_lab_admin_hash_v16";
-    // Standard-PIN: 2468 (als SHA-256 Hash hinterlegt, Punkt I.2)
     const DEFAULT_PIN_HASH = "a1fb4e703a9ef1fa4936801721ff285a97ac85330856674412e054892afe6972";
     const STUDIO_PHONE = "491784537636";
     
-    // Alle Termine dauern weiterhin 120 Minuten (Punkt I.8)
+    // OPTIONAL: Hier Webhook-URL (z. B. Google Sheets / Make.com) eintragen für 10/10 Live-Synchronisation
+    const WEBHOOK_URL = "";
+
     const BLOCK_DURATION_MINUTES = 120;
-    // 30-Minuten-Taktung verhindert tote 15-Minuten-Lücken
     const TIME_INTERVAL_MINUTES = 30;
 
     const OPENING_SCHEDULE = {
-      0: { start: "12:00", end: "21:00" }, // Sonntag
-      1: { start: "18:00", end: "21:00" }, // Montag
-      2: { start: "12:00", end: "21:00" }, // Dienstag
-      3: { start: "19:00", end: "21:00" }, // Mittwoch
-      4: { start: "19:00", end: "21:00" }, // Donnerstag
-      5: { start: "19:00", end: "21:00" }, // Freitag
-      6: { start: "12:00", end: "21:00" }  // Samstag
+      0: { start: "12:00", end: "21:00" }, 
+      1: { start: "18:00", end: "21:00" }, 
+      2: { start: "12:00", end: "21:00" }, 
+      3: { start: "19:00", end: "21:00" }, 
+      4: { start: "19:00", end: "21:00" }, 
+      5: { start: "19:00", end: "21:00" }, 
+      6: { start: "12:00", end: "21:00" }  
     };
 
     const CATALOGUE = [
@@ -1390,8 +1377,19 @@
     };
 
     /* ==========================================================================
-       UTILITIES & STORAGE (Bereinigt von Duplikaten, Punkt I.4)
+       UTILITIES & SECURITY (XSS-Schutz & Bereinigungen)
        ========================================================================== */
+    function sanitizeHtml(str) {
+      if (!str) return "";
+      return String(str).replace(/[&<>"']/g, match => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[match]));
+    }
+
     function fetchStored(key, fallback) {
       try { 
         const item = localStorage.getItem(key); 
@@ -1493,7 +1491,7 @@
     function checkSlotAvailable(ymd, timeStr) {
       if (blockedDays.includes(ymd)) return false;
       const slotDate = new Date(`${ymd}T${timeStr}:00`);
-      if (slotDate.getTime() - Date.now() < 120 * 60000) return false; // 2h Vorlauf
+      if (slotDate.getTime() - Date.now() < 120 * 60000) return false;
 
       const startMin = minutesFromTimeString(timeStr);
       const endMin = startMin + BLOCK_DURATION_MINUTES;
@@ -1529,7 +1527,6 @@
       title.textContent = new Intl.DateTimeFormat("de-DE", { month: "long", year: "numeric" }).format(viewCalendarDate);
       grid.innerHTML = "";
 
-      // Navigation-Sperren (Punkt I.6): Keine Navigation vor aktuellen Monat oder über 3 Monate hinaus
       const monthDiff = (year - today.getFullYear()) * 12 + (month - today.getMonth());
       if (btnPrev) btnPrev.disabled = (monthDiff <= 0);
       if (btnNext) btnNext.disabled = (monthDiff >= 3);
@@ -1543,7 +1540,6 @@
         grid.appendChild(document.createElement("div"));
       }
 
-      // Sicheres 3-Monats-Limit ohne JS-Überlauf-Bug
       const maxDate = new Date(today.getFullYear(), today.getMonth() + 3, today.getDate(), 23, 59, 59);
 
       for (let d = 1; d <= daysInMonth; d++) {
@@ -1567,14 +1563,8 @@
           btn.style.borderColor = "var(--gold-bright)";
         }
 
-        if (cellDate > maxDate) {
+        if (cellDate > maxDate || isPast || isBlocked) {
           btn.disabled = true; 
-          btn.title = "Maximal 3 Monate im Voraus buchbar";
-          btn.style.opacity = "0.35"; 
-          btn.style.background = "rgba(230,222,212,0.4)";
-          btn.style.cursor = "not-allowed";
-        } else if (isPast || isBlocked) {
-          btn.disabled = true;
           btn.style.opacity = "0.35"; 
           btn.style.background = "rgba(230,222,212,0.4)";
           btn.style.cursor = "not-allowed";
@@ -1599,7 +1589,7 @@
       today.setHours(0, 0, 0, 0);
       const targetMonthDate = new Date(viewCalendarDate.getFullYear(), viewCalendarDate.getMonth() + delta, 1);
       const diff = (targetMonthDate.getFullYear() - today.getFullYear()) * 12 + (targetMonthDate.getMonth() - today.getMonth());
-      if (diff < 0 || diff > 3) return; // Begrenzung beachten
+      if (diff < 0 || diff > 3) return;
 
       viewCalendarDate = targetMonthDate;
       renderCalendar();
@@ -1632,7 +1622,6 @@
 
       titleEl.textContent = new Intl.DateTimeFormat("de-DE", { weekday: "long", day: "2-digit", month: "2-digit" }).format(dObj);
       
-      // Korrektur für gleiche Start-/Endzeit (Punkt I.7)
       const lastStartStr = timeStringFromMinutes(lStart);
       if (sched.start === lastStartStr) {
         hoursEl.textContent = `Termin startet um ${sched.start} Uhr (Dauer: 120 Min.)`;
@@ -1678,6 +1667,7 @@
       proceedToStep(step);
     };
 
+    /* Schritt-Navigation mit konsistenten Tab-Zuständen (Punkt A) */
     window.proceedToStep = function(targetStep) {
       [1, 2, 3, 4].forEach(i => {
         const panel = document.getElementById(`step-panel-${i}`);
@@ -1687,18 +1677,33 @@
         
         if (tab) {
           const num = tab.querySelector('span');
-          if (i === targetStep) {
+          if (targetStep === 4) {
             tab.style.color = "var(--brown-deep)"; 
             tab.style.background = "rgba(255,253,249,0.95)";
-            num.style.background = "var(--brown-deep)"; 
-            num.style.color = "#fff";
+            if (num) {
+              num.style.background = "#177344";
+              num.style.color = "#fff";
+              num.textContent = "✓";
+            }
+            tab.querySelector('div')?.remove();
+          } else if (i === targetStep) {
+            tab.style.color = "var(--brown-deep)"; 
+            tab.style.background = "rgba(255,253,249,0.95)";
+            if (num) {
+              num.style.background = "var(--brown-deep)"; 
+              num.style.color = "#fff";
+              num.textContent = String(i);
+            }
             tab.querySelector('div')?.remove();
             tab.insertAdjacentHTML('beforeend', '<div style="position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--gold-dark);"></div>');
           } else {
             tab.style.color = "var(--taupe)"; 
             tab.style.background = "transparent";
-            num.style.background = "rgba(195,157,88,0.2)"; 
-            num.style.color = "var(--brown-deep)";
+            if (num) {
+              num.style.background = "rgba(195,157,88,0.2)"; 
+              num.style.color = "var(--brown-deep)";
+              num.textContent = String(i);
+            }
             tab.querySelector('div')?.remove();
           }
         }
@@ -1738,16 +1743,31 @@
         customer, status: "confirmed", timestamp: new Date().toISOString()
       };
 
+      // 1. Lokale Speicherung
       appointments.unshift(record);
       bookingState.recentBooking = record;
       persistData();
+
+      // 2. Optionale Webhook-Übertragung (Google Sheets / Make.com)
+      if (WEBHOOK_URL) {
+        try {
+          fetch(WEBHOOK_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(record)
+          }).catch(err => console.warn("Webhook-Übertragung:", err));
+        } catch (err) {
+          console.warn("Webhook-Fehler:", err);
+        }
+      }
 
       document.getElementById("voucher-code").textContent = record.id;
       proceedToStep(4);
       displayToast("Erfolgreich reserviert!", "success");
     };
 
-    /* Kalender-Export mit UTF-8 BOM für fehlerfreie Umlaute (Punkt III.4) */
+    /* Kalender-Export nach RFC 5545 mit UTF-8 BOM und maskiertem \\n (Quick-Fix 1) */
     window.exportCalendarIcs = function() {
       const b = bookingState.recentBooking;
       if (!b) return;
@@ -1759,7 +1779,7 @@
         `UID:${b.id}@alisabeautylab.de`, `DTSTAMP:${new Date().toISOString().replaceAll(/[-:]/g, "").split(".")[0]}Z`,
         `DTSTART:${dateClean}T${startClean}`, `DTEND:${dateClean}T${endClean}`,
         `SUMMARY:Wimperntermin ALISA BEAUTY LAB - ${b.serviceTitle}`,
-        `DESCRIPTION:Buchungscode: ${b.id}\nBehandlung: ${b.serviceTitle}\nBetrag: ${b.price} EUR`,
+        `DESCRIPTION:Buchungscode: ${b.id}\\nBehandlung: ${b.serviceTitle}\\nBetrag: ${b.price} EUR`,
         `LOCATION:Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen`,
         "STATUS:CONFIRMED", "END:VEVENT", "END:VCALENDAR"
       ].join("\r\n");
@@ -1858,7 +1878,7 @@
     };
 
     /* ==========================================================================
-       ADMIN MANAGEMENT & PIN SECURITY (Punkt I.2 & I.3)
+       ADMIN MANAGEMENT & XSS-SCHUTZ (Quick-Fix 2)
        ========================================================================== */
     window.openAdminModal = function() {
       document.getElementById("admin-modal").classList.add("open");
@@ -1958,6 +1978,7 @@
       displayToast("Tag wieder freigegeben", "success");
     };
 
+    /* XSS-sicheres Rendering im Admin-Bereich */
     window.renderAdminBookings = function(filter = "all") {
       adminFilterState = filter;
       const container = document.getElementById("adm-bookings-table-container");
@@ -1979,7 +2000,7 @@
           <div style="border:1px solid ${isCancelled ? 'rgba(179,58,58,0.3)' : 'var(--border-gold-light)'}; background:${isCancelled ? 'rgba(179,58,58,0.03)' : '#fff'}; border-radius:10px; padding:14px; margin-bottom:10px; font-size:12.5px;">
             <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
               <div>
-                <strong style="color:var(--brown-deep); font-size:14px;">${a.customer.firstName} ${a.customer.lastName}</strong>
+                <strong style="color:var(--brown-deep); font-size:14px;">${sanitizeHtml(a.customer.firstName)} ${sanitizeHtml(a.customer.lastName)}</strong>
                 <span style="display:inline-block; margin-left:8px; padding:2px 8px; border-radius:99px; font-size:10px; font-weight:700; text-transform:uppercase; background:${isCancelled ? 'rgba(179,58,58,0.15)' : 'rgba(23,115,68,0.15)'}; color:${isCancelled ? '#b33a3a' : '#177344'};">
                   ${isCancelled ? 'Storniert' : 'Bestätigt'}
                 </span>
@@ -1987,14 +2008,14 @@
               <div style="font-family:var(--font-serif); font-size:16px; font-weight:600; color:var(--gold-dark);">${formatCurrency(a.price)}</div>
             </div>
             <div style="color:var(--taupe); margin-bottom:6px;">
-              ✨ <strong>${a.serviceTitle}</strong> | 📅 <strong>${formatDateDisplay(a.date)}</strong> um <strong>${a.time} Uhr</strong> (Code: <code>${a.id}</code>)
+              ✨ <strong>${sanitizeHtml(a.serviceTitle)}</strong> | 📅 <strong>${formatDateDisplay(a.date)}</strong> um <strong>${a.time} Uhr</strong> (Code: <code>${sanitizeHtml(a.id)}</code>)
             </div>
             <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:8px; font-size:12px;">
-              <a href="tel:${a.customer.phone}" style="color:var(--brown-deep); text-decoration:none;">📞 ${a.customer.phone}</a>
-              <a href="https://wa.me/${a.customer.phone.replace(/[^0-9]/g, '')}" target="_blank" rel="noopener noreferrer" style="color:#128c7e; text-decoration:none;">💬 WhatsApp</a>
-              <a href="mailto:${a.customer.email}" style="color:var(--taupe); text-decoration:none;">✉️ ${a.customer.email}</a>
+              <a href="tel:${sanitizeHtml(a.customer.phone)}" style="color:var(--brown-deep); text-decoration:none;">📞 ${sanitizeHtml(a.customer.phone)}</a>
+              <a href="https://wa.me/${encodeURIComponent(a.customer.phone.replace(/[^0-9]/g, ''))}" target="_blank" rel="noopener noreferrer" style="color:#128c7e; text-decoration:none;">💬 WhatsApp</a>
+              <a href="mailto:${sanitizeHtml(a.customer.email)}" style="color:var(--taupe); text-decoration:none;">✉️ ${sanitizeHtml(a.customer.email)}</a>
             </div>
-            ${a.customer.notes ? `<div style="font-size:11.5px; background:rgba(244,236,225,0.6); padding:6px 10px; border-radius:6px; margin-bottom:8px; color:var(--brown);"><em>Hinweis:</em> ${a.customer.notes}</div>` : ''}
+            ${a.customer.notes ? `<div style="font-size:11.5px; background:rgba(244,236,225,0.6); padding:6px 10px; border-radius:6px; margin-bottom:8px; color:var(--brown);"><em>Hinweis:</em> ${sanitizeHtml(a.customer.notes)}</div>` : ''}
             <div style="display:flex; justify-content:flex-end; gap:8px;">
               ${!isCancelled ? `<button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#b33a3a; border-color:rgba(179,58,58,0.4);" onclick="cancelAppointment('${a.id}')">Stornieren</button>` : ''}
               <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#786a62;" onclick="deleteAppointment('${a.id}')">Löschen</button>
@@ -2106,7 +2127,6 @@
       document.body.classList.remove("modal-open");
     };
 
-    // Tastatur-Bedienung: Escape schließt alle Modals & Menüs
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeMobileMenu();
@@ -2116,7 +2136,7 @@
     });
 
     /* ==========================================================================
-       INITIALIZATION & SCROLL FX (Punkt V.3 Throttled)
+       INITIALIZATION & SCROLL FX
        ========================================================================== */
     document.addEventListener("DOMContentLoaded", () => {
       renderTreatmentOptions();
@@ -2153,7 +2173,6 @@
       }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
       document.querySelectorAll(".reveal-on-scroll").forEach(el => revealObserver.observe(el));
 
-      // Performance: Throttling mit requestAnimationFrame (Punkt V.3)
       const header = document.getElementById("siteHeader");
       const progressBar = document.getElementById("scrollProgressBar");
       let isScrolling = false;
@@ -2177,7 +2196,7 @@
         }
       }, { passive: true });
 
-      // Before/After Slider mit Touch-Scroll-Fix & Barrierefreiheit (Punkt I.5 & IV.3)
+      // Before/After Slider
       const baSlider = document.getElementById("baSlider");
       const baAfterImg = document.getElementById("baAfterImg");
       const baHandleLine = document.getElementById("baHandleLine");
@@ -2216,7 +2235,6 @@
           updateSlider(e.clientX); 
         });
 
-        // Touch Events mit Erkennung horizontal vs. vertikal (behebt Scroll-Einfrieren)
         baSlider.addEventListener("touchstart", (e) => { 
           if (e.touches.length === 1) {
             isDragging = true;
@@ -2248,12 +2266,10 @@
             if (e.cancelable) e.preventDefault();
             updateSlider(currentX);
           } else if (isTouchHorizontal === false) {
-            // Normales vertikales Scrollen erlauben
             isDragging = false;
           }
         }, { passive: false });
 
-        // Barrierefreie Tastatur-Steuerung mit Pfeiltasten
         baSlider.addEventListener("keydown", (e) => {
           let currentVal = parseFloat(baHandleLine.style.left) || 50;
           if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
