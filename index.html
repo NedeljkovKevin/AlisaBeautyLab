@@ -315,9 +315,10 @@
     }
     .hero-headline em {
       font-family: var(--font-script); font-style: normal; font-weight: 400; font-size: 1.2em;
-      padding: 0 16px; margin: 0 -8px; 
+      padding: 10px 16px 18px; /* Gibt dem Browser Platz nach oben und unten, um die Schnörkel zu zeichnen */
+      margin: -10px -8px -18px; /* Zieht diesen Platz fürs Layout wieder ab, damit die Zeilenabstände eng bleiben */
       background: var(--gold-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-      display: inline-block; vertical-align: middle; line-height: 0.7;
+      display: inline-block; vertical-align: middle; line-height: 0.8;
     }
     .hero-subparagraph {
       font-size: clamp(15px, 1.8vw, 17.5px); color: var(--taupe); max-width: 660px;
