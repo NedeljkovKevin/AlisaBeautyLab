@@ -242,7 +242,6 @@
       transform: translateY(-2px);
     }
 
-    /* Neu hinzugefügt: .btn-lux-secondary */
     .btn-lux-secondary {
       background: rgba(255, 253, 249, 0.85);
       color: var(--brown-deep);
@@ -464,7 +463,6 @@
     .reveal-on-scroll.is-revealed { opacity: 1; transform: translateY(0); }
     .reveal-delay-1 { transition-delay: 0.15s; }
     .reveal-delay-2 { transition-delay: 0.3s; }
-
   </style>
 </head>
 <body>
@@ -906,15 +904,62 @@
     </section>
 
     <!-- Location & Contact -->
-    <section id="location" class="section-spacing" style="background:var(--cream);">
-      <div class="container" style="text-align: center;">
-        <div class="u-head reveal-on-scroll">
-          <span class="section-eyebrow">Studio & Anfahrt</span>
-          <h2 class="section-title">Finde zu uns</h2>
-          <p class="section-description" style="margin-bottom: 24px;">Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen</p>
-          <a href="https://maps.google.com/?q=Bürgermeister-Sommer-Straße+34,+91757+Treuchtlingen" target="_blank" class="btn-lux btn-booking">
-            Route planen
-          </a>
+    <section id="location" class="section-spacing" style="background:var(--sand);">
+      <div class="container">
+        <div class="reveal-on-scroll">
+          
+          <!-- Outer Double-Border Wrapper (Für den feinen Doppelrahmen-Effekt aus dem Bild) -->
+          <div style="padding: 10px; border: 1px solid var(--border-gold-light); border-radius: 34px; max-width: 1020px; margin: 0 auto; background: rgba(255, 253, 249, 0.3);">
+            
+            <!-- Inner Glass Card -->
+            <div class="glass-panel" style="padding: 75px 40px; text-align: center; border-radius: 24px; border: 1px solid var(--border-gold);">
+              
+              <!-- Eyebrow mit Pin Icon -->
+              <div style="display:flex; align-items:center; justify-content:center; gap:12px; margin-bottom:26px;">
+                <div style="width:46px; height:46px; border-radius:50%; border:1px solid var(--gold); display:flex; align-items:center; justify-content:center; color:var(--gold-dark); background:rgba(195, 157, 88, 0.1);">
+                  <!-- Map Pin Icon (gefüllt) -->
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" stroke="none">
+                    <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                  </svg>
+                </div>
+                <span style="font-size:12px; letter-spacing:0.25em; text-transform:uppercase; color:var(--gold-dark); font-weight:700;">Studio Treuchtlingen</span>
+              </div>
+              
+              <!-- Headline -->
+              <h2 class="section-title" style="margin-bottom: 22px;">Komm vorbei & entspanne dich</h2>
+              
+              <!-- Address -->
+              <p style="font-size: 16px; color: var(--brown-deep); font-weight: 500; margin-bottom: 50px; letter-spacing: 0.02em;">
+                Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen
+              </p>
+              
+              <!-- Action Buttons -->
+              <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
+                
+                <!-- Maps Button -->
+                <a href="https://maps.google.com/?q=Bürgermeister-Sommer-Straße+34,+91757+Treuchtlingen" target="_blank" class="btn-lux btn-booking" style="padding: 0 28px;">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                  Route in Google Maps
+                </a>
+                
+                <!-- WhatsApp Button -->
+                <a href="https://wa.me/491784537636" target="_blank" rel="noopener noreferrer" class="btn-lux btn-whatsapp" style="padding: 0 28px;">
+                  WhatsApp schreiben
+                </a>
+                
+                <!-- Phone Button -->
+                <a href="tel:+491784537636" class="btn-lux btn-lux-secondary" style="padding: 0 28px;">
+                  0178 4537636 Anrufen
+                </a>
+                
+              </div>
+              
+            </div>
+          </div>
+          
         </div>
       </div>
     </section>
@@ -1095,8 +1140,8 @@
       ["Ich habe empfindliche Augen oder Allergien.", "Schreib das bitte bei der Buchung unter „Besondere Wünsche“, ich arbeite nur mit hautfreundlichen Materialien."]
     ];
 
-    let appointments = fetchStored(STORAGE_KEY_BOOKINGS, []);
-    let blockedDays = fetchStored(STORAGE_KEY_BLOCKED, []);
+    let appointments = fetchStored(STORAGE_KEY_BOOKINGS, []) || [];
+    let blockedDays = fetchStored(STORAGE_KEY_BLOCKED, []) || [];
     let viewCalendarDate = new Date();
     let giftAmount = 50;
     
@@ -1243,12 +1288,23 @@
         if (cellDate > maxDate) {
           btn.disabled = true; btn.title = "Maximal 3 Monate im Voraus buchbar";
           btn.style.opacity = "0.35"; btn.style.background = "rgba(230,222,212,0.4)";
+          btn.style.cursor = "not-allowed";
         } else if (isPast || isBlocked) {
           btn.disabled = true;
           btn.style.opacity = "0.35"; btn.style.background = "rgba(230,222,212,0.4)";
+          btn.style.cursor = "not-allowed";
         } else {
-          if (dayHasFree(ymd)) btn.classList.add("has-free");
-          btn.onclick = () => selectDay(ymd);
+          // Bugfix: Sperrtage, an denen keine Zeiten mehr frei sind, nun komplett blockieren!
+          if (dayHasFree(ymd)) {
+            btn.classList.add("has-free");
+            btn.onclick = () => selectDay(ymd);
+          } else {
+            btn.disabled = true;
+            btn.title = "Keine Termine mehr frei";
+            btn.style.opacity = "0.35"; 
+            btn.style.background = "rgba(230,222,212,0.4)";
+            btn.style.cursor = "not-allowed";
+          }
         }
         grid.appendChild(btn);
       }
@@ -1346,7 +1402,6 @@
       document.getElementById("booking-section").scrollIntoView({ behavior: "smooth" });
     };
 
-    /* BOOKING SUBMISSION & BACKEND WARNING (Punkt 8) */
     window.handleFormSubmission = function(e) {
       e.preventDefault();
       if (!bookingState.date || !bookingState.time) { proceedToStep(2); return; }
@@ -1354,9 +1409,6 @@
         displayToast("Termin gerade vergeben. Bitte wähle eine andere Zeit.", "error");
         renderSlotsForDate(); proceedToStep(2); return;
       }
-
-      // HINWEIS (Punkt 8): Live-Speicherung benötigt ein Backend. 
-      // console.warn("Backend-Synchronisation fehlt: Buchungen werden aktuell nur lokal im Browser des Nutzers simuliert. Für Live-Betrieb Supabase oder Firebase anbinden.");
 
       const srv = CATALOGUE.find(s => s.id === bookingState.serviceId);
       const code = `ALISA-${Date.now().toString().slice(-4)}-${Math.floor(Math.random() * 89 + 10)}`;
@@ -1461,14 +1513,16 @@
     window.giftSend = function() { window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(`Hallo Alisa, ich möchte gern einen Geschenkgutschein über ${giftAmount} € bestellen.`)}`, "_blank"); };
 
     /* ==========================================================================
-       MODALS, LEGAL & ADMIN (Punkt 9)
+       MODALS, LEGAL & ADMIN
        ========================================================================== */
     window.openAdminModal = function() {
       document.getElementById("admin-modal").classList.add("open");
       document.getElementById("admin-pin-input").focus();
+      document.body.classList.add("modal-open"); // Fix: Blockiert Hintergrund-Scrollen
     };
     window.closeAdminModal = function() {
       document.getElementById("admin-modal").classList.remove("open");
+      document.body.classList.remove("modal-open");
     };
 
     window.verifyAdminPin = function(e) {
@@ -1503,9 +1557,11 @@
       imprint.classList.toggle("hidden", type !== "imprint");
       privacy.classList.toggle("hidden", type !== "privacy");
       modal.classList.add("open");
+      document.body.classList.add("modal-open"); // Fix: Blockiert Hintergrund-Scrollen
     };
     window.closeLegalModal = function() {
       document.getElementById("legal-modal-overlay").classList.remove("open");
+      document.body.classList.remove("modal-open");
     };
 
     window.acceptAllCookies = function() {
