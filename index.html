@@ -169,20 +169,13 @@
       position: fixed;
       inset: 0;
       z-index: -1;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.88), rgba(244, 236, 225, 0.95)),
-        url("Hintergrund-muster.jpg"); 
-      background-repeat: no-repeat;
-      background-position: top center;
-      background-size: cover;
+      background: radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.88), rgba(244, 236, 225, 0.95));
+      pointer-events: none;
     }
 
     @media (max-width: 768px) {
       body::before {
-        background-image: 
-          radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.45), rgba(244, 236, 225, 0.85)),
-          url("Hintergrund-muster.jpg"); 
-        background-position: center center;
+        background: radial-gradient(circle at 50% 0%, rgba(255, 253, 250, 0.45), rgba(244, 236, 225, 0.85));
       }
     }
 
@@ -1199,6 +1192,9 @@
             </div>
           </div>
         </div>
+        <p class="reveal-on-scroll" style="text-align:center; font-size:12px; color:var(--taupe); margin-top:32px;">
+          Alle angegebenen Preise sind Endpreise vor Ort. Gemäß § 19 UStG wird keine Umsatzsteuer erhoben (Kleinunternehmerregelung).
+        </p>
       </div>
     </section>
 
@@ -1225,6 +1221,7 @@
               <div class="reviews-cta-info">
                 <strong>Offizielles Google Unternehmensprofil</strong>
                 <p>5.0 Sterne Gesamtbewertung (3 Rezensionen) · Lies alle Rezensionen oder teile dein Feedback.</p>
+                <small style="display:block; font-size:11px; color:var(--taupe); margin-top:3px;">Verifizierte Rezensionen aus unserem Google-Profil (§ 5b Abs. 3 UWG).</small>
               </div>
             </div>
             
