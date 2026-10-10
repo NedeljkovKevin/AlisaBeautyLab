@@ -548,12 +548,38 @@
       position: relative; background: linear-gradient(145deg, rgba(255, 253, 249, 0.96) 0%, rgba(249, 244, 237, 0.93) 100%);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border-gold); border-radius: var(--radius-lg);
-      padding: 40px 32px; display: flex; flex-direction: column; justify-content: space-between;
+      padding: 38px 24px; display: flex; flex-direction: column; justify-content: space-between;
       overflow: hidden; box-shadow: var(--shadow-md);
       transition: transform 0.5s var(--ease-luxury), border-color 0.5s, box-shadow 0.5s;
     }
     .treatment-card-features li { display: flex; align-items: center; gap: 10px; font-size: 12.5px; color: var(--brown); margin-bottom: 10px; }
     .treatment-card-features li svg { width: 14px; height: 14px; color: var(--gold-dark); flex-shrink: 0; }
+
+    .refill-opt-btn {
+      flex-direction: column !important;
+      justify-content: center !important;
+      align-items: center !important;
+      padding: 6px 4px !important;
+      min-height: 44px !important;
+      line-height: 1.25 !important;
+      white-space: normal !important;
+      text-align: center !important;
+    }
+    .refill-btn-type {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      display: block;
+    }
+    .refill-btn-details {
+      font-size: 9.5px;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      opacity: 0.88;
+      display: block;
+      margin-top: 1px;
+    }
 
     /* ==========================================================================
        GOOGLE REVIEWS / STIMMEN (ECHTE BEWERTUNGEN)
@@ -896,8 +922,8 @@
       <!-- Desktop Nav -->
       <nav class="nav-links" aria-label="Hauptnavigation">
         <a href="#looks"><span>Preise &</span><span>Looks</span></a>
-        <a href="#booking-section"><span>Termin</span><span>Buchen</span></a>
         <a href="#stimmen"><span>Kunden-</span><span>Stimmen</span></a>
+        <a href="#booking-section"><span>Termin</span><span>Buchen</span></a>
         <a href="#atelier"><span>Über</span><span>Mich</span></a>
         <a href="#location"><span>Studio &</span><span>Anfahrt</span></a>
       </nav>
@@ -941,8 +967,8 @@
   <div id="mobileNav" class="mobile-nav-overlay" aria-hidden="true">
     <button style="position:absolute; top:30px; right:30px; background:none; border:none; font-size:40px; color:var(--brown-deep); cursor:pointer;" aria-label="Menü schließen" onclick="closeMobileMenu()">×</button>
     <a href="#looks" onclick="closeMobileMenu()">Preise & Looks</a>
-    <a href="#booking-section" onclick="closeMobileMenu()">Online Reservierung</a>
     <a href="#stimmen" onclick="closeMobileMenu()">Kundenstimmen</a>
+    <a href="#booking-section" onclick="closeMobileMenu()">Online Reservierung</a>
     <a href="#quiz" onclick="closeMobileMenu()">Look-Finder</a>
     <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="#atelier" onclick="closeMobileMenu()">Über mich</a>
@@ -1115,15 +1141,23 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1:1 & Volumen: 2 Wo. 30 € | 3 Wo. 40 €</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mega Volumen: 2 Wo. 40 € | 3 Wo. 50 €</li>
             </ul>
-            <div style="display:flex; flex-direction:column; gap:8px;">
-              <div style="display:flex; gap:8px;">
-                <button type="button" class="btn-lux btn-lux-secondary" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-vol-2w')">1:1/Vol. 2 Wo. (30€)</button>
-                <button type="button" class="btn-lux btn-lux-secondary" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-vol-3w')">1:1/Vol. 3 Wo. (40€)</button>
-              </div>
-              <div style="display:flex; gap:8px;">
-                <button type="button" class="btn-lux btn-booking" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-mega-2w')">Mega 2 Wo. (40€)</button>
-                <button type="button" class="btn-lux btn-booking" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-mega-3w')">Mega 3 Wo. (50€)</button>
-              </div>
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px;">
+              <button type="button" class="btn-lux btn-lux-secondary refill-opt-btn" onclick="preselectAndScroll('srv-refill-vol-2w')">
+                <span class="refill-btn-type">1:1 / Vol.</span>
+                <span class="refill-btn-details">2 Wo. · 30 €</span>
+              </button>
+              <button type="button" class="btn-lux btn-lux-secondary refill-opt-btn" onclick="preselectAndScroll('srv-refill-vol-3w')">
+                <span class="refill-btn-type">1:1 / Vol.</span>
+                <span class="refill-btn-details">3 Wo. · 40 €</span>
+              </button>
+              <button type="button" class="btn-lux btn-booking refill-opt-btn" onclick="preselectAndScroll('srv-refill-mega-2w')">
+                <span class="refill-btn-type">Mega Vol.</span>
+                <span class="refill-btn-details">2 Wo. · 40 €</span>
+              </button>
+              <button type="button" class="btn-lux btn-booking refill-opt-btn" onclick="preselectAndScroll('srv-refill-mega-3w')">
+                <span class="refill-btn-type">Mega Vol.</span>
+                <span class="refill-btn-details">3 Wo. · 50 €</span>
+              </button>
             </div>
           </div>
         </div>
