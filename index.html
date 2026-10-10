@@ -1595,7 +1595,7 @@
           <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Datenschutzerklärung</h4>
           <p><strong>1. Verantwortliche Stelle:</strong><br>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen<br>Telefon: +49 178 4537636 | E-Mail: alisa.prykhodko07@gmail.com</p>
 
-          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles (Vercel):</strong><br>Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf dieser Website erfasst Vercel automatisch technische Informationen in Server-Logfiles (z. B. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zugriffszeitpunkt). Diese Daten sind technisch erforderlich, um die Website stabil und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO); ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Server-Logfiles werden von Vercel zur Gewährleistung der Systemsicherheit und Fehleranalyse für die Dauer von standardmäßig bis zu 7 Tagen (im Hobby-Tarif) bzw. maximal 30 Tagen aufbewahrt und anschließend automatisch gelöscht.</p>
+          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles (Vercel):</strong><br>Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf dieser Website erfasst Vercel automatisch technische Informationen in Server-Logfiles (z. B. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zugriffszeitpunkt). Diese Daten sind technisch erforderlich, um die Website stabil und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO); ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Server-Logfiles werden von Vercel zur Gewährleistung der Systemsicherheit und Fehleranalyse nach den technischen Vorgaben des Hosters für die Dauer von wenigen Tagen bis maximal 30 Tagen aufbewahrt und anschließend automatisch gelöscht.</p>
 
           <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Speicher deines Browsers ausschließlich für technisch notwendige Funktionen (z. B. Speicherung der Bestätigung des Datenschutzhinweises, Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG). Es werden <em>keine</em> personenbezogenen Daten, Kundendaten oder Tracking-Cookies im lokalen Speicher abgelegt.</p>
 
@@ -2152,24 +2152,24 @@
       if (!WEBHOOK_URL) {
         transmissionOk = false;
       } else {
-        try {
-          const controller = new AbortController();
-          const timeoutId = setTimeout(() => controller.abort(), 7000);
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 7000);
 
+        try {
           const res = await fetch(WEBHOOK_URL, {
             method: "POST",
             headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify(record),
             signal: controller.signal
           });
-          clearTimeout(timeoutId);
 
           if (res.ok) {
             try {
               const json = await res.json();
-              transmissionOk = (json && (json.status === "success" || json.ok === true || json.result === "success"));
+              transmissionOk = Boolean(json && (json.status === "success" || json.ok === true || json.result === "success"));
             } catch (_) {
-              transmissionOk = true;
+              // Ungültiges JSON oder HTML-Fehlerseite darf niemals als Erfolg gewertet werden!
+              transmissionOk = false;
             }
           } else {
             transmissionOk = false;
@@ -2177,6 +2177,8 @@
         } catch (err) {
           console.warn("Webhook-Übertragungsfehler:", err);
           transmissionOk = false;
+        } finally {
+          clearTimeout(timeoutId);
         }
       }
 
@@ -2352,13 +2354,16 @@
       }
     };
 
-    // A11y Focus-Trap für das Legal-Modal
+    // A11y Focus-Trap für das Legal-Modal (nur tatsächlich sichtbare Elemente!)
     document.getElementById("legal-modal-overlay")?.addEventListener("keydown", (e) => {
       if (e.key !== "Tab") return;
       const modal = document.getElementById("legal-modal-overlay");
       if (!modal.classList.contains("open")) return;
 
-      const focusables = modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      const candidates = modal.querySelectorAll('button:not([disabled]), a[href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      const focusables = Array.from(candidates).filter(el => {
+        return el.offsetParent !== null && window.getComputedStyle(el).visibility !== "hidden" && !el.closest(".hidden");
+      });
       if (focusables.length === 0) return;
 
       const first = focusables[0];
@@ -2375,6 +2380,11 @@
           first.focus();
         }
       }
+    });
+
+    // Klick auf den abgedunkelten Hintergrund schließt das Modal
+    document.getElementById("legal-modal-overlay")?.addEventListener("click", (e) => {
+      if (e.target === e.currentTarget) closeLegalModal();
     });
 
     window.acceptNecessaryCookies = function() {
@@ -2437,6 +2447,11 @@
           first.focus();
         }
       }
+    });
+
+    // Klick auf den abgedunkelten Hintergrund schließt das mobile Menü
+    document.getElementById("mobileNav")?.addEventListener("click", (e) => {
+      if (e.target === e.currentTarget) closeMobileMenu();
     });
 
     window.addEventListener("keydown", (e) => {
