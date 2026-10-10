@@ -65,19 +65,19 @@
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday"],
         "opens": "18:00",
-        "closes": "20:00"
+        "closes": "21:30"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Tuesday", "Saturday", "Sunday"],
         "opens": "10:30",
-        "closes": "20:00"
+        "closes": "21:30"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
         "opens": "19:00",
-        "closes": "20:00"
+        "closes": "21:30"
       }
     ],
     "priceRange": "30€ - 80€"
@@ -1362,9 +1362,9 @@
                     </div>
                   </div>
                   <div style="margin-bottom:16px;">
-                    <label for="inp-notes" class="lux-form-label">Besondere Wünsche oder Fragen (optional)</label>
-                    <textarea id="inp-notes" rows="3" class="lux-input" placeholder="Wunsch-Look, Biegung oder allgemeine Fragen..."></textarea>
-                    <small style="display:block; font-size:11px; color:var(--taupe); margin-top:6px; line-height:1.4;">Hinweis: Allergien, Unverträglichkeiten oder empfindliche Augen besprechen wir persönlich und diskret vor Ort im Studio vor Beginn der Behandlung.</small>
+                    <label for="inp-notes" class="lux-form-label">Besondere Wünsche zum Look (optional)</label>
+                    <textarea id="inp-notes" rows="3" class="lux-input" placeholder="z. B. gewünschter Schwung, Länge, Dichte oder allgemeine Fragen zum Ablauf..."></textarea>
+                    <small style="display:block; font-size:11px; color:var(--taupe); margin-top:6px; line-height:1.4;">Wichtiger Hinweis: Bitte trage hier keine Gesundheits- oder Allergieangaben ein. Gesundheitliche Besonderheiten besprechen wir vertraulich und persönlich vor Ort im Studio vor Beginn der Behandlung.</small>
                   </div>
                   
                   <div style="display:flex; gap:10px; margin-bottom:20px; align-items:flex-start;">
@@ -1538,7 +1538,7 @@
         
         <div>
           <h4 style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:16px;">Öffnungszeiten</h4>
-          <p style="color:#ede3d8; line-height:1.8;">Mo: 18:00 – 20:00 Uhr<br>Di: 10:30 – 20:00 Uhr<br>Mi – Fr: 19:00 – 20:00 Uhr<br>Sa – So: 10:30 – 20:00 Uhr</p>
+          <p style="color:#ede3d8; line-height:1.8;">Mo: 18:00 – 21:30 Uhr<br>Di: 10:30 – 21:30 Uhr<br>Mi – Fr: 19:00 – 21:30 Uhr<br>Sa – So: 10:30 – 21:30 Uhr</p>
         </div>
         
         <div>
@@ -1599,7 +1599,7 @@
 
           <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Speicher deines Browsers ausschließlich für technisch notwendige Funktionen (z. B. Speicherung der Bestätigung des Datenschutzhinweises, Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG). Es werden <em>keine</em> personenbezogenen Daten, Kundendaten oder Tracking-Cookies im lokalen Speicher abgelegt.</p>
 
-          <p style="margin-top:12px;"><strong>4. Erfassung von Daten bei der unverbindlichen Terminanfrage:</strong><br>Die im Anfrageformular eingegebenen Daten (Vorname, Nachname, Telefonnummer, E-Mail-Adresse und optionale Wünsche) sowie die gewählte Behandlung, das Datum und die Uhrzeit werden zum Zweck der Terminabstimmung und Vorbereitung der Behandlung verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO). Die Angaben sind für die Bearbeitung deiner Anfrage erforderlich. Die Daten werden vertraulich behandelt und nach Durchführung des Termins bzw. nach Ablauf gesetzlicher Aufbewahrungsfristen gelöscht.</p>
+          <p style="margin-top:12px;"><strong>4. Erfassung von Daten bei der unverbindlichen Terminanfrage &amp; Speicherdauer:</strong><br>Die im Anfrageformular eingegebenen Daten (Vorname, Nachname, Telefonnummer, E-Mail-Adresse und optionale Wünsche zum Look) sowie die gewählte Behandlung, das Datum und die Uhrzeit werden ausschließlich zum Zweck der Terminabstimmung und Vorbereitung der Behandlung verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO). Die Angaben sind für die Bearbeitung deiner Anfrage erforderlich. <strong>Speicherdauer:</strong> Kommt kein Termin zustande, werden deine Daten spätestens nach 90 Tagen gelöscht. Bei Durchführung des Termins werden die Daten nach Abschluss der Behandlung gelöscht, es sei denn, gesetzliche steuer- oder handelsrechtliche Aufbewahrungsfristen (z. B. nach § 147 AO, § 257 HGB) erfordern eine längere Aufbewahrung.</p>
 
           <p style="margin-top:12px;"><strong>5. Keine Erhebung von Gesundheitsdaten online:</strong><br>Im Online-Formular werden keine sensiblen Gesundheitsdaten (wie Allergien oder Augenempfindlichkeiten) erhoben. Etwaige gesundheitliche Besonderheiten, Allergien oder Fragen zu Inhaltsstoffen besprechen wir persönlich und diskret vor Ort im Studio vor Beginn deiner Behandlung.</p>
 
@@ -2102,7 +2102,7 @@
       document.getElementById("booking-section").scrollIntoView({ behavior: "smooth" });
     };
 
-    window.handleFormSubmission = function(e) {
+    window.handleFormSubmission = async function(e) {
       e.preventDefault();
       if (!bookingState.date || !bookingState.time) { 
         proceedToStep(2); return; 
@@ -2132,35 +2132,55 @@
         customer, status: "pending", timestamp: new Date().toISOString()
       };
 
-      // 1. Temporäre Session-Haltung (Keine Kundendaten im localStorage!)
-      bookingState.recentBooking = record;
-      appointments.unshift({
-        id: code, serviceTitle: srv.title, price: srv.price,
-        date: bookingState.date, time: bookingState.time, duration: BLOCK_DURATION_MINUTES,
-        status: "confirmed"
-      });
-
-      // 2. Webhook-Übertragung an dein Google Sheet
       const btn = document.getElementById("btn-submit-booking");
-      if (btn) { btn.disabled = true; btn.textContent = "Wird gesendet..."; }
+      if (btn) { btn.disabled = true; btn.textContent = "Wird übertragen..."; }
 
+      let transmissionOk = false;
+
+      // 1. Webhook-Übertragung an Google Sheets abwarten
       if (WEBHOOK_URL) {
         try {
-          fetch(WEBHOOK_URL, {
+          const controller = new AbortController();
+          const timeoutId = setTimeout(() => controller.abort(), 7000);
+
+          await fetch(WEBHOOK_URL, {
             method: "POST",
             mode: "no-cors",
             headers: { "Content-Type": "text/plain;charset=utf-8" },
-            body: JSON.stringify(record)
-          }).catch(err => console.warn("Webhook-Übertragung:", err));
+            body: JSON.stringify(record),
+            signal: controller.signal
+          });
+          clearTimeout(timeoutId);
+          transmissionOk = true;
         } catch (err) {
-          console.warn("Webhook-Fehler:", err);
+          console.warn("Webhook-Übertragungsfehler:", err);
+          transmissionOk = false;
         }
+      } else {
+        transmissionOk = true;
       }
 
-      document.getElementById("voucher-code").textContent = record.id;
-      proceedToStep(4);
-      displayToast("Terminanfrage erfolgreich übermittelt!", "success");
       if (btn) { btn.disabled = false; btn.textContent = "Termin unverbindlich anfragen"; }
+
+      // 2. Temporäre Session-Haltung (Keine Kundendaten im localStorage!)
+      bookingState.recentBooking = record;
+
+      if (transmissionOk) {
+        appointments.unshift({
+          id: code, serviceTitle: srv.title, price: srv.price,
+          date: bookingState.date, time: bookingState.time, duration: BLOCK_DURATION_MINUTES,
+          status: "confirmed"
+        });
+        document.getElementById("voucher-code").textContent = record.id;
+        proceedToStep(4);
+        displayToast("Terminanfrage erfolgreich übermittelt!", "success");
+      } else {
+        displayToast("Verbindung zum Kalender unterbrochen. Bitte nutze WhatsApp!", "error");
+        const confirmWa = confirm("Die Verbindung zum Server konnte nicht hergestellt werden. Möchtest du deine Terminanfrage stattdessen direkt per WhatsApp an Alisa senden?");
+        if (confirmWa) {
+          window.sendConfirmationWhatsApp();
+        }
+      }
     };
 
     /* Kalender-Export */
@@ -2279,9 +2299,12 @@
     };
 
     /* ==========================================================================
-       MODALS, LEGAL & PRIVACY
+       MODALS, LEGAL & PRIVACY (ACCESSIBLE DIALOGS)
        ========================================================================== */
+    let lastLegalTrigger = null;
+
     window.openLegalView = function(type) {
+      lastLegalTrigger = document.activeElement;
       const modal = document.getElementById("legal-modal-overlay");
       const imprint = document.getElementById("legal-imprint-text");
       const privacy = document.getElementById("legal-privacy-text");
@@ -2293,12 +2316,47 @@
       
       modal.classList.add("open");
       document.body.classList.add("modal-open");
+
+      // A11y: Fokus auf Schließen-Button setzen
+      const closeBtn = modal.querySelector(".modal-close");
+      if (closeBtn) closeBtn.focus();
     };
     
     window.closeLegalModal = function() {
-      document.getElementById("legal-modal-overlay").classList.remove("open");
+      const modal = document.getElementById("legal-modal-overlay");
+      modal.classList.remove("open");
       document.body.classList.remove("modal-open");
+
+      // A11y: Rückkehr zum auslösenden Element
+      if (lastLegalTrigger && typeof lastLegalTrigger.focus === "function") {
+        lastLegalTrigger.focus();
+      }
     };
+
+    // A11y Focus-Trap für das Legal-Modal
+    document.getElementById("legal-modal-overlay")?.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const modal = document.getElementById("legal-modal-overlay");
+      if (!modal.classList.contains("open")) return;
+
+      const focusables = modal.querySelectorAll('button:not([disabled]), [href], input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])');
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
 
     window.acceptNecessaryCookies = function() {
       store.rawSet(STORAGE_KEY_COOKIES, "necessary");
@@ -2311,14 +2369,19 @@
     };
 
     /* MOBILE NAVIGATION */
+    let lastNavTrigger = null;
+
     window.toggleMobileMenu = function() {
       const menu = document.getElementById("mobileNav");
       if (menu.classList.contains("open")) {
         closeMobileMenu();
       } else { 
+        lastNavTrigger = document.activeElement;
         menu.classList.add("open"); 
         menu.setAttribute("aria-hidden", "false");
         document.body.classList.add("modal-open"); 
+        const firstLink = menu.querySelector("a, button");
+        if (firstLink) firstLink.focus();
       }
     };
     
@@ -2327,6 +2390,9 @@
       menu.classList.remove("open");
       menu.setAttribute("aria-hidden", "true");
       document.body.classList.remove("modal-open");
+      if (lastNavTrigger && typeof lastNavTrigger.focus === "function") {
+        lastNavTrigger.focus();
+      }
     };
 
     window.addEventListener("keydown", (e) => {
