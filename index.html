@@ -80,14 +80,13 @@
         "closes": "20:00"
       }
     ],
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": "5.0",
-      "reviewCount": "3"
-    },
     "priceRange": "30€ - 80€"
   }
   </script>
+
+  <noscript>
+    <style>.reveal-on-scroll { opacity: 1 !important; transform: none !important; }</style>
+  </noscript>
 
   <style>
     /* ==========================================================================
@@ -842,8 +841,9 @@
     .lux-input:focus { outline:none; border-color:var(--gold-dark); box-shadow: 0 0 0 3px rgba(195,157,88,0.15); }
 
     /* Modals & Toasts */
-    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; transition: opacity 0.3s; padding: 20px; }
-    .modal-overlay.open { opacity: 1; pointer-events: auto; }
+    .modal-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.6); backdrop-filter: blur(5px); z-index: 2000; display: flex; justify-content: center; align-items: center; opacity: 0; pointer-events: none; visibility: hidden; transition: opacity 0.3s, visibility 0.3s; padding: 20px; }
+    .modal-overlay.open { opacity: 1; pointer-events: auto; visibility: visible; }
+    .cal-day:focus-visible, button:focus-visible, a:focus-visible { outline: 2px solid var(--gold-dark); outline-offset: 2px; }
     .modal-content { background: var(--bg-surface); padding: 36px 30px; border-radius: var(--radius-md); max-width: 700px; width: 100%; max-height: 90vh; overflow-y: auto; position: relative; border: 1px solid var(--border-gold); box-shadow: var(--shadow-lg); }
     .modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; cursor: pointer; color: var(--brown-deep); line-height: 1; border:none; background:none; }
 
@@ -1116,14 +1116,14 @@
           
           <!-- Card 1: Wimpernlifting -->
           <div class="treatment-luxury-card reveal-on-scroll">
-            <h3 style="font-family:var(--font-serif); font-size:26px; color:var(--brown-deep); margin-bottom:8px;">Wimpernlifting inkl. Färbung</h3>
+            <h3 style="font-family:var(--font-serif); font-size:26px; color:var(--brown-deep); margin-bottom:8px;">Wimpernlifting inkl. Färbung & Pflege</h3>
             <div style="font-family:var(--font-serif); font-size:32px; font-weight:600; color:var(--brown-deep); margin-bottom:16px;">35 €</div>
             <p style="font-size:13.5px; color:var(--taupe); line-height:1.7; flex-grow:1;">
-              Maximiert den Schwung deiner Naturwimpern ohne künstliche Extensions. Dabei werden sie geliftet und gefärbt.
+              Maximiert den Schwung deiner Naturwimpern ohne künstliche Extensions. Dabei werden sie geliftet, gefärbt und intensiv gepflegt.
             </p>
             <ul class="treatment-card-features" style="list-style:none; border-top:1px solid var(--border-gold-light); padding-top:18px; margin:20px 0;">
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Haltbarkeit 4–6 Wochen</li>
-              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 100% wasser- & wischfest</li>
+              <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Wasser- & wischfest im Alltag</li>
             </ul>
             <button type="button" class="btn-lux btn-lux-secondary" style="width:100%;" onclick="preselectAndScroll('srv-lifting')">Lifting buchen</button>
           </div>
@@ -1210,6 +1210,10 @@
         <!-- Die 3 Bewertungskarten -->
         <div class="t-track reveal-on-scroll" id="testimonial-track"></div>
 
+        <div class="reveal-on-scroll" style="text-align:center; max-width:760px; margin:24px auto 0; font-size:12px; color:var(--taupe); line-height:1.6;">
+          <strong>Hinweis zur Echtheit der Bewertungen (§ 5b Abs. 3 UWG):</strong> Hier werden Bewertungen aus meinem offiziellen Google-Unternehmensprofil wiedergegeben. Ich gleiche die Namen mit meinen Termineinträgen ab, um sicherzustellen, dass die Bewertungen von echten Kundinnen meines Studios stammen.
+        </div>
+
         <!-- Google Profil Banner & Button -->
         <div class="reviews-google-cta reveal-on-scroll">
           <div class="glass-panel reviews-cta-box">
@@ -1220,8 +1224,7 @@
               </div>
               <div class="reviews-cta-info">
                 <strong>Offizielles Google Unternehmensprofil</strong>
-                <p>5.0 Sterne Gesamtbewertung (3 Rezensionen) · Lies alle Rezensionen oder teile dein Feedback.</p>
-                <small style="display:block; font-size:11px; color:var(--taupe); margin-top:3px;">Verifizierte Rezensionen aus unserem Google-Profil (§ 5b Abs. 3 UWG).</small>
+                <p>5.0 Sterne Gesamtbewertung (3 Rezensionen) · Lies alle Rezensionen auf Google Maps.</p>
               </div>
             </div>
             
@@ -1359,23 +1362,19 @@
                     </div>
                   </div>
                   <div style="margin-bottom:16px;">
-                    <label for="inp-notes" class="lux-form-label">Besondere Wünsche oder Hinweise</label>
-                    <textarea id="inp-notes" rows="3" class="lux-input" placeholder="Allergien, empfindliche Augen, Wunsch-Biegung..."></textarea>
+                    <label for="inp-notes" class="lux-form-label">Besondere Wünsche oder Fragen (optional)</label>
+                    <textarea id="inp-notes" rows="3" class="lux-input" placeholder="Wunsch-Look, Biegung oder allgemeine Fragen..."></textarea>
+                    <small style="display:block; font-size:11px; color:var(--taupe); margin-top:6px; line-height:1.4;">Hinweis: Allergien, Unverträglichkeiten oder empfindliche Augen besprechen wir persönlich und diskret vor Ort im Studio vor Beginn der Behandlung.</small>
                   </div>
                   
-                  <div style="display:flex; gap:10px; margin-bottom:14px; align-items:flex-start;">
+                  <div style="display:flex; gap:10px; margin-bottom:20px; align-items:flex-start;">
                     <input id="inp-consent" type="checkbox" required style="accent-color:var(--brown-deep); margin-top:3px; flex-shrink:0;">
-                    <label for="inp-consent" style="font-size:12px; color:var(--taupe); line-height:1.5;">Ich reserviere verbindlich. Bezahlung erfolgt vor Ort. Stornierung bis 24 Std. vorher kostenlos. Die <a href="#" onclick="openLegalView('privacy'); return false;" style="color:var(--brown-deep); font-weight:600; text-decoration:underline;">Datenschutzerklärung</a> habe ich zur Kenntnis genommen. *</label>
-                  </div>
-
-                  <div style="display:flex; gap:10px; margin-bottom:24px; align-items:flex-start;">
-                    <input id="inp-health-consent" type="checkbox" style="accent-color:var(--brown-deep); margin-top:3px; flex-shrink:0;">
-                    <label for="inp-health-consent" style="font-size:12px; color:var(--taupe); line-height:1.5;"><strong>Einwilligung zu Gesundheitsangaben (Art. 9 DSGVO):</strong> Falls ich unter Hinweisen Angaben zu Allergien, Unverträglichkeiten oder empfindlichen Augen mache, willige ich ausdrücklich in deren Verarbeitung zur sicheren Durchführung der Behandlung ein (jederzeit mit Wirkung für die Zukunft widerrufbar).</label>
+                    <label for="inp-consent" style="font-size:12px; color:var(--taupe); line-height:1.5;">Ich sende eine unverbindliche Terminanfrage. Die Bezahlung erfolgt erst nach der Behandlung vor Ort im Studio (bar oder EC-/Kartenzahlung). Bitte gib mir spätestens 24 Std. vorher per WhatsApp oder Telefon Bescheid, falls du verhindert bist. Die <a href="#datenschutz" onclick="openLegalView('privacy'); return false;" style="color:var(--brown-deep); font-weight:600; text-decoration:underline;">Datenschutzerklärung</a> habe ich zur Kenntnis genommen. *</label>
                   </div>
                   
                   <div style="display:flex; justify-content:space-between;">
                     <button type="button" class="btn-lux btn-lux-secondary" onclick="proceedToStep(2)">‹ Zurück</button>
-                    <button type="submit" class="btn-lux btn-booking">Verbindlich reservieren</button>
+                    <button id="btn-submit-booking" type="submit" class="btn-lux btn-booking">Termin unverbindlich anfragen</button>
                   </div>
                 </form>
 
@@ -1385,7 +1384,11 @@
                   <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-bottom:8px;"><span>Datum:</span><strong id="sum-date-display">–</strong></div>
                   <div style="display:flex; justify-content:space-between; font-size:13.5px; margin-bottom:8px;"><span>Zeit:</span><strong id="sum-time-display">–</strong></div>
                   <div style="display:flex; justify-content:space-between; align-items:baseline; margin-top:20px; padding-top:14px; border-top:1px dashed var(--border-gold);">
-                    <span>Gesamt (vor Ort):</span><span id="sum-price-amount" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:var(--gold-dark);">0 €</span>
+                    <div>
+                      <span style="display:block; font-size:13px;">Gesamtbetrag:</span>
+                      <small style="font-size:10.5px; color:var(--taupe);">Zahlung vor Ort (bar / Karte)</small>
+                    </div>
+                    <span id="sum-price-amount" style="font-family:var(--font-serif); font-size:26px; font-weight:600; color:var(--gold-dark);">0 €</span>
                   </div>
                 </div>
               </div>
@@ -1394,13 +1397,13 @@
             <!-- Step 4 -->
             <div id="step-panel-4" class="hidden" style="text-align:center;">
                <div style="width:70px; height:70px; border-radius:50%; background:var(--gold-gradient); color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:30px; margin:0 auto 20px;">✓</div>
-               <h3 style="font-family:var(--font-serif); font-size:34px; margin-bottom:8px;">Erfolgreich reserviert!</h3>
-               <p style="color:var(--taupe); margin-bottom:24px;">Ich freue mich auf deinen Besuch! Dein Buchungscode lautet: <strong id="voucher-code" style="color:var(--brown-deep);"></strong></p>
+               <h3 style="font-family:var(--font-serif); font-size:32px; margin-bottom:8px;">Anfrage erfolgreich gesendet!</h3>
+               <p style="color:var(--taupe); margin-bottom:24px; font-size:14px; max-width:540px; margin-inline:auto;">Vielen Dank! Ich habe deine Terminanfrage erhalten und melde mich zeitnah zur Abstimmung bei dir. Dein Buchungscode lautet: <strong id="voucher-code" style="color:var(--brown-deep);"></strong></p>
                <div style="display:flex; justify-content:center; gap:14px; flex-wrap:wrap;">
-                 <button type="button" class="btn-lux btn-booking" onclick="exportCalendarIcs()">In Kalender sichern (.ics)</button>
-                 <button type="button" class="btn-lux btn-whatsapp" onclick="sendConfirmationWhatsApp()">Buchung an Alisa senden (WhatsApp)</button>
+                 <button type="button" class="btn-lux btn-booking" onclick="exportCalendarIcs()">In Kalender vormerken (.ics)</button>
+                 <button type="button" class="btn-lux btn-whatsapp" onclick="sendConfirmationWhatsApp()">Anfrage per WhatsApp senden</button>
                </div>
-               <button type="button" class="btn-lux btn-lux-secondary" style="margin-top:24px;" onclick="startFreshBooking()">Weiteren Termin buchen</button>
+               <button type="button" class="btn-lux btn-lux-secondary" style="margin-top:24px;" onclick="startFreshBooking()">Neue Anfrage stellen</button>
             </div>
 
           </div>
@@ -1446,7 +1449,7 @@
               Ich bin Alisa und liebe es, mit ruhiger Hand und Feingefühl das Beste aus deinen Wimpern herauszuholen. Mein kleines Studio in Treuchtlingen habe ich mir ganz bewusst als gemütlichen Wohlfühlort eingerichtet – fernab von Salon-Hektik und Trubel.
             </p>
             <p class="section-description" style="margin-bottom:30px;">
-              Kein Ziepen, keine brennenden Augen: Ich nehme mir wirklich Zeit für dich und arbeite nur mit sanften, geprüften Materialien. Mir ist wichtig, dass du dich auf meiner Behandlungsliege einfach entspannen und abschalten kannst.
+              Sanft und schonend für deine Augen: Ich nehme mir wirklich Zeit für dich und arbeite nur mit ausgewählten, geprüften Materialien. Mir ist wichtig, dass du dich auf meiner Behandlungsliege einfach entspannen und abschalten kannst.
             </p>
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-top:10px;">
               <div>
@@ -1491,7 +1494,7 @@
               </p>
               
               <div style="display:flex; justify-content:center; flex-wrap:wrap; gap:16px;">
-                <a href="https://maps.google.com/?q=Bürgermeister-Sommer-Straße+34,+91757+Treuchtlingen" target="_blank" class="btn-lux btn-booking" style="padding: 0 28px;">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=B%C3%BCrgermeister-Sommer-Stra%C3%9Fe%2034%2C%2091757%20Treuchtlingen" target="_blank" rel="noopener noreferrer" class="btn-lux btn-booking" style="padding: 0 28px;">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="margin-right: 4px;">
                     <line x1="22" y1="2" x2="11" y2="13"></line>
                     <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
@@ -1550,10 +1553,10 @@
       </div>
 
       <div style="display:flex; justify-content:space-between; flex-wrap:wrap; gap: 15px; color:#928377; font-size: 12px;">
-        <span><span onclick="openAdminModal()" style="cursor:default;" title="">©</span> 2026 ALISA BEAUTY LAB · Alle Rechte vorbehalten.</span>
+        <span>© 2026 ALISA BEAUTY LAB · Alle Rechte vorbehalten.</span>
         <div style="display:flex; gap: 15px;">
-          <button type="button" style="background:none; border:none; color:inherit; cursor:pointer;" onclick="openLegalView('imprint')">Impressum</button>
-          <button type="button" style="background:none; border:none; color:inherit; cursor:pointer;" onclick="openLegalView('privacy')">Datenschutz</button>
+          <a href="#impressum" style="color:inherit; text-decoration:none;" onclick="openLegalView('imprint'); return false;">Impressum</a>
+          <a href="#datenschutz" style="color:inherit; text-decoration:none;" onclick="openLegalView('privacy'); return false;">Datenschutz</a>
           <button type="button" style="background:none; border:none; color:inherit; cursor:pointer;" onclick="showCookieSettings()">Cookie-Einstellungen</button>
         </div>
       </div>
@@ -1561,92 +1564,7 @@
   </footer>
 
   <!-- Toasts -->
-  <div id="toast-tray" class="toast-tray"></div>
-
-  <!-- Admin Modal -->
-  <div id="admin-modal" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="admin-modal-title">
-    <div class="modal-content" style="max-width: 820px;">
-      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--border-gold-light); padding-bottom:15px; margin-bottom: 20px;">
-        <h3 id="admin-modal-title" style="font-family:var(--font-serif); font-size: 24px; color:var(--brown-deep);">Studio Management</h3>
-        <button type="button" class="modal-close" aria-label="Fenster schließen" onclick="closeAdminModal()">×</button>
-      </div>
-
-      <!-- PIN View -->
-      <div id="admin-pin-view" style="max-width:340px; margin: 30px auto; text-align:center;">
-        <div style="font-size:36px; margin-bottom:12px;">🔒</div>
-        <h4 style="font-family:var(--font-serif); font-size:24px; color:var(--brown-deep); margin-bottom:8px;">PIN eingeben</h4>
-        <p style="color:var(--taupe); font-size:12.5px; margin-bottom:20px;">Bitte gib deinen Admin-PIN ein.</p>
-
-        <form onsubmit="verifyAdminPin(event)">
-          <label for="admin-pin-input" class="visually-hidden">Admin PIN</label>
-          <input id="admin-pin-input" type="password" inputmode="numeric" maxlength="8" class="lux-input" style="text-align:center; font-size:22px; letter-spacing:0.25em; margin-bottom:14px;" required placeholder="••••">
-          <button id="admin-login-btn" type="submit" class="btn-lux btn-booking" style="width:100%;">Freischalten</button>
-        </form>
-      </div>
-
-      <!-- Dashboard View -->
-      <div id="admin-dashboard-view" class="hidden">
-        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px;">
-          <div>
-            <h4 style="font-family:var(--font-serif); font-size:20px; color:var(--brown-deep);">Buchungsübersicht &amp; Verwaltung</h4>
-            <p style="color:var(--taupe); font-size:13px;">Termine prüfen, stornieren und Sperrtage verwalten.</p>
-          </div>
-          <div style="display:flex; gap:10px;">
-            <button type="button" class="btn-lux btn-booking" style="min-height:36px; font-size:10.5px; padding:0 14px;" onclick="exportBookingsCsv()">Buchungen als CSV</button>
-            <button type="button" class="btn-lux btn-lux-secondary" style="min-height:36px; font-size:10.5px; padding:0 14px;" onclick="logoutAdmin()">Abmelden</button>
-          </div>
-        </div>
-
-        <!-- Stat Kacheln -->
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(160px, 1fr)); gap:12px; margin-bottom:24px;">
-          <div style="padding:16px; background:#fff; border-radius:12px; border:1px solid rgba(195,157,88,0.3);">
-            <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Termine Gesamt</span>
-            <div id="adm-count-total" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:var(--brown-deep);">0</div>
-          </div>
-          <div style="padding:16px; background:#fff; border-radius:12px; border:1px solid rgba(195,157,88,0.3);">
-            <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Bestätigt</span>
-            <div id="adm-count-active" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:#177344;">0</div>
-          </div>
-          <div style="padding:16px; background:#fff; border-radius:12px; border:1px solid rgba(195,157,88,0.3);">
-            <span style="font-size:11px; text-transform:uppercase; color:var(--taupe);">Storniert</span>
-            <div id="adm-count-cancelled" style="font-family:var(--font-serif); font-size:28px; font-weight:600; color:#b33a3a;">0</div>
-          </div>
-        </div>
-
-        <!-- Sperrtage Steuerung -->
-        <div style="background:#fff; border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:18px; margin-bottom:24px;">
-          <h5 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep); margin-bottom:12px;">Sperrtage verwalten</h5>
-          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-bottom:12px;">
-            <input id="adm-block-date" type="date" class="lux-input" style="padding:8px 12px; font-size:13px; max-width:200px;">
-            <button type="button" class="btn-lux btn-booking" style="min-height:38px; padding:0 16px; font-size:11px;" onclick="blockCalendarDay()">Tag sperren</button>
-          </div>
-          <div id="adm-blocked-days-list" style="display:flex; flex-wrap:wrap; gap:8px;"></div>
-        </div>
-
-        <!-- Terminliste -->
-        <div style="background:#fff; border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:18px; margin-bottom:24px;">
-          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
-            <h5 style="font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep);">Gebuchte Termine</h5>
-            <div style="display:flex; gap:6px;">
-              <button type="button" class="btn-lux btn-booking" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('all')">Alle</button>
-              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('confirmed')">Aktiv</button>
-              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10px;" onclick="renderAdminBookings('cancelled')">Storniert</button>
-            </div>
-          </div>
-          <div id="adm-bookings-table-container" style="max-height:320px; overflow-y:auto;"></div>
-        </div>
-
-        <!-- PIN ändern -->
-        <div style="background:rgba(246,239,230,0.7); border:1px solid var(--border-gold-light); border-radius:var(--radius-md); padding:16px;">
-          <h5 style="font-size:12px; font-weight:700; text-transform:uppercase; letter-spacing:0.1em; color:var(--brown-deep); margin-bottom:8px;">Admin PIN ändern</h5>
-          <form onsubmit="changeAdminPin(event)" style="display:flex; gap:10px; flex-wrap:wrap;">
-            <input id="adm-new-pin-input" type="password" maxlength="8" class="lux-input" style="padding:8px 12px; font-size:13px; max-width:200px;" placeholder="Neuer PIN (z. B. 4-stellig)" required>
-            <button type="submit" class="btn-lux btn-lux-secondary" style="min-height:38px; padding:0 16px; font-size:11px;">Neuen PIN speichern</button>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
+  <div id="toast-tray" class="toast-tray" role="status" aria-live="polite"></div>
 
   <!-- Legal Modal -->
   <div id="legal-modal-overlay" class="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="legal-modal-title">
@@ -1677,23 +1595,25 @@
           <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Datenschutzerklärung</h4>
           <p><strong>1. Verantwortliche Stelle:</strong><br>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen<br>Telefon: +49 178 4537636 | E-Mail: alisa.prykhodko07@gmail.com</p>
 
-          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles:</strong><br>Beim Aufruf dieser Website erfasst der Webserver des Hosting-Dienstleisters automatisch technische Informationen (z. B. IP-Adresse, Browsertyp und -version, Betriebssystem, Referrer-URL, Datum und Uhrzeit des Zugriffs). Diese Daten sind technisch erforderlich, um die Website fehlerfrei und sicher bereitzustellen, und werden nicht mit anderen Datenquellen zusammengeführt (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Die Logfiles werden nach Ablauf der gesetzlichen bzw. technischen Fristen automatisch gelöscht.</p>
+          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles (Vercel):</strong><br>Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf dieser Website erfasst Vercel automatisch technische Informationen in Server-Logfiles (z. B. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zugriffszeitpunkt). Diese Daten sind technisch erforderlich, um die Website stabil und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO); ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Daten werden nach Ablauf technischer Speicherfristen gelöscht.</p>
 
-          <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Browserspeicher (Local Storage) deines Endgeräts zur technisch notwendigen Zwischenspeicherung deiner Terminauswahl während des Buchungsvorgangs sowie zur Speicherung des Status deines Datenschutzhinweises. Diese Daten verbleiben auf deinem Gerät und können jederzeit über die Einstellungen deines Browsers gelöscht werden. Es werden keine Profiling-, Analyse- oder Werbe-Cookies eingesetzt (Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG).</p>
+          <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Speicher deines Browsers ausschließlich für technisch notwendige Funktionen (z. B. Speicherung der Bestätigung des Datenschutzhinweises, Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG). Es werden <em>keine</em> personenbezogenen Daten, Kundendaten oder Tracking-Cookies im lokalen Speicher abgelegt.</p>
 
-          <p style="margin-top:12px;"><strong>4. Erfassung von Daten bei der Terminreservierung:</strong><br>Die im Buchungsformular eingegebenen Daten (Vorname, Nachname, Telefonnummer, E-Mail-Adresse und optionale Hinweise) sowie die gewählte Behandlung, das Datum und die Uhrzeit werden zum Zweck der Terminvereinbarung, Vorbereitung und Durchführung der kosmetischen Behandlung verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO). Nach dem Absenden der Reservierung werden diese Daten zur Terminverwaltung sicher an unser Studio übermittelt (siehe Punkt 6). Die Daten werden vertraulich behandelt und nach Ablauf gesetzlicher Aufbewahrungsfristen gelöscht.</p>
+          <p style="margin-top:12px;"><strong>4. Erfassung von Daten bei der unverbindlichen Terminanfrage:</strong><br>Die im Anfrageformular eingegebenen Daten (Vorname, Nachname, Telefonnummer, E-Mail-Adresse und optionale Wünsche) sowie die gewählte Behandlung, das Datum und die Uhrzeit werden zum Zweck der Terminabstimmung und Vorbereitung der Behandlung verarbeitet (Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO). Die Angaben sind für die Bearbeitung deiner Anfrage erforderlich. Die Daten werden vertraulich behandelt und nach Durchführung des Termins bzw. nach Ablauf gesetzlicher Aufbewahrungsfristen gelöscht.</p>
 
-          <p style="margin-top:12px;"><strong>5. Gesundheitsdaten (Allergien, empfindliche Augen):</strong><br>Im Feld „Besondere Wünsche oder Hinweise“ kannst du freiwillig Angaben zu Allergien, Unverträglichkeiten oder empfindlichen Augen machen. Dabei handelt es sich um Gesundheitsdaten im Sinne von Art. 9 DSGVO. Diese Angaben verarbeite ich ausschließlich, um deine Behandlung sicher durchzuführen und geeignete Materialien auszuwählen. Rechtsgrundlage ist deine ausdrückliche Einwilligung über die Checkbox im Buchungsformular (Art. 9 Abs. 2 lit. a DSGVO). Du kannst deine Einwilligung jederzeit mit Wirkung für die Zukunft per E-Mail oder Telefon widerrufen. Die Daten werden gelöscht, sobald sie für die Behandlung nicht mehr benötigt werden.</p>
+          <p style="margin-top:12px;"><strong>5. Keine Erhebung von Gesundheitsdaten online:</strong><br>Im Online-Formular werden keine sensiblen Gesundheitsdaten (wie Allergien oder Augenempfindlichkeiten) erhoben. Etwaige gesundheitliche Besonderheiten, Allergien oder Fragen zu Inhaltsstoffen besprechen wir persönlich und diskret vor Ort im Studio vor Beginn deiner Behandlung.</p>
 
-          <p style="margin-top:12px;"><strong>6. Google Apps Script &amp; Google Sheets (Terminverwaltung):</strong><br>Nach Absenden einer Reservierung werden die Buchungsdaten (Buchungscode, Behandlung, Preis, Datum, Uhrzeit, Vorname, Nachname, Telefonnummer, E-Mail-Adresse und Hinweise – einschließlich ggf. angegebener Gesundheitsdaten, siehe Punkt 5) über einen Google-Apps-Script-Dienst in eine Google-Sheets-Tabelle übertragen, über die ich meine Termine verwalte. Dabei wird technisch bedingt auch deine IP-Adresse an Google übermittelt. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland. Eine Übermittlung an die Google LLC in den USA kann nicht ausgeschlossen werden. Google LLC ist nach dem EU-US Data Privacy Framework zertifiziert; die EU-Kommission hat für die USA insoweit einen Angemessenheitsbeschluss erlassen (Art. 45 DSGVO). Ergänzend gelten die EU-Standardvertragsklauseln. Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Terminabwicklung) bzw. für Gesundheitsdaten deine Einwilligung nach Art. 9 Abs. 2 lit. a DSGVO. Mit Google besteht ein Vertrag zur Auftragsverarbeitung. Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://policies.google.com/privacy</a>.</p>
+          <p style="margin-top:12px;"><strong>6. Google Apps Script &amp; Google Sheets (Terminabstimmung):</strong><br>Beim Laden des Kalenders ruft dein Browser die belegten Zeiten über einen Google-Apps-Script-Dienst ab, um freie Termine anzuzeigen. Nach Absenden einer Terminanfrage werden deine Angaben über diesen Dienst in meine Google-Sheets-Tabelle zur Terminorganisation übertragen. Dabei wird technisch bedingt deine IP-Adresse an Google übermittelt. Anbieter ist die Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland (Übermittlung an Google LLC, USA auf Grundlage des EU-US Data Privacy Frameworks nach Art. 45 DSGVO und EU-Standardvertragsklauseln). Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (vorvertragliche Maßnahmen). Weitere Informationen: <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://policies.google.com/privacy</a>.</p>
 
-          <p style="margin-top:12px;"><strong>7. Links zu Google Maps &amp; Google-Bewertungen:</strong><br>Diese Website enthält Links zu Google Maps (Routenplanung) und zu meinem Google-Unternehmensprofil (Bewertungen). Es handelt sich um einfache Links; Google-Dienste werden nicht in diese Website eingebettet und es werden beim bloßen Aufruf dieser Website keine Daten an Google Maps übertragen. Erst wenn du einen dieser Links anklickst, wirst du zu Google weitergeleitet; dort gelten die Datenschutzbestimmungen von Google (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland).</p>
+          <p style="margin-top:12px;"><strong>7. Links zu Google Maps &amp; Google-Bewertungen:</strong><br>Diese Website enthält Links zu Google Maps (Routenplanung) und zu meinem Google-Unternehmensprofil (Bewertungen). Es handelt sich um einfache Hyperlinks; Google-Dienste werden nicht eingebettet, und es werden beim Aufruf dieser Website keine Daten an Google Maps übertragen. Erst wenn du einen Link anklickst, wirst du zu Google weitergeleitet (Anbieter: Google Ireland Limited, Dublin, Irland).</p>
 
-          <p style="margin-top:12px;"><strong>8. Kontaktaufnahme via WhatsApp:</strong><br>Wenn du die angebotenen WhatsApp-Schaltflächen anklickst, wirst du direkt zu WhatsApp weitergeleitet. Dienstanbieter ist die Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland. Bei der Nutzung gelten die Datenschutzbestimmungen von WhatsApp. Die Nutzung dieses Kommunikationskanals ist freiwillig.</p>
+          <p style="margin-top:12px;"><strong>8. Kontaktaufnahme via WhatsApp:</strong><br>Wenn du die angebotenen WhatsApp-Schaltflächen anklickst, wirst du zu WhatsApp weitergeleitet (Meta Platforms Ireland Limited, Dublin, Irland). Bei der Nutzung gelten die Datenschutzbestimmungen von WhatsApp. Die Nutzung dieses Kommunikationskanals ist vollkommen freiwillig.</p>
 
-          <p style="margin-top:12px;"><strong>9. Adobe Fonts (Typekit):</strong><br>Zur einheitlichen typografischen Gestaltung nutzt diese Website Webfonts von Adobe Fonts. Anbieter ist die Adobe Systems Software Ireland Limited, 4–6 Riverwalk, Citywest Business Campus, Dublin 24, Irland. Beim Aufruf einer Seite lädt dein Browser die Schriftarten direkt von Adobe-Servern (use.typekit.net). Dabei werden insbesondere deine IP-Adresse, Browser- und Geräteinformationen sowie die aufgerufene Seite an Adobe übermittelt. Adobe verwendet diese Daten nach eigenen Angaben zur Bereitstellung des Dienstes und zur Abrechnung der Schriftlizenzen; es werden keine Cookies gesetzt. Eine Übermittlung an Adobe Inc. in den USA kann nicht ausgeschlossen werden. Adobe Inc. ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Rechtsgrundlage ist mein berechtigtes Interesse an einer einheitlichen und ansprechenden Darstellung der Website (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://www.adobe.com/de/privacy/policies/adobe-fonts.html" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://www.adobe.com/de/privacy/policies/adobe-fonts.html</a>.</p>
+          <p style="margin-top:12px;"><strong>9. Adobe Fonts (Typekit):</strong><br>Zur einheitlichen und ansprechenden typografischen Gestaltung nutzt diese Website Webfonts von Adobe Fonts. Anbieter ist die Adobe Systems Software Ireland Limited, 4–6 Riverwalk, Citywest Business Campus, Dublin 24, Irland. Beim Aufruf einer Seite lädt dein Browser die Schriftarten direkt von Adobe-Servern (use.typekit.net). Dabei werden IP-Adresse, Browser- und Geräteinformationen übermittelt. Adobe Inc. in den USA ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO). Rechtsgrundlage ist mein berechtigtes Interesse an einer einheitlichen Darstellung des Markenauftritts (Art. 6 Abs. 1 lit. f DSGVO). Weitere Informationen: <a href="https://www.adobe.com/de/privacy/policies/adobe-fonts.html" target="_blank" rel="noopener noreferrer" style="color:var(--gold-dark);">https://www.adobe.com/de/privacy/policies/adobe-fonts.html</a>.</p>
 
-          <p style="margin-top:12px;"><strong>10. Deine Rechte als betroffene Person:</strong><br>Du hast im Rahmen der gesetzlichen Bestimmungen jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten Daten (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie Widerspruch gegen die Verarbeitung (Art. 21 DSGVO). Erteilte Einwilligungen kannst du jederzeit mit Wirkung für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Zudem steht dir ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Bayerisches Landesamt für Datenschutzaufsicht, BayLDA, Promenade 18, 91522 Ansbach).</p>
+          <p style="margin-top:12px;"><strong>10. Deine Rechte als betroffene Person:</strong><br>Du hast jederzeit das Recht auf unentgeltliche Auskunft über deine gespeicherten Daten (Art. 15 DSGVO), Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO), Einschränkung der Verarbeitung (Art. 18 DSGVO), Datenübertragbarkeit (Art. 20 DSGVO) sowie das Recht auf Beschwerde bei der zuständigen Aufsichtsbehörde (Bayerisches Landesamt für Datenschutzaufsicht, BayLDA, Promenade 18, 91522 Ansbach).</p>
+
+          <p style="margin-top:12px; padding:10px; background:rgba(195,157,88,0.12); border-left:3px solid var(--gold-dark); border-radius:4px;"><strong>Widerspruchsrecht nach Art. 21 DSGVO:</strong><br>Du hast das Recht, aus Gründen, die sich aus deiner besonderen Situation ergeben, jederzeit gegen die Verarbeitung dich betreffender personenbezogener Daten, die aufgrund von Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse) erfolgt, Widerspruch einzulegen. Wende dich hierzu einfach formlos per E-Mail an alisa.prykhodko07@gmail.com.</p>
         </div>
       </div>
     </div>
@@ -1703,7 +1623,7 @@
   <div id="cookie-banner" class="cookie-banner">
     <div>
       <h4 style="font-family:var(--font-serif); font-size: 20px; color:var(--brown-deep); margin-bottom: 4px;">Privatsphäre &amp; Datenschutz</h4>
-      <p style="font-size: 13px; color: var(--taupe); max-width: 620px;">Wir nutzen lokale Speicherung auf deinem Endgerät ausschließlich für die technische Abwicklung der Terminbuchung. Es werden keine Werbe- oder Tracking-Cookies eingesetzt.</p>
+      <p style="font-size: 13px; color: var(--taupe); max-width: 620px;">Wir nutzen lokale Speicherung ausschließlich für notwendige Sitzungsdaten. Keine Werbe- oder Tracking-Cookies. Weitere Informationen findest du in der <a href="#datenschutz" onclick="openLegalView('privacy'); return false;" style="color:var(--brown-deep); text-decoration:underline;">Datenschutzerklärung</a> und im <a href="#impressum" onclick="openLegalView('imprint'); return false;" style="color:var(--brown-deep); text-decoration:underline;">Impressum</a>.</p>
     </div>
     <div style="display:flex; gap: 10px;">
       <button type="button" class="btn-lux btn-booking" onclick="acceptNecessaryCookies()">Verstanden &amp; Fortfahren</button>
@@ -1716,11 +1636,7 @@
     /* ==========================================================================
        DATA & STATE
        ========================================================================== */
-    const STORAGE_KEY_BOOKINGS = "alisa_beauty_lab_bookings_v16";
-    const STORAGE_KEY_BLOCKED = "alisa_beauty_lab_blocked_v16";
-    const STORAGE_KEY_COOKIES = "alisa_beauty_lab_cookies_v16";
-    const STORAGE_KEY_PIN_HASH = "alisa_beauty_lab_admin_hash_v16";
-    const DEFAULT_PIN_HASH = "a1fb4e703a9ef1fa4936801721ff285a97ac85330856674412e054892afe6972";
+    const STORAGE_KEY_COOKIES = "alisa_beauty_lab_cookies_v17";
     const STUDIO_PHONE = "491784537636";
     
     // Webhook-URL für Google Sheets Synchronisation
@@ -1740,7 +1656,7 @@
     };
 
     const CATALOGUE = [
-      { id: "srv-lifting", title: "Wimpernlifting inkl. Pflege", price: 35, duration: 120, desc: "Natürlicher Schwung mit Tiefenpflege für deine Naturwimpern." },
+      { id: "srv-lifting", title: "Wimpernlifting inkl. Färbung & Pflege", price: 35, duration: 120, desc: "Natürlicher Schwung mit Tiefenpflege und Färbung für deine Naturwimpern." },
       { id: "srv-new-1-1", title: "Neuanlage: 1:1 Technik", price: 55, duration: 120, desc: "Feinster Mascara-Effekt. Eine Seidenwimper pro Naturwimper." },
       { id: "srv-new-volume", title: "Neuanlage: Volumen Soft (2D–4D)", price: 65, duration: 120, desc: "Zarte handgefächerte Wimpern für federleichte Dichte." },
       { id: "srv-new-mega", title: "Neuanlage: Mega Volumen (5D–8D)", price: 80, duration: 120, desc: "Hypnotisierend tiefer Glamour-Look mit dichter Fülle." },
@@ -1751,33 +1667,33 @@
     ];
 
     /* ==========================================================================
-       GOOGLE BEWERTUNGEN (3 ECHTE VERIFIZIERTE REZENSIONEN)
+       GOOGLE BEWERTUNGEN (3 ECHTE REZENSIONEN)
        ========================================================================== */
     const TESTIMONIALS = [
       { 
-        name: "Veronika Cherniavska", 
+        name: "Veronika C.", 
         initial: "V", 
-        avatarBg: "#5c6bc0", /* Violett/Indigo Avatar passend zum Google-Original */
+        avatarBg: "#5c6bc0", 
         stars: 5, 
-        badge: "Verifizierte Google-Rezension", 
+        badge: "Google-Rezension", 
         text: "Meine Wimpern sahen noch nie so schön aus wie nach dem Besuch bei Alisa.\n\nIhre Arbeit hat nicht nur mein Selbstbewusstsein erhöht sondern auch ein permanentes Lächeln garantiert. Ich würde gerne öfters zu ihr kommen aber leider halten die Wimpern zuuu lange hahahahah\n\nDie Session hat sich besser als Urlaub angefühlt. Man kann reden, lachen singen oder auch einfach mal schlafen!\n\nGirls das ist eure Chance mal durchzuatmen und sich wieder wie die Queen zu fühlen 💕",
         shortText: "Meine Wimpern sahen noch nie so schön aus wie nach dem Besuch bei Alisa.\n\nIhre Arbeit hat nicht nur mein Selbstbewusstsein erhöht sondern auch ein permanentes Lächeln garantiert. Ich würde gerne öfters zu ihr kommen aber leider halten die Wimpern zuuu lange hahahahah",
         moreText: "Die Session hat sich besser als Urlaub angefühlt. Man kann reden, lachen singen oder auch einfach mal schlafen!\n\nGirls das ist eure Chance mal durchzuatmen und sich wieder wie die Queen zu fühlen 💕"
       },
       { 
-        name: "Nikola Mrozkowiak", 
+        name: "Nikola M.", 
         initial: "N", 
-        avatarBg: "#8e24aa", /* Lila Avatar passend zum Google-Original */
+        avatarBg: "#8e24aa", 
         stars: 5, 
-        badge: "Verifizierte Google-Rezension", 
+        badge: "Google-Rezension", 
         text: "Sehr professionelle und saubere Arbeit. Sie nimmt sich viel Zeit, geht auf individuelle Wünsche ein und zaubert jedes Mal ein wunderschönes Ergebnis. Man fühlt sich direkt wohl und gut aufgehoben. Kann ich nur weiterempfehlen! 🤍" 
       },
       { 
-        name: "Lisa Emmerling", 
+        name: "Lisa E.", 
         initial: "L", 
-        avatarBg: "#2e7d32", /* Grüner Avatar passend zum Google-Original */
+        avatarBg: "#2e7d32", 
         stars: 5, 
-        badge: "Verifizierte Google-Rezension", 
+        badge: "Google-Rezension", 
         text: "Einfach die beste! 🥰 Kann ich nur weiterempfehlen. Man kann sich nur wohl fühlen. Freue mich immer auf jeden Termin und bin rundum zufrieden 🥰" 
       }
     ];
@@ -1786,16 +1702,14 @@
       ["Wie lange hält ein Wimpernlifting?", "4-6 Wochen, bis die Naturwimpern nachgewachsen sind. Es ist wasser- und wischfest."],
       ["Wie lange dauert ein Termin?", "Pro Termin reserviere ich dir ein privates Zeitfenster von 120 Minuten, ohne Hektik und ohne Parallelbehandlung."],
       ["Ab wann ist ein Refill möglich?", "Ein Auffüllen lohnt sich, solange noch mindestens 50 % der Wimpern vorhanden sind. Ab der 4. Woche ist eine Neuanlage nötig."],
-      ["Ich habe empfindliche Augen oder Allergien.", "Schreib das bitte bei der Buchung unter „Besondere Wünsche“, ich arbeite nur mit hautfreundlichen Materialien."],
+      ["Ich habe empfindliche Augen oder Allergien.", "Sprich mich gern vor Beginn deines Termins persönlich darauf an. Ich arbeite mit sanften, geprüften Materialien und stimme alles individuell auf dich ab."],
       ["Wo genau befindet sich das Studio und kann ich dort parken?", "Mein Studio befindet sich in der Bürgermeister-Sommer-Straße 34 in Treuchtlingen in einem eigenen, gemütlich eingerichteten Bereich im Haus. Du kannst bequem und kostenlos direkt an der Straße vor dem Haus parken. Klingle einfach – ich hole dich an der Tür ab!"]
     ];
 
-    let appointments = fetchStored(STORAGE_KEY_BOOKINGS, []) || [];
-    let blockedDays = fetchStored(STORAGE_KEY_BLOCKED, []) || [];
+    let appointments = [];
+    let blockedDays = [];
     let viewCalendarDate = new Date();
     let giftAmount = 50;
-    let failedPinAttempts = 0;
-    let adminFilterState = "all";
     
     let bookingState = {
       serviceId: "srv-lifting", date: null, time: null, recentBooking: null
@@ -1804,6 +1718,13 @@
     /* ==========================================================================
        UTILITIES & SECURITY
        ========================================================================== */
+    const store = {
+      get(k, fb) { try { const v = localStorage.getItem(k); return v ? JSON.parse(v) : fb; } catch (e) { return fb; } },
+      set(k, v) { try { localStorage.setItem(k, JSON.stringify(v)); } catch (e) {} },
+      raw(k) { try { return localStorage.getItem(k); } catch (e) { return null; } },
+      rawSet(k, v) { try { localStorage.setItem(k, v); } catch (e) {} }
+    };
+
     function sanitizeHtml(str) {
       if (!str) return "";
       return String(str).replace(/[&<>"']/g, match => ({
@@ -1813,27 +1734,6 @@
         '"': "&quot;",
         "'": "&#39;"
       }[match]));
-    }
-
-    function fetchStored(key, fallback) {
-      try { 
-        const item = localStorage.getItem(key); 
-        return item ? JSON.parse(item) : fallback; 
-      } 
-      catch (e) { 
-        return fallback; 
-      }
-    }
-
-    function persistData() {
-      localStorage.setItem(STORAGE_KEY_BOOKINGS, JSON.stringify(appointments));
-      localStorage.setItem(STORAGE_KEY_BLOCKED, JSON.stringify(blockedDays));
-    }
-
-    async function computeSha256(str) {
-      const buffer = new TextEncoder().encode(str);
-      const digest = await crypto.subtle.digest("SHA-256", buffer);
-      return Array.from(new Uint8Array(digest)).map(b => b.toString(16).padStart(2, "0")).join("");
     }
 
     function minutesFromTimeString(t) { 
@@ -1967,44 +1867,25 @@
           
           // 1. Sperrtage abgleichen
           if (Array.isArray(data.blockedDays)) {
-            data.blockedDays.forEach(ymd => {
-              if (!blockedDays.includes(ymd)) {
-                blockedDays.push(ymd);
-                hasChanges = true;
-              }
-            });
+            blockedDays = data.blockedDays;
+            hasChanges = true;
           }
 
           // 2. Belegte Slots abgleichen
           if (Array.isArray(data.bookedSlots)) {
-            const localOnly = appointments.filter(a => a.isLocal && a.customer && a.customer.phone);
-            const remoteBookings = data.bookedSlots.map(slot => ({
-              id: slot.code || `GS-${slot.date}-${slot.time.replace(":", "")}`,
+            appointments = data.bookedSlots.map(slot => ({
+              id: slot.code || `GS-${slot.date}-${(slot.time || "").replace(":", "")}`,
               serviceTitle: "Reserviert",
               price: 0,
               date: slot.date,
               time: slot.time,
               duration: BLOCK_DURATION_MINUTES,
-              customer: {},
-              status: "confirmed",
-              timestamp: new Date().toISOString()
+              status: "confirmed"
             }));
-
-            const merged = [...localOnly];
-            remoteBookings.forEach(rb => {
-              if (!merged.some(m => m.date === rb.date && m.time === rb.time && m.status !== "cancelled")) {
-                merged.push(rb);
-              }
-            });
-
-            if (merged.length !== appointments.length || hasChanges) {
-              appointments = merged;
-              hasChanges = true;
-            }
+            hasChanges = true;
           }
 
           if (hasChanges) {
-            persistData();
             renderCalendar();
             if (bookingState.date) renderSlotsForDate();
           }
@@ -2234,13 +2115,6 @@
       }
 
       const notes = document.getElementById("inp-notes").value.trim();
-      const healthConsent = document.getElementById("inp-health-consent") ? document.getElementById("inp-health-consent").checked : false;
-      if (notes.length > 0 && !healthConsent) {
-        displayToast("Bitte bestätige die Einwilligung für deine Hinweise/Gesundheitsangaben.", "warning");
-        document.getElementById("inp-health-consent").focus();
-        return;
-      }
-
       const srv = CATALOGUE.find(s => s.id === bookingState.serviceId);
       const [year, month, day] = bookingState.date.split("-");
       const timeClean = bookingState.time.replace(":", "");
@@ -2250,22 +2124,26 @@
         lastName: document.getElementById("inp-lastname").value.trim(),
         phone: document.getElementById("inp-phone").value.trim(),
         email: document.getElementById("inp-email").value.trim(),
-        notes: notes,
-        healthConsent: healthConsent
+        notes: notes
       };
       const record = {
         id: code, serviceId: srv.id, serviceTitle: srv.title, price: srv.price,
         date: bookingState.date, time: bookingState.time, duration: BLOCK_DURATION_MINUTES,
-        customer, status: "confirmed", timestamp: new Date().toISOString(),
-        isLocal: true
+        customer, status: "pending", timestamp: new Date().toISOString()
       };
 
-      // 1. Lokale Speicherung
-      appointments.unshift(record);
+      // 1. Temporäre Session-Haltung (Keine Kundendaten im localStorage!)
       bookingState.recentBooking = record;
-      persistData();
+      appointments.unshift({
+        id: code, serviceTitle: srv.title, price: srv.price,
+        date: bookingState.date, time: bookingState.time, duration: BLOCK_DURATION_MINUTES,
+        status: "confirmed"
+      });
 
       // 2. Webhook-Übertragung an dein Google Sheet
+      const btn = document.getElementById("btn-submit-booking");
+      if (btn) { btn.disabled = true; btn.textContent = "Wird gesendet..."; }
+
       if (WEBHOOK_URL) {
         try {
           fetch(WEBHOOK_URL, {
@@ -2281,7 +2159,8 @@
 
       document.getElementById("voucher-code").textContent = record.id;
       proceedToStep(4);
-      displayToast("Erfolgreich reserviert!", "success");
+      displayToast("Terminanfrage erfolgreich übermittelt!", "success");
+      if (btn) { btn.disabled = false; btn.textContent = "Termin unverbindlich anfragen"; }
     };
 
     /* Kalender-Export */
@@ -2292,31 +2171,36 @@
       const startClean = b.time.replace(":", "") + "00";
       const endClean = timeStringFromMinutes(minutesFromTimeString(b.time) + BLOCK_DURATION_MINUTES).replace(":", "") + "00";
       const ics = [
-        "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ALISA BEAUTY LAB//DE", "BEGIN:VEVENT",
+        "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//ALISA BEAUTY LAB//DE", "CALSCALE:GREGORIAN", "METHOD:PUBLISH",
+        "BEGIN:VTIMEZONE", "TZID:Europe/Berlin",
+        "BEGIN:DAYLIGHT", "TZOFFSETFROM:+0100", "TZOFFSETTO:+0200", "TZNAME:CEST", "DTSTART:19700329T020000", "RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=-1SU", "END:DAYLIGHT",
+        "BEGIN:STANDARD", "TZOFFSETFROM:+0200", "TZOFFSETTO:+0100", "TZNAME:CET", "DTSTART:19701025T030000", "RRULE:FREQ=YEARLY;BYMONTH=10;BYDAY=-1SU", "END:STANDARD",
+        "END:VTIMEZONE",
+        "BEGIN:VEVENT",
         `UID:${b.id}@alisabeautylab.de`, `DTSTAMP:${new Date().toISOString().replaceAll(/[-:]/g, "").split(".")[0]}Z`,
-        `DTSTART:${dateClean}T${startClean}`, `DTEND:${dateClean}T${endClean}`,
-        `SUMMARY:Wimperntermin ALISA BEAUTY LAB - ${b.serviceTitle}`,
-        `DESCRIPTION:Buchungscode: ${b.id}\\nBehandlung: ${b.serviceTitle}\\nBetrag: ${b.price} EUR`,
-        `LOCATION:Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen`,
-        "STATUS:CONFIRMED", "END:VEVENT", "END:VCALENDAR"
+        `DTSTART;TZID=Europe/Berlin:${dateClean}T${startClean}`, `DTEND;TZID=Europe/Berlin:${dateClean}T${endClean}`,
+        `SUMMARY:Terminanfrage ALISA BEAUTY LAB – ${b.serviceTitle}`,
+        `DESCRIPTION:Referenzcode: ${b.id}\\nBehandlung: ${b.serviceTitle}\\nBetrag: ${b.price} EUR (Zahlung vor Ort im Studio)`,
+        `LOCATION:Bürgermeister-Sommer-Straße 34\\, 91757 Treuchtlingen`,
+        "STATUS:TENTATIVE", "END:VEVENT", "END:VCALENDAR"
       ].join("\r\n");
       
-      const blob = new Blob(["\ufeff" + ics], { type: "text/calendar;charset=utf-8" });
+      const blob = new Blob([ics], { type: "text/calendar;charset=utf-8" });
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a"); 
       a.href = url; 
-      a.download = `Termin-${b.id}.ics`;
+      a.download = `Terminanfrage-${b.id}.ics`;
       document.body.appendChild(a); 
       a.click(); 
       a.remove(); 
-      URL.revokeObjectURL(url);
+      setTimeout(() => URL.revokeObjectURL(url), 1500);
     };
 
     window.sendConfirmationWhatsApp = function() {
       const b = bookingState.recentBooking;
       if (!b) return;
-      const notesLine = b.customer.notes ? `\n📝 Hinweis: ${b.customer.notes}` : "";
-      const text = `Hallo Alisa,\nich habe einen Termin reserviert:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n📞 ${b.customer.phone}${notesLine}\n🏷️ Code: ${b.id}\nIch freue mich darauf!`;
+      const notesLine = b.customer && b.customer.notes ? `\n📝 Wünsche: ${b.customer.notes}` : "";
+      const text = `Hallo Alisa,\nich möchte gern einen Termin anfragen:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n📞 ${b.customer.phone}${notesLine}\n🏷️ Referenzcode: ${b.id}\nPasst der Termin bei dir?`;
       window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(text)}`, "_blank");
     };
 
@@ -2395,204 +2279,6 @@
     };
 
     /* ==========================================================================
-       ADMIN MANAGEMENT
-       ========================================================================== */
-    window.openAdminModal = function() {
-      document.getElementById("admin-modal").classList.add("open");
-      document.getElementById("admin-pin-input").value = "";
-      document.getElementById("admin-pin-input").focus();
-      document.body.classList.add("modal-open");
-    };
-    
-    window.closeAdminModal = function() {
-      document.getElementById("admin-modal").classList.remove("open");
-      document.body.classList.remove("modal-open");
-    };
-
-    window.logoutAdmin = function() {
-      document.getElementById("admin-dashboard-view").classList.add("hidden");
-      document.getElementById("admin-pin-view").classList.remove("hidden");
-      document.getElementById("admin-pin-input").value = "";
-    };
-
-    window.verifyAdminPin = async function(e) {
-      e.preventDefault();
-      if (failedPinAttempts >= 5) {
-        displayToast("Zu viele Fehlversuche. Bitte kurz warten.", "error");
-        return;
-      }
-
-      const inputVal = document.getElementById("admin-pin-input").value.trim();
-      const enteredHash = await computeSha256(inputVal);
-      const storedHash = localStorage.getItem(STORAGE_KEY_PIN_HASH) || DEFAULT_PIN_HASH;
-
-      if (enteredHash === storedHash) {
-        failedPinAttempts = 0;
-        document.getElementById("admin-pin-view").classList.add("hidden");
-        document.getElementById("admin-dashboard-view").classList.remove("hidden");
-        refreshAdminStats();
-        renderAdminBookings(adminFilterState);
-        renderAdminBlockedDays();
-        displayToast("Erfolgreich freigeschaltet", "success");
-      } else {
-        failedPinAttempts++;
-        displayToast(`PIN inkorrekt (${failedPinAttempts}/5 Versuche)`, "error");
-      }
-    };
-
-    function refreshAdminStats() {
-      document.getElementById("adm-count-total").textContent = appointments.length;
-      document.getElementById("adm-count-active").textContent = appointments.filter(a => a.status === "confirmed").length;
-      document.getElementById("adm-count-cancelled").textContent = appointments.filter(a => a.status === "cancelled").length;
-    }
-
-    window.changeAdminPin = async function(e) {
-      e.preventDefault();
-      const newPin = document.getElementById("adm-new-pin-input").value.trim();
-      if (newPin.length < 4) {
-        return displayToast("Der PIN sollte mindestens 4 Stellen haben.", "warning");
-      }
-      const newHash = await computeSha256(newPin);
-      localStorage.setItem(STORAGE_KEY_PIN_HASH, newHash);
-      document.getElementById("adm-new-pin-input").value = "";
-      displayToast("Admin-PIN erfolgreich geändert!", "success");
-    };
-
-    window.renderAdminBlockedDays = function() {
-      const container = document.getElementById("adm-blocked-days-list");
-      if (!container) return;
-      if (blockedDays.length === 0) {
-        container.innerHTML = '<span style="font-size:12px; color:var(--taupe);">Keine Sperrtage eingetragen.</span>';
-        return;
-      }
-      container.innerHTML = blockedDays.map(ymd => `
-        <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(195,157,88,0.15); border:1px solid var(--border-gold); padding:4px 10px; border-radius:99px; font-size:12px; color:var(--brown-deep);">
-          📅 ${formatDateDisplay(ymd)}
-          <button type="button" onclick="unblockCalendarDay('${ymd}')" title="Sperrung aufheben" style="background:none; border:none; cursor:pointer; color:#b33a3a; font-weight:bold; font-size:13px; line-height:1;">✕</button>
-        </span>
-      `).join("");
-    };
-
-    window.blockCalendarDay = function() {
-      const ymd = document.getElementById("adm-block-date").value;
-      if (!ymd) return displayToast("Bitte Datum wählen", "warning");
-      if (!blockedDays.includes(ymd)) {
-        blockedDays.push(ymd);
-        persistData();
-        renderCalendar();
-        renderAdminBlockedDays();
-        displayToast("Tag gesperrt", "success");
-      } else {
-        displayToast("Dieser Tag ist bereits gesperrt", "warning");
-      }
-    };
-
-    window.unblockCalendarDay = function(ymd) {
-      blockedDays = blockedDays.filter(d => d !== ymd);
-      persistData();
-      renderCalendar();
-      renderAdminBlockedDays();
-      displayToast("Tag wieder freigegeben", "success");
-    };
-
-    window.renderAdminBookings = function(filter = "all") {
-      adminFilterState = filter;
-      const container = document.getElementById("adm-bookings-table-container");
-      if (!container) return;
-
-      const list = appointments.filter(a => {
-        if (filter === "all") return true;
-        return a.status === filter;
-      });
-
-      if (list.length === 0) {
-        container.innerHTML = '<div style="text-align:center; padding:24px; color:var(--taupe); font-size:13px;">Keine Buchungen in dieser Kategorie vorhanden.</div>';
-        return;
-      }
-
-      container.innerHTML = list.map(a => {
-        const isCancelled = a.status === "cancelled";
-        return `
-          <div style="border:1px solid ${isCancelled ? 'rgba(179,58,58,0.3)' : 'var(--border-gold-light)'}; background:${isCancelled ? 'rgba(179,58,58,0.03)' : '#fff'}; border-radius:10px; padding:14px; margin-bottom:10px; font-size:12.5px;">
-            <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:8px; margin-bottom:6px;">
-              <div>
-                <strong style="color:var(--brown-deep); font-size:14px;">${sanitizeHtml(a.customer.firstName)} ${sanitizeHtml(a.customer.lastName)}</strong>
-                <span style="display:inline-block; margin-left:8px; padding:2px 8px; border-radius:99px; font-size:10px; font-weight:700; text-transform:uppercase; background:${isCancelled ? 'rgba(179,58,58,0.15)' : 'rgba(23,115,68,0.15)'}; color:${isCancelled ? '#b33a3a' : '#177344'};">
-                  ${isCancelled ? 'Storniert' : 'Bestätigt'}
-                </span>
-              </div>
-              <div style="font-family:var(--font-serif); font-size:16px; font-weight:600; color:var(--gold-dark);">${formatCurrency(a.price)}</div>
-            </div>
-            <div style="color:var(--taupe); margin-bottom:6px;">
-              ✨ <strong>${sanitizeHtml(a.serviceTitle)}</strong> | 📅 <strong>${formatDateDisplay(a.date)}</strong> um <strong>${a.time} Uhr</strong> (Code: <code>${sanitizeHtml(a.id)}</code>)
-            </div>
-            <div style="display:flex; gap:14px; flex-wrap:wrap; margin-bottom:8px; font-size:12px;">
-              <a href="tel:${sanitizeHtml(a.customer.phone)}" style="color:var(--brown-deep); text-decoration:none;">📞 ${sanitizeHtml(a.customer.phone)}</a>
-              <a href="https://wa.me/${encodeURIComponent(a.customer.phone.replace(/[^0-9]/g, ''))}" target="_blank" rel="noopener noreferrer" style="color:#128c7e; text-decoration:none;">💬 WhatsApp</a>
-              <a href="mailto:${sanitizeHtml(a.customer.email)}" style="color:var(--taupe); text-decoration:none;">✉️ ${sanitizeHtml(a.customer.email)}</a>
-            </div>
-            ${a.customer.notes ? `<div style="font-size:11.5px; background:rgba(244,236,225,0.6); padding:6px 10px; border-radius:6px; margin-bottom:8px; color:var(--brown);"><em>Hinweis:</em> ${sanitizeHtml(a.customer.notes)}</div>` : ''}
-            <div style="display:flex; justify-content:flex-end; gap:8px;">
-              ${!isCancelled ? `<button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#b33a3a; border-color:rgba(179,58,58,0.4);" onclick="cancelAppointment('${a.id}')">Stornieren</button>` : ''}
-              <button type="button" class="btn-lux btn-lux-secondary" style="min-height:28px; padding:0 10px; font-size:10.5px; color:#786a62;" onclick="deleteAppointment('${a.id}')">Löschen</button>
-            </div>
-          </div>
-        `;
-      }).join("");
-    };
-
-    window.cancelAppointment = function(id) {
-      if (!confirm("Diesen Termin wirklich stornieren?")) return;
-      const app = appointments.find(a => a.id === id);
-      if (app) {
-        app.status = "cancelled";
-        persistData();
-        renderCalendar();
-        refreshAdminStats();
-        renderAdminBookings(adminFilterState);
-        displayToast("Termin wurde storniert", "success");
-      }
-    };
-
-    window.deleteAppointment = function(id) {
-      if (!confirm("Diesen Termin endgültig aus der Liste löschen?")) return;
-      appointments = appointments.filter(a => a.id !== id);
-      persistData();
-      renderCalendar();
-      refreshAdminStats();
-      renderAdminBookings(adminFilterState);
-      displayToast("Termin gelöscht", "success");
-    };
-
-    window.exportBookingsCsv = function() {
-      if (appointments.length === 0) return displayToast("Keine Buchungen vorhanden", "warning");
-      const headers = ["Buchungscode", "Status", "Datum", "Uhrzeit", "Behandlung", "Preis", "Vorname", "Nachname", "Telefon", "E-Mail", "Notizen"];
-      const rows = appointments.map(a => [
-        a.id,
-        a.status,
-        a.date,
-        a.time,
-        `"${(a.serviceTitle || '').replace(/"/g, '""')}"`,
-        a.price,
-        `"${(a.customer.firstName || '').replace(/"/g, '""')}"`,
-        `"${(a.customer.lastName || '').replace(/"/g, '""')}"`,
-        `"${(a.customer.phone || '').replace(/"/g, '""')}"`,
-        `"${(a.customer.email || '').replace(/"/g, '""')}"`,
-        `"${(a.customer.notes || '').replace(/"/g, '""')}"`
-      ]);
-      const csvContent = "\ufeff" + [headers.join(";"), ...rows.map(r => r.join(";"))].join("\r\n");
-      const blob = new Blob([csvContent], { type: "text/csv;charset=utf-8" });
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a"); 
-      a.href = url; 
-      a.download = `Termine-AlisaBeautyLab-${new Date().toISOString().slice(0, 10)}.csv`;
-      document.body.appendChild(a); 
-      a.click(); 
-      a.remove(); 
-      URL.revokeObjectURL(url);
-    };
-
-    /* ==========================================================================
        MODALS, LEGAL & PRIVACY
        ========================================================================== */
     window.openLegalView = function(type) {
@@ -2615,7 +2301,7 @@
     };
 
     window.acceptNecessaryCookies = function() {
-      localStorage.setItem(STORAGE_KEY_COOKIES, "necessary");
+      store.rawSet(STORAGE_KEY_COOKIES, "necessary");
       document.getElementById("cookie-banner").classList.remove("show");
       displayToast("Datenschutzhinweis bestätigt", "success");
     };
@@ -2646,13 +2332,7 @@
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
         closeMobileMenu();
-        closeAdminModal();
         closeLegalModal();
-      }
-      // Tastenkombination für Studio-Admin: Strg + Alt + A (bzw. Cmd + Alt + A)
-      if ((e.ctrlKey || e.metaKey) && e.altKey && (e.key === "a" || e.key === "A")) {
-        e.preventDefault();
-        openAdminModal();
       }
     });
 
@@ -2673,25 +2353,43 @@
       }
     };
 
-    function checkAdminHash() {
-      if (window.location.hash === "#admin" || window.location.hash === "#studio") {
-        setTimeout(openAdminModal, 200);
+    function checkLegalHash() {
+      if (window.location.hash === "#impressum") {
+        openLegalView("imprint");
+      } else if (window.location.hash === "#datenschutz") {
+        openLegalView("privacy");
       }
     }
-    window.addEventListener("hashchange", checkAdminHash);
+    window.addEventListener("hashchange", checkLegalHash);
 
     /* ==========================================================================
        INITIALIZATION & SCROLL FX
        ========================================================================== */
     document.addEventListener("DOMContentLoaded", () => {
-      checkAdminHash();
+      checkLegalHash();
+
+      // Intersection Observer direkt als erstes starten (Fallback gegen leere Seite)
+      try {
+        const revealObserver = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) { 
+              entry.target.classList.add("is-revealed"); 
+              revealObserver.unobserve(entry.target); 
+            }
+          });
+        }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
+        document.querySelectorAll(".reveal-on-scroll").forEach(el => revealObserver.observe(el));
+      } catch (err) {
+        document.querySelectorAll(".reveal-on-scroll").forEach(el => el.classList.add("is-revealed"));
+      }
+
       renderTreatmentOptions();
       renderCalendar();
       renderQuiz();
       renderGifts();
       syncRemoteBookings();
 
-      const cookieState = localStorage.getItem(STORAGE_KEY_COOKIES);
+      const cookieState = store.raw(STORAGE_KEY_COOKIES);
       if(!cookieState) setTimeout(() => document.getElementById("cookie-banner").classList.add("show"), 1000);
 
       const faqContainer = document.getElementById("faq-container");
@@ -2736,16 +2434,6 @@
         `).join("");
       }
 
-      const revealObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) { 
-            entry.target.classList.add("is-revealed"); 
-            revealObserver.unobserve(entry.target); 
-          }
-        });
-      }, { threshold: 0.12, rootMargin: "0px 0px -50px 0px" });
-      document.querySelectorAll(".reveal-on-scroll").forEach(el => revealObserver.observe(el));
-
       const header = document.getElementById("siteHeader");
       const progressBar = document.getElementById("scrollProgressBar");
       let isScrolling = false;
@@ -2780,23 +2468,28 @@
         let startX = 0;
         let startY = 0;
         let isTouchHorizontal = null;
+        let baValue = 50;
 
-        const updateSlider = (clientX) => {
+        const updateSliderPercentage = (percentage) => {
+          baValue = Math.max(0, Math.min(100, percentage));
+          baAfterImg.style.clipPath = `inset(0 ${100 - baValue}% 0 0)`;
+          baHandleLine.style.left = `${baValue}%`;
+          baHandleBtn.style.left = `${baValue}%`;
+          baSlider.setAttribute("aria-valuenow", Math.round(baValue));
+          baSlider.setAttribute("aria-valuetext", `${Math.round(baValue)}% Nachher-Bild sichtbar`);
+        };
+
+        const updateFromClientX = (clientX) => {
           const rect = baSlider.getBoundingClientRect();
           let xPos = clientX - rect.left;
           if (xPos < 0) xPos = 0;
           if (xPos > rect.width) xPos = rect.width;
-          const percentage = (xPos / rect.width) * 100;
-          
-          baAfterImg.style.clipPath = `inset(0 ${100 - percentage}% 0 0)`;
-          baHandleLine.style.left = `${percentage}%`;
-          baHandleBtn.style.left = `${percentage}%`;
-          baSlider.setAttribute("aria-valuenow", Math.round(percentage));
+          updateSliderPercentage((xPos / rect.width) * 100);
         };
 
         baSlider.addEventListener("mousedown", (e) => { 
           isDragging = true; 
-          updateSlider(e.clientX); 
+          updateFromClientX(e.clientX); 
         });
         
         window.addEventListener("mouseup", () => { 
@@ -2805,7 +2498,7 @@
         
         window.addEventListener("mousemove", (e) => { 
           if (!isDragging) return; 
-          updateSlider(e.clientX); 
+          updateFromClientX(e.clientX); 
         });
 
         baSlider.addEventListener("touchstart", (e) => { 
@@ -2817,12 +2510,12 @@
           }
         }, { passive: true });
         
-        window.addEventListener("touchend", () => { 
+        baSlider.addEventListener("touchend", () => { 
           isDragging = false; 
           isTouchHorizontal = null;
         });
         
-        window.addEventListener("touchmove", (e) => { 
+        baSlider.addEventListener("touchmove", (e) => { 
           if (!isDragging || e.touches.length !== 1) return; 
           const currentX = e.touches[0].clientX;
           const currentY = e.touches[0].clientY;
@@ -2837,28 +2530,25 @@
 
           if (isTouchHorizontal === true) {
             if (e.cancelable) e.preventDefault();
-            updateSlider(currentX);
+            updateFromClientX(currentX);
           } else if (isTouchHorizontal === false) {
             isDragging = false;
           }
         }, { passive: false });
 
         baSlider.addEventListener("keydown", (e) => {
-          let currentVal = parseFloat(baHandleLine.style.left) || 50;
           if (e.key === "ArrowLeft" || e.key === "ArrowDown") {
             e.preventDefault();
-            const newVal = Math.max(0, currentVal - 5);
-            baAfterImg.style.clipPath = `inset(0 ${100 - newVal}% 0 0)`;
-            baHandleLine.style.left = `${newVal}%`;
-            baHandleBtn.style.left = `${newVal}%`;
-            baSlider.setAttribute("aria-valuenow", Math.round(newVal));
+            updateSliderPercentage(baValue - 5);
           } else if (e.key === "ArrowRight" || e.key === "ArrowUp") {
             e.preventDefault();
-            const newVal = Math.min(100, currentVal + 5);
-            baAfterImg.style.clipPath = `inset(0 ${100 - newVal}% 0 0)`;
-            baHandleLine.style.left = `${newVal}%`;
-            baHandleBtn.style.left = `${newVal}%`;
-            baSlider.setAttribute("aria-valuenow", Math.round(newVal));
+            updateSliderPercentage(baValue + 5);
+          } else if (e.key === "Home") {
+            e.preventDefault();
+            updateSliderPercentage(0);
+          } else if (e.key === "End") {
+            e.preventDefault();
+            updateSliderPercentage(100);
           }
         });
       }
