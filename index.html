@@ -65,19 +65,19 @@
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Monday"],
         "opens": "18:00",
-        "closes": "21:00"
+        "closes": "20:00"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Tuesday", "Saturday", "Sunday"],
-        "opens": "12:00",
-        "closes": "21:00"
+        "opens": "10:30",
+        "closes": "20:00"
       },
       {
         "@type": "OpeningHoursSpecification",
         "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
         "opens": "19:00",
-        "closes": "21:00"
+        "closes": "20:00"
       }
     ],
     "priceRange": "30€ - 80€"
@@ -1466,7 +1466,7 @@
         
         <div>
           <h4 style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:16px;">Öffnungszeiten</h4>
-          <p style="color:#ede3d8; line-height:1.8;">Mo: ab 18:00 Uhr<br>Di: ab 12:00 Uhr<br>Mi – Fr: ab 19:00 Uhr<br>Sa – So: ab 12:00 Uhr</p>
+          <p style="color:#ede3d8; line-height:1.8;">Mo: 18:00 – 20:00 Uhr<br>Di: 10:30 – 20:00 Uhr<br>Mi – Fr: 19:00 – 20:00 Uhr<br>Sa – So: 10:30 – 20:00 Uhr</p>
         </div>
         
         <div>
@@ -1661,13 +1661,13 @@
     const TIME_INTERVAL_MINUTES = 30;
 
     const OPENING_SCHEDULE = {
-      0: { start: "12:00", end: "21:00" }, 
-      1: { start: "18:00", end: "21:00" }, 
-      2: { start: "12:00", end: "21:00" }, 
-      3: { start: "19:00", end: "21:00" }, 
-      4: { start: "19:00", end: "21:00" }, 
-      5: { start: "19:00", end: "21:00" }, 
-      6: { start: "12:00", end: "21:00" }  
+      0: { start: "10:30", end: "21:30", latestSlot: "19:30" }, // Sonntag
+      1: { start: "18:00", end: "21:30", latestSlot: "19:30" }, // Montag
+      2: { start: "10:30", end: "21:30", latestSlot: "19:30" }, // Dienstag
+      3: { start: "19:00", end: "21:30", latestSlot: "19:30" }, // Mittwoch
+      4: { start: "19:00", end: "21:30", latestSlot: "19:30" }, // Donnerstag
+      5: { start: "19:00", end: "21:30", latestSlot: "19:30" }, // Freitag
+      6: { start: "10:30", end: "21:30", latestSlot: "19:30" }  // Samstag
     };
 
     const CATALOGUE = [
@@ -1788,7 +1788,12 @@
       return `${d}.${m}.${y}`; 
     }
 
-    const lastStart = day => minutesFromTimeString(OPENING_SCHEDULE[day].end) - BLOCK_DURATION_MINUTES;
+    const lastStart = day => {
+      if (OPENING_SCHEDULE[day] && OPENING_SCHEDULE[day].latestSlot) {
+        return minutesFromTimeString(OPENING_SCHEDULE[day].latestSlot);
+      }
+      return minutesFromTimeString(OPENING_SCHEDULE[day].end) - BLOCK_DURATION_MINUTES;
+    };
 
     /* Toasts */
     function displayToast(msg, type = "success") {
