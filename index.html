@@ -9,18 +9,30 @@
 
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
+
+  <!-- Canonical URL & Favicons -->
+  <link rel="canonical" href="https://alisabeautylab.de/">
   <link rel="icon" type="image/webp" href="AlisaLogoQuertransparent.webp">
   <link rel="apple-touch-icon" href="alisa-preview.png">
 
-  <!-- Open Graph & Social Media Sharing -->
+  <!-- Open Graph & Social Media Sharing (WhatsApp, Instagram, Facebook, iMessage) -->
   <meta property="og:title" content="ALISA BEAUTY LAB | Exklusives Wimpern-Atelier Treuchtlingen">
   <meta property="og:description" content="Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit persönlicher Beratung in Treuchtlingen.">
+  <meta property="og:url" content="https://alisabeautylab.de/">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="alisa-preview.png">
-  <meta property="og:image:alt" content="ALISA BEAUTY LAB - Logo & Atelier">
+  <meta property="og:image" content="https://alisabeautylab.de/alisa-preview.png">
+  <meta property="og:image:secure_url" content="https://alisabeautylab.de/alisa-preview.png">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="ALISA BEAUTY LAB - Logo & Atelier Treuchtlingen">
+  
+  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="alisa-preview.png">
+  <meta name="twitter:title" content="ALISA BEAUTY LAB | Exklusives Wimpern-Atelier Treuchtlingen">
+  <meta name="twitter:description" content="Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit persönlicher Beratung in Treuchtlingen.">
+  <meta name="twitter:image" content="https://alisabeautylab.de/alisa-preview.png">
 
   <!-- Local SEO Structured Data Schema.org (BeautySalon) -->
   <script type="application/ld+json">
@@ -28,8 +40,9 @@
     "@context": "https://schema.org",
     "@type": "BeautySalon",
     "name": "ALISA BEAUTY LAB",
+    "url": "https://alisabeautylab.de/",
     "description": "Exklusives Wimpern-Atelier Treuchtlingen für Wimpernlifting, Neuanlagen (1:1 & Volumen) und Refills.",
-    "image": "alisa-preview.png",
+    "image": "https://alisabeautylab.de/alisa-preview.png",
     "sameAs": [
       "https://www.instagram.com/alisabeautylab/"
     ],
@@ -488,13 +501,29 @@
     }
     .ba-badge {
       position: absolute; bottom: 20px; padding: 6px 16px;
-      background: rgba(255, 253, 249, 0.9); border: 1px solid var(--border-gold);
-      border-radius: var(--radius-full); font-size: 10px; letter-spacing: 0.18em;
+      background: rgba(255, 253, 249, 0.95); border: 1px solid var(--border-gold);
+      border-radius: var(--radius-full); font-size: 10px; letter-spacing: 0.16em;
       text-transform: uppercase; color: var(--brown-deep); z-index: 5; pointer-events: none;
       box-shadow: var(--shadow-sm);
+      white-space: nowrap;
     }
     .ba-badge.before { right: 20px; }
     .ba-badge.after { left: 20px; color: var(--gold-dark); border-color: var(--gold); }
+    .ba-badge-desktop { display: inline; }
+    .ba-badge-mobile { display: none; }
+
+    @media (max-width: 640px) {
+      .ba-badge {
+        bottom: 12px;
+        padding: 5px 11px;
+        font-size: 8.5px;
+        letter-spacing: 0.1em;
+      }
+      .ba-badge.before { right: 10px; }
+      .ba-badge.after { left: 10px; }
+      .ba-badge-desktop { display: none; }
+      .ba-badge-mobile { display: inline; }
+    }
 
     /* ==========================================================================
        SECTIONS & GLASS CARDS
@@ -951,12 +980,18 @@
         <div class="reveal-on-scroll reveal-delay-2" style="margin-top:20px;">
           <div class="ba-slider-wrapper" id="baSlider" role="slider" aria-label="Vorher-Nachher-Vergleich Wimpernlifting" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" tabindex="0">
             <!-- Vorher Bild (Hinten) -->
-            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_bef%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_bef%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23a3958c%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23a3958c%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3ENATURWIMPERN%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23a3958c%22%20letter-spacing%3D%223%22%3EVor%20der%20Behandlung%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Vorher: Naturwimpern vor der Behandlung" class="ba-slider-img">
-            <span class="ba-badge before">Vor der Behandlung</span>
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_bef%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_bef%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28800%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23a3958c%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23a3958c%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23a3958c%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3ENATURWIMPERN%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23a3958c%22%20letter-spacing%3D%223%22%3EVor%20der%20Behandlung%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Vorher: Naturwimpern vor der Behandlung" class="ba-slider-img">
+            <span class="ba-badge before">
+              <span class="ba-badge-desktop">Vor der Behandlung</span>
+              <span class="ba-badge-mobile">Vorher</span>
+            </span>
             
             <!-- Nachher Bild (Vorne) -->
-            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_aft%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_aft%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28600%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23dfbc77%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23dfbc77%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3EPERFEKTER%20SCHWUNG%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23dfbc77%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3ENach%20dem%20Lifting%20%28Foto-Platzhalter%29%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Nachher: Wimpernlifting Ergebnis" class="ba-slider-img ba-after-layer" id="baAfterImg">
-            <span class="ba-badge after" style="z-index:6;">✦ Nach dem Lifting</span>
+            <img src="data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%201200%20800%22%20width%3D%221200%22%20height%3D%22800%22%3E%0A%20%20%3Cdefs%3E%0A%20%20%20%20%3CradialGradient%20id%3D%22bg_aft%22%20cx%3D%2250%25%22%20cy%3D%2250%25%22%20r%3D%2270%25%22%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%220%25%22%20stop-color%3D%22%232e221d%22/%3E%0A%20%20%20%20%20%20%3Cstop%20offset%3D%22100%25%22%20stop-color%3D%22%2319110f%22/%3E%0A%20%20%20%20%3C/radialGradient%3E%0A%20%20%3C/defs%3E%0A%20%20%3Crect%20width%3D%22100%25%22%20height%3D%22100%25%22%20fill%3D%22url%28%23bg_aft%29%22/%3E%0A%20%20%3Crect%20x%3D%2224%22%20y%3D%2224%22%20width%3D%221152%22%20height%3D%22752%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%221.5%22%20stroke-opacity%3D%220.35%22%20rx%3D%2216%22/%3E%0A%20%20%3Cg%20transform%3D%22translate%28400%2C%20370%29%22%20text-anchor%3D%22middle%22%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-100%2C-10%20C-50%2C-55%2050%2C-55%20100%2C-10%20C50%2C30%20-50%2C30%20-100%2C-10%20Z%22%20fill%3D%22none%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%2220%22%20fill%3D%22%23dfbc77%22%20fill-opacity%3D%220.25%22/%3E%0A%20%20%20%20%3Ccircle%20cx%3D%220%22%20cy%3D%22-5%22%20r%3D%229%22%20fill%3D%22%23dfbc77%22/%3E%0A%20%20%20%20%3Cpath%20d%3D%22M-70%2C-35%20Q-85%2C-75%20-95%2C-85%20M-35%2C-46%20Q-40%2C-90%20-45%2C-105%20M0%2C-50%20Q0%2C-95%200%2C-112%20M35%2C-46%20Q40%2C-90%2045%2C-105%20M70%2C-35%20Q85%2C-75%2095%2C-85%22%20stroke%3D%22%23dfbc77%22%20stroke-width%3D%223%22%20stroke-linecap%3D%22round%22%20fill%3D%22none%22/%3E%0A%20%20%20%20%3Ctext%20y%3D%2295%22%20font-family%3D%22%27Cormorant%20Garamond%27%2C%20Georgia%2C%20serif%22%20font-size%3D%2238%22%20fill%3D%22%23fffdfa%22%20letter-spacing%3D%223%22%3EPERFEKTER%20SCHWUNG%3C/text%3E%0A%20%20%20%20%3Ctext%20y%3D%22140%22%20font-family%3D%22%27Montserrat%27%2C%20sans-serif%22%20font-size%3D%2216%22%20fill%3D%22%23dfbc77%22%20letter-spacing%3D%223%22%20text-transform%3D%22uppercase%22%3ENach%20dem%20Lifting%3C/text%3E%0A%20%20%3C/g%3E%0A%3C/svg%3E" alt="Nachher: Wimpernlifting Ergebnis" class="ba-slider-img ba-after-layer" id="baAfterImg">
+            <span class="ba-badge after" style="z-index:6;">
+              <span class="ba-badge-desktop">✦ Nach dem Lifting</span>
+              <span class="ba-badge-mobile">✦ Nachher</span>
+            </span>
             
             <!-- Regler -->
             <div class="ba-handle-line" id="baHandleLine"></div>
@@ -1544,7 +1579,7 @@
           <p><strong>ALISA BEAUTY LAB</strong><br>Inhaberin: Alisa Prykhodko<br>Bürgermeister-Sommer-Straße 34<br>91757 Treuchtlingen<br>Deutschland</p>
           
           <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Kontakt</h4>
-          <p>Telefon: <a href="tel:+491784537636" style="color:var(--brown-deep); font-weight:600;">+49 178 4537636</a><br>E-Mail: <a href="mailto:alisa.prykhodko07@gmail.com" style="color:var(--brown-deep);">alisa.prykhodko07@gmail.com</a></p>
+          <p>Telefon: <a href="tel:+491784537636" style="color:var(--brown-deep); font-weight:600;">+49 178 4537636</a><br>E-Mail: <a href="mailto:alisa.prykhodko07@gmail.com" style="color:var(--brown-deep);">alisa.prykhodko07@gmail.com</a><br>Internet: <a href="https://alisabeautylab.de" target="_blank" rel="noopener noreferrer" style="color:var(--brown-deep);">https://alisabeautylab.de</a></p>
           
           <h4 style="font-family:var(--font-serif); font-size:16px; margin:14px 0 6px; color:var(--brown-deep);">Umsatzsteuer</h4>
           <p>Gemäß § 19 UStG wird keine Umsatzsteuer berechnet (Kleinunternehmerregelung).</p>
