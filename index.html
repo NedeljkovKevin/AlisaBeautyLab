@@ -10,14 +10,17 @@
   <!-- Adobe Fonts -->
   <link rel="stylesheet" href="https://use.typekit.net/fda0xlt.css">
   <link rel="icon" type="image/webp" href="AlisaLogoQuertransparent.webp">
+  <link rel="apple-touch-icon" href="alisa-preview.png">
 
   <!-- Open Graph & Social Media Sharing -->
   <meta property="og:title" content="ALISA BEAUTY LAB | Exklusives Wimpern-Atelier Treuchtlingen">
   <meta property="og:description" content="Exklusive Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills mit persönlicher Beratung in Treuchtlingen.">
   <meta property="og:type" content="website">
   <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="AlisaLogoQuertransparent.webp">
+  <meta property="og:image" content="alisa-preview.png">
+  <meta property="og:image:alt" content="ALISA BEAUTY LAB - Logo & Atelier">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="alisa-preview.png">
 
   <!-- Local SEO Structured Data Schema.org (BeautySalon) -->
   <script type="application/ld+json">
@@ -26,7 +29,10 @@
     "@type": "BeautySalon",
     "name": "ALISA BEAUTY LAB",
     "description": "Exklusives Wimpern-Atelier Treuchtlingen für Wimpernlifting, Neuanlagen (1:1 & Volumen) und Refills.",
-    "image": "AlisaLogoQuertransparent.webp",
+    "image": "alisa-preview.png",
+    "sameAs": [
+      "https://www.instagram.com/alisabeautylab/"
+    ],
     "telephone": "+49 178 4537636",
     "email": "alisa.prykhodko07@gmail.com",
     "address": {
@@ -302,6 +308,17 @@
       transform: translateY(-2px);
     }
 
+    .btn-instagram {
+      background: linear-gradient(135deg, #405de6 0%, #833ab4 30%, #e1306c 60%, #fd1d1d 80%, #f77737 100%);
+      color: #fff;
+      border: 1px solid transparent;
+      box-shadow: 0 4px 15px rgba(225, 48, 108, 0.25);
+    }
+    .btn-instagram:hover {
+      box-shadow: 0 6px 20px rgba(225, 48, 108, 0.45);
+      transform: translateY(-2px);
+    }
+
     .btn-booking {
       background: linear-gradient(135deg, #382923 0%, #1a120f 100%);
       color: #fff;
@@ -336,6 +353,9 @@
 
     .btn-label-whatsapp { display: none; }
     @media (min-width: 640px) { .btn-label-whatsapp { display: inline; } }
+
+    .btn-label-instagram { display: none; }
+    @media (min-width: 1280px) { .btn-label-instagram { display: inline; } }
 
     /* Mobile Menu Toggle */
     .mobile-menu-btn {
@@ -829,7 +849,15 @@
           <span class="btn-label-whatsapp">WhatsApp</span>
         </a>
 
-        <!-- 3. Termin Buchen Button -->
+        <!-- 3. Instagram Button -->
+        <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" class="btn-lux btn-instagram" aria-label="ALISA BEAUTY LAB auf Instagram ansehen">
+          <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+          </svg>
+          <span class="btn-label-instagram">Instagram</span>
+        </a>
+
+        <!-- 4. Termin Buchen Button -->
         <a href="#booking-section" class="btn-lux btn-booking" onclick="closeMobileMenu()">
           <svg viewBox="0 0 24 24" fill="none" stroke="var(--gold-bright)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
           <span>Termin Buchen</span>
@@ -853,6 +881,10 @@
     <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
     <a href="#atelier" onclick="closeMobileMenu()">Über mich</a>
     <a href="#location" onclick="closeMobileMenu()">Studio & Anfahrt</a>
+    <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" onclick="closeMobileMenu()" style="display:inline-flex; align-items:center; gap:10px; font-size:22px; color:var(--gold-dark); text-decoration:none; margin-top:10px;">
+      <svg viewBox="0 0 24 24" fill="currentColor" style="width:24px; height:24px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      <span>@alisabeautylab auf Instagram</span>
+    </a>
   </div>
 
   <main>
@@ -1011,9 +1043,15 @@
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> 1:1 & Volumen: 2 Wo. 30 € | 3 Wo. 40 €</li>
               <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg> Mega Volumen: 2 Wo. 40 € | 3 Wo. 50 €</li>
             </ul>
-            <div style="display:flex; gap:10px;">
-              <button type="button" class="btn-lux btn-lux-secondary" style="flex:1;" onclick="preselectAndScroll('srv-refill-vol-2w')">Refill 2 Wo.</button>
-              <button type="button" class="btn-lux btn-booking" style="flex:1;" onclick="preselectAndScroll('srv-refill-vol-3w')">Refill 3 Wo.</button>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <div style="display:flex; gap:8px;">
+                <button type="button" class="btn-lux btn-lux-secondary" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-vol-2w')">1:1/Vol. 2 Wo. (30€)</button>
+                <button type="button" class="btn-lux btn-lux-secondary" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-vol-3w')">1:1/Vol. 3 Wo. (40€)</button>
+              </div>
+              <div style="display:flex; gap:8px;">
+                <button type="button" class="btn-lux btn-booking" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-mega-2w')">Mega 2 Wo. (40€)</button>
+                <button type="button" class="btn-lux btn-booking" style="flex:1; font-size:10.5px; padding:0 8px;" onclick="preselectAndScroll('srv-refill-mega-3w')">Mega 3 Wo. (50€)</button>
+              </div>
             </div>
           </div>
         </div>
@@ -1077,20 +1115,20 @@
         </div>
 
         <div class="booking-cockpit-frame reveal-on-scroll">
-          <div class="cockpit-tabs-container">
-            <div class="cockpit-step-tab" id="tab-1" onclick="jumpToStep(1)" style="color:var(--brown-deep); font-size:12px; font-weight:700; border-right:1px solid var(--border-gold-light); background:rgba(255,253,249,0.95); position:relative;">
+          <div class="cockpit-tabs-container" role="tablist" aria-label="Buchungsschritte">
+            <button type="button" class="cockpit-step-tab" id="tab-1" role="tab" aria-selected="true" onclick="jumpToStep(1)" style="color:var(--brown-deep); font-size:12px; font-weight:700; border-right:1px solid var(--border-gold-light); background:rgba(255,253,249,0.95); position:relative; border-top:none; border-bottom:none; border-left:none; width:100%; cursor:pointer;">
               <span style="width:24px; height:24px; border-radius:50%; background:var(--brown-deep); color:#fff; display:flex; align-items:center; justify-content:center; font-size:11px;">1</span>
               <span>Behandlung</span>
               <div style="position:absolute; bottom:0; left:0; width:100%; height:2px; background:var(--gold-dark);"></div>
-            </div>
-            <div class="cockpit-step-tab" id="tab-2" onclick="jumpToStep(2)" style="color:var(--taupe); font-size:12px; font-weight:600; border-right:1px solid var(--border-gold-light);">
+            </button>
+            <button type="button" class="cockpit-step-tab" id="tab-2" role="tab" aria-selected="false" onclick="jumpToStep(2)" style="color:var(--taupe); font-size:12px; font-weight:600; border-right:1px solid var(--border-gold-light); background:transparent; border-top:none; border-bottom:none; border-left:none; width:100%; cursor:pointer;">
               <span style="width:24px; height:24px; border-radius:50%; background:rgba(195,157,88,0.2); border:1px solid var(--border-gold); color:var(--brown-deep); display:flex; align-items:center; justify-content:center; font-size:11px;">2</span>
               <span>Datum & Zeit</span>
-            </div>
-            <div class="cockpit-step-tab" id="tab-3" onclick="jumpToStep(3)" style="color:var(--taupe); font-size:12px; font-weight:600;">
+            </button>
+            <button type="button" class="cockpit-step-tab" id="tab-3" role="tab" aria-selected="false" onclick="jumpToStep(3)" style="color:var(--taupe); font-size:12px; font-weight:600; background:transparent; border:none; width:100%; cursor:pointer;">
               <span style="width:24px; height:24px; border-radius:50%; background:rgba(195,157,88,0.2); border:1px solid var(--border-gold); color:var(--brown-deep); display:flex; align-items:center; justify-content:center; font-size:11px;">3</span>
               <span>Bestätigung</span>
-            </div>
+            </button>
           </div>
 
           <div style="padding:44px 38px;" id="cockpit-body">
@@ -1269,11 +1307,15 @@
             <p class="section-description" style="margin-bottom:30px;">
               Keine brennenden Augen, kein Verkleben – ich arbeite ausschließlich mit hautverträglichen, zertifizierten Materialien. Dein Auge wird perfekt betont.
             </p>
-            <div style="display:flex; align-items:center; gap:24px;">
+            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:20px; margin-top:10px;">
               <div>
                 <span style="font-family:var(--font-script); font-size:42px; color:var(--gold-dark); display:block; line-height:1;">Alisa Prykhodko</span>
                 <span style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--taupe); font-weight:600;">Gründerin & Lash Artistin</span>
               </div>
+              <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" class="btn-lux btn-instagram" style="min-height:38px; padding:0 20px;">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:16px; height:16px;"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+                <span>@alisabeautylab</span>
+              </a>
             </div>
           </div>
         </div>
@@ -1354,7 +1396,11 @@
         
         <div>
           <h4 style="font-size:11px; letter-spacing:0.18em; text-transform:uppercase; color:var(--gold-bright); margin-bottom:16px;">Kontakt</h4>
-          <p style="color:#ede3d8; line-height:1.8;">Bürgermeister-Sommer-Str. 34<br>91757 Treuchtlingen<br>Telefon: <a href="tel:+491784537636" style="color:inherit; text-decoration:none;">0178 4537636</a></p>
+          <p style="color:#ede3d8; line-height:1.8;">
+            Bürgermeister-Sommer-Str. 34<br>91757 Treuchtlingen<br>
+            Telefon: <a href="tel:+491784537636" style="color:inherit; text-decoration:none;">0178 4537636</a><br>
+            Instagram: <a href="https://www.instagram.com/alisabeautylab/" target="_blank" rel="noopener noreferrer" style="color:var(--gold-bright); text-decoration:none; font-weight:600;">@alisabeautylab ↗</a>
+          </p>
         </div>
 
       </div>
@@ -1689,7 +1735,15 @@
       target.innerHTML = CATALOGUE.map(srv => {
         const isSelected = srv.id === bookingState.serviceId;
         return `
-          <div style="background:#fff; border:1px solid ${isSelected ? 'var(--gold-dark)' : 'var(--border-gold-light)'}; border-radius:var(--radius-md); padding:20px; cursor:pointer; transition:all 0.3s; box-shadow:${isSelected ? '0 0 0 2px var(--gold-dark)' : '0 4px 14px rgba(0,0,0,0.03)'};" onclick="selectBookingService('${srv.id}')">
+          <div 
+            role="button" 
+            tabindex="0" 
+            aria-pressed="${isSelected}" 
+            aria-label="${srv.title}, ${formatCurrency(srv.price)}"
+            onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();selectBookingService('${srv.id}');}"
+            style="background:#fff; border:1px solid ${isSelected ? 'var(--gold-dark)' : 'var(--border-gold-light)'}; border-radius:var(--radius-md); padding:20px; cursor:pointer; transition:all 0.3s; box-shadow:${isSelected ? '0 0 0 2px var(--gold-dark)' : '0 4px 14px rgba(0,0,0,0.03)'}; outline:none;" 
+            onclick="selectBookingService('${srv.id}')"
+          >
             <div style="display:flex; justify-content:space-between; align-items:baseline; margin-bottom:8px;">
               <strong style="color:var(--brown-deep); font-size:15px; margin-right:12px;">${srv.title}</strong>
               <span style="font-family:var(--font-serif); font-size:20px; font-weight:600; color:var(--gold-dark); white-space:nowrap; flex-shrink:0;">${formatCurrency(srv.price)}</span>
@@ -1975,6 +2029,7 @@
         if (panel) panel.classList.toggle("hidden", i !== targetStep);
         
         if (tab) {
+          tab.setAttribute("aria-selected", i === targetStep ? "true" : "false");
           const num = tab.querySelector('span');
           if (targetStep === 4) {
             tab.style.color = "var(--brown-deep)"; 
