@@ -261,8 +261,10 @@
     .brand-logo-link:hover { opacity: 0.92; transform: scale(0.99); }
     .brand-logo-img {
       max-height: 52px;
-      width: min(280px, 28vw);
+      width: auto;
+      max-width: min(280px, 30vw);
       object-fit: contain;
+      object-position: left center;
     }
     .logo-brand-fallback { display: flex; flex-direction: column; line-height: 1; }
     .logo-main-text { font-family: var(--font-brand); font-size: 20px; letter-spacing: 0.12em; color: var(--brown-deep); font-weight: 500; white-space: nowrap; }
@@ -799,8 +801,16 @@
     .cookie-banner.show { bottom: 0; }
 
     /* Footer Logo overrides */
-    .footer-logo-link { display: inline-block; margin-bottom: 16px; }
-    .footer-logo-img { width: min(240px, 70vw); max-height: 50px; height: auto; object-fit: contain; }
+    .footer-logo-link { display: inline-flex; align-items: center; margin-bottom: 16px; text-decoration: none; }
+    .footer-logo-img { 
+      display: block;
+      width: auto; 
+      max-width: min(240px, 70vw); 
+      max-height: 48px; 
+      height: auto; 
+      object-fit: contain; 
+      object-position: left center; 
+    }
     .footer-logo-fallback { font-family: var(--font-brand); font-size: 20px; letter-spacing: 0.12em; color: #ffffff; }
 
     /* Scroll Reveal */
