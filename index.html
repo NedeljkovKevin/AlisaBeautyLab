@@ -1595,7 +1595,7 @@
           <h4 style="font-family:var(--font-serif); font-size:18px; margin-bottom:8px; color:var(--brown-deep);">Datenschutzerklärung</h4>
           <p><strong>1. Verantwortliche Stelle:</strong><br>Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br>Alisa Prykhodko, Bürgermeister-Sommer-Straße 34, 91757 Treuchtlingen<br>Telefon: +49 178 4537636 | E-Mail: alisa.prykhodko07@gmail.com</p>
 
-          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles (Vercel):</strong><br>Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf dieser Website erfasst Vercel automatisch technische Informationen in Server-Logfiles (z. B. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zugriffszeitpunkt). Diese Daten sind technisch erforderlich, um die Website stabil und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO); ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Daten werden nach Ablauf technischer Speicherfristen gelöscht.</p>
+          <p style="margin-top:12px;"><strong>2. Hosting &amp; Server-Logfiles (Vercel):</strong><br>Diese Website wird bei der Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA, gehostet. Beim Aufruf dieser Website erfasst Vercel automatisch technische Informationen in Server-Logfiles (z. B. IP-Adresse, Browsertyp, Betriebssystem, Referrer-URL, Zugriffszeitpunkt). Diese Daten sind technisch erforderlich, um die Website stabil und sicher bereitzustellen (Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO). Vercel ist nach dem EU-US Data Privacy Framework zertifiziert (Art. 45 DSGVO); ergänzend gelten die Standardvertragsklauseln der EU-Kommission. Server-Logfiles werden von Vercel zur Gewährleistung der Systemsicherheit und Fehleranalyse für die Dauer von standardmäßig bis zu 7 Tagen (im Hobby-Tarif) bzw. maximal 30 Tagen aufbewahrt und anschließend automatisch gelöscht.</p>
 
           <p style="margin-top:12px;"><strong>3. Lokale Speicherung (Local Storage):</strong><br>Diese Website nutzt den lokalen Speicher deines Browsers ausschließlich für technisch notwendige Funktionen (z. B. Speicherung der Bestätigung des Datenschutzhinweises, Rechtsgrundlage: § 25 Abs. 2 Nr. 2 TDDDG). Es werden <em>keine</em> personenbezogenen Daten, Kundendaten oder Tracking-Cookies im lokalen Speicher abgelegt.</p>
 
@@ -1816,6 +1816,7 @@
       bookingState.time = null;
       renderTreatmentOptions();
       if (bookingState.date) renderSlotsForDate();
+      updateSummaries();
       validateStep2();
     }
 
@@ -2115,10 +2116,20 @@
       }
 
       const notes = document.getElementById("inp-notes").value.trim();
+      const healthKeywords = ["allergie", "allergisch", "unverträg", "neurodermitis", "entzünd", "augenentzünd", "schwanger", "medikament", "ausschlag", "bindehaut"];
+      const lowerNotes = notes.toLowerCase();
+      if (healthKeywords.some(kw => lowerNotes.includes(kw))) {
+        displayToast("Bitte trage keine Gesundheitsangaben online ein.", "warning");
+        alert("Hinweis zum Schutz deiner Gesundheitsdaten:\n\nBitte trage keine Angaben zu Allergien, Erkrankungen oder Medikamenten in das Notizfeld ein.\n\nDeine Gesundheit und etwaige Besonderheiten besprechen wir diskret und persönlich vor Ort im Studio!");
+        document.getElementById("inp-notes").focus();
+        return;
+      }
+
       const srv = CATALOGUE.find(s => s.id === bookingState.serviceId);
       const [year, month, day] = bookingState.date.split("-");
       const timeClean = bookingState.time.replace(":", "");
-      const code = `ALISA-${day}${month}-${timeClean}`;
+      const randSuffix = Math.floor(100 + Math.random() * 900);
+      const code = `ALISA-${year.slice(2)}${month}${day}-${timeClean}-${randSuffix}`;
       const customer = {
         firstName: document.getElementById("inp-firstname").value.trim(),
         lastName: document.getElementById("inp-lastname").value.trim(),
@@ -2138,26 +2149,35 @@
       let transmissionOk = false;
 
       // 1. Webhook-Übertragung an Google Sheets abwarten
-      if (WEBHOOK_URL) {
+      if (!WEBHOOK_URL) {
+        transmissionOk = false;
+      } else {
         try {
           const controller = new AbortController();
           const timeoutId = setTimeout(() => controller.abort(), 7000);
 
-          await fetch(WEBHOOK_URL, {
+          const res = await fetch(WEBHOOK_URL, {
             method: "POST",
-            mode: "no-cors",
             headers: { "Content-Type": "text/plain;charset=utf-8" },
             body: JSON.stringify(record),
             signal: controller.signal
           });
           clearTimeout(timeoutId);
-          transmissionOk = true;
+
+          if (res.ok) {
+            try {
+              const json = await res.json();
+              transmissionOk = (json && (json.status === "success" || json.ok === true || json.result === "success"));
+            } catch (_) {
+              transmissionOk = true;
+            }
+          } else {
+            transmissionOk = false;
+          }
         } catch (err) {
           console.warn("Webhook-Übertragungsfehler:", err);
           transmissionOk = false;
         }
-      } else {
-        transmissionOk = true;
       }
 
       if (btn) { btn.disabled = false; btn.textContent = "Termin unverbindlich anfragen"; }
@@ -2219,8 +2239,7 @@
     window.sendConfirmationWhatsApp = function() {
       const b = bookingState.recentBooking;
       if (!b) return;
-      const notesLine = b.customer && b.customer.notes ? `\n📝 Wünsche: ${b.customer.notes}` : "";
-      const text = `Hallo Alisa,\nich möchte gern einen Termin anfragen:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n📞 ${b.customer.phone}${notesLine}\n🏷️ Referenzcode: ${b.id}\nPasst der Termin bei dir?`;
+      const text = `Hallo Alisa,\nich möchte gern einen Termin anfragen:\n✨ ${b.serviceTitle}\n📅 ${formatDateDisplay(b.date)} um ${b.time} Uhr\n👤 ${b.customer.firstName} ${b.customer.lastName}\n📞 ${b.customer.phone}\n🏷️ Referenzcode: ${b.id}\nPasst der Termin bei dir?`;
       window.open(`https://wa.me/${STUDIO_PHONE}?text=${encodeURIComponent(text)}`, "_blank");
     };
 
@@ -2394,6 +2413,31 @@
         lastNavTrigger.focus();
       }
     };
+
+    // A11y Focus-Trap für das mobile Menü
+    document.getElementById("mobileNav")?.addEventListener("keydown", (e) => {
+      if (e.key !== "Tab") return;
+      const menu = document.getElementById("mobileNav");
+      if (!menu.classList.contains("open")) return;
+
+      const focusables = menu.querySelectorAll('a, button, [tabindex]:not([tabindex="-1"])');
+      if (focusables.length === 0) return;
+
+      const first = focusables[0];
+      const last = focusables[focusables.length - 1];
+
+      if (e.shiftKey) {
+        if (document.activeElement === first) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (document.activeElement === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    });
 
     window.addEventListener("keydown", (e) => {
       if (e.key === "Escape") {
