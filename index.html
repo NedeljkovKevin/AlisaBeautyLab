@@ -80,6 +80,11 @@
         "closes": "20:00"
       }
     ],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "5.0",
+      "reviewCount": "3"
+    },
     "priceRange": "30€ - 80€"
   }
   </script>
@@ -644,8 +649,8 @@
     }
     .t-card p { 
       font-family: var(--font-serif); 
-      font-size: 18.5px; 
-      line-height: 1.6; 
+      font-size: 16.5px; 
+      line-height: 1.65; 
       color: var(--brown-deep); 
       margin-bottom: 24px;
       flex-grow: 1;
@@ -1186,7 +1191,7 @@
               </div>
               <div class="reviews-cta-info">
                 <strong>Offizielles Google Unternehmensprofil</strong>
-                <p>5.0 Sterne Gesamtbewertung · Lies alle Rezensionen oder teile dein Feedback.</p>
+                <p>5.0 Sterne Gesamtbewertung (3 Rezensionen) · Lies alle Rezensionen oder teile dein Feedback.</p>
               </div>
             </div>
             
@@ -1716,7 +1721,7 @@
     ];
 
     /* ==========================================================================
-       GOOGLE BEWERTUNGEN (1 ECHTE + 2 VORBEREITETE PLÄTZE)
+       GOOGLE BEWERTUNGEN (3 ECHTE VERIFIZIERTE REZENSIONEN)
        ========================================================================== */
     const TESTIMONIALS = [
       { 
@@ -1728,22 +1733,20 @@
         text: "Einfach die beste! 🥰 Kann ich nur weiterempfehlen. Man kann sich nur wohl fühlen. Freue mich immer auf jeden Termin und bin rundum zufrieden 🥰" 
       },
       { 
-        /* Sobald deine 2. Rezension da ist, hier Namen, Initial und Text eintragen */
-        name: "Google Kundin", 
-        initial: "J", 
-        avatarBg: "#c39d58", 
+        name: "Nikola Mrozkowiak", 
+        initial: "N", 
+        avatarBg: "#8e24aa", /* Lila Avatar passend zum Google-Original */
         stars: 5, 
         badge: "Verifizierte Google-Rezension", 
-        text: "Super saubere Arbeit und wunderschönes Ergebnis! Ich komme jedes Mal sehr gerne zu Alisa und kann das Studio uneingeschränkt empfehlen." 
+        text: "Sehr professionelle und saubere Arbeit. Sie nimmt sich viel Zeit, geht auf individuelle Wünsche ein und zaubert jedes Mal ein wunderschönes Ergebnis. Man fühlt sich direkt wohl und gut aufgehoben. Kann ich nur weiterempfehlen! 🤍" 
       },
       { 
-        /* Sobald deine 3. Rezension da ist, hier Namen, Initial und Text eintragen */
-        name: "Google Kundin", 
-        initial: "S", 
-        avatarBg: "#45362e", 
+        name: "Veronika Cherniavska", 
+        initial: "V", 
+        avatarBg: "#5c6bc0", /* Violett/Indigo Avatar passend zum Google-Original */
         stars: 5, 
         badge: "Verifizierte Google-Rezension", 
-        text: "Sehr professionelle Beratung, mega angenehme Atmosphäre und die Wimpern halten bombenfest. Fühle mich hier bestens aufgehoben!" 
+        text: "Meine Wimpern sahen noch nie so schön aus wie nach dem Besuch bei Alisa.\n\nIhre Arbeit hat nicht nur mein Selbstbewusstsein erhöht sondern auch ein permanentes Lächeln garantiert. Ich würde gerne öfters zu ihr kommen aber leider halten die Wimpern zuuu lange hahahahah\n\nDie Session hat sich besser als Urlaub angefühlt. Man kann reden, lachen singen oder auch einfach mal schlafen!\n\nGirls das ist eure Chance mal durchzuatmen und sich wieder wie die Queen zu fühlen 💕" 
       }
     ];
 
@@ -2664,7 +2667,7 @@
                 Google Rezension
               </span>
             </div>
-            <p>„${sanitizeHtml(t.text)}“</p>
+            <p>„${sanitizeHtml(t.text).replace(/\n\n/g, '<br><br>').replace(/\n/g, '<br>')}“</p>
             <div class="t-author">
               <div class="t-avatar" style="background:${t.avatarBg};">${t.initial}</div>
               <div>
