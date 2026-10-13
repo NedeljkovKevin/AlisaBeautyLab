@@ -34,59 +34,207 @@
   <meta name="twitter:description" content="Wimpernbehandlungen, Wimpernlifting, Neuanlagen & Refills in Treuchtlingen. Nur 10 bis 20 Minuten von Weißenburg, Gunzenhausen, Pappenheim oder Eichstätt entfernt – kostenlose Parkplätze direkt vor der Tür.">
   <meta name="twitter:image" content="https://alisabeautylab.de/alisa-preview.png">
 
-  <!-- Local SEO Structured Data Schema.org (BeautySalon) -->
+  <!-- Local SEO Structured Data Schema.org (BeautySalon + OfferCatalog + AggregateRating + FAQPage) -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "BeautySalon",
-    "name": "ALISA BEAUTY LAB",
-    "url": "https://alisabeautylab.de/",
-    "description": "Privates Wimpern-Studio in Treuchtlingen für Wimpernlifting, Neuanlagen (1:1 & Volumen) und Refills in entspannter Wohlfühlatmosphäre. Nur 10 bis 20 Minuten von Weißenburg, Gunzenhausen, Pappenheim oder Eichstätt entfernt – kostenlose Parkplätze direkt vor der Tür.",
-    "image": "https://alisabeautylab.de/alisa-preview.png",
-    "sameAs": [
-      "https://www.instagram.com/alisabeautylab/"
-    ],
-    "telephone": "+49 152 33973216",
-    "email": "alisa.prykhodko07@gmail.com",
-    "areaServed": [
-      "Treuchtlingen",
-      "Weißenburg in Bayern",
-      "Pappenheim",
-      "Gunzenhausen"
-    ],
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Bürgermeister-Sommer-Straße 34",
-      "addressLocality": "Treuchtlingen",
-      "postalCode": "91757",
-      "addressCountry": "DE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": "48.9555",
-      "longitude": "10.9101"
-    },
-    "openingHoursSpecification": [
+    "@graph": [
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday"],
-        "opens": "18:00",
-        "closes": "21:30"
+        "@type": "BeautySalon",
+        "@id": "https://alisabeautylab.de/#salon",
+        "name": "ALISA BEAUTY LAB",
+        "url": "https://alisabeautylab.de/",
+        "description": "Privates Wimpern-Studio in Treuchtlingen für Wimpernlifting, Neuanlagen (1:1 & Volumen) und Refills in entspannter Wohlfühlatmosphäre. Nur 10 bis 20 Minuten von Weißenburg, Gunzenhausen, Pappenheim oder Eichstätt entfernt – kostenlose Parkplätze direkt vor der Tür.",
+        "image": "https://alisabeautylab.de/alisa-preview.png",
+        "sameAs": [
+          "https://www.instagram.com/alisabeautylab/"
+        ],
+        "telephone": "+49 152 33973216",
+        "email": "alisa.prykhodko07@gmail.com",
+        "areaServed": [
+          "Treuchtlingen",
+          "Weißenburg in Bayern",
+          "Pappenheim",
+          "Gunzenhausen",
+          "Eichstätt",
+          "Pleinfeld",
+          "Meinheim",
+          "Mörnsheim"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Bürgermeister-Sommer-Straße 34",
+          "addressLocality": "Treuchtlingen",
+          "postalCode": "91757",
+          "addressCountry": "DE"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "48.9555",
+          "longitude": "10.9101"
+        },
+        "openingHoursSpecification": [
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday"],
+            "opens": "18:00",
+            "closes": "21:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Tuesday", "Saturday", "Sunday"],
+            "opens": "10:30",
+            "closes": "21:30"
+          },
+          {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
+            "opens": "19:00",
+            "closes": "21:30"
+          }
+        ],
+        "priceRange": "30€ - 80€",
+        "aggregateRating": {
+          "@type": "AggregateRating",
+          "ratingValue": "5.0",
+          "reviewCount": "4",
+          "bestRating": "5",
+          "worstRating": "1"
+        },
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Wimpernbehandlungen & Preise",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Wimpernlifting inkl. Färbung & Pflege",
+                "description": "Natürlicher Schwung mit Tiefenpflege und Färbung für deine Naturwimpern."
+              },
+              "price": "35.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Neuanlage: 1:1 Technik",
+                "description": "Feinster Mascara-Effekt. Eine Seidenwimper pro Naturwimper."
+              },
+              "price": "55.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Neuanlage: Volumen 2D–4D",
+                "description": "Zarte handgefächerte Wimpern für federleichte Dichte."
+              },
+              "price": "65.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Neuanlage: Mega Volumen 5D–8D",
+                "description": "Hypnotisierend tiefer Glamour-Look mit dichter Fülle."
+              },
+              "price": "80.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auffüllen 1:1 & Volumen (bis 3 Wochen)",
+                "description": "Auffrischen für 1:1 & Volumen bis 3 Wochen (mind. 50 % der Extensions vorhanden)."
+              },
+              "price": "30.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auffüllen 1:1 & Volumen (bis 4 Wochen)",
+                "description": "Auffrischen für 1:1 & Volumen bis 4 Wochen (mind. 50 % der Extensions vorhanden)."
+              },
+              "price": "40.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auffüllen Megavolumen (bis 3 Wochen)",
+                "description": "Auffrischen Megavolumen bis 3 Wochen (mind. 50 % der Extensions vorhanden)."
+              },
+              "price": "40.00",
+              "priceCurrency": "EUR"
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Auffüllen Megavolumen (bis 4 Wochen)",
+                "description": "Auffrischen Megavolumen bis 4 Wochen (mind. 50 % der Extensions vorhanden)."
+              },
+              "price": "50.00",
+              "priceCurrency": "EUR"
+            }
+          ]
+        }
       },
       {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Tuesday", "Saturday", "Sunday"],
-        "opens": "10:30",
-        "closes": "21:30"
-      },
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Wednesday", "Thursday", "Friday"],
-        "opens": "19:00",
-        "closes": "21:30"
+        "@type": "FAQPage",
+        "@id": "https://alisabeautylab.de/#faq-schema",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Wie lange hält ein Wimpernlifting?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "4-6 Wochen, bis die Naturwimpern nachgewachsen sind. Es ist wasser- und wischfest."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wie lange dauert ein Termin?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Pro Termin reserviere ich dir ein privates Zeitfenster von 120 Minuten, ohne Hektik und ohne Parallelbehandlung."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ab wann gilt ein Auffüllpreis?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Ein Auffüllen ist bis zur 4. Woche möglich, wenn beim Termin noch mindestens 50 % der Extensions vorhanden sind. Ab der 5. Woche wird der Neupreis berechnet."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Ich habe empfindliche Augen oder Allergien.",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Sprich mich gern vor Beginn deines Termins persönlich darauf an. Ich arbeite mit sanften, geprüften Materialien und stimme alles individuell auf dich ab."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Wo genau befindet sich das Studio und kann ich dort parken?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Mein Studio befindet sich in der Bürgermeister-Sommer-Straße 34 in Treuchtlingen in einem eigenen, gemütlich eingerichteten Bereich im Haus. Du kannst bequem und kostenlos direkt an der Straße vor dem Haus parken. Klingle einfach – ich hole dich an der Tür ab!"
+            }
+          }
+        ]
       }
-    ],
-    "priceRange": "30€ - 80€"
+    ]
   }
   </script>
 
@@ -591,7 +739,7 @@
        ========================================================================== */
     .t-track { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); 
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
       gap: 24px; 
       padding: 10px 0 20px; 
     }
@@ -1216,7 +1364,7 @@
           <p class="section-description">Echtes Feedback von Kundinnen aus meinem Studio in Treuchtlingen.</p>
         </div>
 
-        <!-- Die 3 Bewertungskarten -->
+        <!-- Die 4 Bewertungskarten -->
         <div class="t-track reveal-on-scroll" id="testimonial-track"></div>
 
         <div class="reveal-on-scroll" style="text-align:center; max-width:760px; margin:24px auto 0; font-size:12px; color:var(--taupe); line-height:1.6;">
@@ -1233,7 +1381,7 @@
               </div>
               <div class="reviews-cta-info">
                 <strong>Offizielles Google Unternehmensprofil</strong>
-                <p>5.0 Sterne Gesamtbewertung (3 Rezensionen) · Lies alle Rezensionen auf Google Maps.</p>
+                <p>5.0 Sterne Gesamtbewertung (4 Rezensionen) · Lies alle Rezensionen auf Google Maps.</p>
               </div>
             </div>
             
@@ -1666,9 +1814,17 @@
     ];
 
     /* ==========================================================================
-       GOOGLE BEWERTUNGEN (3 ECHTE REZENSIONEN)
+       GOOGLE BEWERTUNGEN (4 ECHTE REZENSIONEN)
        ========================================================================== */
     const TESTIMONIALS = [
+      { 
+        name: "Arigona A.", 
+        initial: "A", 
+        avatarBg: "#c39d58", 
+        stars: 5, 
+        badge: "Google-Rezension", 
+        text: "ich kann sie euch echt nur empfehlen!!! War bei ihr zum Lashlifting und bin sooo zufrieden mit dem Ergebnis!! ✨ Meine Wimpern sehen einfach mega aus und der Schwung ist richtig schön!! Dazu ist sie einfach super lieb und man fühlt sich direkt wohl bei ihr. Würde immer wieder zu ihr gehen!! 🤍✨" 
+      },
       { 
         name: "Veronika C.", 
         initial: "V", 
