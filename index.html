@@ -697,6 +697,22 @@
       background: var(--bg-card); backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
       border: 1px solid var(--border-gold); border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
     }
+    .looks-grid {
+      display: grid;
+      gap: 28px;
+      margin-top: 50px;
+      grid-template-columns: 1fr;
+    }
+    @media (min-width: 640px) {
+      .looks-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    @media (min-width: 1220px) {
+      .looks-grid {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
     .treatment-luxury-card {
       position: relative; background: linear-gradient(145deg, rgba(255, 253, 249, 0.96) 0%, rgba(249, 244, 237, 0.93) 100%);
       backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
@@ -739,9 +755,14 @@
        ========================================================================== */
     .t-track { 
       display: grid; 
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+      grid-template-columns: repeat(2, 1fr); 
       gap: 24px; 
       padding: 10px 0 20px; 
+    }
+    @media (min-width: 1220px) {
+      .t-track {
+        grid-template-columns: repeat(4, 1fr);
+      }
     }
     @media (max-width: 900px) {
       .t-track {
@@ -1227,12 +1248,12 @@
       <div class="marquee-track">
         <div class="marquee-item"><span>NATÜRLICHE ELEGANZ</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUCHZARTE SEIDENWIMPERN</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
-        <div class="marquee-item"><span>WIMPERNLIFTING MIT FÄRBUNG</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
+        <div class="marquee-item"><span>WIMPERNLIFTING MIT FÄRBUNG & PFLEGE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUTFREUNDLICHE PREMIUM-KLEBER</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>TYPGERECHTER SCHWUNG & FÜLLE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>NATÜRLICHE ELEGANZ</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUCHZARTE SEIDENWIMPERN</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
-        <div class="marquee-item"><span>WIMPERNLIFTING MIT KERATINPFLEGE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
+        <div class="marquee-item"><span>WIMPERNLIFTING MIT FÄRBUNG & PFLEGE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>HAUTFREUNDLICHE PREMIUM-KLEBER</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
         <div class="marquee-item"><span>TYPGERECHTER SCHWUNG & FÜLLE</span><svg viewBox="0 0 24 24"><polygon points="12 2 15 9 22 12 15 15 12 22 9 15 2 12 9 9 12 2"/></svg></div>
       </div>
@@ -1265,7 +1286,7 @@
           </p>
         </div>
 
-        <div style="display:grid; gap:28px; margin-top:50px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
+        <div class="looks-grid">
           
           <!-- Card 1: Wimpernlifting -->
           <div class="treatment-luxury-card reveal-on-scroll">
