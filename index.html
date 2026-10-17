@@ -2500,7 +2500,7 @@
        ========================================================================== */
     let lastLegalTrigger = null;
 
-    window.openLegalView = function(type) {
+    window.openLegalView = function(type, skipHistory = false) {
       lastLegalTrigger = document.activeElement;
       const modal = document.getElementById("legal-modal-overlay");
       const imprint = document.getElementById("legal-imprint-text");
@@ -2514,6 +2514,15 @@
       modal.classList.add("open");
       document.body.classList.add("modal-open");
 
+      if (!skipHistory) {
+        const targetHash = type === "imprint" ? "#impressum" : "#datenschutz";
+        if (window.location.hash !== targetHash && !window.location.pathname.toLowerCase().includes(type === "imprint" ? "impressum" : "datenschutz")) {
+          try {
+            history.replaceState(null, "", targetHash);
+          } catch (_) {}
+        }
+      }
+
       // A11y: Fokus auf Schließen-Button setzen
       const closeBtn = modal.querySelector(".modal-close");
       if (closeBtn) closeBtn.focus();
@@ -2523,6 +2532,15 @@
       const modal = document.getElementById("legal-modal-overlay");
       modal.classList.remove("open");
       document.body.classList.remove("modal-open");
+
+      // URL bereinigen, falls #impressum, #datenschutz oder /impressum aktiv war
+      try {
+        const path = window.location.pathname.toLowerCase();
+        const hash = window.location.hash.toLowerCase();
+        if (hash === "#impressum" || hash === "#datenschutz" || path.endsWith("/impressum") || path.endsWith("/impressum/") || path.endsWith("/datenschutz") || path.endsWith("/datenschutz/")) {
+          history.replaceState(null, "", "/");
+        }
+      } catch (_) {}
 
       // A11y: Rückkehr zum auslösenden Element
       if (lastLegalTrigger && typeof lastLegalTrigger.focus === "function") {
@@ -2645,13 +2663,28 @@
     };
 
     function checkLegalHash() {
-      if (window.location.hash === "#impressum") {
-        openLegalView("imprint");
-      } else if (window.location.hash === "#datenschutz") {
-        openLegalView("privacy");
+      const hash = window.location.hash.toLowerCase();
+      const path = window.location.pathname.toLowerCase().replace(/\/+$/, "");
+      const search = window.location.search.toLowerCase();
+
+      if (
+        hash === "#impressum" ||
+        path.endsWith("/impressum") ||
+        path.endsWith("/impressum.html") ||
+        search.includes("impressum")
+      ) {
+        openLegalView("imprint", true);
+      } else if (
+        hash === "#datenschutz" ||
+        path.endsWith("/datenschutz") ||
+        path.endsWith("/datenschutz.html") ||
+        search.includes("datenschutz")
+      ) {
+        openLegalView("privacy", true);
       }
     }
     window.addEventListener("hashchange", checkLegalHash);
+    window.addEventListener("popstate", checkLegalHash);
 
     /* ==========================================================================
        INITIALIZATION & SCROLL FX
